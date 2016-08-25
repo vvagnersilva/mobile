@@ -1,0 +1,17 @@
+<resources>
+    <!-- Cores do Tema Material -->
+    <color name="primary">#03A9F4</color>
+    <color name="primary_dark">#01579B</color>
+    <color name="accent">#F44336</color>
+
+    <color name="preto">#000000</color>
+    <color name="branco">#FFFFFF</color>
+    <color name="vermelho">#FF0000</color>
+    <color name="verde">#01160D</color>
+    <color name="verde_toolbar">#26a69a</color>
+
+    <color name="azul">#0000FF</color>
+    <color name="amarelo">#FFFF00</color>
+    <color name="cinza">#C0C0C0</color>
+
+</resources>

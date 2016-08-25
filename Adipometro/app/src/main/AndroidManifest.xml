@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.ufgd.adipometro">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo_ufgd"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Adipometro" >
+1
+        <!-- Splash screen -->
+        <activity
+            android:name="br.ufgd.adipometro.SplashScreenActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Activity Principal -->
+        <activity
+            android:name="br.ufgd.adipometro.MainActivity"
+            android:label="@string/app_name"/>
+
+        <activity
+            android:name="br.ufgd.adipometro.EgsActivity"
+            android:label="@string/app_name"/>
+    </application>
+
+</manifest>

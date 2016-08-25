@@ -1,0 +1,6 @@
+INDEX VERSION 1.3+/home/wagner/workspace/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1830188898.index
+2482859430.index
+3045983155.index
+3938111017.index
+3162258219.index
