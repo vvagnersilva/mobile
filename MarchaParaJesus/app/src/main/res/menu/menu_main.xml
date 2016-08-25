@@ -1,0 +1,47 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/action_agenda"
+        android:title="@string/action_agenda"
+        android:icon="@drawable/agenda"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_videos"
+        android:title="@string/action_videos"
+        android:icon="@drawable/camera"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_youtube"
+        android:title="@string/action_youtube"
+        android:icon="@drawable/youtube"
+        app:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/action_contato"
+        android:title="@string/action_contato"
+        android:icon="@drawable/contato"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_config"
+        android:title="@string/action_configuracoes"
+        android:icon="@drawable/config"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_paypal"
+        android:icon="@drawable/paypal"
+        android:title="@string/action_doacao"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_sobre"
+        android:title="Sobre"
+        android:icon="@drawable/config"
+        app:showAsAction="never" />
+</menu>
