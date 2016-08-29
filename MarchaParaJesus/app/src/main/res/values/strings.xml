@@ -18,6 +18,7 @@
 
     <string name="string_vazia"></string>
     <string name="action_agenda">Agenda</string>
+    <string name="action_gps">Localização</string>
     <string name="action_videos">Vídeos</string>
     <string name="action_contato">Contato</string>
     <string name="action_youtube">YouTube</string>
@@ -84,5 +85,31 @@
     <string name="layout_tela_dois">Layout da tela DOIS</string>
     <string name="ir_para_tela_dois">Ir para a tela DOIS</string>
     <string name="texto_doar">Colabore com o evento fazendo a sua doação com qualquer valor.</string>
+    <string name="alert_dialog_two_buttons_title">Vox clamantis in deserto</string>
+    <string name="alert_dialog_ok">OK</string>
+    <string name="alert_dialog_cancel">Cancel</string>
+    <string name="show">Show</string>
+
+    <string name="erro_gps">É necessário habilitar a configuração de localização para utilizar o aplicativo.</string>
+
+    <string name="msg_buscar">Buscando endereço…</string>
+    <string name="origem2">Jesus</string>
+    <string name="destino">Destino</string>
+    <string name="titulo_lista_endereco">Selecione o destino</string>
+    <string name="msg_rota">Traçando rota…</string>
+    <string name="local_atual">Local atual</string>
+
+    <string name="erro_local">Você deve habilitar as permissões para utilizar o aplicativo.</string>
+
+    <string name="txtValores">Selecione um valor</string>
+
+
+    <string-array name="valores">
+        <item>5.00</item>
+        <item>10.00</item>
+        <item>20.00</item>
+        <item>50.00</item>
+        <item>Outros</item>
+    </string-array>
 
 </resources>

@@ -25,8 +25,12 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
@@ -66,7 +70,7 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
  * rebuffering.
  */
 @TargetApi(13)
-public final class VideoListActivity extends Activity implements OnFullscreenListener {
+public final class VideoListActivity extends AppCompatActivity implements OnFullscreenListener {
 
     /**
      * The duration of the animation sliding up the video in portrait.
@@ -91,6 +95,7 @@ public final class VideoListActivity extends Activity implements OnFullscreenLis
     private boolean isFullscreen;
 
     private static List<VideoEntry> VIDEO_LIST = new ArrayList<VideoEntry>();
+    private static Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +106,6 @@ public final class VideoListActivity extends Activity implements OnFullscreenLis
         VIDEO_LIST = getIntent().getParcelableArrayListExtra("dados");
 
         setContentView(R.layout.video_list);
-
 
         listFragment = (VideoListFragment) getFragmentManager().findFragmentById(R.id.list_fragment);
         videoFragment =
@@ -116,6 +120,17 @@ public final class VideoListActivity extends Activity implements OnFullscreenLis
 
         checkYouTubeApi();
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Id correspondente ao botão Up/Home da actionbar
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void checkYouTubeApi() {

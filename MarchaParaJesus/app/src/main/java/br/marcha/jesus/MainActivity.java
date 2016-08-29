@@ -1,23 +1,17 @@
 package br.marcha.jesus;
 
 import android.app.Activity;
-import android.content.ComponentName;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
@@ -51,22 +45,10 @@ import br.marcha.jesus.fragments.PaypalFragment;
 import br.marcha.jesus.fragments.SobreFragment;
 import br.marcha.jesus.fragments.VideosFragment;
 import br.marcha.jesus.util.Constantes;
+import br.marcha.jesus.mapas.LocalizacaoActivity;
 import br.marcha.jesus.youtube.VideoEntry;
 import br.marcha.jesus.youtube.VideoListActivity;
 
-/**
- * 1) Esta activity desligou a action bar padrao pelo Tema
- * <p/>
- * android:theme="@style/AppTheme.NoActionBar"
- * <p/>
- * 2) Foi adicionado a Toolbar no layout
- * <p/>
- * 3) A toolbar eh setada como a ActionBar
- * <p/>
- * setSupportActionBar(toolbar);
- * <p/>
- * 4) De resto pode usar os metodos da action bar normalmente.
- */
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<VideoEntry> VIDEO_LIST;
@@ -110,9 +92,22 @@ public class MainActivity extends AppCompatActivity {
         Fragment fragment;
 
         switch (id) {
+            case R.id.action_gps: {
+                Intent it = new Intent(this, LocalizacaoActivity.class);
+
+                // Iniciamos nossa activity
+                startActivity(it);
+                break;
+            }
+
             case R.id.action_agenda: {
                 fragment = new AgendaFragment();
                 replaceFragment(fragment);
+
+              /*  DialogFragment newFragment = FragmentDialogAlarmActivity.MyAlertDialogFragment
+                        .newInstance(R.string.alert_dialog_two_buttons_title);
+                newFragment.show(getFragmentManager(), "dialog");
+*/
                 break;
             }
             case R.id.action_videos: {
@@ -196,14 +191,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void executarPagtoPayPal() {
-        TextView valor = (TextView) findViewById(R.id.editValor);
+        Spinner spinner = (Spinner) findViewById(R.id.spinner1);
 
-        if (valor.getText().length() == 0) {
+        if (spinner.getSelectedItem().toString().length() == 0) {
             Toast.makeText(this, "Entre com o valor da doação!", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        double val = Double.parseDouble(valor.getText().toString());
+        double val = Double.parseDouble(spinner.getSelectedItem().toString());
 
         PayPalPayment pagto = montarPagtoFinal(val);
 
