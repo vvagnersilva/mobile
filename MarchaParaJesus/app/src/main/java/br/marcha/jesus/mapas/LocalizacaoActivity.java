@@ -192,6 +192,7 @@ public class LocalizacaoActivity extends AppCompatActivity implements
 
         Log.d("NGVL", "onConnected::END");
     }
+
     @Override
     public void onConnectionSuspended(int i) {
         mGoogleApiClient.connect();
@@ -238,6 +239,7 @@ public class LocalizacaoActivity extends AppCompatActivity implements
         }
         Log.d("NGVL", "obterUltimaLocalizacao::END");
     }
+
     private void atualizarMapa() {
         Log.d("NGVL", "atualizarMapa::BEGIN");
         if (mGoogleMap == null) {

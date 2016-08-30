@@ -2,18 +2,35 @@ package br.marcha.jesus;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.PendingResult;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.LocationListener;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.LocationSettingsRequest;
+import com.google.android.gms.location.LocationSettingsResult;
+import com.google.android.gms.location.LocationSettingsStatusCodes;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
@@ -49,16 +66,26 @@ import br.marcha.jesus.mapas.LocalizacaoActivity;
 import br.marcha.jesus.youtube.VideoEntry;
 import br.marcha.jesus.youtube.VideoListActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements
+        GoogleApiClient.ConnectionCallbacks,
+        LocationListener,
+        GoogleMap.OnMapLongClickListener {
 
-    private ArrayList<VideoEntry> VIDEO_LIST;
+    ArrayList<VideoEntry> VIDEO_LIST;
 
-    private PayPalConfiguration payPalConfig = new PayPalConfiguration()
+    PayPalConfiguration payPalConfig = new PayPalConfiguration()
             .environment(Constantes.PAYPAL_ENV)
             .clientId(Constantes.PAYPAL_CLIENT_ID)
             .languageOrLocale("pt_BR");
 
-    private static final int COD_PAGTO = 123;
+    GoogleApiClient mGoogleApiClient;
+    LatLng mOrigem;
+
+    Handler mHandler;
+    int mTentativas;
+    Marker mMarkerLocalAtual;
+
+    static final int COD_PAGTO = 123;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,14 +100,52 @@ public class MainActivity extends AppCompatActivity {
         Fragment agendaFragment = new AgendaFragment();
         replaceFragment(agendaFragment);
 
-        // Pesquisa os links no youtube.
+        // Create an instance of GoogleAPIClient.
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addConnectionCallbacks(this)
+                .addApi(LocationServices.API)
+                .build();
+
+        // Thread p/ pesquisa dos links no youtube.
         pesquisarLinks();
+
+        //Thread p/ obter a ultima localizacao.
+        obterLocalizacao();
+
+    }
+
+    protected void onStart() {
+        mGoogleApiClient.connect();
+        super.onStart();
+    }
+
+    protected void onStop() {
+        mGoogleApiClient.disconnect();
+        super.onStop();
+    }
+
+    @Override
+    public void onConnected(Bundle dataBundle) {
+        Log.d("NGVL", "onConnected::BEGIN");
+        verificarStatusGPS();
+
+        Log.d("NGVL", "onConnected::END");
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+        mGoogleApiClient.connect();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }
+
+    @Override
+    public void onMapLongClick(LatLng latLng) {
+
     }
 
     @Override
@@ -218,6 +283,26 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onLocationChanged(Location location) {
+        Log.d("NGVL", "onLocationChanged::BEGIN");
+        if (mOrigem == null) {
+            mOrigem = new LatLng(location.getLatitude(), location.getLongitude());
+        }
+        mMarkerLocalAtual.setPosition(
+                new LatLng(location.getLatitude(), location.getLongitude()));
+        Log.d("NGVL", "onLocationChanged::END");
+    }
+
+    // Busca a localizacao atual do aparelho.
+    private void obterLocalizacao() {
+        // Cria uma AsyncTask
+            LocalizacaoTask task = new LocalizacaoTask();
+
+            // Executa a task/thread
+            task.execute();
+    }
+
     // Busca os links no YouTube em uma nova thread
     private void pesquisarLinks() {
         // Cria uma AsyncTask
@@ -225,6 +310,51 @@ public class MainActivity extends AppCompatActivity {
 
         // Executa a task/thread
         task.execute();
+    }
+
+    public void verificarStatusGPS() {
+        Log.d("NGVL", "verificarStatusGPS::BEGIN");
+        final LocationRequest locationRequest = LocationRequest.create();
+        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        LocationSettingsRequest.Builder locationSettingsRequest =
+                new LocationSettingsRequest.Builder();
+        locationSettingsRequest.setAlwaysShow(true);
+        locationSettingsRequest.addLocationRequest(locationRequest);
+
+        PendingResult<LocationSettingsResult> result =
+                LocationServices.SettingsApi.checkLocationSettings(
+                        mGoogleApiClient,
+                        locationSettingsRequest.build());
+        result.setResultCallback(new ResultCallback<LocationSettingsResult>() {
+            @Override
+            public void onResult(LocationSettingsResult locationSettingsResult) {
+                final Status status = locationSettingsResult.getStatus();
+                switch (status.getStatusCode()) {
+                    case LocationSettingsStatusCodes.SUCCESS:
+                        obterUltimaLocalizacao();
+                        break;
+                }
+            }
+        });
+        Log.d("NGVL", "verificarStatusGPS::END");
+    }
+
+    private void obterUltimaLocalizacao() {
+        Log.d("NGVL", "obterUltimaLocalizacao::BEGIN");
+        Location location = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+        if (location != null) {
+            mTentativas = 0;
+            mOrigem = new LatLng(location.getLatitude(), location.getLongitude());
+        } else if (mTentativas < 10) {  // vamos tentar obter a última localização 10 vezes
+            mTentativas++;
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    obterUltimaLocalizacao();
+                }
+            }, 1000); // a cada 1 segundos
+        }
+        Log.d("NGVL", "obterUltimaLocalizacao::END");
     }
 
     private class LinkYoutubeTask extends AsyncTask<Void, Void, List<SearchResult>> {
@@ -316,9 +446,6 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(List<SearchResult> searchResults) {
             super.onPostExecute(searchResults);
 
-            // Esconde o progress
-            // progress.setVisibility(View.INVISIBLE);
-
             if (searchResults != null) {
                 List<VideoEntry> list = new ArrayList<VideoEntry>();
 
@@ -335,6 +462,34 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 VIDEO_LIST = new ArrayList<VideoEntry>(Collections.unmodifiableList(list));
+            }
+        }
+    }
+
+    private class LocalizacaoTask extends AsyncTask<Void, Void, LatLng> {
+
+        @Override
+        protected LatLng doInBackground(Void... voids) {
+            verificarStatusGPS();
+
+            return mOrigem;
+        }
+
+        @Override
+        protected void onPostExecute(LatLng latLng) {
+            super.onPostExecute(latLng);
+
+            if (latLng != null) {
+                Double latitude = latLng.latitude;
+                Double longitude = latLng.longitude;
+
+                TextView txtLatitude = (TextView) findViewById(R.id.txtLatitude);
+
+                txtLatitude.setText(latitude.toString());
+
+                TextView txtLongitude = (TextView) findViewById(R.id.txtLongitude);
+
+                txtLongitude.setText(longitude.toString());
             }
         }
     }
