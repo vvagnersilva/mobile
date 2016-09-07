@@ -1,0 +1,13 @@
+Passos p/ comitar no gitHub.
+
+git init
+git status
+
+1) git add utils/
+2) git commit -m "Diretorio com anotacoes importantes." 
+3) git push
+
+
+
+
+
