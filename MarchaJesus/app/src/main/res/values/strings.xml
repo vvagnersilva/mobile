@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Marcha para Jesus</string>
+
+    <string name="opcao_agenda">Agenda</string>
+    <string name="opcao_youtube">Youtube</string>
+    <string name="opcao_paypal">Paypal</string>
+    <string name="opcao_videos">Vídeos</string>
+    <string name="videolist_demo_name">Video List</string>
+    <string name="playerview_text">This is a YouTubePlayerView!</string>
+    <string name="error_player">Ocorreu um erro ao inicializar o YouTubePlayer</string>
+
+    <string name="opcao_mapa">Mapa de eventos</string>
+    <string name="opcao_amigos">Amigos</string>
+    <string name="opcao_login">Login</string>
+    <string name="opcao_logout">Logout</string>
+    <string name="opcao_sair">Sair</string>
+    <string name="origem2">Jesus</string>
+    <string name="destino">Destino</string>
+    <string name="erro_local">Você deve habilitar as permissões para utilizar o aplicativo.</string>
+
+    <string name="txtValores">Selecione um valor</string>
+    <string name="erro_gps">É necessário habilitar a configuração de localização para utilizar o aplicativo.</string>
+
+    <string-array name="valores">
+        <item>5.00</item>
+        <item>10.00</item>
+        <item>20.00</item>
+        <item>50.00</item>
+    </string-array>
+
+</resources>

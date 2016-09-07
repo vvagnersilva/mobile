@@ -1,0 +1,32 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/action_agenda"
+            android:icon="@drawable/agenda_48dp"
+            android:title="@string/opcao_agenda" />
+        <item
+            android:id="@+id/action_paypal"
+            android:icon="@drawable/paypal"
+            android:title="@string/opcao_paypal" />
+        <item
+            android:id="@+id/action_videos"
+            android:icon="@mipmap/ic_videos"
+            android:title="@string/opcao_videos" />
+        <item
+            android:id="@+id/action_mapa"
+            android:icon="@mipmap/ic_mapa"
+            android:title="@string/opcao_mapa" />
+        <item
+            android:id="@+id/action_friends"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="@string/opcao_amigos" />
+    </group>
+
+    <item
+        android:id="@+id/action_sair"
+        android:icon="@mipmap/ic_sair"
+        android:title="@string/opcao_sair" />
+
+</menu>

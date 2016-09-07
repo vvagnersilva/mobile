@@ -1,0 +1,79 @@
+{
+  "project_info": {
+    "project_number": "481677171400",
+    "project_id": "marcha-jesus"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481677171400:android:2844ec21c9b84824",
+        "android_client_info": {
+          "package_name": "br.marcha.jesus.googleplus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "481677171400-odr5pu6d6mlqa1mu2msv4nrjn73mui89.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4j76xRqhFUlscnJox8rNtcPyG7PgmydE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481677171400:android:a47cd704a4013c27",
+        "android_client_info": {
+          "package_name": "br.marcha.jesus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "481677171400-d8i20qmroabcv9hdkeujge22dt544986.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.marcha.jesus",
+            "certificate_hash": "49FFB855B17F1699C61BA5D502C1787B06F48F90"
+          }
+        },
+        {
+          "client_id": "481677171400-odr5pu6d6mlqa1mu2msv4nrjn73mui89.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4j76xRqhFUlscnJox8rNtcPyG7PgmydE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
