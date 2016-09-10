@@ -70,7 +70,7 @@
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyCab7T3zeVz41U4skJ_MN43tcOykhjm5Bo" />
+            android:value="AIzaSyA8GUc7b9hcAh7iDj9Ecx8FJUbIlgGOZ5Q" />
 
         <!-- Google Play Services -->
         <meta-data

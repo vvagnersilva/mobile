@@ -13,7 +13,10 @@
         pv:pv_host_text="Instituto"
         pv:pv_particle_text="Ser Integral"
         pv:pv_text_color="#BBDEFB"
-        pv:pv_background_color="#757575"/>
+        pv:pv_background_color="#757575"
+        pv:pv_text_anim_time="3000"
+        pv:pv_spread_anim_time="2000"
+        pv:pv_host_text_anim_time="3000" />
 
     <Button
         android:id="@+id/btEntrar"

@@ -24,10 +24,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,9 +53,7 @@ import com.google.api.services.youtube.model.ResourceId;
 import com.google.api.services.youtube.model.SearchListResponse;
 import com.google.api.services.youtube.model.SearchResult;
 import com.paypal.android.sdk.payments.PayPalConfiguration;
-import com.paypal.android.sdk.payments.PayPalItem;
 import com.paypal.android.sdk.payments.PayPalPayment;
-import com.paypal.android.sdk.payments.PayPalPaymentDetails;
 import com.paypal.android.sdk.payments.PayPalService;
 import com.paypal.android.sdk.payments.PaymentActivity;
 import com.squareup.picasso.Picasso;
@@ -134,12 +130,6 @@ public class MainActivity extends AppCompatActivity implements
                         return true;
                     }
                 });
-
-        if (savedInstanceState == null) {
-            mOpcaoSelecionada = R.id.action_agenda;
-        } else {
-            mOpcaoSelecionada = savedInstanceState.getInt("menuItem");
-        }
 
         selecionarOpcaoMenu(mNavigationView.getMenu().findItem(R.id.action_agenda));
 
@@ -353,6 +343,7 @@ public class MainActivity extends AppCompatActivity implements
     private void atualizarMenu() {
         final ImageView imgFoto = (ImageView) findViewById(R.id.imgFotoPerfil);
         final TextView txtNome = (TextView) findViewById(R.id.txtNome);
+
         if (mGoogleApiClient.isConnected()) {
             Person person = Plus.PeopleApi.getCurrentPerson(mGoogleApiClient);
             if (person != null) {
@@ -443,7 +434,7 @@ public class MainActivity extends AppCompatActivity implements
 
         final String API_KEY = "AIzaSyA8LVmKQhpvKJ_tBG53Bq8JUUenTNb3qAc";
 
-        final String MARCHA_PARA_JESUS = "Professor Doutor Cristiano Muniz Unb";
+        final String MARCHA_PARA_JESUS = "Cristiano Muniz unb, CC";
 
         /************* BUSCAS NO YOUTUBE *********************/
         /**
