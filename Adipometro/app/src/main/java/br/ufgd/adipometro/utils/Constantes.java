@@ -1,4 +1,4 @@
-package br.ufgd.adipometro.ufgd.utils;
+package br.ufgd.adipometro.utils;
 
 public class Constantes {
 

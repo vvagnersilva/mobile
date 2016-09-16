@@ -19,7 +19,7 @@
 
 <resources>
 
-    <style name="Theme.Adipometro" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+    <style name="Theme.Adipometro" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="actionBarItemBackground">@drawable/selectable_background_adipometro</item>
         <item name="popupMenuStyle">@style/PopupMenu.Adipometro</item>
         <item name="dropDownListViewStyle">@style/DropDownListView.Adipometro</item>

@@ -4,20 +4,27 @@
     tools:context="br.ufgd.adipometro.MainActivity">
 
     <item
-        android:id="@+id/action_search"
-        android:icon="@drawable/ic_action_search"
-        android:title="@string/action_search"
-        app:actionViewClass="android.support.v7.widget.SearchView"
+        android:id="@+id/action_calculo"
+        android:icon="@drawable/ic_format_superscript"
+        android:title="@string/action_calculo"
         app:showAsAction="always" />
-    <item
-        android:id="@+id/action_refresh"
-        android:icon="@drawable/ic_action_refresh"
-        android:title="@string/action_refresh"
-        app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
 
+    <item
+        android:id="@+id/action_ufgd"
+        android:icon="@drawable/ic_web"
+        android:title="@string/action_ufgd"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_ajuda"
+        android:icon="@drawable/ic_help"
+        android:title="@string/action_ajuda"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_sobre"
+        android:icon="@drawable/ic_information"
+        android:title="@string/action_sobre"
+        app:showAsAction="always" />
 
 </menu>

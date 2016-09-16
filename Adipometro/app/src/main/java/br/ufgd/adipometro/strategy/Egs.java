@@ -1,4 +1,4 @@
-package br.ufgd.adipometro.ufgd.strategy;
+package br.ufgd.adipometro.strategy;
 
 public abstract class Egs {
     protected double peso;

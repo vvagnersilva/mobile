@@ -14,4 +14,10 @@
     <color name="amarelo">#FFFF00</color>
     <color name="cinza">#C0C0C0</color>
 
+
+    <color name="azul_meia_noite">#000080</color>
+    <color name="azul_escuro">#3E4095</color>
+    <color name="azul_medio">#00AFEF</color>
+    <color name="azul_claro">#c9ebfb</color>
+
 </resources>

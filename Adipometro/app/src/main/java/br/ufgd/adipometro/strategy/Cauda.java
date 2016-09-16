@@ -1,8 +1,8 @@
-package br.ufgd.adipometro.ufgd.strategy;
+package br.ufgd.adipometro.strategy;
 
 import android.util.Log;
 
-import br.ufgd.adipometro.ufgd.utils.Constantes;
+import br.ufgd.adipometro.utils.Constantes;
 
 public class Cauda extends Egs {
 

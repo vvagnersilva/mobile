@@ -22,6 +22,7 @@ public class EgsActivity extends AppCompatActivity {
 
         Bundle args = getIntent().getExtras();
 
+        String tpMedida = args.getString("tpMedida");
         Double peso = args.getDouble("peso");
         Double ca = args.getDouble("ca");
         Double cc = args.getDouble("cc");

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/string_vazia"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/logo_ufgd" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/string_vazia"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Switch
+            android:id="@+id/tipoPlicometro"
+            android:layout_width="195dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_horizontal"
+            android:singleLine="false"
+            android:splitTrack="false"
+            android:text="Plicômetro digital"
+            android:textAlignment="gravity" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/string_vazia"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/escolha"
+            android:textColor="@color/vermelho"/>
+
+        <RadioGroup
+            android:id="@+id/group1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioCostas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="@string/costas" />
+
+            <RadioButton
+                android:id="@+id/radioPeito"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="@string/peito" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/edPeso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/llMain"
+            android:ems="5"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/txtPeso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Peso (Peso corporal):" />
+
+        <EditText
+            android:id="@+id/edCa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/llMain"
+            android:ems="5"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/txtCa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CA (Plicômetro prega da cauda)" />
+
+        <EditText
+            android:id="@+id/edCc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/llMain"
+            android:ems="5"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/txtCc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CC (Condição Corporal)" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/string_vazia"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Button
+            android:id="@+id/btCalcularEgs"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:background="@drawable/fundo"
+            android:text="Calcular"
+            android:textSize="15sp"
+            android:textColor="@color/branco"
+            android:elevation="6dp"
+            android:stateListAnimator="@null"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="16dp"
+            android:onClick="onClickCalcularEgs"
+            android:layout_marginRight="16dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -3,58 +3,76 @@ package br.ufgd.adipometro;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.SearchView;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CompoundButton;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import br.ufgd.adipometro.ufgd.strategy.Egs;
-import br.ufgd.adipometro.ufgd.strategy.Cauda;
+import br.ufgd.adipometro.fragment.AjudaFragment;
+import br.ufgd.adipometro.fragment.CalculoFragment;
+import br.ufgd.adipometro.fragment.SobreFragment;
+import br.ufgd.adipometro.fragment.UfgdFragment;
+import br.ufgd.adipometro.strategy.Egs;
+import br.ufgd.adipometro.strategy.Cauda;
 
-public class MainActivity extends android.support.v7.app.AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     private boolean isCheckedTipoPlicometro;
     private static final String TAG = "Adipometro";
+    private String tpMedida;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Adipômetro");
-        actionBar.setIcon(R.drawable.logo_ufgd);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        // Cria as tabs (Passa como parâmetro o índice de cada tab: 1,2,3)
+        Fragment f = null;
 
-        ActionBar.Tab tab1 = actionBar.newTab();
+        f = CalculoFragment.novaInstancia("teste");
 
-        tab1.setText("Calda").setTabListener(new MyTabListener(this, 1));
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.conteudo, f, "teste")
+                .commit();
 
-        actionBar.addTab(tab1);
+/*
+        final RadioGroup group = (RadioGroup) findViewById(R.id.group1);
+        group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                boolean isCalda = R.id.radioCalda == checkedId;
+                boolean isCostas = R.id.radioCostas == checkedId;
+                boolean isPeito = R.id.radioPeito == checkedId;
 
-        //actionBar.addTab(actionBar.newTab().setText("Tab 2").setTabListener(new MyTabListener(this, 2)));
-        //actionBar.addTab(actionBar.newTab().setText("Tab 3").setTabListener(new MyTabListener(this, 3)));
+                if (isCalda) {
+                    tpMedida = TipoMedidaEnum.CALDA.getCodigo();
+                    Log.i(TAG, "Marcou radio Calda: " + checkedId);
+                } else if (isCostas) {
+                    tpMedida = TipoMedidaEnum.COSTAS.getCodigo();
+                    Log.i(TAG, "Marcou radio Costas: " + checkedId);
+                } else if (isPeito) {
+                    tpMedida = TipoMedidaEnum.PEITO.getCodigo();
+                    Log.i(TAG, "Marcou radio Peito: " + checkedId);
+                }
+            }
+        });
 
         Switch tipoPlicometro = (Switch) findViewById(R.id.tipoPlicometro);
         tipoPlicometro.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
                 isCheckedTipoPlicometro = isChecked;
-
                 Log.v("Switch State=", "" + isCheckedTipoPlicometro);
             }
         });
+*/
     }
 
     public void onClickCalcularEgs(View view) {
@@ -82,8 +100,10 @@ public class MainActivity extends android.support.v7.app.AppCompatActivity {
 
             // Navega para a próxima tela
             Intent intent = new Intent(this, EgsActivity.class);
+
             Bundle params = new Bundle();
 
+            params.putString("tpMedida", tpMedida);
             params.putDouble("peso", peso);
             params.putDouble("ca", ca);
             params.putDouble("cc", cc);
@@ -105,11 +125,6 @@ public class MainActivity extends android.support.v7.app.AppCompatActivity {
         // Infla o menu com os botões da action bar
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
-        // SearchView
-        MenuItem item = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(item);
-        searchView.setOnQueryTextListener(onSearch());
-
         return true;
     }
 
@@ -121,34 +136,29 @@ public class MainActivity extends android.support.v7.app.AppCompatActivity {
         return intent;
     }
 
-    private SearchView.OnQueryTextListener onSearch() {
-        return new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                toast("Buscar o texto: " + query);
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
-            }
-        };
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Fragment f = null;
+        String titulo = item.getTitle().toString();
+
         int id = item.getItemId();
-        if (id == R.id.action_search) {
-            toast("Clicou no Search!");
-            return true;
-        } else if (id == R.id.action_refresh) {
-            toast("Clicou no Refresh!");
-            return true;
-        } else if (id == R.id.action_settings) {
-            toast("Clicou no Settings!");
-            return true;
+
+        if (id == R.id.action_calculo) {
+            f = CalculoFragment.novaInstancia(titulo);
+        } else if (id == R.id.action_ufgd) {
+            f = UfgdFragment.novaInstancia(titulo);
+        } else if (id == R.id.action_ajuda) {
+            f = AjudaFragment.novaInstancia(titulo);
+
+        } else if (id == R.id.action_sobre) {
+            f = SobreFragment.novaInstancia(titulo);
         }
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.conteudo, f, titulo)
+                .commit();
+
         return super.onOptionsItemSelected(item);
     }
 
