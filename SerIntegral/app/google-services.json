@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "504931573369",
+    "project_id": "serintegral-143001"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504931573369:android:59b89728b8404a36",
+        "android_client_info": {
+          "package_name": "serintegral.com.br"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "504931573369-mm3qcad26cllukllkj9rs74bbgdqk4fl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "serintegral.com.br",
+            "certificate_hash": "49FFB855B17F1699C61BA5D502C1787B06F48F90"
+          }
+        },
+        {
+          "client_id": "504931573369-fgar5ineblthtkma1itsqhraebg77rn1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPv5n5-OJbaeWJD7MhDE5U3p3UwXmt478"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

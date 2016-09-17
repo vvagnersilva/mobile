@@ -25,7 +25,7 @@ public class GeofenceReceiver extends BroadcastReceiver {
                 List<Geofence> geofences = geofencingEvent.getTriggeringGeofences();
                 String acao = transicao == 1 ? "Entrou" : "Saiu";
                 Toast.makeText(context,
-                        "Geofence ID: "+ geofences.get(0).getRequestId() +"  "+ acao +" do perímetro",
+                        "Geofence ID: " + geofences.get(0).getRequestId() + "  " + acao + " do perímetro",
                         Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(context,

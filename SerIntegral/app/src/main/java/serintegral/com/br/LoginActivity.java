@@ -7,32 +7,24 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.plus.Plus;
-
-import serintegral.com.br.particleview.ParticleView;
 
 public class LoginActivity extends Activity implements
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         GoogleApiProvider {
 
+    public static final int REQUEST_SIGN_IN = 0;
+    // Shared Preferences.
+    private static final String PREF_NAME = "LoginActivity";
     // Google+
     private GoogleApiClient mGoogleApiClient;
     private boolean mIntentInProgress;
     private boolean mSignInClicked;
     private ConnectionResult mConnectionResult;
-
-    private ParticleView mPv;
-
-    public static final int REQUEST_SIGN_IN = 0;
-
-    // Shared Preferences.
-    private static final String PREF_NAME = "LoginActivity";
-
     private SharedPreferences.OnSharedPreferenceChangeListener callback = new SharedPreferences.OnSharedPreferenceChangeListener() {
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
@@ -55,30 +47,6 @@ public class LoginActivity extends Activity implements
                 .addScope(Plus.SCOPE_PLUS_PROFILE)
                 .build();
 
-        SharedPreferences prefs = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-
-        prefs.registerOnSharedPreferenceChangeListener(callback);
-
-        boolean login = prefs.getBoolean("login", false);
-
-        Log.i("LoginActivity", "login 1: " + login);
-
-        if (login) {
-            Intent it = new Intent(this, MainActivity.class);
-            startActivity(it);
-        } else {
-            mPv = (ParticleView) findViewById(R.id.pv);
-
-            mPv.startAnim();
-
-            mPv.setOnParticleAnimListener(new ParticleView.ParticleAnimListener() {
-                @Override
-                public void onAnimationEnd() {
-                    Button btEntrar = (Button) findViewById(R.id.btEntrar);
-                    btEntrar.setVisibility(View.VISIBLE);
-                }
-            });
-        }
     }
 
     @Override

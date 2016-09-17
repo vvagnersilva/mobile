@@ -54,7 +54,7 @@ public class LocalizacaoActivity extends AppCompatActivity implements
 
     private static final int REQUEST_ERRO_PLAY_SERVICES = 1;
     private static final int REQUEST_CHECAR_GPS = 2;
-    private  static final int REQUEST_PERMISSIONS = 3;
+    private static final int REQUEST_PERMISSIONS = 3;
 
     private static final String EXTRA_DIALOG = "dialog";
     private static final String EXTRA_ROTA = "rota";
@@ -86,8 +86,6 @@ public class LocalizacaoActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_gps);
 
         mLoaderManager = getSupportLoaderManager();
-        mTxtProgresso = (TextView)findViewById(R.id.txtProgresso);
-        mLayoutProgresso = (LinearLayout)findViewById(R.id.llProgresso);
         mDeveExibirDialog = savedInstanceState == null;
         mHandler = new Handler();
         mGoogleApiClient = new GoogleApiClient.Builder(this)
@@ -136,6 +134,7 @@ public class LocalizacaoActivity extends AppCompatActivity implements
         }
         Log.d("NGVL", "onPause::END");
     }
+
     @Override
     protected void onStop() {
         Log.d("NGVL", "onStop::BEGIN");
@@ -147,6 +146,7 @@ public class LocalizacaoActivity extends AppCompatActivity implements
         Log.d("NGVL", "onStop::END");
         super.onStop();
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -154,8 +154,8 @@ public class LocalizacaoActivity extends AppCompatActivity implements
         if (requestCode == REQUEST_ERRO_PLAY_SERVICES
                 && resultCode == RESULT_OK) {
             mGoogleApiClient.connect();
-        } else if (requestCode == REQUEST_CHECAR_GPS){
-            if (resultCode == RESULT_OK){
+        } else if (requestCode == REQUEST_CHECAR_GPS) {
+            if (resultCode == RESULT_OK) {
                 mTentativas = 0;
                 mHandler.removeCallbacksAndMessages(null);
                 obterUltimaLocalizacao();
@@ -166,6 +166,7 @@ public class LocalizacaoActivity extends AppCompatActivity implements
         }
         Log.d("NGVL", "onActivityResult::END");
     }
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -175,6 +176,7 @@ public class LocalizacaoActivity extends AppCompatActivity implements
         outState.putParcelable(EXTRA_DEST, mDestino);
         outState.putParcelableArrayList(EXTRA_ROTA, mRota);
     }
+
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
@@ -197,6 +199,7 @@ public class LocalizacaoActivity extends AppCompatActivity implements
     public void onConnectionSuspended(int i) {
         mGoogleApiClient.connect();
     }
+
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
         Log.d("NGVL", "onConnectionFailed");
@@ -210,10 +213,11 @@ public class LocalizacaoActivity extends AppCompatActivity implements
             exibirMensagemDeErro(this, connectionResult.getErrorCode());
         }
     }
+
     @Override
     public void onLocationChanged(Location location) {
         Log.d("NGVL", "onLocationChanged::BEGIN");
-        if (mOrigem == null){
+        if (mOrigem == null) {
             mOrigem = new LatLng(location.getLatitude(), location.getLongitude());
         }
         mMarkerLocalAtual.setPosition(
@@ -228,7 +232,7 @@ public class LocalizacaoActivity extends AppCompatActivity implements
             mTentativas = 0;
             mOrigem = new LatLng(location.getLatitude(), location.getLongitude());
             atualizarMapa();
-        } else if (mTentativas < 10){  // vamos tentar obter a última localização 10 vezes
+        } else if (mTentativas < 10) {  // vamos tentar obter a última localização 10 vezes
             mTentativas++;
             mHandler.postDelayed(new Runnable() {
                 @Override
@@ -275,6 +279,7 @@ public class LocalizacaoActivity extends AppCompatActivity implements
 
         Log.d("NGVL", "atualizarMapa::END");
     }
+
     private void exibirMensagemDeErro(FragmentActivity activity, final int codigoDoErro) {
         Log.d("NGVL", "exibirMensagemDeErro");
         final String TAG = "DIALOG_ERRO_PLAY_SERVICES";
@@ -342,7 +347,7 @@ public class LocalizacaoActivity extends AppCompatActivity implements
                 != PackageManager.PERMISSION_GRANTED) {
             permissoes.add(Manifest.permission.ACCESS_FINE_LOCATION);
         }
-        if (!permissoes.isEmpty()&& mDeveExibirDialog){
+        if (!permissoes.isEmpty() && mDeveExibirDialog) {
             String[] array = new String[permissoes.size()];
             permissoes.toArray(array);
             ActivityCompat.requestPermissions(this, array, REQUEST_PERMISSIONS);
@@ -357,14 +362,14 @@ public class LocalizacaoActivity extends AppCompatActivity implements
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         Log.d("NGVL", "onRequestPermissionsResult::BEGIN");
         boolean success = true;
-        for (int i = 0; i < permissions.length; i++){
-            if (grantResults[i] != PackageManager.PERMISSION_GRANTED){
+        for (int i = 0; i < permissions.length; i++) {
+            if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
                 success = false;
                 break;
             }
         }
         mDeveExibirDialog = true;
-        if (!success){
+        if (!success) {
             Toast.makeText(this, R.string.erro_local, Toast.LENGTH_SHORT).show();
             finish();
         }
