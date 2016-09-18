@@ -175,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
     private void executarPagtoPayPal() {
         EditText edValor = (EditText) findViewById(R.id.edValor);
 
+        // Retirar o simbolo da moeda.
         String valor = edValor.getText().toString().replace("R$", "");
 
         if (valor.length() == 0) {
@@ -182,6 +183,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+        // Conversao p/ Double
         Double val = Util.converteStringToDouble(valor);
 
         PayPalPayment pagto = montarPagtoFinal(val);

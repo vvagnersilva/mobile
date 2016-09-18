@@ -1,4 +1,4 @@
-package serintegral.com.br.currencyedittext;
+package com.blackcat.currencyedittext;
 
 
 import java.text.DecimalFormat;

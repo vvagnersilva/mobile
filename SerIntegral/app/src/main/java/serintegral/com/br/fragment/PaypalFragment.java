@@ -2,20 +2,15 @@ package serintegral.com.br.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.Editable;
 import android.text.Html;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
-
-import java.text.NumberFormat;
 
 import serintegral.com.br.MainActivity;
 import serintegral.com.br.R;
-import serintegral.com.br.currencyedittext.CurrencyEditText;
+import serintegral.com.br.util.currencyedittext.CurrencyEditText;
 
 public class PaypalFragment extends Fragment {
     private static final String EXTRA_TIPO = "mTipo";

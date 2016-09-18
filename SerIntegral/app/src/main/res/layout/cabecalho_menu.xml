@@ -8,6 +8,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@mipmap/ic_serintegral"
-        android:scaleType="fitXY" />
+        android:scaleType="fitXY"/>
 
 </RelativeLayout>

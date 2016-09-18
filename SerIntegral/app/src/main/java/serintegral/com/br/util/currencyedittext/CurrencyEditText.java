@@ -1,4 +1,4 @@
-package serintegral.com.br.currencyedittext;
+package serintegral.com.br.util.currencyedittext;
 
 import android.content.Context;
 import android.content.res.TypedArray;
