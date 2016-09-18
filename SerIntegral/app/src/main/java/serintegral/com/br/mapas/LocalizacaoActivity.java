@@ -11,6 +11,7 @@ import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
@@ -45,6 +46,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import serintegral.com.br.R;
+import serintegral.com.br.fragment.DialogErrorFragment;
 
 public class LocalizacaoActivity extends AppCompatActivity implements
         GoogleApiClient.ConnectionCallbacks,
@@ -78,6 +80,8 @@ public class LocalizacaoActivity extends AppCompatActivity implements
 
     ArrayList<LatLng> mRota;
     Marker mMarkerLocalAtual;
+    private int codigoDoErro;
+    private FragmentManager supportFragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -282,18 +286,17 @@ public class LocalizacaoActivity extends AppCompatActivity implements
 
     private void exibirMensagemDeErro(FragmentActivity activity, final int codigoDoErro) {
         Log.d("NGVL", "exibirMensagemDeErro");
-        final String TAG = "DIALOG_ERRO_PLAY_SERVICES";
 
-        if (getSupportFragmentManager().findFragmentByTag(TAG) == null) {
-            DialogFragment errorFragment = new DialogFragment() {
-                @Override
-                public Dialog onCreateDialog(Bundle savedInstanceState) {
-                    return GooglePlayServicesUtil.getErrorDialog(
-                            codigoDoErro, getActivity(), REQUEST_ERRO_PLAY_SERVICES);
-                }
-            };
-            errorFragment.show(activity.getSupportFragmentManager(), TAG);
-        }
+        final String TAG = "DIALOG_ERRO_PLAY_SERVICES";
+        this.codigoDoErro = codigoDoErro;
+        this.supportFragmentManager = getSupportFragmentManager();
+
+        DialogErrorFragment errorFragment = new DialogErrorFragment();
+
+        errorFragment.setCodigoDoErro(codigoDoErro);
+        errorFragment.setErro_play_service(REQUEST_ERRO_PLAY_SERVICES);
+
+        errorFragment.show(activity.getSupportFragmentManager(), TAG);
     }
 
     private void verificarStatusGPS() {
