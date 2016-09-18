@@ -44,11 +44,11 @@ public class PaypalFragment extends Fragment {
 
         final String textoEmHtml =
                 "<html><body lang=\"pt-BR\" dir=\"ltr\">\n" +
-                        "<p align=\"left\" style=\"margin-bottom: 0cm; line-height: 0.53cm; orphans: 2; widows: 2\">\n" +
-                        "<font color=\"#ff3333\"><span style=\"font-variant: normal\"><font face=\"URW Chancery L\"><font size=\"6\" style=\"font-size: 24pt\"><span style=\"letter-spacing: normal\"><span style=\"font-style: normal\"><span style=\"font-weight: normal\">E\n" +
+                        "<p align=\"left\" style=\"margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 0.53cm; orphans: 2; widows: 2\">\n" +
+                        "<font color=\"#000000\"><font face=\"URW Chancery L\"><font size=\"6\" style=\"font-size: 24pt\">E\n" +
                         "quem der, mesmo que seja apenas um copo de água fria a um destes\n" +
                         "pequeninos, por ser este meu discípulo, com toda a certeza vos\n" +
-                        "afirmo que de modo algum perderá a sua recompensa”.</span></span></span></font></font></span></font></p>\n" +
+                        "afirmo que de modo algum perderá a sua recompensa”.</font></font></font></p>\n" +
                         "</body></html>";
 
         txtProverbio.setText(Html.fromHtml(textoEmHtml, null, null));
