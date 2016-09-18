@@ -31,9 +31,9 @@
         android:layout_weight="0.42" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="131dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="right"
         android:padding="15dp"
         android:text="Mateus 10:42" />
 

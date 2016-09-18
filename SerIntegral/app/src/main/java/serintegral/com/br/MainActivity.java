@@ -114,9 +114,9 @@ public class MainActivity extends AppCompatActivity {
 
         if (requestCode == COD_PAGTO) {
             if (responseCode == Activity.RESULT_OK) {
-                Toast.makeText(this, "Pagamento realizado com sucesso ...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Doação realizada com sucesso ...", Toast.LENGTH_SHORT).show();
             } else
-                Toast.makeText(this, "Algum problema com o pagamento verificar sua conta no paypal.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Algum problema com a doação verificar a sua conta no paypal.", Toast.LENGTH_SHORT).show();
         }
     }
 

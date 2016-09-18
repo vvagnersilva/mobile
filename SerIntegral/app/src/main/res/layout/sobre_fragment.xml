@@ -8,21 +8,29 @@
     android:weightSum="1">
 
     <ImageView
-        android:layout_width="390dp"
-        android:layout_height="wrap_content"
+        android:layout_width="233dp"
+        android:layout_height="262dp"
         android:layout_centerInParent="true"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="0.21"
         android:onClick="onClickEnviarEmail"
         android:src="@drawable/mini_serintegral" />
 
     <ImageView
-        android:layout_width="86dp"
-        android:layout_height="45dp"
+        android:layout_width="83dp"
+        android:layout_height="79dp"
         android:layout_centerInParent="true"
         android:layout_gravity="center_horizontal"
         android:onClick="onClickEnviarEmail"
-        android:src="@drawable/qrcode"
-        android:layout_weight="0.15" />
+        android:src="@drawable/qrcode" />
+
+    <TextView
+        android:id="@+id/txtDesenv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="15dp"
+        android:textSize="10dp"
+        android:text="Wagner" />
+
 
 </LinearLayout>
