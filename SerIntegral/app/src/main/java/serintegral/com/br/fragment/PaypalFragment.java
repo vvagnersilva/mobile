@@ -3,20 +3,23 @@ package serintegral.com.br.fragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
+import android.text.Html;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.text.NumberFormat;
 
 import serintegral.com.br.MainActivity;
 import serintegral.com.br.R;
+import serintegral.com.br.currencyedittext.CurrencyEditText;
 
 public class PaypalFragment extends Fragment {
     private static final String EXTRA_TIPO = "mTipo";
-    private EditText edValor;
+    private CurrencyEditText edValor;
 
     public static PaypalFragment novaInstancia(String tipo) {
         Bundle params = new Bundle();
@@ -40,60 +43,20 @@ public class PaypalFragment extends Fragment {
 
         View layout = inflater.inflate(R.layout.paypal_fragment, container, false);
 
-        edValor = (EditText) layout.findViewById(R.id.edValor);
+        edValor = (CurrencyEditText) layout.findViewById(R.id.edValor);
 
-        edValor.addTextChangedListener(new TextWatcher() {
-            NumberFormat currencyFormat = NumberFormat.getNumberInstance();
-            private String current = "";
+        TextView txtProverbio = (TextView) layout.findViewById(R.id.txtProverbio);
 
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        final String textoEmHtml =
+                "<html><body lang=\"pt-BR\" dir=\"ltr\">\n" +
+                        "<p align=\"left\" style=\"margin-bottom: 0cm; line-height: 0.53cm; orphans: 2; widows: 2\">\n" +
+                        "<font color=\"#ff3333\"><span style=\"font-variant: normal\"><font face=\"URW Chancery L\"><font size=\"6\" style=\"font-size: 24pt\"><span style=\"letter-spacing: normal\"><span style=\"font-style: normal\"><span style=\"font-weight: normal\">E\n" +
+                        "quem der, mesmo que seja apenas um copo de água fria a um destes\n" +
+                        "pequeninos, por ser este meu discípulo, com toda a certeza vos\n" +
+                        "afirmo que de modo algum perderá a sua recompensa”.</span></span></span></font></font></span></font></p>\n" +
+                        "</body></html>";
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
-                if (!s.toString().equals(current)) {
-                    edValor.removeTextChangedListener(this);
-
-                    int selection = edValor.getSelectionStart();
-
-                    // We strip off the currency symbol
-                    String replaceable = String.format("[%s,\\s]", NumberFormat.getCurrencyInstance().getCurrency().getSymbol());
-                    String cleanString = s.toString().replaceAll(replaceable, "");
-
-                    double price;
-
-                    // Parse the string
-                    try {
-                        price = Double.parseDouble(cleanString);
-                    } catch (java.lang.NumberFormatException e) {
-                        price = 0;
-                    }
-
-                    // If we don't see a decimal, then the user must have deleted it.
-                    // In that case, the number must be divided by 100, otherwise 1
-                    int shrink = 1;
-                    if (!(s.toString().contains("."))) {
-                        shrink = 100;
-                    }
-
-                    // Reformat the number
-                    String formated = currencyFormat.format((price / shrink));
-
-                    current = formated;
-                    edValor.setText(formated);
-                    edValor.setSelection(Math.min(selection, edValor.getText().length()));
-
-                    edValor.addTextChangedListener(this);
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
+        txtProverbio.setText(Html.fromHtml(textoEmHtml, null, null));
 
         return layout;
     }

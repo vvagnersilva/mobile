@@ -28,6 +28,7 @@ import serintegral.com.br.fragment.PaypalFragment;
 import serintegral.com.br.fragment.SobreFragment;
 import serintegral.com.br.mapas.LocalizacaoActivity;
 import serintegral.com.br.util.Constantes;
+import serintegral.com.br.util.Util;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -172,14 +173,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void executarPagtoPayPal() {
-        EditText valor = (EditText) findViewById(R.id.edValor);
+        EditText edValor = (EditText) findViewById(R.id.edValor);
 
-        if (valor.getText().length() == 0) {
-            valor.setError("Campo obrigatório!");
+        String valor = edValor.getText().toString().replace("R$", "");
+
+        if (valor.length() == 0) {
+            edValor.setError("Campo obrigatório!");
             return;
         }
 
-        double val = Double.parseDouble(valor.getText().toString().replace("R$", ""));
+        Double val = Util.converteStringToDouble(valor);
 
         PayPalPayment pagto = montarPagtoFinal(val);
 

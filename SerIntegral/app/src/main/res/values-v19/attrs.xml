@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="ParticleView">
-        <attr name="pv_host_text" format="string"></attr>
-        <attr name="pv_particle_text" format="string"></attr>
-        <attr name="pv_particle_text_size" format="dimension"></attr>
-        <attr name="pv_text_color" format="color"></attr>
-        <attr name="pv_background_color" format="color"></attr>
-        <attr name="pv_text_anim_time" format="integer"></attr>
-        <attr name="pv_spread_anim_time" format="integer"></attr>
-        <attr name="pv_host_text_anim_time" format="integer"></attr>
+    <declare-styleable name="CurrencyEditText">
+        <attr name="enable_default_hint" format="boolean"/>
+        <attr name="allow_negative_values" format="boolean" />
     </declare-styleable>
 
 </resources>
