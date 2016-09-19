@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/action_lattes"
+        android:icon="@drawable/ic_lattes"
+        android:title="@string/opcao_lattes" />
+    <item
+        android:id="@+id/action_mapa"
+        android:icon="@drawable/map_marker_multiple"
+        android:title="@string/opcao_mapa" />
+
+    <item
+        android:id="@+id/action_sobre"
+        android:icon="@drawable/ic_information"
+        android:title="@string/opcao_sobre" />
+    <item
+        android:id="@+id/action_sair"
+        android:icon="@mipmap/ic_sair"
+        android:title="@string/opcao_sair" />
+
+</menu>

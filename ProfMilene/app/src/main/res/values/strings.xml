@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Professora Milene</string>
+
+    <string name="opcao_lattes">Currículo Lattes</string>
+    <string name="opcao_youtube">Vídeos no Youtube</string>
+    <string name="opcao_paypal">Faça aqui a sua doação</string>
+    <string name="opcao_videos">Poste seus vídeos</string>
+    <string name="opcao_mapa">Localização</string>
+    <string name="opcao_amigos">Lista de amigos</string>
+    <string name="opcao_sair">Sair</string>
+    <string name="valor">Valor</string>
+
+    <string name="destino">Destino</string>
+    <string name="origem2">Jesus</string>
+    <string name="txtValores">Selecione um valor</string>
+    <string name="playerview_text">This is a YouTubePlayerView!</string>
+    <string name="erro_local">Você deve habilitar as permissões para utilizar o aplicativo.</string>
+    <string name="erro_gps">É necessário habilitar a configuração de localização para utilizar o aplicativo.</string>
+    <string name="error_player">Ocorreu um erro ao inicializar o YouTubePlayer</string>
+    <string name="opcao_sobre">Sobre</string>
+    <string name="string_vazia" />
+
+
+    <string-array name="valores">
+        <item>5.00</item>
+        <item>10.00</item>
+        <item>20.00</item>
+        <item>50.00</item>
+        <item>Outro Valor</item>
+    </string-array>
+
+</resources>
