@@ -1,18 +1,24 @@
 package br.ufgd.adipometro.strategy;
 
 public abstract class Egs {
-    protected double peso;
-    protected double ca;
-    protected double cc;
-
-    protected boolean checkedTipoPlicometro;
-
-    protected String strFormulaUtilizada;
-
     protected static final String TAG = "Ovigorificopinca";
+    protected double peso;
+    protected double prega;
+    protected String strFormulaUtilizada;
+    public String spCategoria;
 
     public double CalcularEgs() {
         return 0;
+    }
+
+    public String getStrFormulaUtilizada() {
+        return strFormulaUtilizada;
+    }
+
+    public String getClassName() {
+        // Retorna o nome da classe sem o pacote
+        String s = getClass().getName();
+        return s.substring(s.lastIndexOf("."));
     }
 
     public double getPeso() {
@@ -23,41 +29,11 @@ public abstract class Egs {
         this.peso = peso;
     }
 
-    public double getCa() {
-        return ca;
+    public double getPrega() {
+        return prega;
     }
 
-    public void setCa(double ca) {
-        this.ca = ca;
-    }
-
-    public double getCc() {
-        return cc;
-    }
-
-    public void setCc(double cc) {
-        this.cc = cc;
-    }
-
-    public boolean isCheckedTipoPlicometro() {
-        return checkedTipoPlicometro;
-    }
-
-    public void setCheckedTipoPlicometro(boolean checkedTipoPlicometro) {
-        this.checkedTipoPlicometro = checkedTipoPlicometro;
-    }
-
-    public String getStrFormulaUtilizada() {
-        return strFormulaUtilizada;
-    }
-
-    public void setStrFormulaUtilizada(String strFormulaUtilizada) {
-        this.strFormulaUtilizada = strFormulaUtilizada;
-    }
-
-    public String getClassName() {
-        // Retorna o nome da classe sem o pacote
-        String s = getClass().getName();
-        return s.substring(s.lastIndexOf("."));
+    public void setPrega(double prega) {
+        this.prega = prega;
     }
 }

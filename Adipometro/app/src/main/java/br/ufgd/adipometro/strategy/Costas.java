@@ -4,9 +4,9 @@ import android.util.Log;
 
 import br.ufgd.adipometro.utils.Constantes;
 
-public class Peito extends Egs {
+public class Costas extends Egs {
 
-    public Peito(double peso, double prega, String spCategoria) {
+    public Costas(double peso, double prega, String spCategoria) {
         this.peso = peso;
         this.prega = prega;
         this.spCategoria = spCategoria;
@@ -14,9 +14,9 @@ public class Peito extends Egs {
 
     public double CalcularEgs() {
 
-        double egs = -3.23 + 0.550 * peso - 0.776 * prega - 0.00891 * Math.pow(peso, 2) + 0.0506 * Math.pow(prega, 2);
+        double egs = -3.57 + 0.675 * peso - 1.255 * prega - 0.01061 * Math.pow(peso, 2) + 0.0805 * Math.pow(prega, 2);
 
-        this.strFormulaUtilizada = Constantes.PEITO;
+        this.strFormulaUtilizada = Constantes.COSTAS;
 
         Log.i(TAG, getClassName() + ".CalcularEgs(): " + egs);
 

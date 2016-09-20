@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Configurações</string>
-    <string name="action_search">Buscar</string>
-    <string name="action_refresh">Atualizar</string>
-
     <string name="app_name">Adipômetro</string>
     <string name="app_title">Ovigorificopinça</string>
-    <string name="peso">peso</string>
-    <string name="ca">ca</string>
-    <string name="cc">cc</string>
-    <string name="formula">formula</string>
-    <string name="egs">EGS</string>
-    <string name="calda">Calda</string>
     <string name="costas">Costas</string>
     <string name="peito">Peito</string>
-    <string name="escolha">Escolha uma das medidas ?</string>
+    <string name="peso">Peso corporal (Kg)</string>
+    <string name="pregas">Medida das pregas (mm)</string>
+    <string name="formula">formula</string>
+    <string name="egs">EGS</string>
 
-    <string name="string_vazia"> </string>
-    <string name="portal_ufgd">http://portal.ufgd.edu.br</string>
+    <string name="escolha">Escolha uma das medidas:</string>
+    <string name="categoria">Categoria do animal:</string>
+
     <string name="action_sobre">Sobre</string>
     <string name="action_calculo">Cálculos</string>
     <string name="action_ajuda">Ajuda</string>
     <string name="action_ufgd">Ufgd</string>
+
+    <string name="string_vazia" />
+    <string name="portal_ufgd">http://portal.ufgd.edu.br</string>
+
+    <string-array name="categoria_arrays">
+        <item>Selecione uma opção</item>
+        <item>Cordeiro macho</item>
+    </string-array>
 
 </resources>

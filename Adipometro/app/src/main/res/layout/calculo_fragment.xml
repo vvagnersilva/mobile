@@ -28,30 +28,14 @@
             android:text="@string/string_vazia"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <Switch
-            android:id="@+id/tipoPlicometro"
-            android:layout_width="195dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|center_horizontal"
-            android:singleLine="false"
-            android:splitTrack="false"
-            android:text="Plicômetro digital"
-            android:textAlignment="gravity" />
-
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/string_vazia"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:text="@string/escolha"
-            android:textColor="@color/vermelho"/>
+            android:textColor="@color/vermelho" />
 
         <RadioGroup
-            android:id="@+id/group1"
+            android:id="@+id/rgOpcoes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -60,7 +44,7 @@
                 android:id="@+id/radioCostas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="false"
+                android:checked="true"
                 android:text="@string/costas" />
 
             <RadioButton
@@ -70,6 +54,24 @@
                 android:checked="false"
                 android:text="@string/peito" />
         </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:text="@string/string_vazia" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="@string/categoria"
+            android:textColor="@color/vermelho" />
+
+        <Spinner
+            android:id="@+id/spCategoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/categoria_arrays"
+            android:prompt="@string/categoria" />
 
         <EditText
             android:id="@+id/edPeso"
@@ -85,10 +87,10 @@
             android:id="@+id/txtPeso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Peso (Peso corporal):" />
+            android:text="@string/peso" />
 
         <EditText
-            android:id="@+id/edCa"
+            android:id="@+id/edPrega"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -101,27 +103,11 @@
             android:id="@+id/txtCa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CA (Plicômetro prega da cauda)" />
-
-        <EditText
-            android:id="@+id/edCc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/llMain"
-            android:ems="5"
-            android:inputType="numberDecimal" />
-
-        <TextView
-            android:id="@+id/txtCc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CC (Condição Corporal)" />
+            android:text="@string/pregas" />
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="@string/string_vazia"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -129,18 +115,18 @@
             android:id="@+id/btCalcularEgs"
             android:layout_width="86dp"
             android:layout_height="86dp"
-            android:background="@drawable/fundo"
-            android:text="Calcular"
-            android:textSize="15sp"
-            android:textColor="@color/branco"
-            android:elevation="6dp"
-            android:stateListAnimator="@null"
-            android:layout_gravity="center_horizontal"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
             android:layout_marginBottom="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/fundo"
+            android:elevation="6dp"
             android:onClick="onClickCalcularEgs"
-            android:layout_marginRight="16dp"/>
+            android:stateListAnimator="@null"
+            android:text="Calcular"
+            android:textColor="@color/branco"
+            android:textSize="15sp" />
 
     </LinearLayout>
 

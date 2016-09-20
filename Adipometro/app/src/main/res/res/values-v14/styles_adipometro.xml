@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- File created by the Android Action Bar Style Generator
+<?xml version="1.0" encoding="utf-8"?><!-- File created by the Android Action Bar Style Generator
 
      Copyright (C) 2011 The Android Open Source Project
      Copyright (C) 2012 readyState Software Ltd
@@ -20,22 +19,26 @@
 <resources>
 
     <style name="Theme.Adipometro" parent="@style/Theme.AppCompat.Light.DarkActionBar">
-        <item name="android:actionBarItemBackground">@drawable/selectable_background_adipometro</item>
+        <item name="android:actionBarItemBackground">@drawable/selectable_background_adipometro
+        </item>
         <item name="android:popupMenuStyle">@style/PopupMenu.Adipometro</item>
         <item name="android:dropDownListViewStyle">@style/DropDownListView.Adipometro</item>
         <item name="android:actionBarTabStyle">@style/ActionBarTabStyle.Adipometro</item>
         <item name="android:actionDropDownStyle">@style/DropDownNav.Adipometro</item>
         <item name="android:actionBarStyle">@style/ActionBar.Solid.Adipometro</item>
         <item name="android:actionModeBackground">@drawable/cab_background_top_adipometro</item>
-        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_adipometro</item>
-        <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Adipometro</item>
-        
-                <!-- Light.DarkActionBar specific -->
+        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_adipometro
+        </item>
+        <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Adipometro
+        </item>
+
+        <!-- Light.DarkActionBar specific -->
         <item name="android:actionBarWidgetTheme">@style/Theme.Adipometro.Widget</item>
 
     </style>
 
-    <style name="ActionBar.Solid.Adipometro" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+    <style name="ActionBar.Solid.Adipometro"
+        parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@drawable/ab_background_textured_adipometro</item>
         <item name="android:backgroundStacked">@drawable/ab_stacked_solid_adipometro</item>
         <item name="android:backgroundSplit">@drawable/ab_background_textured_adipometro</item>
@@ -46,7 +49,7 @@
         <item name="android:background">@drawable/ab_transparent_adipometro</item>
         <item name="android:progressBarStyle">@style/ProgressBar.Adipometro</item>
     </style>
-    
+
     <!-- this style is only referenced in a Light.DarkActionBar based theme -->
     <style name="Theme.Adipometro.Widget" parent="@style/Theme.AppCompat">
         <item name="android:popupMenuStyle">@style/PopupMenu.Adipometro</item>

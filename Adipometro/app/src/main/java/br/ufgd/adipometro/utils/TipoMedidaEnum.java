@@ -8,9 +8,8 @@ import java.util.List;
  */
 public enum TipoMedidaEnum {
 
-    CALDA  ("C", "Calda"),
-    COSTAS ("T", "Costas"),
-    PEITO  ("P", "Peito");
+    COSTAS("C", "Costas"),
+    PEITO("P", "Peito");
 
     private final String codigo;
     private final String descricao;
@@ -22,7 +21,7 @@ public enum TipoMedidaEnum {
 
     /**
      * Retorna o valor do enum
-     * 
+     *
      * @param codigo
      * @return CondicaoAmostraEnum
      */
@@ -42,7 +41,7 @@ public enum TipoMedidaEnum {
 
     /**
      * Retorna a lista do enum
-     * 
+     *
      * @return List<CondicaoAmostraEnum>
      */
     public static List<TipoMedidaEnum> getLista() {
@@ -55,7 +54,7 @@ public enum TipoMedidaEnum {
 
     /**
      * Busca e retorna o enum pelo codigo
-     * 
+     *
      * @param codigo
      * @return CondicaoAmostraEnum
      */
@@ -70,7 +69,7 @@ public enum TipoMedidaEnum {
 
     /**
      * Recupera codigo.
-     * 
+     *
      * @return codigo
      */
     public String getCodigo() {
@@ -79,7 +78,7 @@ public enum TipoMedidaEnum {
 
     /**
      * Recupera descricao.
-     * 
+     *
      * @return descricao
      */
     public String getDescricao() {
