@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import br.ufgd.adipometro.fragment.AjudaFragment;
 import br.ufgd.adipometro.fragment.CalculoFragment;
+import br.ufgd.adipometro.fragment.EgsFragment;
 import br.ufgd.adipometro.fragment.SobreFragment;
 import br.ufgd.adipometro.fragment.WebFragment;
 import br.ufgd.adipometro.strategy.Costas;
@@ -66,23 +67,21 @@ public class MainActivity extends AppCompatActivity {
             switch (tpMedida) {
                 case COSTAS:
                     egs = new Costas(peso, prega, spCategoria.toString());
+                    egs.CalcularEgs();
                     break;
                 case PEITO:
                     egs = new Peito(peso, prega, spCategoria.toString());
+                    egs.CalcularEgs();
                     break;
             }
 
-            // Navega para a próxima tela
-            Intent intent = new Intent(this, EgsActivity.class);
+            // Fragment default.
+            EgsFragment egsfragment = EgsFragment.novaInstancia(egs);
 
-            Bundle params = new Bundle();
-
-            params.putDouble("egs", egs.CalcularEgs());
-            params.putString("formula", egs.getStrFormulaUtilizada());
-
-            intent.putExtras(params);
-
-            startActivity(intent);
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.conteudo, egsfragment, "egsFragment")
+                    .commit();
         } catch (NumberFormatException ex) {
             Log.e(TAG, getClassName() + ex.getStackTrace());
         } catch (Exception ex) {

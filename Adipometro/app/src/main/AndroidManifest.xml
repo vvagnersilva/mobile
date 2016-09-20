@@ -26,9 +26,6 @@
             android:name="br.ufgd.adipometro.MainActivity"
             android:label="@string/app_name" />
 
-        <activity
-            android:name="br.ufgd.adipometro.EgsActivity"
-            android:label="@string/app_name" />
     </application>
 
 </manifest>

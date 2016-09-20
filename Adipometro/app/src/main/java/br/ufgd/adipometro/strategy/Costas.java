@@ -16,7 +16,8 @@ public class Costas extends Egs {
 
         double egs = -3.57 + 0.675 * peso - 1.255 * prega - 0.01061 * Math.pow(peso, 2) + 0.0805 * Math.pow(prega, 2);
 
-        this.strFormulaUtilizada = Constantes.COSTAS;
+        setEgs(egs);
+        setStrFormulaUtilizada(Constantes.COSTAS);
 
         Log.i(TAG, getClassName() + ".CalcularEgs(): " + egs);
 

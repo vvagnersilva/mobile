@@ -16,7 +16,8 @@ public class Peito extends Egs {
 
         double egs = -3.23 + 0.550 * peso - 0.776 * prega - 0.00891 * Math.pow(peso, 2) + 0.0506 * Math.pow(prega, 2);
 
-        this.strFormulaUtilizada = Constantes.PEITO;
+        setEgs(egs);
+        strFormulaUtilizada = Constantes.PEITO;
 
         Log.i(TAG, getClassName() + ".CalcularEgs(): " + egs);
 
