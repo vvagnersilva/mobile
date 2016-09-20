@@ -1,6 +1,5 @@
 package br.ufgd.adipometro;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -91,12 +90,12 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean validaCamposObrigatorios(TextView tPeso, TextView tPrega) {
         if (tPeso.getText().length() == 0) {
-            alert("Campo peso corporal é obrigatório!");
+            alert("Campo peso corporal é de preenchimento obrigatório!");
             return true;
         }
 
         if (tPrega.getText().length() == 0) {
-            alert("Campo medida da prega é obrigatório!");
+            alert("Campo medida da prega é de preenchimento obrigatório!");
             return true;
         }
         return false;

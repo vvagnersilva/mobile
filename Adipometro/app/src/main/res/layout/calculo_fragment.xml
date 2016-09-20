@@ -19,10 +19,10 @@
 
         <ImageView
             android:id="@+id/imageView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/logo_ufgd"
             android:layout_weight="1"
-            android:layout_width="wrap_content" />
+            android:background="@drawable/logo_ufgd" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -46,17 +46,17 @@
                 android:id="@+id/radioCostas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
                 android:checked="true"
-                android:text="@string/costas" />
+                android:text="@string/costas"
+                android:textColor="@color/black" />
 
             <RadioButton
                 android:id="@+id/radioPeito"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
                 android:checked="false"
-                android:text="@string/peito" />
+                android:text="@string/peito"
+                android:textColor="@color/black" />
         </RadioGroup>
 
         <TextView
@@ -74,8 +74,8 @@
             android:id="@+id/spCategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:popupBackground="@color/grey"
             android:entries="@array/categoria_arrays"
+            android:popupBackground="@color/grey"
             android:prompt="@string/categoria" />
 
         <EditText

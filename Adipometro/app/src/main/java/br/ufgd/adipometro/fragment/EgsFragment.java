@@ -70,7 +70,7 @@ public class EgsFragment extends Fragment {
             txFormula.setTextColor(Color.BLACK);
             txEgs.setTextColor(Color.BLACK);
             ll.setBackgroundResource(R.drawable.background_amarelo);
-        } else if (egs >=2 && egs < 3) {
+        } else if (egs >= 2 && egs < 3) {
             txFormula.setTextColor(Color.BLACK);
             txEgs.setTextColor(Color.BLACK);
             ll.setBackgroundResource(R.drawable.background_verde);

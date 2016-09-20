@@ -2,22 +2,22 @@ package br.ufgd.adipometro.strategy;
 
 public abstract class Egs {
     protected static final String TAG = "Ovigorificopinca";
+    public String spCategoria;
     protected double egs;
     protected double peso;
     protected double prega;
     protected String strFormulaUtilizada;
-    public String spCategoria;
 
     public double CalcularEgs() {
         return 0;
     }
 
-    public void setStrFormulaUtilizada(String strFormulaUtilizada) {
-        this.strFormulaUtilizada = strFormulaUtilizada;
-    }
-
     public String getStrFormulaUtilizada() {
         return strFormulaUtilizada;
+    }
+
+    public void setStrFormulaUtilizada(String strFormulaUtilizada) {
+        this.strFormulaUtilizada = strFormulaUtilizada;
     }
 
     public double getPeso() {
