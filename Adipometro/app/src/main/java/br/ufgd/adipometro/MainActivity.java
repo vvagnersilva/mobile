@@ -66,13 +66,13 @@ public class MainActivity extends AppCompatActivity {
             switch (tpMedida) {
                 case COSTAS:
                     egs = new Costas(peso, prega, spCategoria.toString());
-                    egs.CalcularEgs();
                     break;
                 case PEITO:
                     egs = new Peito(peso, prega, spCategoria.toString());
-                    egs.CalcularEgs();
                     break;
             }
+
+            egs.CalcularEgs();
 
             // Fragment default.
             EgsFragment egsfragment = EgsFragment.novaInstancia(egs);

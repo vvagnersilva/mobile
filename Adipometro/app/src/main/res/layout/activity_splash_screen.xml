@@ -24,7 +24,7 @@
         android:layout_marginBottom="10dp"
         android:gravity="center_horizontal"
         android:text="@string/portal_ufgd"
-        android:textColor="@color/blue"
+        android:textColor="@color/darkGreen"
         android:textSize="15dp" />
 
 </RelativeLayout>

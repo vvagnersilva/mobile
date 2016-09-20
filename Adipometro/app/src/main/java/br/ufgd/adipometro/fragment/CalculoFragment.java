@@ -16,14 +16,22 @@ public class CalculoFragment extends Fragment {
     private static final String TAG = "Adipometro";
     private static final String EXTRA_TIPO = "mTipo";
 
-    private TipoMedidaEnum tpMedida = TipoMedidaEnum.COSTAS;
+    // Verificar melhor forma p/ consultar essa variavel.
+    private static TipoMedidaEnum tpMedida;
     private Spinner spCategoria;
+    private RadioGroup group;
 
     public static CalculoFragment novaInstancia(String tipo) {
         Bundle params = new Bundle();
         params.putString(EXTRA_TIPO, tipo);
+
         CalculoFragment f = new CalculoFragment();
+
         f.setArguments(params);
+
+        // Default p/ medida das costas.
+        tpMedida = TipoMedidaEnum.COSTAS;
+        
         return f;
     }
 
@@ -31,7 +39,7 @@ public class CalculoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.calculo_fragment, container, false);
 
-        final RadioGroup group = (RadioGroup) view.findViewById(R.id.rgOpcoes);
+        group = (RadioGroup) view.findViewById(R.id.rgOpcoes);
 
         group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -39,10 +47,10 @@ public class CalculoFragment extends Fragment {
                 boolean isPeito = R.id.radioPeito == checkedId;
 
                 if (isCostas) {
-                    tpMedida = TipoMedidaEnum.COSTAS;
+                    CalculoFragment.this.tpMedida = TipoMedidaEnum.COSTAS;
                     Log.i(TAG, "Marcou radio das Costas: " + checkedId);
                 } else if (isPeito) {
-                    tpMedida = TipoMedidaEnum.PEITO;
+                    CalculoFragment.this.tpMedida = TipoMedidaEnum.PEITO;
                     Log.i(TAG, "Marcou radio do Peito: " + checkedId);
                 }
             }
