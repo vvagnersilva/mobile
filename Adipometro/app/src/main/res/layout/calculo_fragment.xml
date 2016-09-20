@@ -8,7 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:weightSum="1">
 
         <TextView
             android:layout_width="wrap_content"
@@ -18,9 +19,10 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/logo_ufgd" />
+            android:background="@drawable/logo_ufgd"
+            android:layout_weight="1"
+            android:layout_width="wrap_content" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -32,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:text="@string/escolha"
-            android:textColor="@color/vermelho" />
+            android:textColor="@color/red" />
 
         <RadioGroup
             android:id="@+id/rgOpcoes"
@@ -44,6 +46,7 @@
                 android:id="@+id/radioCostas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:checked="true"
                 android:text="@string/costas" />
 
@@ -51,6 +54,7 @@
                 android:id="@+id/radioPeito"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:checked="false"
                 android:text="@string/peito" />
         </RadioGroup>
@@ -64,12 +68,13 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:text="@string/categoria"
-            android:textColor="@color/vermelho" />
+            android:textColor="@color/red" />
 
         <Spinner
             android:id="@+id/spCategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:popupBackground="@color/grey"
             android:entries="@array/categoria_arrays"
             android:prompt="@string/categoria" />
 
@@ -125,7 +130,7 @@
             android:onClick="onClickCalcularEgs"
             android:stateListAnimator="@null"
             android:text="Calcular"
-            android:textColor="@color/branco"
+            android:textColor="@color/white"
             android:textSize="15sp" />
 
     </LinearLayout>

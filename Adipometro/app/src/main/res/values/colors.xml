@@ -1,23 +1,15 @@
 <resources>
-    <!-- Cores do Tema Material -->
-    <color name="primary">#03A9F4</color>
-    <color name="primary_dark">#01579B</color>
-    <color name="accent">#F44336</color>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#01160D</color>
+    <color name="colorAccent">#009688</color>
 
-    <color name="preto">#000000</color>
-    <color name="branco">#FFFFFF</color>
-    <color name="vermelho">#FF0000</color>
-    <color name="verde">#01160D</color>
-    <color name="verde_toolbar">#26a69a</color>
-
-    <color name="azul">#0000FF</color>
-    <color name="amarelo">#FFFF00</color>
-    <color name="cinza">#C0C0C0</color>
-
-
-    <color name="azul_meia_noite">#000080</color>
-    <color name="azul_escuro">#3E4095</color>
-    <color name="azul_medio">#00AFEF</color>
-    <color name="azul_claro">#c9ebfb</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="darkGreen">#01160D</color>
+    <color name="lightGreen">#26a69a</color>
+    <color name="blue">#0000FF</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="grey">#F0F0F0</color>
 
 </resources>
