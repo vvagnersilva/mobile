@@ -78,8 +78,7 @@ public class EgsActivity extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
-        if (id == android.R.id.home) {
+        if(id == android.R.id.home) {
             // O método finish() vai encerrar essa activity
             finish();
             return true;

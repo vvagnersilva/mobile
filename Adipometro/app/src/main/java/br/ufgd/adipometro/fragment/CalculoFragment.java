@@ -16,7 +16,7 @@ public class CalculoFragment extends Fragment {
     private static final String TAG = "Adipometro";
     private static final String EXTRA_TIPO = "mTipo";
 
-    private TipoMedidaEnum tpMedida;
+    private TipoMedidaEnum tpMedida = TipoMedidaEnum.COSTAS;
     private Spinner spCategoria;
 
     public static CalculoFragment novaInstancia(String tipo) {
