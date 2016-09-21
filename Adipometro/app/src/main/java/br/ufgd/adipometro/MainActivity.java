@@ -1,7 +1,9 @@
 package br.ufgd.adipometro;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -89,13 +91,38 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean validaCamposObrigatorios(TextView tPeso, TextView tPrega) {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this, R.style.AlertDialogStyle);
+
         if (tPeso.getText().length() == 0) {
-            alert("Campo peso corporal é de preenchimento obrigatório!");
+
+            alertDialogBuilder.setTitle("Informação");
+            alertDialogBuilder.setIcon(R.drawable.ic_information);
+            alertDialogBuilder.setMessage("Campo peso corporal é de preenchimento obrigatório!");
+            alertDialogBuilder.setPositiveButton(" Ok ", new DialogInterface.OnClickListener() {
+
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+
+            alertDialogBuilder.show();
+
             return true;
         }
 
         if (tPrega.getText().length() == 0) {
-            alert("Campo medida da prega é de preenchimento obrigatório!");
+            alertDialogBuilder.setTitle("Informação");
+            alertDialogBuilder.setIcon(R.drawable.ic_information);
+            alertDialogBuilder.setMessage("Campo medida das pregas é de preenchimento obrigatório!");
+            alertDialogBuilder.setPositiveButton(" Ok ", new DialogInterface.OnClickListener() {
+
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+
+            alertDialogBuilder.show();
+
             return true;
         }
         return false;
