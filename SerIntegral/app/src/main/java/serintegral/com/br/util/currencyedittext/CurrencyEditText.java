@@ -61,19 +61,19 @@ public class CurrencyEditText extends EditText {
     }
 
     /**
-     * Sets whether or or not the Default Hint (users local currency symbol) will be shown in the textbox when no value has yet been entered.
-     * @param useDefaultHint - true to enable default hint, false to disable
-     */
-    public void setDefaultHintEnabled(boolean useDefaultHint) {
-        this.defaultHintEnabled = useDefaultHint;
-    }
-
-    /**
      * Determine whether or not the default hint is currently enabled for this view.
      * @return true if the default hint is enabled, false if it is not.
      */
     public boolean getDefaultHintEnabled(){
         return this.defaultHintEnabled;
+    }
+
+    /**
+     * Sets whether or or not the Default Hint (users local currency symbol) will be shown in the textbox when no value has yet been entered.
+     * @param useDefaultHint - true to enable default hint, false to disable
+     */
+    public void setDefaultHintEnabled(boolean useDefaultHint) {
+        this.defaultHintEnabled = useDefaultHint;
     }
 
     /**
@@ -138,17 +138,16 @@ public class CurrencyEditText extends EditText {
         updateHint();
     }
 
+    public Currency getCurrency() {
+        return currency;
+    }
+
     public void setCurrency(Currency currency) {
         this.currency = currency;
 
         init();
         updateHint();
     }
-
-    public Currency getCurrency() {
-        return currency;
-    }
-
 
     private void updateHint() {
         if(hintCache != null){
@@ -159,6 +158,10 @@ public class CurrencyEditText extends EditText {
                 setHint(getDefaultHintValue());
             }
         }
+    }
+
+    public Locale getDefaultLocale(){
+        return defaultLocale;
     }
 
     /**
@@ -172,10 +175,6 @@ public class CurrencyEditText extends EditText {
     public void setDefaultLocale(Locale locale){
         this.defaultLocale = locale;
         init();
-    }
-
-    public Locale getDefaultLocale(){
-        return defaultLocale;
     }
 
     /**

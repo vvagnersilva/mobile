@@ -8,7 +8,8 @@ android {
         applicationId "serintegral.com.br"
         minSdkVersion 16
         targetSdkVersion 24
-        versionCode 1
+        // Incrementar p/ deploy
+        versionCode 4
         versionName "1.0.1"
     }
 

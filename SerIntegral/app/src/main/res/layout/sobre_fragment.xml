@@ -29,8 +29,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:padding="15dp"
-        android:textSize="10dp"
-        android:text="Wagner" />
+        android:text="Wagner"
+        android:textSize="10dp" />
 
 
 </LinearLayout>

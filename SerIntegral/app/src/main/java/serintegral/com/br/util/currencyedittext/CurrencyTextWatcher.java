@@ -10,17 +10,14 @@ import java.util.Locale;
 @SuppressWarnings("unused")
 class CurrencyTextWatcher implements TextWatcher {
 
-    private CurrencyEditText editText;
-    private Locale defaultLocale;
-
-    private boolean ignoreIteration;
-    private String lastGoodInput;
-
-    double CURRENCY_DECIMAL_DIVISOR;
     final int CURSOR_SPACING_COMPENSATION = 2;
-
     //Setting a max length because after this length, java represents doubles in scientific notation which breaks the formatter
     final int MAX_RAW_INPUT_LENGTH = 15;
+    double CURRENCY_DECIMAL_DIVISOR;
+    private CurrencyEditText editText;
+    private Locale defaultLocale;
+    private boolean ignoreIteration;
+    private String lastGoodInput;
 
 
     /**
