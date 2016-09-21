@@ -1,6 +1,7 @@
 package serintegral.com.br;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -9,12 +10,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.paypal.android.sdk.payments.PayPalConfiguration;
 import com.paypal.android.sdk.payments.PayPalPayment;
@@ -112,11 +113,27 @@ public class MainActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int responseCode, Intent intent) {
         super.onActivityResult(requestCode, responseCode, intent);
 
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this, R.style.AlertDialogStyle);
+
+        alertDialogBuilder.setTitle("Informação");
+        alertDialogBuilder.setIcon(R.drawable.ic_information);
+
         if (requestCode == COD_PAGTO) {
             if (responseCode == Activity.RESULT_OK) {
-                Toast.makeText(this, "Doação realizada com sucesso ...", Toast.LENGTH_SHORT).show();
-            } else
-                Toast.makeText(this, "Algum problema com a doação verificar a sua conta no paypal.", Toast.LENGTH_SHORT).show();
+                alertDialogBuilder.setMessage("Doação realizada com sucesso!");
+
+
+            } else {
+                alertDialogBuilder.setMessage("Algum problema com a doação verificar a sua conta no paypal.");
+            }
+
+            alertDialogBuilder.setPositiveButton(" Ok ", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+
+            alertDialogBuilder.show();
         }
     }
 
