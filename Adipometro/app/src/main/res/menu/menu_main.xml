@@ -31,9 +31,7 @@
         android:id="@+id/action_ajuda"
         android:icon="@drawable/ic_help_white_48dp"
         android:title="@string/action_ajuda"
-        app:showAsAction="never"
-        android:checkable="false"
-        android:enabled="false" />
+        app:showAsAction="never"/>
 
     <item
         android:id="@+id/action_sobre"
