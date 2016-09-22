@@ -20,10 +20,21 @@
 
     <string name="string_vazia" />
     <string name="portal_ufgd">http://portal.ufgd.edu.br</string>
+    <string name="action_false_conosco">Fale Conosco</string>
+    <string name="assunto">Assunto:</string>
+    <string name="descricao">Descrição:</string>
+    <string name="action_fotos">Fotos</string>
 
     <string-array name="categoria_arrays">
         <item>Selecione uma opção</item>
         <item>Cordeiro macho</item>
+    </string-array>
+
+    <string-array name="categoria_assunto">
+        <item>Selecione uma opção</item>
+        <item>Dúvidas</item>
+        <item>Elogios</item>
+        <item>Sugestões</item>
     </string-array>
 
 </resources>

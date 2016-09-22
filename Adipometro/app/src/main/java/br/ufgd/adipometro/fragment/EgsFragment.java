@@ -52,31 +52,15 @@ public class EgsFragment extends Fragment {
      */
     public void setBackground(String formula, Double egs, View layout) {
 
-        // Setando os labels na tela.
-        TextView txFormula = (TextView) layout.findViewById(R.id.tFormula);
-        txFormula.setText(formula);
-
-        TextView txEgs = (TextView) layout.findViewById(R.id.tEgs);
-
-        txEgs.setText("EGS = " + egs);
-
         LinearLayout ll = (LinearLayout) layout.findViewById(R.id.llResultado);
 
         if (egs < 1) {
-            txFormula.setTextColor(Color.WHITE);
-            txEgs.setTextColor(Color.WHITE);
             ll.setBackgroundResource(R.drawable.background_laranja);
         } else if (egs >= 1 && egs < 2) {
-            txFormula.setTextColor(Color.BLACK);
-            txEgs.setTextColor(Color.BLACK);
             ll.setBackgroundResource(R.drawable.background_amarelo);
         } else if (egs >= 2 && egs < 3) {
-            txFormula.setTextColor(Color.BLACK);
-            txEgs.setTextColor(Color.BLACK);
             ll.setBackgroundResource(R.drawable.background_verde);
         } else if (egs >= 3) {
-            txFormula.setTextColor(Color.WHITE);
-            txEgs.setTextColor(Color.WHITE);
             ll.setBackgroundResource(R.drawable.background_vermelho);
         }
     }

@@ -6,10 +6,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
+import br.ufgd.adipometro.MainActivity;
 import br.ufgd.adipometro.R;
+import br.ufgd.adipometro.utils.TipoCategoriaAnimalEnum;
 import br.ufgd.adipometro.utils.TipoMedidaEnum;
 
 public class CalculoFragment extends Fragment {
@@ -62,6 +65,26 @@ public class CalculoFragment extends Fragment {
          * (FUTURAMENTE VAMOS ACRESCENTAR AS OUTRAS CATEGORIAS, APÓS NOVOS EXPERIMENTOS)
          */
         spCategoria = (Spinner) view.findViewById(R.id.spCategoria);
+
+        spCategoria.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                // String selectedItem = (String) spCategoria.getItemAtPosition(position);
+
+                if (position == 0) {
+                    MainActivity.setTpCategoriaAnimal(null);
+                } else if (Integer.parseInt(TipoCategoriaAnimalEnum.CORDEIRO_MACHO.getCodigo()) == position) {
+                    MainActivity.setTpCategoriaAnimal(TipoCategoriaAnimalEnum.CORDEIRO_MACHO);
+                } else if (TipoCategoriaAnimalEnum.CORDEIRO_MACHO.getCodigo().equals(position)) {
+                    // A implementar
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
 
         return view;
     }

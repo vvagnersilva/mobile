@@ -1,6 +1,7 @@
 package br.ufgd.adipometro;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
@@ -17,6 +18,8 @@ import android.widget.TextView;
 import br.ufgd.adipometro.fragment.AjudaFragment;
 import br.ufgd.adipometro.fragment.CalculoFragment;
 import br.ufgd.adipometro.fragment.EgsFragment;
+import br.ufgd.adipometro.fragment.FaleConoscoFragment;
+import br.ufgd.adipometro.fragment.FotosFragment;
 import br.ufgd.adipometro.fragment.SobreFragment;
 import br.ufgd.adipometro.fragment.WebFragment;
 import br.ufgd.adipometro.strategy.Egs;
@@ -25,11 +28,13 @@ import br.ufgd.adipometro.strategy.EgsCordeiroMachoPeito;
 import br.ufgd.adipometro.utils.TipoCategoriaAnimalEnum;
 import br.ufgd.adipometro.utils.TipoMedidaEnum;
 
+import static br.ufgd.adipometro.R.id.spCategoria;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "Adipometro";
     private CalculoFragment fragment;
-    private TipoCategoriaAnimalEnum tpCategoriaAnimal;
+    private static TipoCategoriaAnimalEnum tpCategoriaAnimal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,32 +55,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickCalcularEgs(View view) {
         try {
-             TextView tPeso = (TextView)
+            TextView tPeso = (TextView)
                     findViewById(R.id.edPeso);
 
             TextView tPrega = (TextView) findViewById(R.id.edPrega);
 
             final Spinner spCategoria = fragment.getSpCategoria();
-
-            spCategoria.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                    // String selectedItem = (String) spCategoria.getItemAtPosition(position);
-
-                    if (position == 0) {
-                        MainActivity.this.tpCategoriaAnimal = null;
-                    } else if (Integer.parseInt(TipoCategoriaAnimalEnum.CORDEIRO_MACHO.getCodigo()) == position) {
-                        MainActivity.this.tpCategoriaAnimal = TipoCategoriaAnimalEnum.CORDEIRO_MACHO;
-                    } else if (TipoCategoriaAnimalEnum.CORDEIRO_MACHO.getCodigo().equals(position)) {
-                        // A implementar
-                    }
-                }
-
-                @Override
-                public void onNothingSelected(AdapterView<?> parent) {
-                }
-            });
 
             // Validar campos obrigatorios.
             if (validaCamposObrigatorios(tPeso, tPrega)) return;
@@ -205,12 +190,16 @@ public class MainActivity extends AppCompatActivity {
         Fragment frag = null;
 
         if (id == R.id.action_calculo) {
+            tpCategoriaAnimal = null;
             frag = CalculoFragment.novaInstancia(titulo);
         } else if (id == R.id.action_ufgd) {
             frag = WebFragment.novaInstancia(titulo);
+        } else if (id == R.id.action_fotos) {
+            frag = FotosFragment.novaInstancia(titulo);
+        } else if (id == R.id.action_fale_conosco) {
+            frag = FaleConoscoFragment.novaInstancia(titulo);
         } else if (id == R.id.action_ajuda) {
             frag = AjudaFragment.novaInstancia(titulo);
-
         } else if (id == R.id.action_sobre) {
             frag = SobreFragment.novaInstancia(titulo);
         }
@@ -223,6 +212,21 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void onClickEnviarEmail(View v) {
+        String subject = "Escreva a sua mensagem";
+
+        Intent email = new Intent(Intent.ACTION_SEND);
+        email.putExtra(Intent.EXTRA_CC, new String[]{"vvagner.silva@gmail.com"});
+        //email.putExtra(Intent.EXTRA_BCC, new String[]{to});
+        email.putExtra(Intent.EXTRA_SUBJECT, subject);
+        email.putExtra(Intent.EXTRA_TEXT, "");
+
+        //need this to prompts email client only
+        email.setType("message/rfc822");
+
+        startActivity(Intent.createChooser(email, "Choose an Email client :"));
+    }
+
     /**
      * Retorna o nome da classe sem o pacote
      *
@@ -231,5 +235,13 @@ public class MainActivity extends AppCompatActivity {
     public String getClassName() {
         String s = getClass().getName();
         return s.substring(s.lastIndexOf("."));
+    }
+
+    public static TipoCategoriaAnimalEnum getTpCategoriaAnimal() {
+        return tpCategoriaAnimal;
+    }
+
+    public static void setTpCategoriaAnimal(TipoCategoriaAnimalEnum tpCategoriaAnimal) {
+        MainActivity.tpCategoriaAnimal = tpCategoriaAnimal;
     }
 }

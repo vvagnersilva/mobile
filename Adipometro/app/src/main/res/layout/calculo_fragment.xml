@@ -33,6 +33,25 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="30dp"
+            android:text="@string/categoria"
+            android:textColor="@color/red" />
+
+        <Spinner
+            android:id="@+id/spCategoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/categoria_arrays"
+            android:popupBackground="@color/grey"
+            android:prompt="@string/categoria" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:text="@string/string_vazia" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
             android:text="@string/escolha"
             android:textColor="@color/red" />
 
@@ -58,25 +77,6 @@
                 android:text="@string/peito"
                 android:textColor="@color/black" />
         </RadioGroup>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="10dp"
-            android:text="@string/string_vazia" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:text="@string/categoria"
-            android:textColor="@color/red" />
-
-        <Spinner
-            android:id="@+id/spCategoria"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/categoria_arrays"
-            android:popupBackground="@color/grey"
-            android:prompt="@string/categoria" />
 
         <EditText
             android:id="@+id/edPeso"
