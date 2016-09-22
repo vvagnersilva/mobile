@@ -10,24 +10,26 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import br.ufgd.adipometro.fragment.AjudaFragment;
 import br.ufgd.adipometro.fragment.CalculoFragment;
 import br.ufgd.adipometro.fragment.EgsFragment;
 import br.ufgd.adipometro.fragment.SobreFragment;
 import br.ufgd.adipometro.fragment.WebFragment;
-import br.ufgd.adipometro.strategy.Costas;
 import br.ufgd.adipometro.strategy.Egs;
-import br.ufgd.adipometro.strategy.Peito;
+import br.ufgd.adipometro.strategy.EgsCordeiroMachoCostas;
+import br.ufgd.adipometro.strategy.EgsCordeiroMachoPeito;
+import br.ufgd.adipometro.utils.TipoCategoriaAnimalEnum;
 import br.ufgd.adipometro.utils.TipoMedidaEnum;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "Adipometro";
     private CalculoFragment fragment;
+    private TipoCategoriaAnimalEnum tpCategoriaAnimal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,15 +50,35 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickCalcularEgs(View view) {
         try {
-            TextView tPeso = (TextView)
+             TextView tPeso = (TextView)
                     findViewById(R.id.edPeso);
 
             TextView tPrega = (TextView) findViewById(R.id.edPrega);
 
+            final Spinner spCategoria = fragment.getSpCategoria();
+
+            spCategoria.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                    // String selectedItem = (String) spCategoria.getItemAtPosition(position);
+
+                    if (position == 0) {
+                        MainActivity.this.tpCategoriaAnimal = null;
+                    } else if (Integer.parseInt(TipoCategoriaAnimalEnum.CORDEIRO_MACHO.getCodigo()) == position) {
+                        MainActivity.this.tpCategoriaAnimal = TipoCategoriaAnimalEnum.CORDEIRO_MACHO;
+                    } else if (TipoCategoriaAnimalEnum.CORDEIRO_MACHO.getCodigo().equals(position)) {
+                        // A implementar
+                    }
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+                }
+            });
+
             // Validar campos obrigatorios.
             if (validaCamposObrigatorios(tPeso, tPrega)) return;
-
-            Spinner spCategoria = fragment.getSpCategoria();
 
             double peso = Double.parseDouble(tPeso.getText().toString());
             double prega = Double.parseDouble(tPrega.getText().toString());
@@ -67,10 +89,24 @@ public class MainActivity extends AppCompatActivity {
 
             switch (tpMedida) {
                 case COSTAS:
-                    egs = new Costas(peso, prega, spCategoria.toString());
+                    if (TipoCategoriaAnimalEnum.CORDEIRO_MACHO.getCodigo().equals(tpCategoriaAnimal.getCodigo())) {
+                        egs = new EgsCordeiroMachoCostas(peso, prega, spCategoria.toString());
+                    }
+                    // Analise futura, intensão de expandir o aplicativo.
+                    if (TipoCategoriaAnimalEnum.CORDEIRO_FEMEA.getCodigo().equals(tpCategoriaAnimal.getCodigo())) {
+                        // A implementar
+                    }
+
                     break;
+
                 case PEITO:
-                    egs = new Peito(peso, prega, spCategoria.toString());
+                    if (TipoCategoriaAnimalEnum.CORDEIRO_MACHO.getCodigo().equals(tpCategoriaAnimal.getCodigo())) {
+                        egs = new EgsCordeiroMachoPeito(peso, prega, spCategoria.toString());
+                    }
+                    // Analise futura, intensão de expandir o aplicativo.
+                    if (TipoCategoriaAnimalEnum.CORDEIRO_FEMEA.getCodigo().equals(tpCategoriaAnimal.getCodigo())) {
+                        // A implementar
+                    }
                     break;
             }
 
@@ -80,9 +116,18 @@ public class MainActivity extends AppCompatActivity {
             EgsFragment egsfragment = EgsFragment.novaInstancia(egs);
 
             getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.conteudo, egsfragment, "egsFragment")
-                    .commit();
+
+                    .
+
+                            beginTransaction()
+
+                    .
+
+                            replace(R.id.conteudo, egsfragment, "egsFragment")
+
+                    .
+
+                            commit();
         } catch (NumberFormatException ex) {
             Log.e(TAG, getClassName() + ex.getStackTrace());
         } catch (Exception ex) {
@@ -91,7 +136,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean validaCamposObrigatorios(TextView tPeso, TextView tPrega) {
+
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this, R.style.AlertDialogStyle);
+
+        if (tpCategoriaAnimal == null) {
+            alertDialogBuilder.setTitle("Informação");
+            alertDialogBuilder.setIcon(R.drawable.ic_information);
+            alertDialogBuilder.setMessage("Campo categoria animal é de preenchimento obrigatório!");
+            alertDialogBuilder.setPositiveButton(" Ok ", new DialogInterface.OnClickListener() {
+
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+
+            alertDialogBuilder.show();
+
+            return true;
+        }
 
         if (tPeso.getText().length() == 0) {
 
@@ -125,6 +187,7 @@ public class MainActivity extends AppCompatActivity {
 
             return true;
         }
+
         return false;
     }
 
@@ -158,10 +221,6 @@ public class MainActivity extends AppCompatActivity {
                 .commit();
 
         return super.onOptionsItemSelected(item);
-    }
-
-    private void alert(String s) {
-        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
     }
 
     /**
