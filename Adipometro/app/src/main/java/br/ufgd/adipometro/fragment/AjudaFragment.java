@@ -28,50 +28,53 @@ public class AjudaFragment extends Fragment {
         TextView txtAjuda = (TextView) view.findViewById(R.id.txtAjuda);
 
         final String textoEmHtml =
-                "<html><body lang=\"pt-BR\" text=\"#00000a\" dir=\"ltr\">\n" +
+                "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n" +
+                        "<html>\n" +
+                        "<head>\n" +
+                        "\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n" +
+                        "</head>\n" +
+                        "<body lang=\"pt-BR\" text=\"#00000a\" dir=\"ltr\">\n" +
                         "<p class=\"western\" align=\"justify\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
-                        "<span style=\"background: #ffffff\">O objetivo geral do projeto é\n" +
-                        "predizer a espessura de gordura subcutânea (EGS), para se obter um\n" +
-                        "ótimo momento de abate, utilizando o peso corporal e medidas de\n" +
-                        "pregas cutâneas.</span></p>\n" +
-                        "<p class=\"western\" align=\"justify\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
-                        "<br/>\n" +
-                        "\n" +
-                        "</p>\n" +
-                        "<p class=\"western\" align=\"justify\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
-                        "<span style=\"background: #ffffff\">O adipômetro, ou plicômetro, é\n" +
-                        "um equipamento que serve para medir a espessura do tecido adiposo do\n" +
-                        "corpo. Essas medidas podem ser colocadas em algumas equações, e\n" +
-                        "servem para calcular o percentual de espessura de gordura subcutânea\n" +
-                        "(EGS).</span></p>\n" +
-                        "<p class=\"western\" align=\"justify\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
-                        "<span style=\"background: #ffffff\">Para resposta utilizamos cotes na\n" +
-                        "ordem crescente de acumulo de gordura</span>:</p>\n" +
+                        "<font face=\"Purisa\"><span style=\"background: #ffffff\">O objetivo\n" +
+                        "geral do projeto é predizer a espessura de gordura subcutânea\n" +
+                        "(EGS), para se obter um ótimo momento de abate, utilizando o peso\n" +
+                        "corporal e medidas de pregas cutâneas.</span></font></p>\n" +
                         "<p class=\"western\" align=\"justify\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
                         "<br/>\n" +
                         "\n" +
                         "</p>\n" +
                         "<p class=\"western\" align=\"justify\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
-                        "<span style=\"background: #dddddd\"><font color=\"#ed7d31\"> <b>LARANJA\n" +
-                        "(&lt; 1 mm)</b></font></span></p>\n" +
+                        "<font face=\"Purisa\"><span style=\"background: #ffffff\">O adipômetro,\n" +
+                        "ou plicômetro, é um equipamento que serve para medir a espessura do\n" +
+                        "tecido adiposo do corpo. Essas medidas podem ser colocadas em algumas\n" +
+                        "equações, e servem para calcular o percentual de espessura de\n" +
+                        "gordura subcutânea (EGS).</span></font></p>\n" +
                         "<p class=\"western\" align=\"justify\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
-                        "<span style=\"background: #dddddd\"><font color=\"#ffff00\"><b>AMARELO (\n" +
-                        "&gt;= 1 &lt; 2 mm)</b></font></span></p>\n" +
-                        "<p class=\"western\" align=\"justify\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
-                        "<span style=\"background: #dddddd\"><font color=\"#00b050\"><b>VERDE\n" +
-                        "(&gt;=2&lt;=3 mm)</b></font></span></p>\n" +
-                        "<p class=\"western\" align=\"justify\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
-                        "<span style=\"background: #dddddd\"><font color=\"#ff0000\"><b>VERMELHO\n" +
-                        "(&gt;3 mm)</b></font></span></p>\n" +
+                        "<font face=\"Purisa\"><span style=\"background: #ffffff\">Para resposta\n" +
+                        "utilizamos cotes na ordem crescente de acumulo de gordura</span>:</font></p>\n" +
                         "<p class=\"western\" align=\"justify\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
                         "<br/>\n" +
                         "\n" +
                         "</p>\n" +
                         "<p class=\"western\" align=\"justify\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
-                        "Lembrando que tais padrões dependem do mercado consumidor, estes\n" +
-                        "utilizados baseiam-se no acabamento mínimo necessário para uma boa\n" +
-                        "proteção da carcaça durante o resfriamento e gordura suficiente na\n" +
-                        "carne para os padrões brasileiros.</p>\n" +
+                        "<font color=\"#ed7d31\"> <font face=\"Purisa\"><b>LARANJA (&lt; 1 mm)</b></font></font></p>\n" +
+                        "<p class=\"western\" align=\"justify\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
+                        "<font face=\"Purisa\"><font color=\"#ffff00\"><b>AMARELO ( &gt;= 1 &lt; 2\n" +
+                        "mm)</b></font></font></p>\n" +
+                        "<p class=\"western\" align=\"justify\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
+                        "<font face=\"Purisa\"><font color=\"#00b050\"><b>VERDE (&gt;=2&lt;=3 mm)</b></font></font></p>\n" +
+                        "<p class=\"western\" align=\"justify\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
+                        "<font face=\"Purisa\"><font color=\"#ff0000\"><b>VERMELHO (&gt;3 mm)</b></font></font></p>\n" +
+                        "<p class=\"western\" align=\"justify\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
+                        "<br/>\n" +
+                        "\n" +
+                        "</p>\n" +
+                        "<p class=\"western\" align=\"justify\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
+                        "<font face=\"Purisa\">Lembrando que tais padrões dependem do mercado\n" +
+                        "consumidor, estes utilizados baseiam-se no acabamento mínimo\n" +
+                        "necessário para uma boa proteção da carcaça durante o\n" +
+                        "resfriamento e gordura suficiente na carne para os padrões\n" +
+                        "brasileiros.</font></p>\n" +
                         "<p class=\"western\" align=\"justify\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
                         "<br/>\n" +
                         "\n" +
@@ -80,7 +83,8 @@ public class AjudaFragment extends Fragment {
                         "<br/>\n" +
                         "\n" +
                         "</p>\n" +
-                        "</body></html>";
+                        "</body>\n" +
+                        "</html>";
 
         txtAjuda.setText(Html.fromHtml(textoEmHtml, null, null));
 

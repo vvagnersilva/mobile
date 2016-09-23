@@ -28,20 +28,36 @@ public class SobreFragment extends Fragment {
         TextView txtParticipantes = (TextView) view.findViewById(R.id.txtParticipantes);
 
         final String textoEmHtml =
-                "<html><body lang=\"pt-BR\" text=\"#00000a\" dir=\"ltr\">\n" +
-                        "<p class=\"western\" style=\"margin-bottom: 0cm; line-height: 100%\"><font face=\"Purisa, serif\">ADRIELLY\n" +
-                        "LAIS ALVES DA SILVA – Graduanda em Zootecnia pela Universidade\n" +
-                        "Federal da Grande Dourados UFGD – Bolsista Iniciação Cientifica.</font></p>\n" +
-                        "<p class=\"western\" style=\"margin-bottom: 0cm; line-height: 100%\"><font face=\"Purisa, serif\">FERNANDO\n" +
-                        "MIRANDA DE VARGAS JUNIOR – Orientador e Professor Doutor da\n" +
-                        "Faculdade de Ciências Agrarias da UFGD.</font></p>\n" +
-                        "<p class=\"western\" style=\"margin-bottom: 0cm; line-height: 100%\"><font face=\"Purisa, serif\">MARCELO\n" +
-                        "CORREA DA SILVA – Doutor em ciência animal – Pós doutorando e\n" +
-                        "professor voluntário UFGD-FCA-ZOOTECNIA.</font></p>\n" +
-                        "<p class=\"western\" style=\"margin-bottom: 0cm; line-height: 100%\"><font face=\"Purisa, serif\">WAGNER\n" +
-                        "SILVA – Bacharel e Ciência da Computação – Universidade\n" +
-                        "federal de lavras UFLA.</font></p>\n" +
-                        "</body></html>";
+                "<html>\n" +
+                        "<font face=\"Purisa, serif\"><b>MEMBROS DA EXECUÇÃO</b></font></p>\n" +
+                        "<p class=\"western\" align=\"center\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
+                        "<br/>\n" +
+                        "\n" +
+                        "</p>\n" +
+                        "<p class=\"western\" align=\"center\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
+                        "<font face=\"Purisa, serif\">Adrielly Lais Alves da Silva</font></p>\n" +
+                        "<p class=\"western\" align=\"center\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
+                        "<font face=\"Purisa, serif\">Fernando Miranda de Vargas Junior</font></p>\n" +
+                        "<p class=\"western\" align=\"center\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
+                        "<font face=\"Purisa, serif\">Marcelo Correa da Silva</font></p>\n" +
+                        "<p class=\"western\" align=\"center\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
+                        "<font face=\"Purisa, serif\">Marcus Vinicius Porto dos Santos</font></p>\n" +
+                        "<p class=\"western\" align=\"center\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
+                        "<font face=\"Purisa, serif\">Wagner Silva</font></p>\n" +
+                        "<p class=\"western\" align=\"center\" style=\"margin-bottom: 0cm; line-height: 100%; page-break-before: always\">\n" +
+                        "<font face=\"Purisa, serif\"><b>MEMBROS COLABORADORES</b></font></p>\n" +
+                        "<p class=\"western\" align=\"center\" style=\"margin-bottom: 0cm; font-weight: normal; line-height: 100%\">\n" +
+                        "<font face=\"Purisa, serif\">Adriana Sathie Ozaki Hirata</font></p>\n" +
+                        "<p class=\"western\" align=\"center\" style=\"margin-bottom: 0cm; font-weight: normal; line-height: 100%\">\n" +
+                        "<font face=\"Purisa, serif\">Alexandre Rodrigo Mendes Fernandes</font></p>\n" +
+                        "<p class=\"western\" align=\"center\" style=\"margin-bottom: 0cm; font-weight: normal; line-height: 100%\">\n" +
+                        "<font face=\"Purisa, serif\">Hélio de Almeida Ricardo</font></p>\n" +
+                        "<p class=\"western\" align=\"center\" style=\"margin-bottom: 0cm; font-weight: normal; line-height: 100%\">\n" +
+                        "<font face=\"Purisa, serif\">Ingrid Harumi de Souza Fuzikawa</font></p>\n" +
+                        "<p class=\"western\" align=\"center\" style=\"margin-bottom: 0cm; font-weight: normal; line-height: 100%\">\n" +
+                        "<font face=\"Purisa, serif\">Márcio Rodrigues de Souza</font></p>\n" +
+                        "</body>\n" +
+                        "</html>";
 
         txtParticipantes.setText(Html.fromHtml(textoEmHtml, null, null));
 
