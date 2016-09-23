@@ -33,7 +33,7 @@ public class FotosFragment extends Fragment implements BaseSliderView.OnSliderCl
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.list_images_fragment, container, false);
+        View view = inflater.inflate(R.layout.images_slider_fragment, container, false);
 
         mDemoSlider = (SliderLayout) view.findViewById(R.id.slider);
 

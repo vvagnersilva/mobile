@@ -14,8 +14,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import br.ufgd.adipometro.R;
+import br.ufgd.adipometro.enums.TipoAssuntoEnum;
 import br.ufgd.adipometro.utils.Constantes;
-import br.ufgd.adipometro.utils.TipoAssuntoEnum;
 
 public class FaleConoscoFragment extends Fragment {
     private static final String EXTRA_TIPO = "mTipo";

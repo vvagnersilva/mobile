@@ -12,8 +12,9 @@ import android.widget.Spinner;
 
 import br.ufgd.adipometro.MainActivity;
 import br.ufgd.adipometro.R;
-import br.ufgd.adipometro.utils.TipoCategoriaAnimalEnum;
-import br.ufgd.adipometro.utils.TipoMedidaEnum;
+import br.ufgd.adipometro.enums.TipoCategoriaAnimalEnum;
+import br.ufgd.adipometro.enums.TipoMedidaEnum;
+
 
 public class CalculoFragment extends Fragment {
     private static final String TAG = "Adipometro";

@@ -1,23 +1,23 @@
-package br.ufgd.adipometro.utils;
+package br.ufgd.adipometro.enums;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Classe TipoMedidaEnum.
- * <p>
+ *
+ * Classe TipoCategoriaAnimalEnum.
+ *
  * Inicialmente vamos ter somente Cordeiro Macho, mas a intenção é expandir as categorias.
  */
-public enum TipoAssuntoEnum {
+public enum TipoCategoriaAnimalEnum {
 
-    DUVIDAS("1", "Dúvidas"),
-    ELOGIOS("2", "Elogios"),
-    SUGESTOES("3", "Sugestões");
+    CORDEIRO_MACHO("1", "Cordeiro Mach"),
+    CORDEIRO_FEMEA("2", "Cordeiro Fêmea");
 
     private final String codigo;
     private final String descricao;
 
-    TipoAssuntoEnum(String codigo, String descricao) {
+    TipoCategoriaAnimalEnum(String codigo, String descricao) {
         this.codigo = codigo;
         this.descricao = descricao;
     }
@@ -28,9 +28,9 @@ public enum TipoAssuntoEnum {
      * @param codigo
      * @return CondicaoAmostraEnum
      */
-    public static TipoAssuntoEnum valueOf(int codigo) {
-        TipoAssuntoEnum value = null;
-        for (TipoAssuntoEnum element : TipoAssuntoEnum.values()) {
+    public static TipoCategoriaAnimalEnum valueOf(int codigo) {
+        TipoCategoriaAnimalEnum value = null;
+        for (TipoCategoriaAnimalEnum element : TipoCategoriaAnimalEnum.values()) {
             if (element.codigo.equals(codigo)) {
                 value = element;
                 break;
@@ -47,9 +47,9 @@ public enum TipoAssuntoEnum {
      *
      * @return List<CondicaoAmostraEnum>
      */
-    public static List<TipoAssuntoEnum> getLista() {
-        List<TipoAssuntoEnum> listaCategoria = new ArrayList<TipoAssuntoEnum>();
-        for (TipoAssuntoEnum element : TipoAssuntoEnum.values()) {
+    public static List<TipoCategoriaAnimalEnum> getLista() {
+        List<TipoCategoriaAnimalEnum> listaCategoria = new ArrayList<TipoCategoriaAnimalEnum>();
+        for (TipoCategoriaAnimalEnum element : TipoCategoriaAnimalEnum.values()) {
             listaCategoria.add(element);
         }
         return listaCategoria;
@@ -61,8 +61,8 @@ public enum TipoAssuntoEnum {
      * @param codigo
      * @return CondicaoAmostraEnum
      */
-    public static TipoAssuntoEnum getByCodigo(String codigo) {
-        for (TipoAssuntoEnum element : TipoAssuntoEnum.values()) {
+    public static TipoCategoriaAnimalEnum getByCodigo(String codigo) {
+        for (TipoCategoriaAnimalEnum element : TipoCategoriaAnimalEnum.values()) {
             if (element.getCodigo().equals(codigo)) {
                 return element;
             }

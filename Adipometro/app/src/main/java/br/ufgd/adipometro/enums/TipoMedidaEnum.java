@@ -1,10 +1,12 @@
-package br.ufgd.adipometro.utils;
+package br.ufgd.adipometro.enums;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
+ *
  * Classe TipoMedidaEnum.
+ *
  */
 public enum TipoMedidaEnum {
 

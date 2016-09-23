@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import br.ufgd.adipometro.enums.TipoCategoriaAnimalEnum;
+import br.ufgd.adipometro.enums.TipoMedidaEnum;
 import br.ufgd.adipometro.fragment.AjudaFragment;
 import br.ufgd.adipometro.fragment.CalculoFragment;
 import br.ufgd.adipometro.fragment.EgsFragment;
@@ -23,15 +25,11 @@ import br.ufgd.adipometro.fragment.WebFragment;
 import br.ufgd.adipometro.strategy.Egs;
 import br.ufgd.adipometro.strategy.EgsCordeiroMachoCostas;
 import br.ufgd.adipometro.strategy.EgsCordeiroMachoPeito;
-import br.ufgd.adipometro.utils.TipoAssuntoEnum;
-import br.ufgd.adipometro.utils.TipoCategoriaAnimalEnum;
-import br.ufgd.adipometro.utils.TipoMedidaEnum;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "Adipometro";
     private static TipoCategoriaAnimalEnum tpCategoriaAnimal;
-    private static TipoAssuntoEnum tpAssunto;
     private CalculoFragment fragment;
 
     public static TipoCategoriaAnimalEnum getTpCategoriaAnimal() {
@@ -230,6 +228,4 @@ public class MainActivity extends AppCompatActivity {
         String s = getClass().getName();
         return s.substring(s.lastIndexOf("."));
     }
-
-
 }
