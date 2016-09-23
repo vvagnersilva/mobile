@@ -1,7 +1,6 @@
 package br.ufgd.adipometro;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
@@ -11,7 +10,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -25,16 +24,16 @@ import br.ufgd.adipometro.fragment.WebFragment;
 import br.ufgd.adipometro.strategy.Egs;
 import br.ufgd.adipometro.strategy.EgsCordeiroMachoCostas;
 import br.ufgd.adipometro.strategy.EgsCordeiroMachoPeito;
+import br.ufgd.adipometro.utils.TipoAssuntoEnum;
 import br.ufgd.adipometro.utils.TipoCategoriaAnimalEnum;
 import br.ufgd.adipometro.utils.TipoMedidaEnum;
-
-import static br.ufgd.adipometro.R.id.spCategoria;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "Adipometro";
     private CalculoFragment fragment;
     private static TipoCategoriaAnimalEnum tpCategoriaAnimal;
+    private static TipoAssuntoEnum tpAssunto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,64 +54,64 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickCalcularEgs(View view) {
         try {
-            TextView tPeso = (TextView)
+            EditText edPeso = (EditText)
                     findViewById(R.id.edPeso);
 
-            TextView tPrega = (TextView) findViewById(R.id.edPrega);
+            EditText edPrega = (EditText) findViewById(R.id.edPrega);
 
             final Spinner spCategoria = fragment.getSpCategoria();
 
             // Validar campos obrigatorios.
-            if (validaCamposObrigatorios(tPeso, tPrega)) return;
+            if (!validaCamposObrigatorios()) {
+                double peso = Double.parseDouble(edPeso.getText().toString());
+                double prega = Double.parseDouble(edPrega.getText().toString());
 
-            double peso = Double.parseDouble(tPeso.getText().toString());
-            double prega = Double.parseDouble(tPrega.getText().toString());
+                Egs egs = null;
 
-            Egs egs = null;
+                TipoMedidaEnum tpMedida = fragment.getTpMedida();
 
-            TipoMedidaEnum tpMedida = fragment.getTpMedida();
+                switch (tpMedida) {
+                    case COSTAS:
+                        if (TipoCategoriaAnimalEnum.CORDEIRO_MACHO.getCodigo().equals(tpCategoriaAnimal.getCodigo())) {
+                            egs = new EgsCordeiroMachoCostas(peso, prega, spCategoria.toString());
+                        }
+                        // Analise futura, intensão de expandir o aplicativo.
+                        if (TipoCategoriaAnimalEnum.CORDEIRO_FEMEA.getCodigo().equals(tpCategoriaAnimal.getCodigo())) {
+                            // A implementar
+                        }
 
-            switch (tpMedida) {
-                case COSTAS:
-                    if (TipoCategoriaAnimalEnum.CORDEIRO_MACHO.getCodigo().equals(tpCategoriaAnimal.getCodigo())) {
-                        egs = new EgsCordeiroMachoCostas(peso, prega, spCategoria.toString());
-                    }
-                    // Analise futura, intensão de expandir o aplicativo.
-                    if (TipoCategoriaAnimalEnum.CORDEIRO_FEMEA.getCodigo().equals(tpCategoriaAnimal.getCodigo())) {
-                        // A implementar
-                    }
+                        break;
 
-                    break;
+                    case PEITO:
+                        if (TipoCategoriaAnimalEnum.CORDEIRO_MACHO.getCodigo().equals(tpCategoriaAnimal.getCodigo())) {
+                            egs = new EgsCordeiroMachoPeito(peso, prega, spCategoria.toString());
+                        }
+                        // Analise futura, intensão de expandir o aplicativo.
+                        if (TipoCategoriaAnimalEnum.CORDEIRO_FEMEA.getCodigo().equals(tpCategoriaAnimal.getCodigo())) {
+                            // A implementar
+                        }
+                        break;
+                }
 
-                case PEITO:
-                    if (TipoCategoriaAnimalEnum.CORDEIRO_MACHO.getCodigo().equals(tpCategoriaAnimal.getCodigo())) {
-                        egs = new EgsCordeiroMachoPeito(peso, prega, spCategoria.toString());
-                    }
-                    // Analise futura, intensão de expandir o aplicativo.
-                    if (TipoCategoriaAnimalEnum.CORDEIRO_FEMEA.getCodigo().equals(tpCategoriaAnimal.getCodigo())) {
-                        // A implementar
-                    }
-                    break;
+                egs.CalcularEgs();
+
+                // Fragment default.
+                EgsFragment egsfragment = EgsFragment.novaInstancia(egs);
+
+                getSupportFragmentManager()
+
+                        .
+
+                                beginTransaction()
+
+                        .
+
+                                replace(R.id.conteudo, egsfragment, "egsFragment")
+
+                        .
+
+                                commit();
             }
-
-            egs.CalcularEgs();
-
-            // Fragment default.
-            EgsFragment egsfragment = EgsFragment.novaInstancia(egs);
-
-            getSupportFragmentManager()
-
-                    .
-
-                            beginTransaction()
-
-                    .
-
-                            replace(R.id.conteudo, egsfragment, "egsFragment")
-
-                    .
-
-                            commit();
         } catch (NumberFormatException ex) {
             Log.e(TAG, getClassName() + ex.getStackTrace());
         } catch (Exception ex) {
@@ -120,7 +119,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private boolean validaCamposObrigatorios(TextView tPeso, TextView tPrega) {
+    private boolean validaCamposObrigatorios() {
+
+        EditText edPeso = (EditText) findViewById(R.id.edPeso);
+        EditText edPrega = (EditText) findViewById(R.id.edPrega);
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this, R.style.AlertDialogStyle);
 
@@ -140,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
-        if (tPeso.getText().length() == 0) {
+        if (edPeso.getText().length() == 0) {
 
             alertDialogBuilder.setTitle("Informação");
             alertDialogBuilder.setIcon(R.drawable.ic_information);
@@ -157,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
-        if (tPrega.getText().length() == 0) {
+        if (edPrega.getText().length() == 0) {
             alertDialogBuilder.setTitle("Informação");
             alertDialogBuilder.setIcon(R.drawable.ic_information);
             alertDialogBuilder.setMessage("Campo medida das pregas é de preenchimento obrigatório!");
@@ -212,20 +214,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void onClickEnviarEmail(View v) {
-        String subject = "Escreva a sua mensagem";
-
-        Intent email = new Intent(Intent.ACTION_SEND);
-        email.putExtra(Intent.EXTRA_CC, new String[]{"vvagner.silva@gmail.com"});
-        //email.putExtra(Intent.EXTRA_BCC, new String[]{to});
-        email.putExtra(Intent.EXTRA_SUBJECT, subject);
-        email.putExtra(Intent.EXTRA_TEXT, "");
-
-        //need this to prompts email client only
-        email.setType("message/rfc822");
-
-        startActivity(Intent.createChooser(email, "Choose an Email client :"));
-    }
 
     /**
      * Retorna o nome da classe sem o pacote
@@ -244,4 +232,6 @@ public class MainActivity extends AppCompatActivity {
     public static void setTpCategoriaAnimal(TipoCategoriaAnimalEnum tpCategoriaAnimal) {
         MainActivity.tpCategoriaAnimal = tpCategoriaAnimal;
     }
+
+
 }
