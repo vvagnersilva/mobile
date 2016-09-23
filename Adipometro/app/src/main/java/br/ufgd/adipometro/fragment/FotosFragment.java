@@ -28,10 +28,10 @@ public class FotosFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.list_images_fragment, container, false);
 
-        mProgressBar = (ProgressBar)view.findViewById(R.id.progressBar);
+        mProgressBar = (ProgressBar) view.findViewById(R.id.progressBar);
         mProgressBar.setVisibility(View.GONE);
 
-        mListView = (ListView)view.findViewById(R.id.listView);
+        mListView = (ListView) view.findViewById(R.id.listView);
 
 
         return view;

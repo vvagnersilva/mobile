@@ -12,7 +12,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import br.ufgd.adipometro.fragment.AjudaFragment;
 import br.ufgd.adipometro.fragment.CalculoFragment;
@@ -31,9 +30,17 @@ import br.ufgd.adipometro.utils.TipoMedidaEnum;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "Adipometro";
-    private CalculoFragment fragment;
     private static TipoCategoriaAnimalEnum tpCategoriaAnimal;
     private static TipoAssuntoEnum tpAssunto;
+    private CalculoFragment fragment;
+
+    public static TipoCategoriaAnimalEnum getTpCategoriaAnimal() {
+        return tpCategoriaAnimal;
+    }
+
+    public static void setTpCategoriaAnimal(TipoCategoriaAnimalEnum tpCategoriaAnimal) {
+        MainActivity.tpCategoriaAnimal = tpCategoriaAnimal;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -214,7 +221,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
     /**
      * Retorna o nome da classe sem o pacote
      *
@@ -223,14 +229,6 @@ public class MainActivity extends AppCompatActivity {
     public String getClassName() {
         String s = getClass().getName();
         return s.substring(s.lastIndexOf("."));
-    }
-
-    public static TipoCategoriaAnimalEnum getTpCategoriaAnimal() {
-        return tpCategoriaAnimal;
-    }
-
-    public static void setTpCategoriaAnimal(TipoCategoriaAnimalEnum tpCategoriaAnimal) {
-        MainActivity.tpCategoriaAnimal = tpCategoriaAnimal;
     }
 
 

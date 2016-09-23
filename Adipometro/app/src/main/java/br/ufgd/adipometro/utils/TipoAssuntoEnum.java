@@ -5,9 +5,8 @@ import java.util.List;
 
 /**
  * Classe TipoMedidaEnum.
- *
+ * <p>
  * Inicialmente vamos ter somente Cordeiro Macho, mas a intenção é expandir as categorias.
- *
  */
 public enum TipoAssuntoEnum {
 

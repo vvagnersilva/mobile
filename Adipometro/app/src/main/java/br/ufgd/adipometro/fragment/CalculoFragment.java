@@ -34,7 +34,7 @@ public class CalculoFragment extends Fragment {
 
         // Default p/ medida das costas.
         tpMedida = TipoMedidaEnum.COSTAS;
-        
+
         return f;
     }
 

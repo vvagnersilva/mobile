@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,9 +72,6 @@ public class FaleConoscoFragment extends Fragment {
                 if (!validaCamposObrigatorios()) {
 
                     String subject = Constantes.ABRE_COLCHETES + getActivity().getTitle() + Constantes.FECHA_COLCHETES + "\t" + tpAssunto.getDescricao();
-
-                    Log.i(TAG, subject);
-                    Log.i(TAG, edDescricao.getText().toString());
 
                     Intent email = new Intent(Intent.ACTION_SEND);
                     email.putExtra(Intent.EXTRA_CC, new String[]{"vvagner.silva@gmail.com"});
