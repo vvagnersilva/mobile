@@ -1,4 +1,4 @@
-package br.ufgd.adipometro.utils;
+package br.edu.ufgd.utils;
 
 public class Constantes {
     public static final String FORMULA_CORDEIRO_MARCHO_COSTAS = "EGS (FORMULA_CORDEIRO_MARCHO_COSTAS) = -3,57+0,675 X1 -1,255 X2 -0,01061 X1^2 + 0,0805 X2^2";

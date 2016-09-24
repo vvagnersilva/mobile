@@ -1,4 +1,4 @@
-package br.ufgd.adipometro.fragment;
+package br.edu.ufgd.fragment;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -14,13 +14,12 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
-import br.ufgd.adipometro.R;
-import br.ufgd.adipometro.enums.TipoCategoriaAnimalEnum;
-import br.ufgd.adipometro.enums.TipoMedidaEnum;
-import br.ufgd.adipometro.strategy.Egs;
-import br.ufgd.adipometro.strategy.EgsCordeiroMachoCostas;
-import br.ufgd.adipometro.strategy.EgsCordeiroMachoPeito;
-
+import br.edu.ufgd.R;
+import br.edu.ufgd.enums.TipoCategoriaAnimalEnum;
+import br.edu.ufgd.enums.TipoMedidaEnum;
+import br.edu.ufgd.strategy.Egs;
+import br.edu.ufgd.strategy.EgsCordeiroMachoCostas;
+import br.edu.ufgd.strategy.EgsCordeiroMachoPeito;
 
 public class CalculoFragment extends Fragment {
     private static final String TAG = "Adipometro";

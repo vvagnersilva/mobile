@@ -1,4 +1,4 @@
-package br.ufgd.adipometro.fragment;
+package br.edu.ufgd.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import br.ufgd.adipometro.R;
+import br.edu.ufgd.R;
 
 public class AjudaFragment extends Fragment {
     private static final String EXTRA_TIPO = "mTipo";

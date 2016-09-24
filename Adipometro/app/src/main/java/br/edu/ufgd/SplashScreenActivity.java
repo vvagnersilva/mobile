@@ -1,4 +1,4 @@
-package br.ufgd.adipometro;
+package br.edu.ufgd;
 
 import android.app.Activity;
 import android.content.Intent;

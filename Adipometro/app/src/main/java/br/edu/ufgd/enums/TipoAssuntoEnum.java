@@ -1,4 +1,4 @@
-package br.ufgd.adipometro.enums;
+package br.edu.ufgd.enums;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,15 +6,16 @@ import java.util.List;
 /**
  * Classe TipoMedidaEnum.
  */
-public enum TipoMedidaEnum {
+public enum TipoAssuntoEnum {
 
-    COSTAS("C", "Costas"),
-    PEITO("P", "Peito");
+    DUVIDAS("1", "Dúvidas"),
+    ELOGIOS("2", "Elogios"),
+    SUGESTOES("3", "Sugestões");
 
     private final String codigo;
     private final String descricao;
 
-    TipoMedidaEnum(String codigo, String descricao) {
+    TipoAssuntoEnum(String codigo, String descricao) {
         this.codigo = codigo;
         this.descricao = descricao;
     }
@@ -25,9 +26,9 @@ public enum TipoMedidaEnum {
      * @param codigo
      * @return CondicaoAmostraEnum
      */
-    public static TipoMedidaEnum valueOf(int codigo) {
-        TipoMedidaEnum value = null;
-        for (TipoMedidaEnum element : TipoMedidaEnum.values()) {
+    public static TipoAssuntoEnum valueOf(int codigo) {
+        TipoAssuntoEnum value = null;
+        for (TipoAssuntoEnum element : TipoAssuntoEnum.values()) {
             if (element.codigo.equals(codigo)) {
                 value = element;
                 break;
@@ -44,9 +45,9 @@ public enum TipoMedidaEnum {
      *
      * @return List<CondicaoAmostraEnum>
      */
-    public static List<TipoMedidaEnum> getLista() {
-        List<TipoMedidaEnum> listaCategoria = new ArrayList<TipoMedidaEnum>();
-        for (TipoMedidaEnum element : TipoMedidaEnum.values()) {
+    public static List<TipoAssuntoEnum> getLista() {
+        List<TipoAssuntoEnum> listaCategoria = new ArrayList<TipoAssuntoEnum>();
+        for (TipoAssuntoEnum element : TipoAssuntoEnum.values()) {
             listaCategoria.add(element);
         }
         return listaCategoria;
@@ -58,8 +59,8 @@ public enum TipoMedidaEnum {
      * @param codigo
      * @return CondicaoAmostraEnum
      */
-    public static TipoMedidaEnum getByCodigo(String codigo) {
-        for (TipoMedidaEnum element : TipoMedidaEnum.values()) {
+    public static TipoAssuntoEnum getByCodigo(String codigo) {
+        for (TipoAssuntoEnum element : TipoAssuntoEnum.values()) {
             if (element.getCodigo().equals(codigo)) {
                 return element;
             }

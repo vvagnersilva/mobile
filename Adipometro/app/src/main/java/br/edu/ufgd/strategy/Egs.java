@@ -1,4 +1,4 @@
-package br.ufgd.adipometro.strategy;
+package br.edu.ufgd.strategy;
 
 public abstract class Egs {
     protected static final String TAG = "Ovigorificopinca";

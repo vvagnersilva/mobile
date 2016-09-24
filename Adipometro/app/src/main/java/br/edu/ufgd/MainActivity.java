@@ -1,4 +1,4 @@
-package br.ufgd.adipometro;
+package br.edu.ufgd;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,13 +7,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import br.ufgd.adipometro.enums.TipoCategoriaAnimalEnum;
-import br.ufgd.adipometro.fragment.AjudaFragment;
-import br.ufgd.adipometro.fragment.CalculoFragment;
-import br.ufgd.adipometro.fragment.FaleConoscoFragment;
-import br.ufgd.adipometro.fragment.FotosFragment;
-import br.ufgd.adipometro.fragment.SobreFragment;
-import br.ufgd.adipometro.fragment.WebFragment;
+import br.edu.ufgd.enums.TipoCategoriaAnimalEnum;
+import br.edu.ufgd.fragment.AjudaFragment;
+import br.edu.ufgd.fragment.CalculoFragment;
+import br.edu.ufgd.fragment.FaleConoscoFragment;
+import br.edu.ufgd.fragment.FotosFragment;
+import br.edu.ufgd.fragment.SobreFragment;
+import br.edu.ufgd.fragment.WebFragment;
 
 public class MainActivity extends AppCompatActivity {
 

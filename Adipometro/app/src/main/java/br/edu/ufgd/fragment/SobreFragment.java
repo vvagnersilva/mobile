@@ -1,4 +1,4 @@
-package br.ufgd.adipometro.fragment;
+package br.edu.ufgd.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,7 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import br.ufgd.adipometro.R;
+import br.edu.ufgd.R;
+
 
 public class SobreFragment extends Fragment {
     private static final String EXTRA_TIPO = "mTipo";
@@ -39,7 +40,7 @@ public class SobreFragment extends Fragment {
                         "<p class=\"western\" align=\"center\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
                         "<font face=\"Purisa, serif\">Fernando Miranda de Vargas Junior</font></p>\n" +
                         "<p class=\"western\" align=\"center\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
-                        "<font face=\"Purisa, serif\">Marcelo Correa da Silva</font></p>\n" +
+                        "<font face=\"Purisa, serif\">Marcelo Corrêa da Silva</font></p>\n" +
                         "<p class=\"western\" align=\"center\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +
                         "<font face=\"Purisa, serif\">Marcus Vinicius Porto dos Santos</font></p>\n" +
                         "<p class=\"western\" align=\"center\" style=\"margin-bottom: 0cm; line-height: 100%\">\n" +

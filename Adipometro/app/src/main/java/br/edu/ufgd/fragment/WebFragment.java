@@ -1,4 +1,4 @@
-package br.ufgd.adipometro.fragment;
+package br.edu.ufgd.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,7 +9,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import br.ufgd.adipometro.R;
+import br.edu.ufgd.R;
 
 public class WebFragment extends Fragment {
     private static final String EXTRA_TIPO = "mTipo";
@@ -42,6 +42,7 @@ public class WebFragment extends Fragment {
         // Enable Javascript
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        webSettings.setSupportZoom(false);
 
         // Force links and redirects to open in the WebView instead of in a browser
         mWebView.setWebViewClient(new WebViewClient());

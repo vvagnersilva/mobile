@@ -1,4 +1,4 @@
-package br.ufgd.adipometro.imageSlider;
+package br.edu.ufgd.imageSlider;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.daimajia.slider.library.SliderLayout;
 
-import br.ufgd.adipometro.R;
+import br.edu.ufgd.R;
 
 /**
  * Created by daimajia on 14-5-29.

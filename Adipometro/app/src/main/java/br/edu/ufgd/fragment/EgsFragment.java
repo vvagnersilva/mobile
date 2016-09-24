@@ -1,4 +1,4 @@
-package br.ufgd.adipometro.fragment;
+package br.edu.ufgd.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,8 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import br.ufgd.adipometro.R;
-import br.ufgd.adipometro.strategy.Egs;
+import br.edu.ufgd.R;
+import br.edu.ufgd.strategy.Egs;
 
 public class EgsFragment extends Fragment {
     protected static final String TAG = "Adipometro";

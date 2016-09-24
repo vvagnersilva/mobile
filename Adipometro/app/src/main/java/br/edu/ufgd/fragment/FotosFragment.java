@@ -1,4 +1,4 @@
-package br.ufgd.adipometro.fragment;
+package br.edu.ufgd.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,7 +15,8 @@ import com.daimajia.slider.library.Tricks.ViewPagerEx;
 
 import java.util.HashMap;
 
-import br.ufgd.adipometro.R;
+import br.edu.ufgd.R;
+
 
 public class FotosFragment extends Fragment implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
     private static final String TAG = "Adipometro";

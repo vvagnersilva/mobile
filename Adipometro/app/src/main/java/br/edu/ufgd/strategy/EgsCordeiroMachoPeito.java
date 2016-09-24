@@ -1,8 +1,8 @@
-package br.ufgd.adipometro.strategy;
+package br.edu.ufgd.strategy;
 
 import android.util.Log;
 
-import br.ufgd.adipometro.utils.Constantes;
+import br.edu.ufgd.utils.Constantes;
 
 public class EgsCordeiroMachoPeito extends Egs {
 
