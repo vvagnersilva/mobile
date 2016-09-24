@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * Classe TipoCategoriaAnimalEnum.
- *
+ * <p>
  * Inicialmente vamos ter somente Cordeiro Macho, mas a intenção é expandir as categorias.
  */
 public enum TipoCategoriaAnimalEnum {

@@ -111,16 +111,7 @@ public class FaleConoscoFragment extends Fragment {
         }
 
         if (edDescricao.getText().length() == 0) {
-            alertDialogBuilder.setMessage("Campo descrição é de preenchimento obrigatório!");
-            alertDialogBuilder.setPositiveButton(" Ok ", new DialogInterface.OnClickListener() {
-
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                }
-            });
-
-            alertDialogBuilder.show();
-
+            edDescricao.setError("Descrição é de preenchimento obrigatório!");
             return true;
         }
         return false;

@@ -127,7 +127,6 @@
             android:layout_marginRight="16dp"
             android:background="@drawable/fundo"
             android:elevation="6dp"
-            android:onClick="onClickCalcularEgs"
             android:stateListAnimator="@null"
             android:text="Calcular"
             android:textColor="@color/white"

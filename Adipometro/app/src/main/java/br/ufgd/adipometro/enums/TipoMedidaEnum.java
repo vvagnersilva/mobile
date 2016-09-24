@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * Classe TipoMedidaEnum.
- *
  */
 public enum TipoMedidaEnum {
 
