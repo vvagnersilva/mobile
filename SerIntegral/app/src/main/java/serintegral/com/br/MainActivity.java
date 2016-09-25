@@ -25,9 +25,9 @@ import com.paypal.android.sdk.payments.PaymentActivity;
 import java.math.BigDecimal;
 
 import serintegral.com.br.fragment.FacebookFragment;
+import serintegral.com.br.fragment.MapsFragment;
 import serintegral.com.br.fragment.PaypalFragment;
 import serintegral.com.br.fragment.SobreFragment;
-import serintegral.com.br.mapas.LocalizacaoActivity;
 import serintegral.com.br.util.Constantes;
 import serintegral.com.br.util.Util;
 
@@ -171,10 +171,20 @@ public class MainActivity extends AppCompatActivity {
                     .replace(R.id.conteudo, f, titulo)
                     .commit();
         } else if (menuItem.getItemId() == R.id.action_mapa) {
+
+            f = MapsFragment.novaInstancia(titulo);
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.conteudo, f, titulo)
+                    .commit();
+
+/*
             Intent it = new Intent(this, LocalizacaoActivity.class);
 
             // Iniciamos nossa activity
             startActivity(it);
+*/
         } else if (menuItem.getItemId() == R.id.action_sobre) {
             f = SobreFragment.novaInstancia(titulo);
 

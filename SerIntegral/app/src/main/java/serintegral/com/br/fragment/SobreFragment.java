@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import serintegral.com.br.R;
-import serintegral.com.br.util.currencyedittext.CurrencyEditText;
 
 public class SobreFragment extends Fragment {
     private static final String EXTRA_TIPO = "mTipo";
