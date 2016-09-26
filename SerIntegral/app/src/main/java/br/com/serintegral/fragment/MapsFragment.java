@@ -22,7 +22,7 @@ public class MapsFragment extends Fragment {
 
     private static final String EXTRA_TIPO = "mTipo";
 
-    MapView mMapView;
+    private MapView mMapView;
     private GoogleMap googleMap;
 
     public static MapsFragment novaInstancia(String tipo) {
