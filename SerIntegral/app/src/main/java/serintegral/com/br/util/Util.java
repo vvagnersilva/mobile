@@ -133,9 +133,8 @@ public class Util {
             return null;
         }
     }
-    
+
     /**
-     * 
      * Converte um BigDecimal para uma string com três dígitos e uma casa decimal. Ex: 100,0
      *
      * @param valor
@@ -199,11 +198,9 @@ public class Util {
 
     /**
      * Valida se a data final é menor que a data inicial, retornando TRUE Obs: Valide se a data é válida primeiro.
-     * 
-     * @param String
-     *            dataInicial
-     * @param String
-     *            dataInicial
+     *
+     * @param String dataInicial
+     * @param String dataInicial
      * @return Boolean
      */
     public static Boolean isValidaDataFinalMenorInicialStr(String dataInicial, String dataFinal, String pattern) throws Exception {
@@ -227,7 +224,7 @@ public class Util {
 
     /**
      * Recupera o ano atual.
-     * 
+     *
      * @return int ano
      */
     public static int anoAtual() {
@@ -236,8 +233,8 @@ public class Util {
 
     public static Boolean isValidaCPFDigitoIguais(String cpfSemMascara) throws Exception {
         if (cpfSemMascara.matches("[0]{11}") || cpfSemMascara.matches("[1]{11}") || cpfSemMascara.matches("[2]{11}") || cpfSemMascara.matches("[3]{11}")
-            || cpfSemMascara.matches("[4]{11}") || cpfSemMascara.matches("[5]{11}") || cpfSemMascara.matches("[6]{11}") || cpfSemMascara.matches("[7]{11}")
-            || cpfSemMascara.matches("[8]{11}") || cpfSemMascara.matches("[9]{11}")) {
+                || cpfSemMascara.matches("[4]{11}") || cpfSemMascara.matches("[5]{11}") || cpfSemMascara.matches("[6]{11}") || cpfSemMascara.matches("[7]{11}")
+                || cpfSemMascara.matches("[8]{11}") || cpfSemMascara.matches("[9]{11}")) {
 
             return true;
         }
@@ -250,7 +247,7 @@ public class Util {
 
     /**
      * Retorna se a data inicio e data fim está dentro da data(compara) informada
-     * 
+     *
      * @param inicio
      * @param fim
      * @param compara
@@ -268,7 +265,7 @@ public class Util {
 
     /**
      * Valida se a data final é menor que a data inicial, retornando TRUE
-     * 
+     *
      * @param dataInicial
      * @param dataInicial
      * @return Boolean
@@ -283,7 +280,7 @@ public class Util {
 
     /**
      * Verifica a sobre posição de dois periodos. Retorna verdadeiro se os periodos se sobrepõem
-     * 
+     *
      * @param dataInicial1
      * @param dataFinal1
      * @param dataInicial2
@@ -297,7 +294,7 @@ public class Util {
         if (dataFinal1 != null && dataInicial1 != null && dataFinal2 != null && dataInicial2 != null) {
 
             if (dataEntre(dataInicial2, dataInicial1, dataFinal2) || dataEntre(dataInicial2, dataFinal1, dataFinal2)
-                || dataEntre(dataInicial1, dataInicial2, dataFinal1) || dataEntre(dataInicial1, dataFinal2, dataFinal1)) {
+                    || dataEntre(dataInicial1, dataInicial2, dataFinal1) || dataEntre(dataInicial1, dataFinal2, dataFinal1)) {
 
                 retorno = true;
             }
@@ -312,7 +309,7 @@ public class Util {
 
     /**
      * Verifica se uma data está no intervalo (inclusive) entre outras duas
-     * 
+     *
      * @param dataMenor
      * @param data
      * @param dataMaior
@@ -368,11 +365,9 @@ public class Util {
 
     /**
      * Retorna o valor monetário, no formato "R$ 4.500" (contêm o símbolo da moeda).
-     * 
-     * @param valor
-     *            BigDecimal
-     * @param qtdDigitosCentavos
-     *            quantidade de dígitos para os centavos.
+     *
+     * @param valor              BigDecimal
+     * @param qtdDigitosCentavos quantidade de dígitos para os centavos.
      * @return String
      */
     public static String transformaValorMonetarioComSimboloMoeda(BigDecimal valor, int qtdDigitosCentavos) {
@@ -393,11 +388,9 @@ public class Util {
 
     /**
      * Retorna o valor monetário, no formato "4.500" (sem os centavos).
-     * 
-     * @param valor
-     *            BigDecimal
-     * @param vazioSeZero
-     *            boolean define se deve retornar (true) uma string vazia ("") caso o valor seja zero. Caso contrário (false) retorna a String com valor zero ("0").
+     *
+     * @param valor       BigDecimal
+     * @param vazioSeZero boolean define se deve retornar (true) uma string vazia ("") caso o valor seja zero. Caso contrário (false) retorna a String com valor zero ("0").
      * @return
      */
     public static String transformaValorMonetarioSemSimboloMoeda(BigDecimal valor, boolean vazioSeZero) {
@@ -423,47 +416,47 @@ public class Util {
             return null;
         }
     }
-    
+
     public static String converteBigDecimalToString(BigDecimal valor) {
         String pattern = "###,##0.00";
         Locale locale = new Locale("pt", "BR");
         NumberFormat numberFormatWithLocale = NumberFormat.getCurrencyInstance(locale);
         DecimalFormat decimalFormatWithLocale = (DecimalFormat) numberFormatWithLocale;
         decimalFormatWithLocale.applyPattern(pattern);
-        
-        try{
+
+        try {
             return decimalFormatWithLocale.format(valor);
-        }catch (Exception e) {
+        } catch (Exception e) {
             return null;
         }
     }
-    
-    public static Object copiarAtuibutosClasse(Object a, Object b) throws IllegalArgumentException, IllegalAccessException {  
-        Field[] fieldsFromFirstClass = a.getClass().getDeclaredFields();  
-        Field[] fieldsFromSecondClass = b.getClass().getDeclaredFields();  
-  
-        for (Field currentFieldFromTheFirstClass : fieldsFromFirstClass) {  
-            for (Field currentFieldFromTheSecondClass : fieldsFromSecondClass) {  
-                String nameOfTheFirstField = currentFieldFromTheFirstClass.getName();  
-                String nameOfTheSecondField = currentFieldFromTheSecondClass.getName();  
-                
-                if(!nameOfTheFirstField.equals("serialVersionUID")){
-                    if (nameOfTheFirstField.equals(nameOfTheSecondField)) {  
-                        currentFieldFromTheFirstClass.setAccessible(true);  
-                        currentFieldFromTheSecondClass.setAccessible(true);  
-      
-                        currentFieldFromTheFirstClass.set(b, currentFieldFromTheSecondClass.get(a));  
+
+    public static Object copiarAtuibutosClasse(Object a, Object b) throws IllegalArgumentException, IllegalAccessException {
+        Field[] fieldsFromFirstClass = a.getClass().getDeclaredFields();
+        Field[] fieldsFromSecondClass = b.getClass().getDeclaredFields();
+
+        for (Field currentFieldFromTheFirstClass : fieldsFromFirstClass) {
+            for (Field currentFieldFromTheSecondClass : fieldsFromSecondClass) {
+                String nameOfTheFirstField = currentFieldFromTheFirstClass.getName();
+                String nameOfTheSecondField = currentFieldFromTheSecondClass.getName();
+
+                if (!nameOfTheFirstField.equals("serialVersionUID")) {
+                    if (nameOfTheFirstField.equals(nameOfTheSecondField)) {
+                        currentFieldFromTheFirstClass.setAccessible(true);
+                        currentFieldFromTheSecondClass.setAccessible(true);
+
+                        currentFieldFromTheFirstClass.set(b, currentFieldFromTheSecondClass.get(a));
                     }
-                }                 
-            }  
-        }  
-  
-        return b;  
+                }
+            }
+        }
+
+        return b;
     }
-    
+
     /***************************************************************************
      * ltrim - REMOVER OS ESPAÇO EM BRANCO NO INICIO DA STRING
-     * 
+     *
      * @param valor
      * @return String
      **************************************************************************/
@@ -473,7 +466,7 @@ public class Util {
 
     /***************************************************************************
      * rtrim - REMOVER OS ESPAÇO EM BRANCO NO FINAL DA STRING
-     * 
+     *
      * @param valor
      * @return String
      **************************************************************************/
@@ -483,7 +476,7 @@ public class Util {
 
     /***************************************************************************
      * trim - REMOVER OS ESPAÇO EM BRANCO DA STRING
-     * 
+     *
      * @param valor
      * @return String
      **************************************************************************/
@@ -496,9 +489,8 @@ public class Util {
     public static String trim(String valor) {
         return valor != null ? removerEspacosDuplicados(rtrim(ltrim(valor))) : null;
     }
-    
+
     /**
-     * 
      * Remover os espaços duplicados entre as strings deixando somente um espaço
      *
      * @return

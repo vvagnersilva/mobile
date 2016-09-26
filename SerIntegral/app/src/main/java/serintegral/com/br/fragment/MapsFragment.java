@@ -35,7 +35,6 @@ public class MapsFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
     }
 
@@ -67,11 +66,11 @@ public class MapsFragment extends Fragment {
                 googleMap.setMyLocationEnabled(true);
 
                 // For dropping a marker at a point on the Map
-                LatLng sydney = new LatLng(-14.1353036, -47.5133263);
-                googleMap.addMarker(new MarkerOptions().position(sydney).title("Instituto Ser Integral").snippet("Atividades sócio educativas"));
+                LatLng location = new LatLng(-14.1353036, -47.5133263);
+                googleMap.addMarker(new MarkerOptions().position(location).title("Instituto Ser Integral").snippet("Atividades sócio educativas"));
 
                 // For zooming automatically to the location of the marker
-                CameraPosition cameraPosition = new CameraPosition.Builder().target(sydney).zoom(12).build();
+                CameraPosition cameraPosition = new CameraPosition.Builder().target(location).zoom(12).build();
                 googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
             }
         });

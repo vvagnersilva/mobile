@@ -1,5 +1,6 @@
 package serintegral.com.br;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -29,6 +30,7 @@ import serintegral.com.br.fragment.MapsFragment;
 import serintegral.com.br.fragment.PaypalFragment;
 import serintegral.com.br.fragment.SobreFragment;
 import serintegral.com.br.util.Constantes;
+import serintegral.com.br.util.PermissionUtils;
 import serintegral.com.br.util.Util;
 
 public class MainActivity extends AppCompatActivity {
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private int mOpcaoSelecionada;
+    private EditText edValor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,8 +124,6 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == COD_PAGTO) {
             if (responseCode == Activity.RESULT_OK) {
                 alertDialogBuilder.setMessage("Doação realizada com sucesso!");
-
-
             } else {
                 alertDialogBuilder.setMessage("Algum problema com a doação verificar a sua conta no paypal.");
             }
@@ -138,16 +139,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void selecionarOpcaoMenu(MenuItem menuItem) {
-        if (menuItem.getItemId() == R.id.action_sair) {
-            // Finalizar a activity atual (MainActivity)
-            finish();
-
-            // Saindo da aplicacao
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.addCategory(Intent.CATEGORY_HOME);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-        }
 
         mOpcaoSelecionada = menuItem.getItemId();
         menuItem.setChecked(true);
@@ -157,41 +148,62 @@ public class MainActivity extends AppCompatActivity {
 
         Fragment f = null;
 
-        if (menuItem.getItemId() == R.id.action_facebook) {
-            f = FacebookFragment.novaInstancia(titulo);
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.conteudo, f, titulo)
-                    .commit();
-        } else if (menuItem.getItemId() == R.id.action_paypal) {
-            f = PaypalFragment.novaInstancia(titulo);
+        switch (mOpcaoSelecionada) {
+            case R.id.action_facebook:
+                f = FacebookFragment.novaInstancia(titulo);
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.conteudo, f, titulo)
+                        .commit();
+                break;
 
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.conteudo, f, titulo)
-                    .commit();
-        } else if (menuItem.getItemId() == R.id.action_mapa) {
+            case R.id.action_paypal:
+                f = PaypalFragment.novaInstancia(titulo);
 
-            f = MapsFragment.novaInstancia(titulo);
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.conteudo, f, titulo)
+                        .commit();
+                break;
 
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.conteudo, f, titulo)
-                    .commit();
+            case R.id.action_mapa:
+                // Solicita as permissões
+                String[] permissoes = new String[]{
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.ACCESS_COARSE_LOCATION,
+                        Manifest.permission.ACCESS_FINE_LOCATION,
+                };
 
-/*
-            Intent it = new Intent(this, LocalizacaoActivity.class);
+                PermissionUtils.validate(this, 0, permissoes);
 
-            // Iniciamos nossa activity
-            startActivity(it);
-*/
-        } else if (menuItem.getItemId() == R.id.action_sobre) {
-            f = SobreFragment.novaInstancia(titulo);
+                f = MapsFragment.novaInstancia(titulo);
 
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.conteudo, f, titulo)
-                    .commit();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.conteudo, f, titulo)
+                        .commit();
+                break;
+
+            case R.id.action_sobre:
+                f = SobreFragment.novaInstancia(titulo);
+
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.conteudo, f, titulo)
+                        .commit();
+                break;
+
+            case R.id.action_sair:
+                // Finalizar a activity atual (MainActivity)
+                finish();
+
+                // Saindo da aplicacao
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                break;
+            default:
         }
     }
 
@@ -200,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void executarPagtoPayPal() {
-        EditText edValor = (EditText) findViewById(R.id.edValor);
+        edValor = (EditText) findViewById(R.id.edValor);
 
         // Retirar o simbolo da moeda.
         String valor = edValor.getText().toString().replace("R$", "");
@@ -230,21 +242,6 @@ public class MainActivity extends AppCompatActivity {
         payPalPayment.custom("Doação - Instituto Ser Integral");
 
         return payPalPayment;
-    }
-
-    public void onClickEnviarEmail(View v) {
-        String subject = "[app] - Instituto Ser Integral";
-
-        Intent email = new Intent(Intent.ACTION_SEND);
-        email.putExtra(Intent.EXTRA_CC, new String[]{"vvagner.silva@gmail.com"});
-        //email.putExtra(Intent.EXTRA_BCC, new String[]{to});
-        email.putExtra(Intent.EXTRA_SUBJECT, subject);
-        email.putExtra(Intent.EXTRA_TEXT, "");
-
-        //need this to prompts email client only
-        email.setType("message/rfc822");
-
-        startActivity(Intent.createChooser(email, "Choose an Email client :"));
     }
 }
 

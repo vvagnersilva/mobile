@@ -19,6 +19,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.07"
         android:ems="5"
+        android:textAlignment="center"
         app:allow_negative_values="false" />
 
     <TextView
