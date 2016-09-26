@@ -5,12 +5,12 @@ android {
     buildToolsVersion "24.0.2"
 
     defaultConfig {
-        applicationId "serintegral.com.br"
+        applicationId "br.com.serintegral"
         minSdkVersion 16
         targetSdkVersion 24
         // Incrementar p/ deploy
-        versionCode 4
-        versionName "1.0.1"
+        versionCode 1
+        versionName "1.0"
     }
 
     buildTypes {
