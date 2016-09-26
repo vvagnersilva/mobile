@@ -1,9 +1,9 @@
-package serintegral.com.br.util.currencyedittext;
+package br.com.serintegral.currencyedittext;
 
 
 import java.text.DecimalFormat;
-import java.util.Currency;
 import java.util.Locale;
+import java.util.Currency;
 
 public final class CurrencyTextFormatter {
 

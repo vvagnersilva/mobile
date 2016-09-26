@@ -1,4 +1,4 @@
-package serintegral.com.br;
+package br.com.serintegral;
 
 import android.Manifest;
 import android.app.Activity;
@@ -25,13 +25,13 @@ import com.paypal.android.sdk.payments.PaymentActivity;
 
 import java.math.BigDecimal;
 
-import serintegral.com.br.fragment.FacebookFragment;
-import serintegral.com.br.fragment.MapsFragment;
-import serintegral.com.br.fragment.PaypalFragment;
-import serintegral.com.br.fragment.SobreFragment;
-import serintegral.com.br.util.Constantes;
-import serintegral.com.br.util.PermissionUtils;
-import serintegral.com.br.util.Util;
+import br.com.serintegral.fragment.FacebookFragment;
+import br.com.serintegral.fragment.MapsFragment;
+import br.com.serintegral.fragment.PaypalFragment;
+import br.com.serintegral.fragment.SobreFragment;
+import br.com.serintegral.util.Constantes;
+import br.com.serintegral.util.PermissionUtils;
+import br.com.serintegral.util.Util;
 
 public class MainActivity extends AppCompatActivity {
 

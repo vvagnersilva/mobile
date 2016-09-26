@@ -1,4 +1,4 @@
-package serintegral.com.br.fragment;
+package br.com.serintegral.fragment;
 
 import android.app.Dialog;
 import android.os.Bundle;

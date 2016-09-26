@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="serintegral.com.br"
+    package="br.com.serintegral"
     android:installLocation="auto">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -35,14 +35,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- GPS -->
-        <activity
-            android:name=".MapsActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/opcao_mapa"></activity>
-
-        <!-- GPS -->
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"

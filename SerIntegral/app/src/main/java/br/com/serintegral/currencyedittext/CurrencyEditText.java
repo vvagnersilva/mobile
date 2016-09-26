@@ -1,4 +1,4 @@
-package serintegral.com.br.util.currencyedittext;
+package br.com.serintegral.currencyedittext;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,9 +10,8 @@ import android.widget.EditText;
 import java.util.Currency;
 import java.util.Locale;
 
-import serintegral.com.br.R;
+import br.com.serintegral.R;
 
-@SuppressWarnings("unused")
 public class CurrencyEditText extends EditText {
 
     private Locale locale = getResources().getConfiguration().locale;

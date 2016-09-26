@@ -1,4 +1,4 @@
-package prof.milene.br;
+package br.com.serintegral;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

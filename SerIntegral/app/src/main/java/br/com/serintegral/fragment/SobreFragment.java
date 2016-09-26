@@ -1,4 +1,4 @@
-package serintegral.com.br.fragment;
+package br.com.serintegral.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import serintegral.com.br.R;
+import br.com.serintegral.MainActivity;
+import br.com.serintegral.R;
+
 
 public class SobreFragment extends Fragment {
     private static final String EXTRA_TIPO = "mTipo";
@@ -25,6 +27,10 @@ public class SobreFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Setando o titulo no toolbar.
+        ((MainActivity) getActivity())
+                .setActionBarTitle(R.string.opcao_sobre);
+
         View view = inflater.inflate(R.layout.sobre_fragment, container, false);
 
         TextView txtDesenv = (TextView) view.findViewById(R.id.txtDesenv);

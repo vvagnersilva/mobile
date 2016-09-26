@@ -1,4 +1,4 @@
-package serintegral.com.br.fragment;
+package br.com.serintegral.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,8 +15,8 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import serintegral.com.br.MainActivity;
-import serintegral.com.br.R;
+import br.com.serintegral.MainActivity;
+import br.com.serintegral.R;
 
 public class MapsFragment extends Fragment {
 

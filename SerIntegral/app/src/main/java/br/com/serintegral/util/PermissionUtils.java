@@ -1,4 +1,4 @@
-package serintegral.com.br.util;
+package br.com.serintegral.util;
 
 import android.app.Activity;
 import android.content.pm.PackageManager;

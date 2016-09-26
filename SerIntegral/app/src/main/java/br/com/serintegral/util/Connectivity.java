@@ -1,4 +1,4 @@
-package serintegral.com.br.util;
+package br.com.serintegral.util;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
