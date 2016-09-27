@@ -1,10 +1,8 @@
 package br.com.serintegral;
 
-import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
-import android.provider.Settings;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
@@ -12,14 +10,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 
 import br.com.serintegral.fragment.FacebookFragment;
-import br.com.serintegral.fragment.MapsFragment;
 import br.com.serintegral.fragment.PaypalFragment;
 import br.com.serintegral.fragment.SobreFragment;
-import br.com.serintegral.util.PermissionUtils;
+import br.com.serintegral.mapas.LocalizacaoActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -118,26 +114,14 @@ public class MainActivity extends AppCompatActivity {
                         .beginTransaction()
                         .replace(R.id.conteudo, f, titulo)
                         .commit();
+
                 break;
 
             case R.id.action_mapa:
-                verificarStatusGPS();
+                Intent it = new Intent(this, LocalizacaoActivity.class);
 
-                // Solicita as permissões
-                String[] permissoes = new String[]{
-                        Manifest.permission.READ_EXTERNAL_STORAGE,
-                        Manifest.permission.ACCESS_COARSE_LOCATION,
-                        Manifest.permission.ACCESS_FINE_LOCATION,
-                };
-
-                PermissionUtils.validate(this, 0, permissoes);
-
-                f = MapsFragment.novaInstancia(titulo);
-
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.conteudo, f, titulo)
-                        .commit();
+                // Iniciamos nossa activity
+                startActivity(it);
                 break;
 
             case R.id.action_sobre:
@@ -161,27 +145,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             default:
         }
-    }
-
-
-    private void verificarStatusGPS() {
-        Log.d("NGVL", "verificarStatusGPS::BEGIN");
-
-        String provider = Settings.Secure.getString(getContentResolver(),
-                Settings.Secure.LOCATION_PROVIDERS_ALLOWED);
-
-        /**
-         *
-         * Se vier null ou length == 0   é por que o GPS esta desabilitado.
-         *
-         * Para abrir a tela do menu pode fazer assim:
-         */
-        if (provider.length() == 0) {
-            Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-            startActivityForResult(intent, 1);
-        }
-
-        Log.d("NGVL", "verificarStatusGPS::END");
     }
 }
 
