@@ -21,14 +21,14 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/serintegral"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
 
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/BaseTheme">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,7 +40,8 @@
         <activity
             android:name=".mapas.LocalizacaoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/opcao_mapa">
+            android:label="@string/opcao_mapa"
+            android:theme="@style/BaseTheme">
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

@@ -33,6 +33,8 @@ import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -215,15 +217,14 @@ public class LocalizacaoActivity extends AppCompatActivity implements
             mGoogleMap.setOnMapLongClickListener(LocalizacaoActivity.this);
         }
 
-        mGoogleMap.clear();
-
         if (mOrigem != null) {
             // For zooming automatically to the location of the marker
             CameraPosition cameraPosition = new CameraPosition.Builder().target(mOrigem).zoom(12).build();
             mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
             // For dropping a marker at a point on the Map
-            mGoogleMap.addMarker(new MarkerOptions().position(mOrigem).title("Instituto Ser Integral").snippet("Atividades sócio educativas"));
+            BitmapDescriptor icon = BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher);
+            mGoogleMap.addMarker(new MarkerOptions().position(mOrigem).title("Instituto Ser Integral").icon(icon).snippet("Atividades sócio educativas"));
         }
 
         Log.d("NGVL", "atualizarMapa::END");
