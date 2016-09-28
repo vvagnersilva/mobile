@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorGrey">
     <group>
         <item
             android:id="@+id/nav_quem_somos"
             android:icon="@drawable/help"
-            android:title="Quem somos" />
+            android:title="@string/nav_quem_somos" />
         <item
             android:id="@+id/nav_parcerias"
             android:icon="@drawable/thumb_up_outline"
-            android:title="Parcerias" />
+            android:title="@string/nav_parcerias" />
         <item
             android:id="@+id/nav_portifolio"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Portifólio" />
+            android:title="@string/nav_portifolio" />
         <item
             android:id="@+id/nav_clientes"
             android:icon="@drawable/account"
-            android:title="Clientes" />
+            android:title="@string/nav_clientes" />
+        <item
+            android:id="@+id/nav_localizacao"
+            android:icon="@drawable/map_marker"
+            android:title="@string/localizacao"
+            android:visible="false"/>
     </group>
 
     <item android:title="Áreas de atuação">
@@ -24,19 +30,19 @@
             <item
                 android:id="@+id/nav_alocacao"
                 android:icon="@drawable/run"
-                android:title="Alocação de mão de obra" />
+                android:title="@string/nav_alocacao" />
             <item
                 android:id="@+id/nav_audiovisual"
                 android:icon="@drawable/television"
-                android:title="Serviços de audiovisual" />
+                android:title="@string/nav_audiovisual" />
             <item
                 android:id="@+id/nav_condominios"
                 android:icon="@drawable/home_outline"
-                android:title="Serviços para condomínios" />
+                android:title="@string/nav_condominios" />
             <item
                 android:id="@+id/nav_tecnologia"
                 android:icon="@drawable/database"
-                android:title="Tecnologia da informação" />
+                android:title="@string/nav_tecnologia" />
         </menu>
     </item>
 </menu>

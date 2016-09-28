@@ -25,6 +25,7 @@ import br.com.connectdf.fragment.ParceriasFragment;
 import br.com.connectdf.fragment.PortifolioFragment;
 import br.com.connectdf.fragment.QuemSomosFragment;
 import br.com.connectdf.fragment.TecnologiaInformacaoFragment;
+import br.com.connectdf.mapas.LocalizacaoActivity;
 import br.com.connectdf.utils.Constantes;
 
 public class MainActivity extends AppCompatActivity
@@ -171,10 +172,26 @@ public class MainActivity extends AppCompatActivity
                     .beginTransaction()
                     .replace(R.id.conteudo, f, titulo)
                     .commit();
+        } else if (id == R.id.nav_localizacao) {
+            Intent it = new Intent(this, LocalizacaoActivity.class);
+
+            // Iniciamos nossa activity
+            startActivity(it);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    /**
+     * Metodo p/ setar o titulo do toolbar.
+     *
+     * @param actionBarTitle
+     */
+    public void setActionBarTitle(int actionBarTitle) {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(actionBarTitle);
+        setSupportActionBar(toolbar);
     }
 }

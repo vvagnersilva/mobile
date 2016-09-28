@@ -5,10 +5,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
+import br.com.connectdf.MainActivity;
 import br.com.connectdf.R;
 
 public class QuemSomosFragment extends Fragment {
@@ -33,6 +32,10 @@ public class QuemSomosFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
+        // Setando o titulo no toolbar.
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(
+                R.string.nav_quem_somos);
 
         View view = inflater.inflate(R.layout.quem_somos_fragment, container, false);
 

@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 
+import br.com.connectdf.MainActivity;
 import br.com.connectdf.R;
 
 public class AudiovisualFragment extends Fragment {
@@ -31,6 +32,10 @@ public class AudiovisualFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
+        // Setando o titulo no toolbar.
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(
+                R.string.nav_audiovisual);
 
         View view = inflater.inflate(R.layout.audiovisual_fragment, container, false);
 

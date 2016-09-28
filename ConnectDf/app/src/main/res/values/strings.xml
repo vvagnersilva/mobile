@@ -1,5 +1,19 @@
 <resources>
-    <string name="app_name">Excelência em Serviços</string>
+    <string name="app_name">Connectdf</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="erro_gps">É necessário habilitar a configuração de localização para utilizar o aplicativo.</string>
+    <string name="erro_local">Você deve habilitar as permissões para utilizar o aplicativo.</string>
+    <string name="localizacao">Venha nos visitar</string>
+
+    <string name="nav_home">Excelência em Serviços</string>
+    <string name="nav_quem_somos">Quem somos</string>
+    <string name="nav_alocacao">Alocação de mão de obra</string>
+    <string name="nav_audiovisual">Serviços de audiovisual</string>
+    <string name="nav_condominios">Serviços para condomínios</string>
+    <string name="nav_tecnologia">Tecnologia da Informação</string>
+    <string name="nav_parcerias">Parcerias</string>
+    <string name="nav_portifolio">Portifólio</string>
+    <string name="nav_clientes">Clientes Connect</string>
+
 </resources>
