@@ -6,7 +6,7 @@
     <string name="erro_local">Você deve habilitar as permissões para utilizar o aplicativo.</string>
     <string name="nav_localizacao">Venha nos visitar</string>
 
-    <string name="nav_home">Home</string>
+    <string name="nav_home">Principal</string>
     <string name="nav_quem_somos">Quem somos</string>
     <string name="nav_alocacao">Alocação de mão de obra</string>
     <string name="nav_audiovisual">Serviços de audiovisual</string>
@@ -15,5 +15,6 @@
     <string name="nav_parcerias">Parcerias</string>
     <string name="nav_portifolio">Portifólio</string>
     <string name="nav_clientes">Clientes Connect</string>
+    <string name="excelencia">Excelencia em Serviços</string>
 
 </resources>

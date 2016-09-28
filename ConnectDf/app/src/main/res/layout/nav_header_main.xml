@@ -1,25 +1,30 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="170dp"
     android:background="@color/colorGrey">
 
     <ImageView
         android:id="@+id/imgCapa"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
         android:background="@drawable/logo"
-        android:scaleType="fitXY" />
+        android:scaleType="fitCenter"
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/txtNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorOrange"
         android:textStyle="bold"
-        android:shadowColor="#000"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="20"
-        android:text="Excelencia em Servicos"/>
+        android:textAlignment="center"
+        android:gravity="center"
+        android:text="@string/excelencia"
+        android:layout_alignBottom="@id/imgCapa"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
