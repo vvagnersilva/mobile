@@ -35,6 +35,18 @@
             </intent-filter>
         </activity>
 
+        <!-- GPS -->
+        <activity
+            android:name=".mapas.LocalizacaoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/nav_localizacao"
+            android:theme="@style/AppTheme.NoActionBar">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
         <!-- Google Play Services -->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"

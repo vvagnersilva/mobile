@@ -3,6 +3,10 @@
     android:background="@color/colorGrey">
     <group>
         <item
+            android:id="@+id/nav_home"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/nav_home" />
+        <item
             android:id="@+id/nav_quem_somos"
             android:icon="@drawable/help"
             android:title="@string/nav_quem_somos" />
@@ -21,7 +25,7 @@
         <item
             android:id="@+id/nav_localizacao"
             android:icon="@drawable/map_marker"
-            android:title="@string/localizacao"
+            android:title="@string/nav_localizacao"
             android:visible="false"/>
     </group>
 

@@ -89,10 +89,10 @@ public class LocalizacaoActivity extends AppCompatActivity implements
                 .addApi(LocationServices.API)
                 .build();
 
-        mOrigem = new LatLng(-14.1353036, -47.5133263);
+        mOrigem = new LatLng(-15.7866009, -47.8895302);
 
-       Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.localizacao);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.nav_localizacao);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

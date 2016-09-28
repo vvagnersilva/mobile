@@ -116,7 +116,14 @@ public class MainActivity extends AppCompatActivity
         String titulo = item.getTitle().toString();
         Fragment f = null;
 
-        if (id == R.id.nav_quem_somos) {
+        if (id == R.id.nav_home) {
+            f = HomeFragment.novaInstancia(titulo);
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.conteudo, f, titulo)
+                    .commit();
+        } else if (id == R.id.nav_quem_somos) {
             f = QuemSomosFragment.novaInstancia(titulo);
 
             getSupportFragmentManager()
