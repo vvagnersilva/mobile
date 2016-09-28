@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/nav_quem_somos"
+            android:icon="@drawable/help"
+            android:title="Quem somos" />
+        <item
+            android:id="@+id/nav_parcerias"
+            android:icon="@drawable/thumb_up_outline"
+            android:title="Parcerias" />
+        <item
+            android:id="@+id/nav_portifolio"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Portifólio" />
+        <item
+            android:id="@+id/nav_clientes"
+            android:icon="@drawable/account"
+            android:title="Clientes" />
+    </group>
+
+    <item android:title="Áreas de atuação">
+        <menu>
+            <item
+                android:id="@+id/nav_alocacao"
+                android:icon="@drawable/run"
+                android:title="Alocação de mão de obra" />
+            <item
+                android:id="@+id/nav_audiovisual"
+                android:icon="@drawable/television"
+                android:title="Serviços de audiovisual" />
+            <item
+                android:id="@+id/nav_condominios"
+                android:icon="@drawable/home_outline"
+                android:title="Serviços para condomínios" />
+            <item
+                android:id="@+id/nav_tecnologia"
+                android:icon="@drawable/database"
+                android:title="Tecnologia da informação" />
+        </menu>
+    </item>
+</menu>
