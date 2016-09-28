@@ -11,10 +11,10 @@
     <string name="nav_alocacao">Alocação de mão de obra</string>
     <string name="nav_audiovisual">Serviços de audiovisual</string>
     <string name="nav_condominios">Serviços para condomínios</string>
-    <string name="nav_tecnologia">Tecnologia da Informação</string>
+    <string name="nav_tecnologia">Tecnologia da informação</string>
     <string name="nav_parcerias">Parcerias</string>
     <string name="nav_portifolio">Portifólio</string>
     <string name="nav_clientes">Clientes Connect</string>
-    <string name="excelencia">Excelencia em Serviços</string>
+    <string name="excelencia">Excelência em serviços</string>
 
 </resources>

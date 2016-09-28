@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity
                 String subject = Constantes.ABRE_COLCHETES + "Connect" + Constantes.FECHA_COLCHETES + "\t" + "Fale Conosco";
 
                 Intent email = new Intent(Intent.ACTION_SEND);
-                email.putExtra(Intent.EXTRA_CC, new String[]{"agnaldo@connectdf.com.br"});
+                email.putExtra(Intent.EXTRA_CC, new String[]{"contato@connectdf.com.br"});
                 email.putExtra(Intent.EXTRA_SUBJECT, subject);
 
                 // need this to prompts email client only
