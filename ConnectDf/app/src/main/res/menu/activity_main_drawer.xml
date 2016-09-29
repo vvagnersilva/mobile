@@ -48,5 +48,11 @@
                 android:icon="@drawable/database"
                 android:title="@string/nav_tecnologia" />
         </menu>
+
+        <item
+            android:id="@+id/legal"
+            android:orderInCategory="100"
+            android:showAsAction="never"
+            android:title="legal"/>
     </item>
 </menu>

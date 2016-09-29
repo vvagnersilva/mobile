@@ -1,11 +1,9 @@
 package br.com.connectdf;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -20,9 +18,7 @@ import br.com.connectdf.fragment.AlocacaoFragment;
 import br.com.connectdf.fragment.AudiovisualFragment;
 import br.com.connectdf.fragment.ClienteFragment;
 import br.com.connectdf.fragment.CondominiosFragment;
-import br.com.connectdf.fragment.FacebookFragment;
 import br.com.connectdf.fragment.HomeFragment;
-import br.com.connectdf.fragment.MapsFragment;
 import br.com.connectdf.fragment.ParceriasFragment;
 import br.com.connectdf.fragment.PortifolioFragment;
 import br.com.connectdf.fragment.QuemSomosFragment;
@@ -182,12 +178,10 @@ public class MainActivity extends AppCompatActivity
                     .replace(R.id.conteudo, f, titulo)
                     .commit();
         } else if (id == R.id.nav_localizacao) {
-            f = MapsFragment.novaInstancia(titulo);
+            Intent it = new Intent(this, LocalizacaoActivity.class);
 
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.conteudo, f, titulo)
-                    .commit();
+            // Iniciamos nossa activity
+            startActivity(it);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
