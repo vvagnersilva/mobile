@@ -182,10 +182,6 @@ public class MainActivity extends AppCompatActivity
                     .replace(R.id.conteudo, f, titulo)
                     .commit();
         } else if (id == R.id.nav_localizacao) {
-            //Intent it = new Intent(this, LocalizacaoActivity.class);
-
-            // Iniciamos nossa activity
-            //startActivity(it);
             f = MapsFragment.novaInstancia(titulo);
 
             getSupportFragmentManager()
