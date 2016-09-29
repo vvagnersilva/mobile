@@ -1,6 +1,7 @@
 package br.com.connectdf;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -21,6 +22,7 @@ import br.com.connectdf.fragment.ClienteFragment;
 import br.com.connectdf.fragment.CondominiosFragment;
 import br.com.connectdf.fragment.FacebookFragment;
 import br.com.connectdf.fragment.HomeFragment;
+import br.com.connectdf.fragment.MapsFragment;
 import br.com.connectdf.fragment.ParceriasFragment;
 import br.com.connectdf.fragment.PortifolioFragment;
 import br.com.connectdf.fragment.QuemSomosFragment;
@@ -180,10 +182,16 @@ public class MainActivity extends AppCompatActivity
                     .replace(R.id.conteudo, f, titulo)
                     .commit();
         } else if (id == R.id.nav_localizacao) {
-            Intent it = new Intent(this, LocalizacaoActivity.class);
+            //Intent it = new Intent(this, LocalizacaoActivity.class);
 
             // Iniciamos nossa activity
-            startActivity(it);
+            //startActivity(it);
+            f = MapsFragment.novaInstancia(titulo);
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.conteudo, f, titulo)
+                    .commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

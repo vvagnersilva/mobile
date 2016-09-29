@@ -26,7 +26,7 @@
             android:id="@+id/nav_localizacao"
             android:icon="@drawable/map_marker"
             android:title="@string/nav_localizacao"
-            android:visible="false"/>
+            android:visible="true"/>
     </group>
 
     <item android:title="Áreas de atuação">

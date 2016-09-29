@@ -9,11 +9,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-    <uses-feature
-        android:glEsVersion="0x00020000"
-        android:required="true" />
-
-    <!-- Maps V2 -->
+    <!-- Maps V2 depende da OpenGL ES V2 -->
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
@@ -24,6 +20,17 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- Google Play Services -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!-- Chave de acesso (API Key) criada na pagina de Console. -->
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/API_KEY" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -46,12 +53,5 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
-        <!-- Google Play Services -->
-        <meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyDuvEZ09ajiaK936hbFq4yoy4jakWtOALs" />
-
     </application>
-
 </manifest>
