@@ -3,6 +3,7 @@ package br.com.connectdf.mapas;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import com.google.android.gms.maps.CameraUpdate;
@@ -17,29 +18,30 @@ import br.com.connectdf.R;
 
 public class LocalizacaoActivity extends AbstractMapActivity implements
         OnMapReadyCallback {
-    private boolean needsInit=false;
+    private boolean needsInit = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-    /*    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.nav_localizacao);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-*/
         if (readyToGo()) {
             setContentView(R.layout.map_fragment);
 
-            MapFragment mapFrag=
+            MapFragment mapFrag =
                     (MapFragment) getFragmentManager().findFragmentById(R.id.map);
 
             if (savedInstanceState == null) {
-                needsInit=true;
+                needsInit = true;
             }
 
             mapFrag.getMapAsync(this);
         }
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.nav_localizacao);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     @Override
@@ -57,9 +59,9 @@ public class LocalizacaoActivity extends AbstractMapActivity implements
     public void onMapReady(GoogleMap map) {
         if (needsInit) {
 
-            CameraUpdate center=
+            CameraUpdate center =
                     CameraUpdateFactory.newLatLng(new LatLng(-15.7866009, -47.8895302));
-            CameraUpdate zoom=CameraUpdateFactory.zoomTo(15);
+            CameraUpdate zoom = CameraUpdateFactory.zoomTo(15);
 
             map.moveCamera(center);
             map.animateCamera(zoom);
@@ -75,5 +77,13 @@ public class LocalizacaoActivity extends AbstractMapActivity implements
         map.addMarker(new MarkerOptions().position(new LatLng(lat, lon))
                 .title(getString(title))
                 .snippet(getString(snippet)));
+    }
+
+    @Override
+    /**
+     * Desabilitando o menu da toolbar.
+     */
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return true;
     }
 }
