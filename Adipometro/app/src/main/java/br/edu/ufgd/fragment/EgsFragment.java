@@ -1,14 +1,20 @@
 package br.edu.ufgd.fragment;
 
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import br.edu.ufgd.R;
 import br.edu.ufgd.strategy.Egs;
+import br.edu.ufgd.utils.Util;
 
 public class EgsFragment extends Fragment {
     protected static final String TAG = "Adipometro";
@@ -51,15 +57,22 @@ public class EgsFragment extends Fragment {
     public void setBackground(String formula, Double egs, View layout) {
 
         LinearLayout ll = (LinearLayout) layout.findViewById(R.id.llResultado);
+        ImageView imgRes = (ImageView) layout.findViewById(R.id.imgRes);
+        TextView txEgs = (TextView) layout.findViewById(R.id.txEgs);
+        txEgs.setText("Egs = " + Util.converteDoubleToString(egs));
 
         if (egs < 1) {
-            ll.setBackgroundResource(R.drawable.background_laranja);
+            imgRes.setImageResource(R.drawable.bg_laranja);
+            ll.setBackgroundResource(R.drawable.laranja);
         } else if (egs >= 1 && egs < 2) {
-            ll.setBackgroundResource(R.drawable.background_amarelo);
+            imgRes.setImageResource(R.drawable.bg_amarelo);
+            ll.setBackgroundResource(R.drawable.amarelo);
         } else if (egs >= 2 && egs < 3) {
-            ll.setBackgroundResource(R.drawable.background_verde);
+            imgRes.setImageResource(R.drawable.bg_verde);
+            ll.setBackgroundResource(R.drawable.verde);
         } else if (egs >= 3) {
-            ll.setBackgroundResource(R.drawable.background_vermelho);
+            imgRes.setImageResource(R.drawable.bg_vermelho);
+            ll.setBackgroundResource(R.drawable.vermelho);
         }
     }
 }

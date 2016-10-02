@@ -8,7 +8,7 @@
     android:minHeight="57dp"
     android:subtitleTextColor="@color/colorPrimary"
     android:theme="@style/AppTheme"
-    android:title="@string/app_title"
+    android:title="@string/app_sigla"
     android:titleTextAppearance="@color/colorLightPrimary"
     android:titleTextColor="@color/colorLightPrimary"
     app:popupTheme="@style/ActionBarPopupThemeOverlay"

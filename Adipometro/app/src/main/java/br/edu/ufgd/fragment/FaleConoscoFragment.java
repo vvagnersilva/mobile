@@ -75,7 +75,7 @@ public class FaleConoscoFragment extends Fragment {
                     String subject = Constantes.ABRE_COLCHETES + getActivity().getTitle() + Constantes.FECHA_COLCHETES + "\t" + tpAssunto.getDescricao();
 
                     Intent email = new Intent(Intent.ACTION_SEND);
-                    email.putExtra(Intent.EXTRA_CC, new String[]{"vvagner.silva@gmail.com"});
+                    email.putExtra(Intent.EXTRA_CC, new String[]{"ovinotecnia.ufgd@gmail.com"});
                     //email.putExtra(Intent.EXTRA_BCC, new String[]{to});
                     email.putExtra(Intent.EXTRA_SUBJECT, subject);
                     email.putExtra(Intent.EXTRA_TEXT, edDescricao.getText().toString());

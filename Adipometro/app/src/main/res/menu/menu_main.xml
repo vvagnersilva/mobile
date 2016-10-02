@@ -16,12 +16,6 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/action_fotos"
-        android:icon="@drawable/ic_camera_white_48dp"
-        android:title="@string/action_fotos"
-        app:showAsAction="always" />
-
-    <item
         android:id="@+id/action_fale_conosco"
         android:icon="@drawable/ic_headphones_white_48dp"
         android:title="@string/action_false_conosco"
@@ -29,9 +23,9 @@
 
     <item
         android:id="@+id/action_ajuda"
-        android:icon="@drawable/ic_help_black_48dp"
+        android:icon="@drawable/ic_help_white_48dp"
         android:title="@string/action_ajuda"
-        app:showAsAction="never" />
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/action_sobre"

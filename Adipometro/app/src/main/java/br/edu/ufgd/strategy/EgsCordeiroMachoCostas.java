@@ -14,9 +14,10 @@ public class EgsCordeiroMachoCostas extends Egs {
 
     public double CalcularEgs() {
 
-        double egs = -3.57 + 0.675 * peso - 1.255 * prega - 0.01061 * Math.pow(peso, 2) + 0.0805 * Math.pow(prega, 2);
+        double egs = -4.16 + (0.717 * peso) - (1.257 * prega) - Math.pow(0.1133 * peso, 2) + Math.pow(0.0805 * prega, 2);
 
         setEgs(egs);
+
         setStrFormulaUtilizada(Constantes.FORMULA_CORDEIRO_MARCHO_COSTAS);
 
         Log.i(TAG, getClassName() + ".CalcularEgs(): " + egs);

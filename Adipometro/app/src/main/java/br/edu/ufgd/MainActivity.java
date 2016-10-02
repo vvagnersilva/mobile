@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.app_sigla);
         setSupportActionBar(toolbar);
 
         // Fragment default.
@@ -57,8 +58,6 @@ public class MainActivity extends AppCompatActivity {
             frag = CalculoFragment.novaInstancia(titulo);
         } else if (id == R.id.action_ufgd) {
             frag = WebFragment.novaInstancia(titulo);
-        } else if (id == R.id.action_fotos) {
-            frag = FotosFragment.novaInstancia(titulo);
         } else if (id == R.id.action_fale_conosco) {
             frag = FaleConoscoFragment.novaInstancia(titulo);
         } else if (id == R.id.action_ajuda) {

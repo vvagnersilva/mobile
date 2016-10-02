@@ -1,8 +1,8 @@
 package br.edu.ufgd.utils;
 
 public class Constantes {
-    public static final String FORMULA_CORDEIRO_MARCHO_COSTAS = "EGS (FORMULA_CORDEIRO_MARCHO_COSTAS) = -3,57+0,675 X1 -1,255 X2 -0,01061 X1^2 + 0,0805 X2^2";
-    public static final String FORMULA_CORDEIRO_MACHO_PEITO = "EGS (FORMULA_CORDEIRO_MACHO_PEITO) = -3,23+0,550 X1 -0,776 X2 -0,00891 X1^2 + 0,0506 X2^2";
+    public static final String FORMULA_CORDEIRO_MARCHO_COSTAS = "EGS (FORMULA_CORDEIRO_MARCHO_COSTAS) = EGS = -4,16 + (0,717.X1) – (1,257.X2) – (0,1133.X1)^2 + (0,0805.X2)^2";
+    public static final String FORMULA_CORDEIRO_MACHO_PEITO = "EGS (FORMULA_CORDEIRO_MACHO_PEITO) = -3,99 + (0,588.X1) – (0,716.X2) – (0,00958.X1)^22 + (0,0473.X2)^2";
 
     public static final String HIFEN = "-";
     public static final String TIL = "~";
@@ -16,8 +16,6 @@ public class Constantes {
     public static final String PONTO_E_VIRGULA = ";";
     public static final String ARROBA = "@";
 
-    public static final String SELECT = "SELECT ";
-    public static final String WHERE_1_IGUAL_1 = " WHERE 1=1 ";
     public static final String PERCENT = "%";
     public static final int CEM = 100;
     public static final String SIM = "S";
