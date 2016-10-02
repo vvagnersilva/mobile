@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Slaughter Point Lambs-LSP</string>
+    <string name="app_sigla">LSP</string>
+    <string name="costas">Costas</string>
+    <string name="peito">Peito</string>
+    <string name="peso">Peso corporal (Kg)</string>
+    <string name="pregas">Medida das pregas (mm)</string>
+    <string name="formula">formula</string>
+    <string name="egs">EGS</string>
+
+    <string name="escolha">Escolha uma das medidas:</string>
+    <string name="categoria">Categoria do animal:</string>
+
+    <string name="action_sobre">Sobre</string>
+    <string name="action_calculo">Cálculos</string>
+    <string name="action_ajuda">Ajuda</string>
+    <string name="action_ufgd">Ufgd</string>
+
+    <string name="string_vazia" />
+    <string name="portal_ufgd">http://portal.ufgd.edu.br</string>
+    <string name="action_false_conosco">Fale Conosco</string>
+    <string name="assunto">Assunto:</string>
+    <string name="descricao">Descrição:</string>
+    <string name="action_fotos">Fotos</string>
+
+    <string-array name="categoria_arrays">
+        <item>Selecione uma opção</item>
+        <item>Cordeiro macho</item>
+    </string-array>
+
+    <string-array name="categoria_assunto">
+        <item>Selecione uma opção</item>
+        <item>Dúvidas</item>
+        <item>Elogios</item>
+        <item>Sugestões</item>
+    </string-array>
+
+</resources>
