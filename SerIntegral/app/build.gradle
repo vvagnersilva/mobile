@@ -5,7 +5,7 @@ android {
     buildToolsVersion "24.0.2"
 
     defaultConfig {
-        applicationId "br.com.serintegral"
+        applicationId "br.gov.serintegral"
         minSdkVersion 16
         targetSdkVersion 24
         // Incrementar p/ deploy
@@ -25,15 +25,18 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:24.2.0'
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:design:24.2.1'
     testCompile 'junit:junit:4.12'
+
     compile 'com.paypal.sdk:paypal-android-sdk:2.14.2'
 
     // Google Maps
     compile 'com.google.android.gms:play-services-maps:8.4.0'
     compile 'com.google.android.gms:play-services-location:8.4.0'
     compile 'com.google.maps.android:android-maps-utils:0.4'
-
-    compile 'com.android.support:design:23.+'
-    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+    compile 'com.google.android.gms:play-services-maps:8.1.0'
 }

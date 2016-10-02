@@ -19,9 +19,4 @@
         android:id="@+id/action_sobre"
         android:icon="@drawable/ic_information"
         android:title="@string/opcao_sobre" />
-    <item
-        android:id="@+id/action_sair"
-        android:icon="@mipmap/ic_sair"
-        android:title="@string/opcao_sair" />
-
 </menu>

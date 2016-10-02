@@ -1,4 +1,4 @@
-package br.com.serintegral.util;
+package br.gov.serintegral.util;
 
 import com.paypal.android.sdk.payments.PayPalConfiguration;
 import com.paypal.android.sdk.payments.PayPalPayment;

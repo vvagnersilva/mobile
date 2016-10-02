@@ -9,20 +9,9 @@
 
     <ImageView
         android:id="@+id/imgLogo"
-        android:layout_width="215dp"
-        android:layout_height="205dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/mini_serintegral" />
-
-    <TextView
-        android:id="@+id/txtDesenv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:padding="15dp"
-        android:text="Wagner"
-        android:textSize="10dp" />
-
-
+        android:src="@drawable/logo_transp" />
 </LinearLayout>

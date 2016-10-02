@@ -1,4 +1,4 @@
-package br.com.serintegral.util;
+package br.gov.serintegral.util;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;

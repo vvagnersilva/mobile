@@ -1,4 +1,4 @@
-package br.com.serintegral.currencyedittext;
+package br.gov.serintegral.currencyedittext;
 
 
 import java.text.DecimalFormat;

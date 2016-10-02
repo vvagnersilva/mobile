@@ -1,4 +1,4 @@
-package br.com.serintegral.currencyedittext;
+package br.gov.serintegral.currencyedittext;
 
 import android.text.Editable;
 import android.text.TextWatcher;

@@ -1,4 +1,4 @@
-package br.com.serintegral;
+package br.gov.serintegral;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,10 +12,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import br.com.serintegral.fragment.FacebookFragment;
-import br.com.serintegral.fragment.PaypalFragment;
-import br.com.serintegral.fragment.SobreFragment;
-import br.com.serintegral.mapas.LocalizacaoActivity;
+import br.gov.serintegral.fragment.FacebookFragment;
+import br.gov.serintegral.fragment.PaypalFragment;
+import br.gov.serintegral.fragment.SobreFragment;
+import br.gov.serintegral.mapas.LocalizacaoActivity;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,17 +54,6 @@ public class MainActivity extends AppCompatActivity {
                 });
 
         selecionarOpcaoMenu(mNavigationView.getMenu().findItem(R.id.action_facebook));
-    }
-
-    /**
-     * Metodo p/ setar o titulo do toolbar.
-     *
-     * @param actionBarTitle
-     */
-    public void setActionBarTitle(int actionBarTitle) {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(actionBarTitle);
-        setSupportActionBar(toolbar);
     }
 
     @Override
@@ -122,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Iniciamos nossa activity
                 startActivity(it);
+
                 break;
 
             case R.id.action_sobre:
@@ -133,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                         .commit();
                 break;
 
-            case R.id.action_sair:
+         /*   case R.id.action_sair:
                 // Finalizar a activity atual (MainActivity)
                 finish();
 
@@ -142,8 +133,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.addCategory(Intent.CATEGORY_HOME);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
-                break;
-            default:
+                break;*/
         }
     }
 }

@@ -1,4 +1,4 @@
-package br.com.serintegral.fragment;
+package br.gov.serintegral.fragment;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -20,11 +20,11 @@ import com.paypal.android.sdk.payments.PaymentActivity;
 
 import java.math.BigDecimal;
 
-import br.com.serintegral.MainActivity;
-import br.com.serintegral.R;
-import br.com.serintegral.currencyedittext.CurrencyEditText;
-import br.com.serintegral.util.Constantes;
-import br.com.serintegral.util.Util;
+import br.gov.serintegral.R;
+import br.gov.serintegral.MainActivity;
+import br.gov.serintegral.currencyedittext.CurrencyEditText;
+import br.gov.serintegral.util.Constantes;
+import br.gov.serintegral.util.Util;
 
 public class PaypalFragment extends Fragment {
     private static final String EXTRA_TIPO = "mTipo";
@@ -56,8 +56,8 @@ public class PaypalFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         // Setando o titulo no toolbar.
-        ((MainActivity) getActivity())
-                .setActionBarTitle(R.string.opcao_paypal);
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(
+                R.string.opcao_paypal);
 
         View view = inflater.inflate(R.layout.paypal_fragment, container, false);
 

@@ -1,4 +1,4 @@
-package br.com.serintegral.fragment;
+package br.gov.serintegral.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,8 +9,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import br.com.serintegral.MainActivity;
-import br.com.serintegral.R;
+import br.gov.serintegral.R;
+import br.gov.serintegral.MainActivity;
 
 public class FacebookFragment extends Fragment {
     private static final String EXTRA_TIPO = "mTipo";
@@ -35,8 +35,8 @@ public class FacebookFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         // Setando o titulo no toolbar.
-        ((MainActivity) getActivity())
-                .setActionBarTitle(R.string.app_name);
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(
+                R.string.app_name);
 
         View layout = inflater.inflate(R.layout.facebook_fragment, container, false);
 
