@@ -14,7 +14,7 @@ public class EgsCordeiroMachoCostas extends Egs {
 
     public double CalcularEgs() {
 
-        double egs = -4.16 + (0.717 * peso) - (1.257 * prega) - Math.pow(0.1133 * peso, 2) + Math.pow(0.0805 * prega, 2);
+        double egs = -4.16 + (0.717 * peso) - (1.257 * prega) - 0.01133 * Math.pow(peso, 2) + 0.0805 * Math.pow(prega, 2);
 
         setEgs(egs);
 

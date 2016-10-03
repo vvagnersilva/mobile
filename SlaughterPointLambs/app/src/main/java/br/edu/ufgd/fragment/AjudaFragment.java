@@ -29,7 +29,7 @@ public class AjudaFragment extends Fragment {
         View view = inflater.inflate(R.layout.ajuda_fragment, container, false);
 
         mWebView = (WebView) view.findViewById(R.id.webAjuda);
-        mWebView.loadUrl("file:///android_asset/ajuda.html");
+        mWebView.loadUrl("file:///android_asset/ajuda.htm");
 
         return view;
     }

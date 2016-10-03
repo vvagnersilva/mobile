@@ -30,7 +30,7 @@ public class SobreFragment extends Fragment {
        View view = inflater.inflate(R.layout.sobre_fragment, container, false);
 
         mWebView = (WebView) view.findViewById(R.id.webSobre);
-        mWebView.loadUrl("file:///android_asset/participantes.html");
+        mWebView.loadUrl("file:///android_asset/membros.htm");
 
         return view;
     }

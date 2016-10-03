@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Slaughter Point Lambs-LSP</string>
+    <string name="app_name">Slaughter Point Lambs</string>
     <string name="app_sigla">LSP</string>
     <string name="costas">Costas</string>
     <string name="peito">Peito</string>
