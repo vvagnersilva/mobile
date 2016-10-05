@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 
-import br.edu.ufgd.MainActivity;
 import br.edu.ufgd.R;
 
 public class AjudaFragment extends Fragment {

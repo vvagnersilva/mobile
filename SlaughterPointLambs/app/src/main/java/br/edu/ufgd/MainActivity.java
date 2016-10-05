@@ -11,7 +11,6 @@ import br.edu.ufgd.enums.TipoCategoriaAnimalEnum;
 import br.edu.ufgd.fragment.AjudaFragment;
 import br.edu.ufgd.fragment.CalculoFragment;
 import br.edu.ufgd.fragment.FaleConoscoFragment;
-import br.edu.ufgd.fragment.FotosFragment;
 import br.edu.ufgd.fragment.SobreFragment;
 import br.edu.ufgd.fragment.WebFragment;
 

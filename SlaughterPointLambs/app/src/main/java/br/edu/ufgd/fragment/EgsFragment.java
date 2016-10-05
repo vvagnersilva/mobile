@@ -1,13 +1,10 @@
 package br.edu.ufgd.fragment;
 
-import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -62,16 +59,16 @@ public class EgsFragment extends Fragment {
         txEgs.setText("Egs = " + Util.converteDoubleToString(egs));
 
         if (egs < 1) {
-            imgRes.setImageResource(R.drawable.bg_laranja);
+            imgRes.setImageResource(R.drawable.thumb_down);
             ll.setBackgroundResource(R.drawable.laranja);
         } else if (egs >= 1 && egs < 2) {
-            imgRes.setImageResource(R.drawable.bg_amarelo);
+            imgRes.setImageResource(R.drawable.thumbs_up_down);
             ll.setBackgroundResource(R.drawable.amarelo);
         } else if (egs >= 2 && egs < 3) {
-            imgRes.setImageResource(R.drawable.bg_verde);
+            imgRes.setImageResource(R.drawable.thumb_up);
             ll.setBackgroundResource(R.drawable.verde);
         } else if (egs >= 3) {
-            imgRes.setImageResource(R.drawable.bg_vermelho);
+            imgRes.setImageResource(R.drawable.flash);
             ll.setBackgroundResource(R.drawable.vermelho);
         }
     }
