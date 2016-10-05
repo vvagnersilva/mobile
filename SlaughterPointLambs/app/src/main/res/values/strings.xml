@@ -24,6 +24,7 @@
     <string name="assunto">Assunto:</string>
     <string name="descricao">Descrição:</string>
     <string name="action_fotos">Fotos</string>
+    <string name="carregando">Carregando ...</string>
 
     <string-array name="categoria_arrays">
         <item>Selecione uma opção</item>
@@ -36,20 +37,5 @@
         <item>Elogios</item>
         <item>Sugestões</item>
     </string-array>
-
-
-    <string name="hello">
-<![CDATA[
-<html>
- <head></head>
- <body style="text-align:justify;color:gray;background-color:black;">
-  Lorem ipsum dolor sit amet, consectetur
-  adipiscing elit. Nunc pellentesque, urna
-  nec hendrerit pellentesque, risus massa
- </body>
-</html>
-]]>
-</string>
-
 
 </resources>

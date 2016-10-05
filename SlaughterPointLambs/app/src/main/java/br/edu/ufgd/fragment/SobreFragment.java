@@ -1,11 +1,15 @@
 package br.edu.ufgd.fragment;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import br.edu.ufgd.R;
 
@@ -13,6 +17,7 @@ import br.edu.ufgd.R;
 public class SobreFragment extends Fragment {
     private static final String EXTRA_TIPO = "mTipo";
     private WebView mWebView;
+    ProgressDialog prDialog;
 
     public static SobreFragment novaInstancia(String tipo) {
         Bundle params = new Bundle();
@@ -27,8 +32,36 @@ public class SobreFragment extends Fragment {
         View view = inflater.inflate(R.layout.sobre_fragment, container, false);
 
         mWebView = (WebView) view.findViewById(R.id.webSobre);
+        mWebView.setWebViewClient(new MyWebViewClient());
+
         mWebView.loadUrl("file:///android_asset/membros.htm");
 
         return view;
+    }
+
+    private class MyWebViewClient extends WebViewClient {
+
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            view.loadUrl(url);
+            return true;
+        }
+
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            super.onPageStarted(view, url, favicon);
+            prDialog = new ProgressDialog(getContext(), AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
+            String carregando = getResources().getString(R.string.carregando);
+            prDialog.setMessage(carregando);
+            prDialog.show();
+        }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
+            if(prDialog!=null){
+                prDialog.dismiss();
+            }
+        }
     }
 }
