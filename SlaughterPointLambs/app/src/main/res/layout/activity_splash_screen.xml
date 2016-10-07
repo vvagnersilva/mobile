@@ -9,7 +9,7 @@
         android:id="@+id/imgLogo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/logotipo"/>
+        android:src="@drawable/logotipo" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -19,6 +19,6 @@
         android:gravity="center_horizontal"
         android:text="@string/app_name"
         android:textColor="@color/darkGreen"
-        android:textSize="20dp"/>
+        android:textSize="20dp" />
 
 </RelativeLayout>

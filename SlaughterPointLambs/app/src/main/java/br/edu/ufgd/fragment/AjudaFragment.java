@@ -15,9 +15,8 @@ import br.edu.ufgd.R;
 
 public class AjudaFragment extends Fragment {
     private static final String EXTRA_TIPO = "mTipo";
-
-    private WebView mWebView;
     ProgressDialog prDialog;
+    private WebView mWebView;
 
     public static AjudaFragment novaInstancia(String tipo) {
         Bundle params = new Bundle();
@@ -60,7 +59,7 @@ public class AjudaFragment extends Fragment {
         @Override
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
-            if(prDialog!=null){
+            if (prDialog != null) {
                 prDialog.dismiss();
             }
         }
