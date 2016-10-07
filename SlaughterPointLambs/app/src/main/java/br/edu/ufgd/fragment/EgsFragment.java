@@ -1,5 +1,6 @@
 package br.edu.ufgd.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -33,6 +34,9 @@ public class EgsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.egs_fragment, container, false);
+
+        // Indica que este fragment deve preservar o seu estado.
+        setRetainInstance(true);
 
         Bundle params = getArguments();
 

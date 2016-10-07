@@ -1,5 +1,6 @@
 package br.edu.ufgd.fragment;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -37,6 +38,9 @@ public class FaleConoscoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fale_conosco, container, false);
+
+        // Indica que este fragment deve preservar o seu estado.
+        setRetainInstance(true);
 
         spAssunto = (Spinner) view.findViewById(R.id.spAssunto);
 

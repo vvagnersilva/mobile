@@ -1,5 +1,6 @@
 package br.edu.ufgd.fragment;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -49,6 +50,9 @@ public class CalculoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.calculo_fragment, container, false);
+
+        // Indica que este fragment deve preservar o seu estado.
+        setRetainInstance(true);
 
         /**
          * Categoria selecionada

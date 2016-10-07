@@ -1,5 +1,6 @@
 package br.edu.ufgd.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -25,16 +26,13 @@ public class WebFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         View layout = inflater.inflate(R.layout.web_fragment, container, false);
+
+        // Indica que este fragment deve preservar o seu estado.
+        setRetainInstance(true);
 
         mWebView = (WebView) layout.findViewById(R.id.webView);
         mWebView.loadUrl("http://portal.ufgd.edu.br");

@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "SlaughterPointLambs";
 
     private static TipoCategoriaAnimalEnum tpCategoriaAnimal;
-    private CalculoFragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +29,17 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle(R.string.app_sigla);
         setSupportActionBar(toolbar);
 
-        // Fragment default.
-        fragment = CalculoFragment.novaInstancia("CalculoFragment");
+        CalculoFragment fragment;
 
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.conteudo, fragment, "CalculoFragment")
-                .commit();
+        if (savedInstanceState == null) {
+            // Fragment default.
+            fragment = CalculoFragment.novaInstancia("CalculoFragment");
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.conteudo, fragment, "CalculoFragment")
+                    .commit();
+        }
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

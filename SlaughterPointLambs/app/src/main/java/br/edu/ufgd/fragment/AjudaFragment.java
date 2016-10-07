@@ -31,6 +31,9 @@ public class AjudaFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.ajuda_fragment, container, false);
 
+        // Indica que este fragment deve preservar o seu estado.
+        setRetainInstance(true);
+
         mWebView = (WebView) view.findViewById(R.id.webAjuda);
         mWebView.setWebViewClient(new MyWebViewClient());
 

@@ -2,6 +2,7 @@ package br.edu.ufgd.fragment;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,12 +17,16 @@ import br.edu.ufgd.R;
 
 public class SobreFragment extends Fragment {
     private static final String EXTRA_TIPO = "mTipo";
+    private static String nome;
+
     ProgressDialog prDialog;
     private WebView mWebView;
 
-    public static SobreFragment novaInstancia(String tipo) {
+    public static SobreFragment novaInstancia(String param) {
+        nome = param;
+
         Bundle params = new Bundle();
-        params.putString(EXTRA_TIPO, tipo);
+        params.putString(EXTRA_TIPO, nome);
         SobreFragment f = new SobreFragment();
         f.setArguments(params);
         return f;
@@ -30,6 +35,9 @@ public class SobreFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.sobre_fragment, container, false);
+
+        // Indica que este fragment deve preservar o seu estado.
+        setRetainInstance(true);
 
         mWebView = (WebView) view.findViewById(R.id.webSobre);
         mWebView.setWebViewClient(new MyWebViewClient());
@@ -50,6 +58,7 @@ public class SobreFragment extends Fragment {
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
+
             prDialog = new ProgressDialog(getContext(), AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
             String carregando = getResources().getString(R.string.carregando);
             prDialog.setMessage(carregando);

@@ -36,6 +36,9 @@ public class FotosFragment extends Fragment implements BaseSliderView.OnSliderCl
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.images_slider_fragment, container, false);
 
+        // Indica que este fragment deve preservar o seu estado.
+        setRetainInstance(true);
+
         mDemoSlider = (SliderLayout) view.findViewById(R.id.slider);
 
         HashMap<String, Integer> file_maps = new HashMap<String, Integer>();
