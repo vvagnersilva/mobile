@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/black"  >
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_anaminese"
+            android:icon="@drawable/ic_ruler_white_48dp"
+            android:title="@string/anaminese" />
+        <item
+            android:id="@+id/nav_clientes"
+            android:icon="@drawable/ic_account_circle_white_48dp"
+            android:title="@string/cadastro_cliente" />
+        <item
+            android:id="@+id/nav_modalidades"
+            android:icon="@drawable/ic_baby_white_48dp"
+            android:title="@string/modalidades" />
+        <item
+            android:id="@+id/nav_planos_promocoes"
+            android:icon="@drawable/ic_credit_card_white_48dp"
+            android:title="@string/planos_promocoes" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_human_handsup_white_48dp"
+            android:title="@string/treinamento" />
+        <item
+            android:id="@+id/nav_localizacao"
+            android:icon="@drawable/ic_map_marker_multiple_white_48dp"
+            android:title="@string/localizacao" />
+        <item
+            android:id="@+id/nav_sobre"
+            android:icon="@drawable/ic_information_variant_white_48dp"
+            android:title="@string/sobre" />
+
+        <item android:title="F. GO MUAY THAI Interestilos">
+            <menu>
+                <item
+                    android:id="@+id/nav_mestres"
+                    android:icon="@drawable/ic_library_white_48dp"
+                    android:title="@string/mestres" />
+                <item
+                    android:id="@+id/nav_cad_graduacao"
+                    android:icon="@drawable/ic_school_white_48dp"
+                    android:title="@string/graduacao" />
+                <item
+                    android:id="@+id/nav_ranking"
+                    android:icon="@drawable/ic_trending_up_white_48dp"
+                    android:title="@string/ranking" />
+                <item
+                    android:id="@+id/nav_categorias"
+                    android:icon="@drawable/ic_weight_kilogram_white_48dp"
+                    android:title="Categorias" />
+                <item
+                    android:id="@+id/nav_estatuto"
+                    android:icon="@drawable/ic_scale_balance_white_48dp"
+                    android:title="@string/estatuto" />
+            </menu>
+        </item>
+
+    </group>
+
+    <item android:title="Redes Sociais">
+        <menu>
+            <item
+                android:id="@+id/nav_facebook"
+                android:icon="@drawable/ic_facebook_box_white_48dp"
+                android:title="@string/facebook" />
+            <item
+                android:id="@+id/nav_instagram"
+                android:icon="@drawable/ic_instagram_white_48dp"
+                android:title="@string/instagram" />
+
+        </menu>
+    </item>
+
+</menu>
