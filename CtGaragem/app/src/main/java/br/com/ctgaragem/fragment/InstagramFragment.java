@@ -13,7 +13,6 @@ import br.com.ctgaragem.R;
 
 public class InstagramFragment extends Fragment {
     private static final String EXTRA_TIPO = "mTipo";
-    private String mTipo;
     private WebView mWebView;
 
     public static InstagramFragment novaInstancia(String tipo) {

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/black" >
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/modalidades"
         android:layout_width="match_parent"
-        android:layout_height="780dp"
-        android:src="@drawable/modalidades"
+        android:layout_height="match_parent"
+        android:src="@drawable/seg_tela"
         android:adjustViewBounds="true"
-        android:layout_centerHorizontal="true" />
+        android:scaleType="fitXY"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

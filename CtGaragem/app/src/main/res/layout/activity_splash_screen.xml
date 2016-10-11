@@ -6,10 +6,11 @@
 
     <ImageView
         android:id="@+id/imgLogo"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:src="@drawable/abertura"
-        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:gravity="center"
+        android:src="@drawable/splash_screen"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

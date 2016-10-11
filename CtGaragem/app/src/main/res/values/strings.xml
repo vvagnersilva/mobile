@@ -27,5 +27,6 @@
     <string name="destino">Destino</string>
     <string name="origem2">Jesus</string>
     <string name="erro_local">Você deve habilitar as permissões para utilizar o aplicativo.</string>
+    <string name="contatos">Contatos</string>
 
 </resources>

@@ -279,7 +279,7 @@ public class Util {
     }
 
     /**
-     * Verifica a sobre posição de dois periodos. Retorna verdadeiro se os periodos se sobrepõem
+     * Verifica a sobre_fragment posição de dois periodos. Retorna verdadeiro se os periodos se sobrepõem
      *
      * @param dataInicial1
      * @param dataFinal1

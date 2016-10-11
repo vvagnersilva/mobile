@@ -1,7 +1,5 @@
 package br.com.ctgaragem;
 
-import android.Manifest;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -16,12 +14,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import br.com.ctgaragem.fragment.ContatosFragment;
+import br.com.ctgaragem.fragment.DefaultFragment;
 import br.com.ctgaragem.fragment.FacebookFragment;
 import br.com.ctgaragem.fragment.InstagramFragment;
 import br.com.ctgaragem.fragment.ModalidadesFragment;
 import br.com.ctgaragem.fragment.PlanosPromocoesFragment;
-import br.com.ctgaragem.mapas.LocalizacaoActivity;
-import br.com.ctgaragem.mapas.PermissionUtils;
+import br.com.ctgaragem.fragment.SobreFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -56,11 +55,11 @@ public class MainActivity extends AppCompatActivity
 
         if (savedInstanceState == null) {
             // Fragment default.
-            fragment = PlanosPromocoesFragment.novaInstancia("PlanosPromocoesFragment");
+            fragment = DefaultFragment.novaInstancia("DefaultFragment");
 
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.conteudo, fragment, "PlanosPromocoesFragment")
+                    .replace(R.id.conteudo, fragment, "DefaultFragment")
                     .commit();
         }
     }
@@ -123,7 +122,7 @@ public class MainActivity extends AppCompatActivity
                     .beginTransaction()
                     .replace(R.id.conteudo, fragment, "PlanosPromocoesFragment")
                     .commit();
-        } else if (id == R.id.nav_localizacao) {
+        /* else if (id == R.id.nav_localizacao) {
             // Solicita as permissões
             String[] permissoes = new String[]{
                     Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -136,8 +135,21 @@ public class MainActivity extends AppCompatActivity
             Intent it = new Intent(this, LocalizacaoActivity.class);
 
             // Iniciamos nossa activity
-            startActivity(it);
+            startActivity(it);*/
         } else if (id == R.id.nav_sobre) {
+            fragment = SobreFragment.novaInstancia("SobreFragment");
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.conteudo, fragment, "SobreFragment")
+                    .commit();
+        } else if (id == R.id.nav_contatos) {
+            fragment = ContatosFragment.novaInstancia("ContatosFragment");
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.conteudo, fragment, "ContatosFragment")
+                    .commit();
         } else if (id == R.id.nav_facebook) {
             fragment = FacebookFragment.novaInstancia("FacebookFragment");
 

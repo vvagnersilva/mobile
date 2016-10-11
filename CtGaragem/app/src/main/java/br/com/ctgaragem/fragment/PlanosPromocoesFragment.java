@@ -12,8 +12,6 @@ import br.com.ctgaragem.R;
 
 public class PlanosPromocoesFragment extends Fragment {
     private static final String EXTRA_TIPO = "mTipo";
-    private String mTipo;
-    private ImageView img;
 
     public static PlanosPromocoesFragment novaInstancia(String tipo) {
         Bundle params = new Bundle();

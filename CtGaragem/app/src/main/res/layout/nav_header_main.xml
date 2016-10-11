@@ -2,14 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
-    android:background="@color/black"
+    android:background="@drawable/seg_tela"
     android:orientation="vertical">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:gravity="center"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/abertura"/>
+        android:src="@drawable/banner"/>
 
 </LinearLayout>

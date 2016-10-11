@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@color/black"  >
+    android:background="@drawable/seg_tela"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <group android:checkableBehavior="single">
         <item
@@ -23,10 +25,16 @@
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_human_handsup_white_48dp"
             android:title="@string/treinamento" />
+<!--
         <item
             android:id="@+id/nav_localizacao"
             android:icon="@drawable/ic_map_marker_multiple_white_48dp"
             android:title="@string/localizacao" />
+-->
+        <item
+            android:id="@+id/nav_contatos"
+            android:icon="@drawable/ic_help_white_48dp"
+            android:title="@string/contatos" />
         <item
             android:id="@+id/nav_sobre"
             android:icon="@drawable/ic_information_variant_white_48dp"
