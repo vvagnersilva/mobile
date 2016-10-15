@@ -166,9 +166,10 @@ public class CalculoFragment extends Fragment {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext(), R.style.AlertDialogStyle);
 
         if (tpCategoriaAnimal == null) {
-            alertDialogBuilder.setTitle("Informação");
+            alertDialogBuilder.setTitle(R.string.informacao);
             alertDialogBuilder.setIcon(R.drawable.ic_information);
-            alertDialogBuilder.setMessage("Categoria animal é de preenchimento obrigatório!");
+            String categoria = getString(R.string.obr_categoria);
+            alertDialogBuilder.setMessage(categoria);
             alertDialogBuilder.setPositiveButton(" Ok ", new DialogInterface.OnClickListener() {
 
                 public void onClick(DialogInterface dialog, int which) {
@@ -182,12 +183,14 @@ public class CalculoFragment extends Fragment {
         }
 
         if (edPeso.getText().length() == 0) {
-            edPeso.setError("Peso corporal é de preenchimento obrigatório!");
+            String peso = getString(R.string.obr_peso);
+            edPeso.setError(peso);
             return true;
         }
 
         if (edPrega.getText().length() == 0) {
-            edPrega.setError("Medida das pregas é de preenchimento obrigatório!");
+            String pregas = getString(R.string.obr_pregas);
+            edPrega.setError(pregas);
             return true;
         }
 

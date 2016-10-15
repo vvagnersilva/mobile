@@ -86,7 +86,9 @@ public class FaleConoscoFragment extends Fragment {
                     //need this to prompts email client only
                     email.setType("message/rfc822");
 
-                    startActivity(Intent.createChooser(email, "Choose an Email client :"));
+                    String msg_email = getString(R.string.msg_email);
+
+                    startActivity(Intent.createChooser(email, msg_email));
                 }
             }
         });
@@ -97,11 +99,12 @@ public class FaleConoscoFragment extends Fragment {
     private boolean validaCamposObrigatorios() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext(), R.style.AlertDialogStyle);
 
-        alertDialogBuilder.setTitle("Informação");
+        alertDialogBuilder.setTitle(R.string.informacao);
         alertDialogBuilder.setIcon(R.drawable.ic_information);
 
         if (tpAssunto == null) {
-            alertDialogBuilder.setMessage("Campo assunto é de preenchimento obrigatório!");
+            String info = getString(R.string.info_obrigatorio);
+            alertDialogBuilder.setMessage(info);
             alertDialogBuilder.setPositiveButton(" Ok ", new DialogInterface.OnClickListener() {
 
                 public void onClick(DialogInterface dialog, int which) {
@@ -115,7 +118,8 @@ public class FaleConoscoFragment extends Fragment {
         }
 
         if (edDescricao.getText().length() == 0) {
-            edDescricao.setError("Descrição é de preenchimento obrigatório!");
+            String desc = getString(R.string.desc_obrigatorio);
+            edDescricao.setError(desc);
             return true;
         }
         return false;

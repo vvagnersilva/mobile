@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Slaughter Point Lambs</string>
+    <string name="app_sigla">LSP</string>
+    <string name="costas">Back</string>
+    <string name="peito">chest</string>
+    <string name="peso">Live Body weight (kg)</string>
+    <string name="pregas">Skinfold thickness(mm)</string>
+    <string name="formula">formula</string>
+    <string name="egs">Subcutâneous Fat Thickness estimate</string>
+
+    <string name="escolha">Please select a body measurement:</string>
+    <string name="categoria">Physiological Stage:</string>
+
+    <string name="action_sobre">About</string>
+    <string name="action_calculo">Calculations</string>
+    <string name="action_ajuda">Help</string>
+    <string name="action_ufgd">Ufgd</string>
+
+    <string name="string_vazia" />
+    <string name="portal_ufgd">http://portal.ufgd.edu.br</string>
+    <string name="action_false_conosco">Contact us</string>
+    <string name="assunto">Subject matter:</string>
+    <string name="descricao">Description:</string>
+    <string name="action_fotos">Photos</string>
+    <string name="carregando">Loading ...</string>
+    <string name="calcular">Predict Subcutaneous Fat (mm) </string>
+    <string name="enviar">Send your e-mail</string>
+    <string name="informacao">Information</string>
+    <string name="info_obrigatorio">E-mail purpose!</string>
+    <string name="desc_obrigatorio">You must write the content of the e-mail!</string>
+    <string name="obr_categoria">Category animals is mandatory!</string>
+    <string name="obr_peso">Body weight is required!</string>
+    <string name="obr_pregas">Measure the pleats is mandatory!</string>
+    <string name="msg_email">Choose an Email client :</string>
+    <string name="res_egs">Subcutâneous Fat Thickness estimate = </string>
+    <string name="milimetro">mm</string>
+
+    <string name="ajuda1" formatted="false">
+      <![CDATA[<html>
+	<body>
+		<p align="justify" class="western" style="text-indent: 1.25cm; margin-bottom: 0cm">
+			<font face="MV Boli"><font style="font-size: 10pt"><span lang="en-GB">This App was designed to predict the amount of fat (subcutaneous fat thickness) in the carcass of Lambs. Fat is associated to the quality of meat. Using </span></font></font><font face="MV Boli"><font style="font-size: 10pt"><span lang="en-GB"><b>Slaughter Point Lambs</b></span></font></font><font face="MV Boli"><font style="font-size: 10pt"><span lang="en-GB"> farmers and people from the agribusiness scenario are entitled to estimate the quality of carcass and optimize slaughter timing for lamb production. The App is designed to use information of live body weight (kg) and skinfold thickness (millimetres) from the back or the region of the chest. Skinfold is measured using a digital plicometer. </span></font></font></p>
+		<p align="justify" class="western" style="text-indent: 1.25cm; margin-bottom: 0cm">
+			<font face="MV Boli"><font style="font-size: 10pt"><span lang="en-GB">The App output resembles the prediction of subcutaneous fat in living lambs using different colours.for different intervals of fat. Subcutaneous fat thickness (EGS) is estimated using multiple regression models developed in the Universidade Federal da Grande Dourados (UFGD), Brazil;.</span></font></font></p>
+		<p align="justify" class="western">
+			<font face="MV Boli"><font style="font-size: 10pt"><span lang="en-GB">Skinfold is measured in the Back or the region of the chest:</span></font></font></p>
+	</body>
+</html>
+]]>
+    </string>
+
+    <string name="ajuda2" formatted="false">
+            <![CDATA[<html>
+	<body>
+		<p align="justify" class="western">
+			<font face="MV Boli"><font style="font-size: 10pt"><span lang="en-GB">Intervals of subcutaneous fat thickness sorted in colours</span></font></font><font face="MV Boli"><font style="font-size: 10pt"><span lang="en-GB">:</span></font></font></p>
+		<ul>
+			<li>
+				<p class="western">
+					<font face="MV Boli"><font style="font-size: 10pt">EGS &lt; 1 mm ( </font></font><font color="#f79646"><font face="MV Boli"><font style="font-size: 10pt"><b>ORANGE </b></font></font></font><font face="MV Boli"><font style="font-size: 10pt">) </font></font></p>
+			</li>
+		</ul>
+		<p class="western" style="margin-left: 2.49cm">
+			<font face="MV Boli"><font style="font-size: 10pt"><span lang="en-GB">-Example I: live body weight=15,3; Back=3,6</span></font></font></p>
+		<p class="western" style="margin-left: 2.49cm">
+			<font face="MV Boli"><font style="font-size: 10pt"><span lang="en-GB">- Example II: livebody weight=14,7; Chest=3,5</span></font></font></p>
+		<ul>
+			<li>
+				<p class="western">
+					<font face="MV Boli"><font style="font-size: 10pt">1 </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">&le;</font></font><font face="MV Boli"><font style="font-size: 10pt"> EGS &lt; 2 mm ( </font></font><font color="#ffc000"><font face="MV Boli"><font style="font-size: 10pt"><u><b>YELLOW </b></u></font></font></font><font face="MV Boli"><font style="font-size: 10pt">)</font></font></p>
+			</li>
+		</ul>
+		<p class="western" style="margin-left: 2.49cm">
+			<font face="MV Boli"><font style="font-size: 10pt"><span lang="en-GB">- Example III: live body weight=17,5; Back=4,2</span></font></font></p>
+		<p class="western" style="margin-left: 2.49cm">
+			<font face="MV Boli"><font style="font-size: 10pt"><span lang="en-GB">- Example IV: live body weight=16,7; Chest =3,4</span></font></font></p>
+		<ul>
+			<li>
+				<p class="western">
+					<font face="MV Boli"><font style="font-size: 10pt">2 </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">&le;</font></font><font face="MV Boli"><font style="font-size: 10pt"> EGS &lt; 3 mm ( </font></font><font color="#00b050"><font face="MV Boli"><font style="font-size: 10pt"><b>GREEN </b></font></font></font><font face="MV Boli"><font style="font-size: 10pt">)</font></font></p>
+			</li>
+		</ul>
+		<p class="western" style="margin-left: 2.49cm">
+			<font face="MV Boli"><font style="font-size: 10pt"><span lang="en-GB">- Example V: live body weight=20; Back=3,7</span></font></font></p>
+		<p class="western" style="margin-left: 2.49cm">
+			<font face="MV Boli"><font style="font-size: 10pt"><span lang="en-GB">- Example VI: live body weight=21; Chest =3,5</span></font></font></p>
+		<ul>
+			<li>
+				<p class="western">
+					<font face="MV Boli"><font style="font-size: 10pt">EGS </font></font><font face="Times New Roman, serif"><font style="font-size: 10pt">&ge;</font></font><font face="MV Boli"><font style="font-size: 10pt"> 3 mm ( </font></font><font color="#ff0000"><font face="MV Boli"><font style="font-size: 10pt"><b>RED </b></font></font></font><font face="MV Boli"><font style="font-size: 10pt">)</font></font><font color="#ff0000"><font face="MV Boli"><font style="font-size: 10pt"> </font></font></font></p>
+			</li>
+		</ul>
+		<p class="western" style="margin-left: 2.49cm">
+			<font face="MV Boli"><font style="font-size: 10pt"><span lang="en-GB">- Example VII: live body weight=26,8; Back=3,6</span></font></font></p>
+		<p class="western" style="margin-left: 2.49cm">
+			<font face="MV Boli"><font style="font-size: 10pt"><span lang="en-GB">- Example VIII: live body weight=27,8 Chest=3,5</span></font></font></p>
+	</body>
+</html>
+]]>
+    </string>
+
+    <string name="membros" formatted="false">
+        <![CDATA[<html>
+<body>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli"><b>DEVELOPED BY</b></font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Adrielly</font> <font face="MV Boli">Lais Alves da Silva</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Fernando Miranda de Vargas Junior</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Marcelo Corr&ecirc;a da Silva</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Marcus Vinicius Porto dos Santos</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Wagner Silva</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli"><b>COLABORATORS</b></font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Adriana Sathie Ozaki Hirata</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Alexandre Rodrigo Mendes Fernandes </font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Bruno Antunes Grenge</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">H&eacute;lio de Almeida Ricardo</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Ingrid Harumi de Souza Fuzikawa</font></p>
+		<p align="center" style="text-indent: 1.25cm; line-height: 100%">
+			<font face="MV Boli">M&aacute;rcio Rodrigues de Souza</font></p>
+	</body>
+</html>
+]]>
+    </string>
+
+    <string-array name="categoria_arrays">
+        <item>Select an option</item>
+        <item>Male lamb</item>
+    </string-array>
+
+    <string-array name="categoria_assunto">
+        <item>Select an option</item>
+        <item>Doubts</item>
+        <item>Compliments</item>
+        <item>Suggestions</item>
+    </string-array>
+
+</resources>

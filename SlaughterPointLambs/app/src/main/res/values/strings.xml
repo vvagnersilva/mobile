@@ -25,6 +25,17 @@
     <string name="descricao">Descrição:</string>
     <string name="action_fotos">Fotos</string>
     <string name="carregando">Carregando ...</string>
+    <string name="calcular">Calcular</string>
+    <string name="enviar">Enviar</string>
+    <string name="informacao">Informação</string>
+    <string name="info_obrigatorio">Campo assunto é de preenchimento obrigatório!</string>
+    <string name="desc_obrigatorio">Descrição é de preenchimento obrigatório!</string>
+    <string name="obr_categoria">Categoria animal é de preenchimento obrigatório!</string>
+    <string name="obr_peso">Peso corporal é de preenchimento obrigatório!</string>
+    <string name="obr_pregas">Medida das pregas é de preenchimento obrigatório!</string>
+    <string name="msg_email">Escolha um e-mail:</string>
+    <string name="res_egs">EGS =</string>
+    <string name="milimetro">mm</string>
 
     <string-array name="categoria_arrays">
         <item>Selecione uma opção</item>
@@ -37,5 +48,105 @@
         <item>Elogios</item>
         <item>Sugestões</item>
     </string-array>
+
+<string name="membros" formatted="false"><![CDATA[<html>
+	<body>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli"><b>MEMBROS DA EXECU&Ccedil;&Atilde;O</b></font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Adrielly</font> <font face="MV Boli">Lais Alves da Silva</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Fernando Miranda de Vargas Junior</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Marcelo Corr&ecirc;a da Silva</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Marcus Vinicius Porto dos Santos</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Wagner Silva</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli"><b>MEMBROS COLABORADORES</b></font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Adriana Sathie Ozaki Hirata</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Alexandre Rodrigo Mendes Fernandes </font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Bruno Antunes Grenge</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">H&eacute;lio de Almeida Ricardo</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Ingrid Harumi de Souza Fuzikawa</font></p>
+		<p align="center" style="text-indent: 1.25cm; line-height: 100%">
+			<font face="MV Boli">M&aacute;rcio Rodrigues de Souza</font></p>
+	</body>
+</html>
+]]>
+    </string>
+
+
+     <string name="ajuda1" formatted="false">
+      <![CDATA[
+<p align="justify" class="western" style="text-indent: 1.25cm; margin-bottom: 0cm">
+			<font face="MV Boli"><font style="font-size: 10pt">A carne de cordeiro &eacute; oriunda de ovinos jovens. Este tipo de carne possui alta demanda de mercado. Um bom acabamento de carca&ccedil;a (quantidade de gordura) est&aacute; relacionado com qualidade.</font></font></p>
+		<p align="justify" class="western" style="text-indent: 1.25cm; margin-bottom: 0cm">
+			<font face="MV Boli" style="text-indent: 1.25cm;"><font style="font-size: 10pt">Objetivou-se com o aplicativo </font></font><font face="MV Boli" style="text-indent: 1.25cm;"><font style="font-size: 10pt"><b>Slaughter Point Lambs</b></font></font><font face="MV Boli" style="text-indent: 1.25cm;"><font style="font-size: 10pt"> disponibilizar uma ferramenta gratuita para predizer (estimar) a espessura de gordura subcut&acirc;nea (</font></font><font face="MV Boli" style="text-indent: 1.25cm;"><font style="font-size: 10pt"><u>EGS</u></font></font><font face="MV Boli" style="text-indent: 1.25cm;"><font style="font-size: 10pt">) da carca&ccedil;a de cordeiros em per&iacute;odo pr&eacute;-abate.</font></font></p>
+		<p align="justify" class="western" style="text-indent: 1.25cm; margin-bottom: 0cm">
+			<font face="MV Boli"><font style="font-size: 10pt">Neste aplicativo foi considerado um acabamento m&iacute;nimo necess&aacute;rio para uma boa prote&ccedil;&atilde;o da carca&ccedil;a durante o resfriamento e quantidades de gordura suficientes para expectativas e padr&otilde;es do mercado brasileiro. Com o aplicativo </font></font><font face="MV Boli"><font style="font-size: 10pt"><b>Slaughter Point Lambs</b></font></font><font face="MV Boli"><font style="font-size: 10pt">, produtores rurais poder&atilde;o determinar per&iacute;odos &oacute;timos de abate. Pessoas ligadas &agrave; comercializa&ccedil;&atilde;o de carne ovina poder&atilde;o ter uma ideia da qualidade da carne antes de sacrificar os animais para consumo humano. </font></font></p>
+		<p align="justify" class="western" style="text-indent: 1.25cm; margin-bottom: 0cm">
+			<font face="MV Boli"><font style="font-size: 10pt">Para tanto, basta que o usu&aacute;rio insira valores de peso corporal (kg) e espessura (mm) de pregas cut&acirc;neas da regi&atilde;o das costas ou da regi&atilde;o do peito dos cordeiros. Esses dados s&atilde;o obtidos com uso de balan&ccedil;a e de um adip&ocirc;metro digital. </font></font></p>
+		<p align="justify" class="western" style="text-indent: 1.25cm; margin-bottom: 0cm">
+			<font face="MV Boli"><font style="font-size: 10pt">As informa&ccedil;&otilde;es determinam se a carca&ccedil;a ter&aacute; menos de 1mm de gordura subcut&acirc;nea (resultado apresentado em colora&ccedil;&atilde;o alaranjada), maior ou igual a 2mm (resultado em cor amarelo), maior ou igual a 3mm (colora&ccedil;&atilde;o verde) ou maior que 3mm (vermelho). </font></font></p>
+		<p align="justify" class="western" style="text-indent: 1.25cm; margin-bottom: 0cm">
+			<font face="MV Boli"><font style="font-size: 10pt">A estimativa de </font></font><font face="MV Boli"><font style="font-size: 10pt"><u>EGS</u></font></font><font face="MV Boli"><font style="font-size: 10pt"> &eacute; obtida com uso de equa&ccedil;&otilde;es matem&aacute;ticas de regress&atilde;o m&uacute;ltipla, embutidas no aplicativo </font></font><font face="MV Boli"><font style="font-size: 10pt"><b>Slaughter Point Lambs</b></font></font><font face="MV Boli"><font style="font-size: 10pt"> ap&oacute;s pesquisas realizadas na Universidade Federal da Grande Dourados (UFGD), Brasil;.</font></font></p>
+		<p align="justify" class="western">
+			<font face="MV Boli"><font style="font-size: 10pt">Pontos da medida das pregas cut&acirc;neas:</font></font></p>
+]]>
+    </string>
+
+    <string name="ajuda2" formatted="false">
+            <![CDATA[
+<p align="justify" class="western">
+			<font face="MV Boli"><font style="font-size: 10pt">Para predi&ccedil;&atilde;o utilizamos cores na ordem crescente de ac&uacute;mulo de gordura</font></font><font face="MV Boli"><font style="font-size: 10pt">:</font></font></p>
+		<ul>
+			<li>
+				<p class="western">
+					<font face="MV Boli"><font style="font-size: 10pt">EGS &lt; 1 mm ( </font></font><font color="#f79646"><font face="MV Boli"><font style="font-size: 10pt"><b>LARANJA </b></font></font></font><font face="MV Boli"><font style="font-size: 10pt">) </font></font></p>
+			</li>
+		</ul>
+		<p class="western" style="margin-left: 2.49cm">
+			<font face="MV Boli"><font style="font-size: 10pt">-</font></font><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> I: Peso = 15,3 e Prega das Costas = 3,6</font></font></p>
+		<p class="western" style="margin-left: 2.49cm">
+			<font face="MV Boli"><font style="font-size: 10pt">-</font></font><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> II: Peso = 14,7 e Prega do Peito = 3,5</font></font></p>
+		<ul>
+			<li>
+				<p class="western">
+					<font face="MV Boli"><font style="font-size: 10pt">1 &lt;= EGS &lt; 2 mm ( </font></font><font color="#ffc000"><font face="MV Boli"><font style="font-size: 10pt"><u><b>AMARELO </b></u></font></font></font><font face="MV Boli"><font style="font-size: 10pt">)</font></font></p>
+			</li>
+		</ul>
+		<p class="western" style="margin-left: 2.49cm">
+			<font face="MV Boli"><font style="font-size: 10pt">-</font></font><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> III: Peso = 17,5 e Prega das Costas = 4,2</font></font></p>
+		<p class="western" style="margin-left: 2.49cm">
+			<font face="MV Boli"><font style="font-size: 10pt">-</font></font><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> IV: Peso = 16,7 e Prega do Peito = 3,4</font></font></p>
+		<ul>
+			<li>
+				<p class="western">
+					<font face="MV Boli"><font style="font-size: 10pt">2 &lt;= EGS &lt; 3 mm ( </font></font><font color="#00b050"><font face="MV Boli"><font style="font-size: 10pt"><b>VERDE </b></font></font></font><font face="MV Boli"><font style="font-size: 10pt">)</font></font></p>
+			</li>
+		</ul>
+		<p class="western" style="margin-left: 2.49cm">
+			<font face="MV Boli"><font style="font-size: 10pt">-</font></font><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> V: Peso = 20 e Prega das Costas = 3,7</font></font></p>
+		<p class="western" style="margin-left: 2.49cm">
+			<font face="MV Boli"><font style="font-size: 10pt">-</font></font><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> VI: Peso = 21 e Prega do Peito = 3,5</font></font></p>
+		<ul>
+			<li>
+				<p class="western">
+					<font face="MV Boli"><font style="font-size: 10pt">EGS &gt;= 3 mm ( </font></font><font color="#ff0000"><font face="MV Boli"><font style="font-size: 10pt"><b>VERMELHO </b></font></font></font><font face="MV Boli"><font style="font-size: 10pt">)</font></font><font color="#ff0000"><font face="MV Boli"><font style="font-size: 10pt"> </font></font></font></p>
+			</li>
+		</ul>
+		<p class="western" style="margin-left: 2.49cm">
+			<font face="MV Boli"><font style="font-size: 10pt">-</font></font><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> VII: Peso = 26,8 e Prega das Costas = 3,6</font></font></p>
+		<p class="western" style="margin-left: 2.49cm">
+			<font face="MV Boli"><font style="font-size: 10pt">-</font></font><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> VIII: Peso = 27,8 e Prega do Peito = 3,5</font></font></p>
+]]>
+    </string>
 
 </resources>

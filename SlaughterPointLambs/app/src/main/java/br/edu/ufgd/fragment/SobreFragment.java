@@ -5,11 +5,13 @@ import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.TextView;
 
 import br.edu.ufgd.R;
 
@@ -35,13 +37,12 @@ public class SobreFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.sobre_fragment, container, false);
 
+        TextView htmlTextView = (TextView) view.findViewById(R.id.txMembros);
+
+        htmlTextView.setText(Html.fromHtml(getResources().getString(R.string.membros)));
+
         // Indica que este fragment deve preservar o seu estado.
         setRetainInstance(true);
-
-        mWebView = (WebView) view.findViewById(R.id.webSobre);
-        mWebView.setWebViewClient(new MyWebViewClient());
-
-        mWebView.loadUrl("file:///android_asset/membros.htm");
 
         return view;
     }

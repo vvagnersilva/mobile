@@ -5,11 +5,13 @@ import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.TextView;
 
 import br.edu.ufgd.R;
 
@@ -31,13 +33,18 @@ public class AjudaFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.ajuda_fragment, container, false);
 
+        // Bloco 1.
+        TextView htmlTextView1 = (TextView) view.findViewById(R.id.txAjudaBloco1);
+
+        htmlTextView1.setText(Html.fromHtml(getString(R.string.ajuda1)));
+
+        // Bloco 2.
+        TextView htmlTextView2 = (TextView) view.findViewById(R.id.txAjudaBloco2);
+
+        htmlTextView2.setText(Html.fromHtml(getString(R.string.ajuda2)));
+
         // Indica que este fragment deve preservar o seu estado.
         setRetainInstance(true);
-
-        mWebView = (WebView) view.findViewById(R.id.webAjuda);
-        mWebView.setWebViewClient(new MyWebViewClient());
-
-        mWebView.loadUrl("file:///android_asset/ajuda.htm");
 
         return view;
     }

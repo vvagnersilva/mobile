@@ -118,7 +118,7 @@
 
         <Button
             android:id="@+id/btCalcularEgs"
-            android:layout_width="86dp"
+            android:layout_width="186dp"
             android:layout_height="86dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
@@ -128,9 +128,9 @@
             android:background="@drawable/fundo"
             android:elevation="6dp"
             android:stateListAnimator="@null"
-            android:text="Calcular"
-            android:textColor="@color/white"
-            android:textSize="15sp" />
+            android:text="@string/calcular"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

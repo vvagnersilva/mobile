@@ -4,16 +4,33 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        tools:context=".MainActivity"
+        android:orientation="vertical" >
 
-        <WebView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/webAjuda"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" />
+        <TextView
+            android:id="@+id/txAjudaBloco1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="" />
 
-    </RelativeLayout>
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ovelha"
+            android:adjustViewBounds="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/txAjudaBloco2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="" />
+
+    </LinearLayout>
 
 </ScrollView>

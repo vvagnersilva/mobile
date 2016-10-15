@@ -79,7 +79,7 @@
 
         <Button
             android:id="@+id/btFaleConosco"
-            android:layout_width="86dp"
+            android:layout_width="139dp"
             android:layout_height="86dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
@@ -89,9 +89,11 @@
             android:background="@drawable/fundo"
             android:elevation="6dp"
             android:stateListAnimator="@null"
-            android:text="Enviar"
+            android:text="@string/enviar"
             android:textColor="@color/white"
-            android:textSize="15sp" />
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            android:layout_weight="0.41" />
 
     </LinearLayout>
 

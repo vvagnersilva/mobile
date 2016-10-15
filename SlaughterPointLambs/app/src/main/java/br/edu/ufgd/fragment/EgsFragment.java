@@ -59,7 +59,11 @@ public class EgsFragment extends Fragment {
         LinearLayout ll = (LinearLayout) layout.findViewById(R.id.llResultado);
         ImageView imgRes = (ImageView) layout.findViewById(R.id.imgRes);
         TextView txEgs = (TextView) layout.findViewById(R.id.txEgs);
-        txEgs.setText("Egs = " + Util.converteDoubleToString(egs));
+
+        String strEgs = getString(R.string.res_egs);
+        String strUnidade = getString(R.string.milimetro);
+
+        txEgs.setText(strEgs + " " + Util.converteDoubleToString(egs) + " " + strUnidade);
 
         if (egs < 1) {
             imgRes.setImageResource(R.drawable.thumb_down);
