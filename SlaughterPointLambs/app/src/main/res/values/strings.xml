@@ -104,48 +104,67 @@
 
     <string name="ajuda2" formatted="false">
             <![CDATA[
+
 <p align="justify" class="western">
 			<font face="MV Boli"><font style="font-size: 10pt">Para predi&ccedil;&atilde;o utilizamos cores na ordem crescente de ac&uacute;mulo de gordura</font></font><font face="MV Boli"><font style="font-size: 10pt">:</font></font></p>
 		<ul>
 			<li>
 				<p class="western">
 					<font face="MV Boli"><font style="font-size: 10pt">EGS &lt; 1 mm ( </font></font><font color="#f79646"><font face="MV Boli"><font style="font-size: 10pt"><b>LARANJA </b></font></font></font><font face="MV Boli"><font style="font-size: 10pt">) </font></font></p>
+				<ul>
+					<li>
+						<p class="western">
+							<font face="MV Boli"><font style="font-size: 10pt"><font face="MV Boli"><font style="font-size: 10pt">-</font></font><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> I: Peso = 15,3 e Prega das Costas = 3,6</font></font></font></font></p>
+					</li>
+					<li>
+						<p class="western">
+							<font face="MV Boli"><font style="font-size: 10pt"><font face="MV Boli"><font style="font-size: 10pt"><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> II: Peso = 14,7 e Prega do Peito = 3,5</font></font></font></font></font></font></p>
+					</li>
+				</ul>
 			</li>
-		</ul>
-		<p class="western" style="margin-left: 2.49cm">
-			<font face="MV Boli"><font style="font-size: 10pt">-</font></font><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> I: Peso = 15,3 e Prega das Costas = 3,6</font></font></p>
-		<p class="western" style="margin-left: 2.49cm">
-			<font face="MV Boli"><font style="font-size: 10pt">-</font></font><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> II: Peso = 14,7 e Prega do Peito = 3,5</font></font></p>
-		<ul>
 			<li>
 				<p class="western">
 					<font face="MV Boli"><font style="font-size: 10pt">1 &lt;= EGS &lt; 2 mm ( </font></font><font color="#ffc000"><font face="MV Boli"><font style="font-size: 10pt"><u><b>AMARELO </b></u></font></font></font><font face="MV Boli"><font style="font-size: 10pt">)</font></font></p>
+				<ul>
+					<li>
+						<p class="western">
+							<font face="MV Boli"><font style="font-size: 10pt"><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> III: Peso = 17,5 e Prega das Costas = 4,2</font></font></font></font></p>
+					</li>
+					<li>
+						<p class="western">
+							<font face="MV Boli"><font style="font-size: 10pt"><font face="MV Boli"><font style="font-size: 10pt"><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> IV: Peso = 16,7 e Prega do Peito = 3,4</font></font></font></font></font></font></p>
+					</li>
+				</ul>
 			</li>
-		</ul>
-		<p class="western" style="margin-left: 2.49cm">
-			<font face="MV Boli"><font style="font-size: 10pt">-</font></font><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> III: Peso = 17,5 e Prega das Costas = 4,2</font></font></p>
-		<p class="western" style="margin-left: 2.49cm">
-			<font face="MV Boli"><font style="font-size: 10pt">-</font></font><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> IV: Peso = 16,7 e Prega do Peito = 3,4</font></font></p>
-		<ul>
 			<li>
 				<p class="western">
 					<font face="MV Boli"><font style="font-size: 10pt">2 &lt;= EGS &lt; 3 mm ( </font></font><font color="#00b050"><font face="MV Boli"><font style="font-size: 10pt"><b>VERDE </b></font></font></font><font face="MV Boli"><font style="font-size: 10pt">)</font></font></p>
+				<ul>
+					<li>
+						<p class="western">
+							<font face="MV Boli"><font style="font-size: 10pt"><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> V: Peso = 20 e Prega das Costas = 3,7</font></font></font></font></p>
+					</li>
+					<li>
+						<p class="western">
+							<font face="MV Boli"><font style="font-size: 10pt"><font face="MV Boli"><font style="font-size: 10pt"><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> VI: Peso = 21 e Prega do Peito = 3,5</font></font></font></font></font></font></p>
+					</li>
+				</ul>
 			</li>
-		</ul>
-		<p class="western" style="margin-left: 2.49cm">
-			<font face="MV Boli"><font style="font-size: 10pt">-</font></font><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> V: Peso = 20 e Prega das Costas = 3,7</font></font></p>
-		<p class="western" style="margin-left: 2.49cm">
-			<font face="MV Boli"><font style="font-size: 10pt">-</font></font><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> VI: Peso = 21 e Prega do Peito = 3,5</font></font></p>
-		<ul>
 			<li>
 				<p class="western">
 					<font face="MV Boli"><font style="font-size: 10pt">EGS &gt;= 3 mm ( </font></font><font color="#ff0000"><font face="MV Boli"><font style="font-size: 10pt"><b>VERMELHO </b></font></font></font><font face="MV Boli"><font style="font-size: 10pt">)</font></font><font color="#ff0000"><font face="MV Boli"><font style="font-size: 10pt"> </font></font></font></p>
+				<ul>
+					<li>
+						<p class="western">
+							<font face="MV Boli"><font style="font-size: 10pt"><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> VII: Peso = 26,8 e Prega das Costas = 3,6</font></font></font></font></p>
+					</li>
+					<li>
+						<p class="western">
+							<font face="MV Boli"><font style="font-size: 10pt"><font face="MV Boli"><font style="font-size: 10pt"><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> VIII: Peso = 27,8 e Prega do Peito = 3,5</font></font></font></font></font></font></p>
+					</li>
+				</ul>
 			</li>
 		</ul>
-		<p class="western" style="margin-left: 2.49cm">
-			<font face="MV Boli"><font style="font-size: 10pt">-</font></font><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> VII: Peso = 26,8 e Prega das Costas = 3,6</font></font></p>
-		<p class="western" style="margin-left: 2.49cm">
-			<font face="MV Boli"><font style="font-size: 10pt">-</font></font><font face="MV Boli"><font style="font-size: 10pt">Ex.:</font></font><font face="MV Boli"><font style="font-size: 10pt"> VIII: Peso = 27,8 e Prega do Peito = 3,5</font></font></p>
 ]]>
     </string>
 
