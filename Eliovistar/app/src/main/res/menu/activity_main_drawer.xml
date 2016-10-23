@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Imagens">
+        <menu>
+            <item
+                android:id="@+id/nav_avaliacao_individual"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/avaliacao" />
+            <item
+                android:id="@+id/nav_cad_biometrico"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/cad_biometrico" />
+        </menu>
+    </item>
+
+    <item android:title="Biometria">
+        <menu>
+            <item
+                android:id="@+id/nav_avaliacao_individual"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/avaliacao" />
+            <item
+                android:id="@+id/nav_cad_biometrico"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/cad_biometrico" />
+        </menu>
+    </item>
+
+    <item android:title="DNA">
+        <menu>
+            <item
+                android:id="@+id/nav_avaliacao_individual"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/avaliacao" />
+            <item
+                android:id="@+id/nav_cad_biometrico"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/cad_biometrico" />
+        </menu>
+    </item>
+
+    <item android:title="Identificação Individual">
+        <menu>
+            <item
+                android:id="@+id/nav_avaliacao_individual"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/avaliacao" />
+            <item
+                android:id="@+id/nav_cad_biometrico"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/cad_biometrico" />
+        </menu>
+    </item>
+
+    <item android:title="Questionários">
+        <menu>
+            <item
+                android:id="@+id/nav_avaliacao_individual"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/avaliacao" />
+            <item
+                android:id="@+id/nav_cad_biometrico"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/cad_biometrico" />
+        </menu>
+    </item>
+
+</menu>

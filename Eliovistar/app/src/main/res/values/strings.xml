@@ -1,0 +1,176 @@
+<resources>
+    <string name="app_name">Eliovistar</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Configurações</string>
+    <string name="avaliacao">Avaliação individual</string>
+    <string name="avaliacao_relatorio">Relatório de Avaliação Individual</string>
+    <string name="medidas_cranio">Medidas do crânio</string>
+    <string name="cad_biometrico">Cadastro Biométrico</string>
+    <string name="racas">* Raças locais brasileiras</string>
+    <string name="categoria">* Categoria Ovina</string>
+    <string name="string_vazia" />
+    <string name="asterisco">* Campo(s) de preenchimento obrigatório!</string>
+
+    <string name="gerais">Gerais</string>
+    <string name="score_corporal">Score corporal (1-5)</string>
+    <string name="peso_vivo">Peso vivo (kg)</string>
+
+    <string name="comp_cabeca">Comprimento da cabeça (cm) :</string>
+    <string name="comp_cranio">Comprimento do crânio (cm) :</string>
+    <string name="larg_cabeca">Largura da cabeça (cm) :</string>
+    <string name="long_rosto">Longitude do rosto (cm) :</string>
+    <string name="tam_orelhas">Tamanho das orelhas (cm) :</string>
+    <string name="medidas_tronco">Medidas de tronco</string>
+    <string name="perim_pescoco">Perímetro de pescoço (cm)</string>
+    <string name="comp_pescoco">Comprimento do pescoço (cm)</string>
+    <string name="comp_corporal">Comprimento corporal (cm)</string>
+    <string name="profundidade">Profundidade (cm)</string>
+    <string name="larg_ombros">Largura dos ombros (cm)</string>
+    <string name="perim_toracico">Perímetro torácico (cm)</string>
+    <string name="comp_garupa">Comprimento da garupa (cm)</string>
+    <string name="Largura_entre_ilios">Largura entre ílios (cm)</string>
+    <string name="Largura_entre_isquios">Largura entre ísquios (cm)</string>
+    <string name="medidas_membros">Medidas de membros</string>
+    <string name="alt_cernelha">Altura da cernelha (cm)</string>
+    <string name="alt_garupa">Altura da garupa(cm)</string>
+    <string name="dist_ventre_solo">Distância ventre-solo (cm)</string>
+    <string name="perim_tarso">Perímetro do tarso (cm)</string>
+    <string name="perim_metatarso">Perímetro do metatarso (cm)</string>
+    <string name="perim_carpo">Perímetro do carpo (cm)</string>
+    <string name="perim_metacarpo">Perímetro do metacarpo (cm)</string>
+    <string name="comp_pernas_anteriores">Comprimento de pernas anteriores (cm)</string>
+    <string name="comp_pernas_posteriores">Comprimento de pernas posteriores (cm)</string>
+    <string name="apendices">Apêndices</string>
+    <string name="comp_cauda">Comprimento da cauda (cm)</string>
+    <string name="perim_base_cauda">Perímetro da base da cauda (cm)</string>
+    <string name="comp_tetos">Comprimento de tetos (cm)</string>
+    <string name="circ_escroto">Circunferência do escroto (cm)</string>
+    <string name="carac_morfometricas">Características morfoMÉTRICAS</string>
+    <string name="carac_morfologicas">Características morfoLÓGICAS</string>
+    <string name="relatorio_avaliacao">Relatório de Avaliação</string>
+    <string name="perfil_cefalico">Perfil cefálico</string>
+    <string name="chanfro">Chanfro</string>
+    <string name="focinho">Focinho</string>
+    <string name="la">Lã</string>
+    <string name="cor_la">Cor da Lã</string>
+    <string name="pelo">Pelo</string>
+    <string name="pele">Pele</string>
+    <string name="manchas">Manchas</string>
+    <string name="oculos">Óculos</string>
+    <string name="cascos">Cascos</string>
+    <string name="testiculos">Testículos</string>
+    <string name="chifres">Chifres</string>
+    <string name="tetos">Tetos</string>
+    <string name="cabeca">Cabeça</string>
+    <string name="barriga">Barriga</string>
+    <string name="pernas">Pernas</string>
+    <string name="pescoco">Pescoço</string>
+    <string name="brancos">Brancos</string>
+    <string name="pretos">Pretos</string>
+    <string name="rajados">Rajados</string>
+    <string name="cara">Cara</string>
+    <string name="orelha">Orelha</string>
+    <string name="normal">Normal</string>
+    <string name="anormal">Anormal</string>
+    <string name="supranumerario">Supranumerário</string>
+    <string name="institucional">Rebanho Institucional</string>
+    <string name="particular">Rebanho Particular</string>
+    <string name="alert">Alerta</string>
+
+    <string name="condicao_particular">No momento temos base de dados somente para Rebanho Institucional!</string>
+    <string name="condicao_instituicao">No momento temos base de dados somente para a UFGD!</string>
+    <string name="condicao_raca">No momento temos base de dados somente a Raça Pantaneira!</string>
+
+    <string name="obrigatorio_instituicao">Campo Instituição é de preenchimento obrigatório!</string>
+    <string name="obrigatorio_raca">Campo Raça é de preenchimento obrigatório!</string>
+    <string name="obrigatorio_categoria">Campo Categoria Ovina é de preenchimento obrigatório!</string>
+    <string name="condicao_score_corporal">Campo score corporal deve estar entre 1-5</string>
+
+    <string-array name="instituicoes_arrays">
+        <item>Selecione a Instituição</item>
+        <item>UFGD</item>
+        <item>Anhanguera</item>
+        <item>Embrapa Gado de Corte</item>
+        <item>Embrapa Pantanal</item>
+        <item>Uniderp</item>
+    </string-array>
+
+    <string-array name="particular_arrays">
+        <item>Selecione o Associciado</item>
+        <item>Diego Guidolin</item>
+    </string-array>
+
+    <string-array name="racas_arrays">
+        <item>Selecione uma raça</item>
+        <item>Pantaneira</item>
+        <item>Crioula Lanada</item>
+        <item>Morada Nova</item>
+        <item>Karakul</item>
+    </string-array>
+
+    <string-array name="categoria_arrays">
+        <item>Selecione uma categoria</item>
+        <item>Cordeiro (dente de leite)</item>
+        <item>Cordeira (dente de leite)</item>
+        <item>Borrego (2 dentes)</item>
+        <item>Borrega (2 dentes)</item>
+        <item>Ovelha (3 ou 4 dentes)</item>
+        <item>Carneiro (3 ou 4 dentes)</item>
+    </string-array>
+
+    <string-array name="morfologica_array">
+        <item>Selecione um perfil</item>
+        <item>Reto</item>
+        <item>Convexo</item>
+        <item>Côncavo</item>
+    </string-array>
+
+    <string-array name="espessura_array">
+        <item>Selecione uma espessura</item>
+        <item>Fino</item>
+        <item>Grosso</item>
+    </string-array>
+
+    <string-array name="chifres_array">
+        <item>Selecione um chifre</item>
+        <item>Ausente</item>
+        <item>Batoque</item>
+        <item>Normal</item>
+    </string-array>
+
+    <string-array name="cor_array">
+        <item>Selecione a cor</item>
+        <item>Branca</item>
+        <item>Preta</item>
+        <item>Manchada</item>
+        <item>Amarela</item>
+    </string-array>
+
+    <string-array name="cor_pele_array">
+        <item>Selecione a cor da pele</item>
+        <item>Branca</item>
+        <item>Escura</item>
+        <item>Amarela</item>
+        <item>Pintada</item>
+    </string-array>
+
+    <string-array name="oculos_array">
+        <item>Selecione o óculos</item>
+        <item>Ausentes</item>
+        <item>Unilateral</item>
+        <item>Bilateral</item>
+    </string-array>
+
+    <string-array name="testiculos_array">
+        <item>Selecione o testiculo</item>
+        <item>Despigmentado</item>
+        <item>Branca</item>
+        <item>Escuro</item>
+        <item>Amarelo</item>
+        <item>Pintado</item>
+    </string-array>
+
+</resources>
