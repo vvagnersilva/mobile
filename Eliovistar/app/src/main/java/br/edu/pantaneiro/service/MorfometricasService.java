@@ -16,10 +16,10 @@ import br.edu.pantaneiro.model.Morfometricas;
 public class MorfometricasService {
     private static final String TAG = "MorfometricasService";
 
-    // Ambiente local
+    // Ambiente local.
     //private static final String SERVIDOR = "http://192.168.1.3:8080/pantaneiro/morfometricas";
 
-    // Ambiente da Amazon
+    // Ambiente da Amazon.
     private static final String SERVIDOR = "http://52.67.183.205:8080/pantaneiro/morfometricas";
 
     private static final String WEBSERVICE_URL = SERVIDOR + "/buscarTodos";
