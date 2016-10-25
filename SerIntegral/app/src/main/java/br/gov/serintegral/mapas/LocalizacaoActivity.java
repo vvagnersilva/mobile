@@ -16,6 +16,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import br.gov.serintegral.R;
 import br.gov.serintegral.mapas.AbstractMapActivity;
 
+/**
+ * Created by Wagner Silva.
+ */
 public class LocalizacaoActivity extends AbstractMapActivity implements
         OnMapReadyCallback {
     private boolean needsInit=false;

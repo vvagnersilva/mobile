@@ -7,7 +7,9 @@ import android.util.Log;
 import java.util.Currency;
 import java.util.Locale;
 
-@SuppressWarnings("unused")
+/**
+ * Created by Wagner Silva.
+ */
 class CurrencyTextWatcher implements TextWatcher {
 
     final int CURSOR_SPACING_COMPENSATION = 2;
@@ -18,7 +20,6 @@ class CurrencyTextWatcher implements TextWatcher {
     private Locale defaultLocale;
     private boolean ignoreIteration;
     private String lastGoodInput;
-
 
     /**
      * A specialized TextWatcher designed specifically for converting EditText values to a pretty-print string currency value.

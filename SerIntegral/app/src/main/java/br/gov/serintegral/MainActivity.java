@@ -17,7 +17,9 @@ import br.gov.serintegral.fragment.PaypalFragment;
 import br.gov.serintegral.fragment.SobreFragment;
 import br.gov.serintegral.mapas.LocalizacaoActivity;
 
-
+/**
+ * Created by Wagner Silva.
+ */
 public class MainActivity extends AppCompatActivity {
 
     private NavigationView mNavigationView;

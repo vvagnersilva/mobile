@@ -4,23 +4,21 @@ import com.paypal.android.sdk.payments.PayPalConfiguration;
 import com.paypal.android.sdk.payments.PayPalPayment;
 
 /**
- * Created by Diogo Souza on 12/11/2015.
+ * Created by Wagner Silva.
  */
 public class Constantes {
 
     /**
      * Teste no ambiente de desenvolvimento.
-     * Conta de comprador: vvagner.silva@gmail.com
      */
-    public static final String PAYPAL_CLIENT_ID = "AbMzmmST4aHHIxdqab606H35RgH7dPZBeNdz1E5DM6hj9CqMjmEixqC4L5Koel7sspm5RJ_kVcqmczeH";
-    public static final String PAYPAL_ENV = PayPalConfiguration.ENVIRONMENT_SANDBOX;
+    //public static final String PAYPAL_CLIENT_ID = "AXN8bzisLLMICP9T68Xk48pC3BR0Fh_f2H1vPCS-m5Zk_3Thccwf6r6-ligP63qGK_GnwRE_RKfaX2zB";
+   //public static final String PAYPAL_ENV = PayPalConfiguration.ENVIRONMENT_SANDBOX;
 
     /**
      * Teste no ambiente de producao.
-     * Conta de vendedor: vvagner.silva@yahoo.com.br
      */
-    //public static final String PAYPAL_CLIENT_ID = "AWn7qozn9SYSemrJvORHIXCE2_TON6QF_JROuZ8XK9-gBZB1ctObmt_GsebemG5lqauvcus2_g_xvq9S";
-    //public static final String PAYPAL_ENV = PayPalConfiguration.ENVIRONMENT_PRODUCTION;
+    public static final String PAYPAL_CLIENT_ID = "ARJwCBNDcv4HrdvrUgonhS5dVJnsb6Ovjm9p_vaBu5nHIssqVHgw5856Iq8trOB770eAXZ3YQSIt0c42";
+    public static final String PAYPAL_ENV = PayPalConfiguration.ENVIRONMENT_PRODUCTION;
 
     public static final String PAYPAL_INTENT = PayPalPayment.PAYMENT_INTENT_SALE;
     public static final String PAYPAL_CURRENCY = "BRL";

@@ -12,6 +12,9 @@ import android.webkit.WebViewClient;
 import br.gov.serintegral.R;
 import br.gov.serintegral.MainActivity;
 
+/**
+ * Created by Wagner Silva.
+ */
 public class FacebookFragment extends Fragment {
     private static final String EXTRA_TIPO = "mTipo";
     private String mTipo;

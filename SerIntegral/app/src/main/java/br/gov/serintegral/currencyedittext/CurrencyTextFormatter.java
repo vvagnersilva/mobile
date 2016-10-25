@@ -5,6 +5,9 @@ import java.text.DecimalFormat;
 import java.util.Currency;
 import java.util.Locale;
 
+/**
+ * Created by Wagner Silva.
+ */
 public final class CurrencyTextFormatter {
 
     //Setting a max length because after this length, java represents doubles in scientific notation which breaks the formatter

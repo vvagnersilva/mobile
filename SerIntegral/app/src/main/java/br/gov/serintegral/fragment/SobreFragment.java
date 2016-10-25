@@ -10,6 +10,9 @@ import android.view.ViewGroup;
 import br.gov.serintegral.R;
 import br.gov.serintegral.MainActivity;
 
+/**
+ * Created by Wagner Silva.
+ */
 public class SobreFragment extends Fragment {
     private static final String EXTRA_TIPO = "mTipo";
 

@@ -12,6 +12,9 @@ import java.util.Locale;
 
 import br.gov.serintegral.R;
 
+/**
+ * Created by Wagner Silva.
+ */
 public class CurrencyEditText extends EditText {
 
     private Locale locale = getResources().getConfiguration().locale;

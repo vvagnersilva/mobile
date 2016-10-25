@@ -7,6 +7,9 @@ import android.telephony.TelephonyManager;
 
 import java.io.IOException;
 
+/**
+ * Created by Wagner Silva.
+ */
 public class Connectivity {
     /*
      * These constants aren't yet available in my API level (7), but I need to

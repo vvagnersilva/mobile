@@ -29,7 +29,9 @@ import com.google.android.gms.common.GoogleApiAvailability;
 
 import br.gov.serintegral.R;
 
-
+/**
+ * Created by Wagner Silva.
+ */
 public class AbstractMapActivity extends AppCompatActivity {
     static final String TAG_ERROR_DIALOG_FRAGMENT = "errorDialog";
 
