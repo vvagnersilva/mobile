@@ -15,7 +15,13 @@ import br.edu.pantaneiro.model.Morfometricas;
 
 public class MorfometricasService {
     private static final String TAG = "MorfometricasService";
-    private static final String SERVIDOR = "http://192.168.1.3:8080/pantaneiro/rest/morfometricas";
+
+    // Ambiente local
+    //private static final String SERVIDOR = "http://192.168.1.3:8080/pantaneiro/morfometricas";
+
+    // Ambiente da Amazon
+    private static final String SERVIDOR = "http://52.67.183.205:8080/pantaneiro/morfometricas";
+
     private static final String WEBSERVICE_URL = SERVIDOR + "/buscarTodos";
 
     // Faz a requisição HTTP, cria a lista de carros e salva o JSON em arquivo

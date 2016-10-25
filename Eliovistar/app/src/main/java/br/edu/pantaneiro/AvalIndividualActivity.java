@@ -32,6 +32,9 @@ import br.edu.pantaneiro.model.Morfometricas;
 import br.edu.pantaneiro.service.MorfometricasService;
 import br.edu.pantaneiro.utils.Util;
 
+/**
+ *
+ */
 public class AvalIndividualActivity extends AppCompatActivity {
 
     private static final String TAG = "Pantaneiro";
