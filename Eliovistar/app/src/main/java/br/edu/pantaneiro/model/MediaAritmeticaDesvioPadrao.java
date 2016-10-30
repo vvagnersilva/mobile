@@ -10,6 +10,17 @@ import android.os.Parcelable;
  */
 public class MediaAritmeticaDesvioPadrao implements Parcelable {
 
+    public static final Parcelable.Creator<MediaAritmeticaDesvioPadrao>
+            CREATOR = new Parcelable.Creator<MediaAritmeticaDesvioPadrao>() {
+
+        public MediaAritmeticaDesvioPadrao createFromParcel(Parcel in) {
+            return new MediaAritmeticaDesvioPadrao(in);
+        }
+
+        public MediaAritmeticaDesvioPadrao[] newArray(int size) {
+            return new MediaAritmeticaDesvioPadrao[size];
+        }
+    };
     // Media Aritmetica
     Double mediaPesoVivo = 0D;
     Double mediaCompCabeca = 0D;
@@ -39,7 +50,6 @@ public class MediaAritmeticaDesvioPadrao implements Parcelable {
     Double mediaPerimBaseCauda = 0D;
     Double mediaCompTetos = 0D;
     Double mediaCircEscroto = 0D;
-
     // Desvio Padrao
     Double desvioPesoVivo = 0D;
     Double desvioCompCabeca = 0D;
@@ -134,18 +144,6 @@ public class MediaAritmeticaDesvioPadrao implements Parcelable {
         desvioCompTetos = p.readDouble();
         desvioCircEscroto = p.readDouble();
     }
-
-    public static final Parcelable.Creator<MediaAritmeticaDesvioPadrao>
-            CREATOR = new Parcelable.Creator<MediaAritmeticaDesvioPadrao>() {
-
-        public MediaAritmeticaDesvioPadrao createFromParcel(Parcel in) {
-            return new MediaAritmeticaDesvioPadrao(in);
-        }
-
-        public MediaAritmeticaDesvioPadrao[] newArray(int size) {
-            return new MediaAritmeticaDesvioPadrao[size];
-        }
-    };
 
     @Override
     public int describeContents() {

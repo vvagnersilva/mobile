@@ -3,20 +3,19 @@ package br.edu.pantaneiro.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.io.Serializable;
-
 import br.edu.pantaneiro.enums.TipoCategoriaOvinaEnum;
 import br.edu.pantaneiro.enums.TipoInstituicaoEnum;
 import br.edu.pantaneiro.enums.TipoRacaEnum;
+import br.edu.pantaneiro.enums.TipoSexoEnum;
 
 /**
- * ss
+ * Classe com os dados das medidas morfometricas.
  *
  * @author wagner
  */
-public class Morfometricas implements Serializable {
+public class Morfometricas implements Parcelable {
 
-    private String sexo;
+    private TipoSexoEnum tpSexo;
     private Integer idade;
     private Double scoreCorporal;
     private Double pesoVivo;
@@ -54,49 +53,107 @@ public class Morfometricas implements Serializable {
     public Morfometricas() {
     }
 
-    public Morfometricas(Double compCranio, String sexo, Integer idade, Double scoreCorporal, Double pesoVivo, Double compCabeca, Double largCabeca, Double longRosto, Double tamOrelhas, Double perimPescoco, Double compPescoco, Double compCorporal, Double profundidade, Double largOmbros, Double perimToracico, Double compGarupa, Double largEntreIlios, Double largEntreIsquios, Double altCernelha, Double altGarupa, Double distEntreVentreSolo, Double perimTarso, Double perimMetatarso, Double perimCarpo, Double perimMetacarpo, Double compPernasAnteriores, Double compPernasPosteriores, Double compCauda, Double perimBaseCauda, Double compTetos, Double circEscroto, TipoInstituicaoEnum tpInstituicaoEnum, TipoRacaEnum tpRacaEnum, TipoCategoriaOvinaEnum tpCategoriaOvinaEnum) {
-        this.compCranio = compCranio;
-        this.sexo = sexo;
-        this.idade = idade;
-        this.scoreCorporal = scoreCorporal;
-        this.pesoVivo = pesoVivo;
-        this.compCabeca = compCabeca;
-        this.largCabeca = largCabeca;
-        this.longRosto = longRosto;
-        this.tamOrelhas = tamOrelhas;
-        this.perimPescoco = perimPescoco;
-        this.compPescoco = compPescoco;
-        this.compCorporal = compCorporal;
-        this.profundidade = profundidade;
-        this.largOmbros = largOmbros;
-        this.perimToracico = perimToracico;
-        this.compGarupa = compGarupa;
-        this.largEntreIlios = largEntreIlios;
-        this.largEntreIsquios = largEntreIsquios;
-        this.altCernelha = altCernelha;
-        this.altGarupa = altGarupa;
-        this.distEntreVentreSolo = distEntreVentreSolo;
-        this.perimTarso = perimTarso;
-        this.perimMetatarso = perimMetatarso;
-        this.perimCarpo = perimCarpo;
-        this.perimMetacarpo = perimMetacarpo;
-        this.compPernasAnteriores = compPernasAnteriores;
-        this.compPernasPosteriores = compPernasPosteriores;
-        this.compCauda = compCauda;
-        this.perimBaseCauda = perimBaseCauda;
-        this.compTetos = compTetos;
-        this.circEscroto = circEscroto;
-        this.tpInstituicaoEnum = tpInstituicaoEnum;
-        this.tpRacaEnum = tpRacaEnum;
-        this.tpCategoriaOvinaEnum = tpCategoriaOvinaEnum;
+    public Morfometricas(Parcel parcel) {
+
+        this.tpSexo = (TipoSexoEnum) parcel.readValue(TipoSexoEnum.class.getClassLoader());
+        this.idade = parcel.readInt();
+        this.scoreCorporal = parcel.readDouble();
+        this.pesoVivo = parcel.readDouble();
+        this.compCabeca = parcel.readDouble();
+        this.compCranio = parcel.readDouble();
+        this.largCabeca = parcel.readDouble();
+        this.longRosto = parcel.readDouble();
+        this.tamOrelhas = parcel.readDouble();
+        this.perimPescoco = parcel.readDouble();
+        this.compPescoco = parcel.readDouble();
+        this.compCorporal = parcel.readDouble();
+        this.profundidade = parcel.readDouble();
+        this.largOmbros = parcel.readDouble();
+        this.perimToracico = parcel.readDouble();
+        this.compGarupa = parcel.readDouble();
+        this.largEntreIlios = parcel.readDouble();
+        this.largEntreIsquios = parcel.readDouble();
+        this.altCernelha = parcel.readDouble();
+        this.altGarupa = parcel.readDouble();
+        this.distEntreVentreSolo = parcel.readDouble();
+        this.perimTarso = parcel.readDouble();
+        this.perimMetatarso = parcel.readDouble();
+        this.perimCarpo = parcel.readDouble();
+        this.perimMetacarpo = parcel.readDouble();
+        this.compPernasAnteriores = parcel.readDouble();
+        this.compPernasPosteriores = parcel.readDouble();
+        this.compCauda = parcel.readDouble();
+        this.perimBaseCauda = parcel.readDouble();
+        this.compTetos = parcel.readDouble();
+        this.circEscroto = parcel.readDouble();
+
+        this.tpInstituicaoEnum = (TipoInstituicaoEnum) parcel.readValue(TipoInstituicaoEnum.class.getClassLoader());
+        this.tpRacaEnum = (TipoRacaEnum) parcel.readValue(TipoRacaEnum.class.getClassLoader());
+        this.tpCategoriaOvinaEnum = (TipoCategoriaOvinaEnum) parcel.readValue(TipoCategoriaOvinaEnum.class.getClassLoader());
     }
 
-    public String getSexo() {
-        return sexo;
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
+        dest.writeValue(tpSexo);
+        dest.writeInt(idade);
+        dest.writeDouble(scoreCorporal);
+        dest.writeDouble(pesoVivo);
+        dest.writeDouble(compCabeca);
+        dest.writeDouble(compCranio);
+        dest.writeDouble(largCabeca);
+        dest.writeDouble(longRosto);
+        dest.writeDouble(tamOrelhas);
+        dest.writeDouble(perimPescoco);
+        dest.writeDouble(compPescoco);
+        dest.writeDouble(compCorporal);
+        dest.writeDouble(profundidade);
+        dest.writeDouble(largOmbros);
+        dest.writeDouble(perimToracico);
+        dest.writeDouble(compGarupa);
+        dest.writeDouble(largEntreIlios);
+        dest.writeDouble(largEntreIsquios);
+        dest.writeDouble(altCernelha);
+        dest.writeDouble(altGarupa);
+        dest.writeDouble(distEntreVentreSolo);
+        dest.writeDouble(perimTarso);
+        dest.writeDouble(perimMetatarso);
+        dest.writeDouble(perimCarpo);
+        dest.writeDouble(perimMetacarpo);
+        dest.writeDouble(compPernasAnteriores);
+        dest.writeDouble(compPernasPosteriores);
+        dest.writeDouble(compCauda);
+        dest.writeDouble(perimBaseCauda);
+        dest.writeDouble(compTetos);
+        dest.writeDouble(circEscroto);
+        dest.writeValue(tpInstituicaoEnum);
+        dest.writeValue(tpRacaEnum);
+        dest.writeValue(tpCategoriaOvinaEnum);
+    }
+
+    public static final Parcelable.Creator<Morfometricas>
+            CREATOR = new Parcelable.Creator<Morfometricas>() {
+
+        public Morfometricas createFromParcel(Parcel in) {
+            return new Morfometricas(in);
+        }
+
+        public Morfometricas[] newArray(int size) {
+            return new Morfometricas[size];
+        }
+    };
+
+    public TipoSexoEnum getTpSexo() {
+        return tpSexo;
+    }
+
+    public void setTpSexo(TipoSexoEnum tpSexo) {
+        this.tpSexo = tpSexo;
     }
 
     public Integer getIdade() {
@@ -363,124 +420,14 @@ public class Morfometricas implements Serializable {
         this.tpCategoriaOvinaEnum = tpCategoriaOvinaEnum;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Morfometricas that = (Morfometricas) o;
-
-        if (getSexo() != null ? !getSexo().equals(that.getSexo()) : that.getSexo() != null)
-            return false;
-        if (getIdade() != null ? !getIdade().equals(that.getIdade()) : that.getIdade() != null)
-            return false;
-        if (getScoreCorporal() != null ? !getScoreCorporal().equals(that.getScoreCorporal()) : that.getScoreCorporal() != null)
-            return false;
-        if (getPesoVivo() != null ? !getPesoVivo().equals(that.getPesoVivo()) : that.getPesoVivo() != null)
-            return false;
-        if (getCompCabeca() != null ? !getCompCabeca().equals(that.getCompCabeca()) : that.getCompCabeca() != null)
-            return false;
-        if (getCompCranio() != null ? !getCompCranio().equals(that.getCompCranio()) : that.getCompCranio() != null)
-            return false;
-        if (getLargCabeca() != null ? !getLargCabeca().equals(that.getLargCabeca()) : that.getLargCabeca() != null)
-            return false;
-        if (getLongRosto() != null ? !getLongRosto().equals(that.getLongRosto()) : that.getLongRosto() != null)
-            return false;
-        if (getTamOrelhas() != null ? !getTamOrelhas().equals(that.getTamOrelhas()) : that.getTamOrelhas() != null)
-            return false;
-        if (getPerimPescoco() != null ? !getPerimPescoco().equals(that.getPerimPescoco()) : that.getPerimPescoco() != null)
-            return false;
-        if (getCompPescoco() != null ? !getCompPescoco().equals(that.getCompPescoco()) : that.getCompPescoco() != null)
-            return false;
-        if (getCompCorporal() != null ? !getCompCorporal().equals(that.getCompCorporal()) : that.getCompCorporal() != null)
-            return false;
-        if (getProfundidade() != null ? !getProfundidade().equals(that.getProfundidade()) : that.getProfundidade() != null)
-            return false;
-        if (getLargOmbros() != null ? !getLargOmbros().equals(that.getLargOmbros()) : that.getLargOmbros() != null)
-            return false;
-        if (getPerimToracico() != null ? !getPerimToracico().equals(that.getPerimToracico()) : that.getPerimToracico() != null)
-            return false;
-        if (getCompGarupa() != null ? !getCompGarupa().equals(that.getCompGarupa()) : that.getCompGarupa() != null)
-            return false;
-        if (getLargEntreIlios() != null ? !getLargEntreIlios().equals(that.getLargEntreIlios()) : that.getLargEntreIlios() != null)
-            return false;
-        if (getLargEntreIsquios() != null ? !getLargEntreIsquios().equals(that.getLargEntreIsquios()) : that.getLargEntreIsquios() != null)
-            return false;
-        if (getAltCernelha() != null ? !getAltCernelha().equals(that.getAltCernelha()) : that.getAltCernelha() != null)
-            return false;
-        if (getAltGarupa() != null ? !getAltGarupa().equals(that.getAltGarupa()) : that.getAltGarupa() != null)
-            return false;
-        if (getDistEntreVentreSolo() != null ? !getDistEntreVentreSolo().equals(that.getDistEntreVentreSolo()) : that.getDistEntreVentreSolo() != null)
-            return false;
-        if (getPerimTarso() != null ? !getPerimTarso().equals(that.getPerimTarso()) : that.getPerimTarso() != null)
-            return false;
-        if (getPerimMetatarso() != null ? !getPerimMetatarso().equals(that.getPerimMetatarso()) : that.getPerimMetatarso() != null)
-            return false;
-        if (getPerimCarpo() != null ? !getPerimCarpo().equals(that.getPerimCarpo()) : that.getPerimCarpo() != null)
-            return false;
-        if (getPerimMetacarpo() != null ? !getPerimMetacarpo().equals(that.getPerimMetacarpo()) : that.getPerimMetacarpo() != null)
-            return false;
-        if (getCompPernasAnteriores() != null ? !getCompPernasAnteriores().equals(that.getCompPernasAnteriores()) : that.getCompPernasAnteriores() != null)
-            return false;
-        if (getCompPernasPosteriores() != null ? !getCompPernasPosteriores().equals(that.getCompPernasPosteriores()) : that.getCompPernasPosteriores() != null)
-            return false;
-        if (getCompCauda() != null ? !getCompCauda().equals(that.getCompCauda()) : that.getCompCauda() != null)
-            return false;
-        if (getPerimBaseCauda() != null ? !getPerimBaseCauda().equals(that.getPerimBaseCauda()) : that.getPerimBaseCauda() != null)
-            return false;
-        if (getCompTetos() != null ? !getCompTetos().equals(that.getCompTetos()) : that.getCompTetos() != null)
-            return false;
-        if (getCircEscroto() != null ? !getCircEscroto().equals(that.getCircEscroto()) : that.getCircEscroto() != null)
-            return false;
-        if (getTpInstituicaoEnum() != that.getTpInstituicaoEnum()) return false;
-        if (getTpRacaEnum() != that.getTpRacaEnum()) return false;
-        return getTpCategoriaOvinaEnum() == that.getTpCategoriaOvinaEnum();
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = getSexo() != null ? getSexo().hashCode() : 0;
-        result = 31 * result + (getIdade() != null ? getIdade().hashCode() : 0);
-        result = 31 * result + (getScoreCorporal() != null ? getScoreCorporal().hashCode() : 0);
-        result = 31 * result + (getPesoVivo() != null ? getPesoVivo().hashCode() : 0);
-        result = 31 * result + (getCompCabeca() != null ? getCompCabeca().hashCode() : 0);
-        result = 31 * result + (getCompCranio() != null ? getCompCranio().hashCode() : 0);
-        result = 31 * result + (getLargCabeca() != null ? getLargCabeca().hashCode() : 0);
-        result = 31 * result + (getLongRosto() != null ? getLongRosto().hashCode() : 0);
-        result = 31 * result + (getTamOrelhas() != null ? getTamOrelhas().hashCode() : 0);
-        result = 31 * result + (getPerimPescoco() != null ? getPerimPescoco().hashCode() : 0);
-        result = 31 * result + (getCompPescoco() != null ? getCompPescoco().hashCode() : 0);
-        result = 31 * result + (getCompCorporal() != null ? getCompCorporal().hashCode() : 0);
-        result = 31 * result + (getProfundidade() != null ? getProfundidade().hashCode() : 0);
-        result = 31 * result + (getLargOmbros() != null ? getLargOmbros().hashCode() : 0);
-        result = 31 * result + (getPerimToracico() != null ? getPerimToracico().hashCode() : 0);
-        result = 31 * result + (getCompGarupa() != null ? getCompGarupa().hashCode() : 0);
-        result = 31 * result + (getLargEntreIlios() != null ? getLargEntreIlios().hashCode() : 0);
-        result = 31 * result + (getLargEntreIsquios() != null ? getLargEntreIsquios().hashCode() : 0);
-        result = 31 * result + (getAltCernelha() != null ? getAltCernelha().hashCode() : 0);
-        result = 31 * result + (getAltGarupa() != null ? getAltGarupa().hashCode() : 0);
-        result = 31 * result + (getDistEntreVentreSolo() != null ? getDistEntreVentreSolo().hashCode() : 0);
-        result = 31 * result + (getPerimTarso() != null ? getPerimTarso().hashCode() : 0);
-        result = 31 * result + (getPerimMetatarso() != null ? getPerimMetatarso().hashCode() : 0);
-        result = 31 * result + (getPerimCarpo() != null ? getPerimCarpo().hashCode() : 0);
-        result = 31 * result + (getPerimMetacarpo() != null ? getPerimMetacarpo().hashCode() : 0);
-        result = 31 * result + (getCompPernasAnteriores() != null ? getCompPernasAnteriores().hashCode() : 0);
-        result = 31 * result + (getCompPernasPosteriores() != null ? getCompPernasPosteriores().hashCode() : 0);
-        result = 31 * result + (getCompCauda() != null ? getCompCauda().hashCode() : 0);
-        result = 31 * result + (getPerimBaseCauda() != null ? getPerimBaseCauda().hashCode() : 0);
-        result = 31 * result + (getCompTetos() != null ? getCompTetos().hashCode() : 0);
-        result = 31 * result + (getCircEscroto() != null ? getCircEscroto().hashCode() : 0);
-        result = 31 * result + (getTpInstituicaoEnum() != null ? getTpInstituicaoEnum().hashCode() : 0);
-        result = 31 * result + (getTpRacaEnum() != null ? getTpRacaEnum().hashCode() : 0);
-        result = 31 * result + (getTpCategoriaOvinaEnum() != null ? getTpCategoriaOvinaEnum().hashCode() : 0);
-        return result;
+    public static Creator<Morfometricas> getCREATOR() {
+        return CREATOR;
     }
 
     @Override
     public String toString() {
-        return "AvaliacaoIndividual{" +
-                "sexo='" + sexo + '\'' +
+        return "Morfometricas{" +
+                "tpSexo=" + tpSexo +
                 ", idade=" + idade +
                 ", scoreCorporal=" + scoreCorporal +
                 ", pesoVivo=" + pesoVivo +

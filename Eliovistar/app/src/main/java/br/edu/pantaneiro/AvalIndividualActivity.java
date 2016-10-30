@@ -27,6 +27,7 @@ import br.edu.pantaneiro.enums.TipoCategoriaOvinaEnum;
 import br.edu.pantaneiro.enums.TipoInstituicaoEnum;
 import br.edu.pantaneiro.enums.TipoOpcoesEnum;
 import br.edu.pantaneiro.enums.TipoRacaEnum;
+import br.edu.pantaneiro.enums.TipoSexoEnum;
 import br.edu.pantaneiro.model.MediaAritmeticaDesvioPadrao;
 import br.edu.pantaneiro.model.Morfometricas;
 import br.edu.pantaneiro.service.MorfometricasService;
@@ -177,21 +178,38 @@ public class AvalIndividualActivity extends AppCompatActivity {
                     Log.i(TAG, "Categoria nao selecionada");
                 } else if (position == 1) {
                     tpCategoriaOvinaEnum = TipoCategoriaOvinaEnum.CORDEIRO;
+                    morfometrica.setTpSexo(TipoSexoEnum.MASCULINO);
+                    morfometrica.setIdade(0);
+
                     Log.i(TAG, "Categoria CORDEIRO");
                 } else if (position == 2) {
                     tpCategoriaOvinaEnum = TipoCategoriaOvinaEnum.CORDEIRA;
+                    morfometrica.setTpSexo(TipoSexoEnum.FEMININO);
+                    morfometrica.setIdade(0);
                     Log.i(TAG, "Categoria CORDEIRA");
                 } else if (position == 3) {
                     tpCategoriaOvinaEnum = TipoCategoriaOvinaEnum.BORREGO;
+                    morfometrica.setTpSexo(TipoSexoEnum.MASCULINO);
+                    morfometrica.setIdade(2);
+
                     Log.i(TAG, "Categoria BORREGO");
                 } else if (position == 4) {
                     tpCategoriaOvinaEnum = TipoCategoriaOvinaEnum.BORREGA;
+                    morfometrica.setTpSexo(TipoSexoEnum.FEMININO);
+                    morfometrica.setIdade(2);
+
                     Log.i(TAG, "Categoria BORREGA");
                 } else if (position == 5) {
                     tpCategoriaOvinaEnum = TipoCategoriaOvinaEnum.OVELHA;
+                    morfometrica.setTpSexo(TipoSexoEnum.FEMININO);
+                    morfometrica.setIdade(4);
+
                     Log.i(TAG, "Categoria OVELHA");
                 } else if (position == 6) {
                     tpCategoriaOvinaEnum = TipoCategoriaOvinaEnum.CARNEIRO;
+                    morfometrica.setTpSexo(TipoSexoEnum.MASCULINO);
+                    morfometrica.setIdade(4);
+
                     Log.i(TAG, "Categoria CARNEIRO");
                 }
                 morfometrica.setTpCategoriaOvinaEnum(tpCategoriaOvinaEnum);
@@ -324,11 +342,12 @@ public class AvalIndividualActivity extends AppCompatActivity {
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this, R.style.AlertDialogStyle);
 
-        alertDialogBuilder.setTitle(R.string.alert);
-        alertDialogBuilder.setIcon(R.drawable.alert);
+        alertDialogBuilder.setIcon(R.drawable.ic_alert_white_48dp);
 
         switch (opcao) {
             case PROCEDENCIA: {
+                alertDialogBuilder.setTitle(R.string.instituicao);
+
                 if (isInstitucional) {
                     // Se não for a UFGD, então aviso porque não tem base de dados.
                     if (tpInstituicaoEnum == null) {
@@ -345,6 +364,8 @@ public class AvalIndividualActivity extends AppCompatActivity {
                 break;
             }
             case RACA: {
+                alertDialogBuilder.setTitle(R.string.racas);
+
                 if (tpRacaEnum == null) {
                     alertDialogBuilder.setMessage(getString(R.string.obrigatorio_raca));
                     bValidacao = true;
@@ -355,6 +376,7 @@ public class AvalIndividualActivity extends AppCompatActivity {
                 break;
             }
             case CATEGORIA_OVINA: {
+                alertDialogBuilder.setTitle(R.string.categoria);
                 if (tpCategoriaOvinaEnum == null) {
                     alertDialogBuilder.setMessage(getString(R.string.obrigatorio_categoria));
                     bValidacao = true;
@@ -362,6 +384,8 @@ public class AvalIndividualActivity extends AppCompatActivity {
                 break;
             }
             case SCORE_CORPORAL: {
+                alertDialogBuilder.setTitle(R.string.score_corporal);
+
                 EditText edScoreCorporal = (EditText) findViewById(R.id.edScoreCorporal);
 
                 double scoreCorporal = Util.converteStringToDouble(edScoreCorporal.getText().length() == 0 ? "0" : edScoreCorporal.getText().toString());
@@ -408,11 +432,13 @@ public class AvalIndividualActivity extends AppCompatActivity {
         // Atualiza a interface
         protected void onPostExecute(List<Morfometricas> listMorfo) {
             if (listMorfo != null) {
+
                 calcularMedias(listMorfo);
 
                 calcularDesvioPadrao(listMorfo);
 
                 Log.i(TAG, mediaDesvio.toString());
+                Log.i(TAG, morfometrica.toString());
 
                 Intent it = new Intent(AvalIndividualActivity.this, RelIndividualActivity.class);
 

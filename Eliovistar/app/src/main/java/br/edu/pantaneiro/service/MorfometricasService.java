@@ -11,6 +11,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.edu.pantaneiro.enums.TipoSexoEnum;
 import br.edu.pantaneiro.model.Morfometricas;
 
 public class MorfometricasService {
@@ -37,9 +38,10 @@ public class MorfometricasService {
 
             for (int i = 0; i < json.length(); i++) {
                 JSONObject morfoJson = json.getJSONObject(i);
+
                 Morfometricas m = new Morfometricas();
 
-                m.setSexo(morfoJson.getString("sexo"));
+                m.setTpSexo(TipoSexoEnum.FEMININO.getCodigo().equals(morfoJson.getString("sexo")) ? TipoSexoEnum.FEMININO: TipoSexoEnum.MASCULINO);
                 m.setIdade(morfoJson.getInt("idade"));
                 m.setScoreCorporal((double) morfoJson.getDouble("scoreCorporal"));
                 m.setPesoVivo((double) morfoJson.getDouble("pesoVivo"));

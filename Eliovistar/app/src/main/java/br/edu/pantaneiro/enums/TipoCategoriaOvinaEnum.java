@@ -1,15 +1,20 @@
 package br.edu.pantaneiro.enums;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import br.edu.pantaneiro.model.Morfometricas;
 
 /**
  * Classe TipoCategoriaAnimalEnum.
  * <p>
  * Inicialmente vamos ter somente Cordeiro Macho, mas a intenção é expandir as categorias.
  */
-public enum TipoCategoriaOvinaEnum {
+public enum TipoCategoriaOvinaEnum  implements Parcelable {
 
     CORDEIRO("CO", "Cordeiro dente de leite"),
     CORDEIRA("CA", "Cordeira dente de leite"),
@@ -24,6 +29,11 @@ public enum TipoCategoriaOvinaEnum {
     TipoCategoriaOvinaEnum(String codigo, String descricao) {
         this.codigo = codigo;
         this.descricao = descricao;
+    }
+
+    TipoCategoriaOvinaEnum(Parcel parcel) {
+        this.codigo = parcel.readString();
+        this.descricao = parcel.readString();
     }
 
     /**
@@ -92,4 +102,26 @@ public enum TipoCategoriaOvinaEnum {
         return descricao;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(codigo);
+        dest.writeString(descricao);
+    }
+
+    public static final Parcelable.Creator<TipoCategoriaOvinaEnum>
+            CREATOR = new Parcelable.Creator<TipoCategoriaOvinaEnum>() {
+
+        public TipoCategoriaOvinaEnum createFromParcel(Parcel in) {
+            return TipoCategoriaOvinaEnum.values()[in.readInt()];
+        }
+
+        public TipoCategoriaOvinaEnum[] newArray(int size) {
+            return new TipoCategoriaOvinaEnum[size];
+        }
+    };
 }

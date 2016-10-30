@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Classe TipoMedidaEnum.
  */
-public enum TipoInstituicaoEnum {
+public enum TipoInstituicaoEnum implements Parcelable {
 
     UFGD("UF", "Ufgd"),
     ANHANGUERA("AH", "Anhanguera"),
@@ -23,6 +23,11 @@ public enum TipoInstituicaoEnum {
     TipoInstituicaoEnum(String codigo, String descricao) {
         this.codigo = codigo;
         this.descricao = descricao;
+    }
+
+    TipoInstituicaoEnum(Parcel parcel) {
+        this.codigo = parcel.readString();
+        this.descricao = parcel.readString();
     }
 
     /**
@@ -71,4 +76,26 @@ public enum TipoInstituicaoEnum {
         return descricao;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(codigo);
+        dest.writeString(descricao);
+    }
+
+    public static final Parcelable.Creator<TipoInstituicaoEnum>
+            CREATOR = new Parcelable.Creator<TipoInstituicaoEnum>() {
+
+        public TipoInstituicaoEnum createFromParcel(Parcel in) {
+            return TipoInstituicaoEnum.values()[in.readInt()];
+        }
+
+        public TipoInstituicaoEnum[] newArray(int size) {
+            return new TipoInstituicaoEnum[size];
+        }
+    };
 }

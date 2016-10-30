@@ -1,17 +1,21 @@
 package br.edu.pantaneiro.enums;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Classe TipoRacaEnum.
  */
-public enum TipoRacaEnum {
+public enum TipoRacaEnum implements Parcelable {
 
-    PANTANEIRA("1", "Pantaneira"),
-    CRIOULA("2", "Crioula Lanada"),
-    MORADA_NOVA("3", "Morada Nova"),
-    KARAKUL("4", "Karakul");
+    PANTANEIRA("P", "Pantaneira"),
+    CRIOULA("C", "Crioula Lanada"),
+    MORADA_NOVA("M", "Morada Nova"),
+    KARAKUL("K", "Karakul");
 
     private final String codigo;
     private final String descricao;
@@ -19,6 +23,11 @@ public enum TipoRacaEnum {
     TipoRacaEnum(String codigo, String descricao) {
         this.codigo = codigo;
         this.descricao = descricao;
+    }
+
+    TipoRacaEnum(Parcel parcel) {
+        this.codigo = parcel.readString();
+        this.descricao = parcel.readString();
     }
 
     /**
@@ -67,4 +76,26 @@ public enum TipoRacaEnum {
         return descricao;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(codigo);
+        dest.writeString(descricao);
+    }
+
+    public static final Parcelable.Creator<TipoRacaEnum>
+            CREATOR = new Parcelable.Creator<TipoRacaEnum>() {
+
+        public TipoRacaEnum createFromParcel(Parcel in) {
+            return TipoRacaEnum.values()[in.readInt()];
+        }
+
+        public TipoRacaEnum[] newArray(int size) {
+            return new TipoRacaEnum[size];
+        }
+    };
 }

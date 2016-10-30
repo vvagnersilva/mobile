@@ -12,6 +12,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import br.edu.pantaneiro.fragment.WebFragment;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -35,12 +37,12 @@ public class MainActivity extends AppCompatActivity
 
         if (savedInstanceState == null) {
             // Fragment default.
-         /*   fragment = EstrelaFragment.novaInstancia("EstrelaFragment");
+            fragment = WebFragment.novaInstancia("WebFragment");
 
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.conteudo, fragment, "EstrelaFragment")
-                    .commit();*/
+                    .replace(R.id.conteudo, fragment, "WebFragment")
+                    .commit();
         }
     }
 
@@ -88,7 +90,6 @@ public class MainActivity extends AppCompatActivity
 
             // Iniciamos nossa activity
             startActivity(it);
-        } else if (id == R.id.nav_cad_biometrico) {
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

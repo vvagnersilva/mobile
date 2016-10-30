@@ -1,12 +1,16 @@
 package br.edu.pantaneiro.enums;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Classe TipoMedidaEnum.
  */
-public enum TipoOpcoesEnum {
+public enum TipoOpcoesEnum implements Parcelable {
 
     PROCEDENCIA(1, "Rebanho Institucional ou Particular"),
     RACA(2, "Raça"),
@@ -19,6 +23,11 @@ public enum TipoOpcoesEnum {
     TipoOpcoesEnum(Integer codigo, String descricao) {
         this.codigo = codigo;
         this.descricao = descricao;
+    }
+
+    TipoOpcoesEnum(Parcel parcel) {
+        this.codigo = parcel.readInt();
+        this.descricao = parcel.readString();
     }
 
     /**
@@ -87,4 +96,26 @@ public enum TipoOpcoesEnum {
         return descricao;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(codigo);
+        dest.writeString(descricao);
+    }
+
+    public static final Parcelable.Creator<TipoOpcoesEnum>
+            CREATOR = new Parcelable.Creator<TipoOpcoesEnum>() {
+
+        public TipoOpcoesEnum createFromParcel(Parcel in) {
+            return TipoOpcoesEnum.values()[in.readInt()];
+        }
+
+        public TipoOpcoesEnum[] newArray(int size) {
+            return new TipoOpcoesEnum[size];
+        }
+    };
 }

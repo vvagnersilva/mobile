@@ -1,5 +1,6 @@
 package br.edu.pantaneiro;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
@@ -24,9 +25,10 @@ public class RelIndividualActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Morfometricas morfometrica = (Morfometricas) getIntent().getSerializableExtra("morfometrica");
-        MediaAritmeticaDesvioPadrao mediaDesvio = getIntent().getExtras().getParcelable("mediaDesvio");
+        Intent intent = getIntent();
 
+        MediaAritmeticaDesvioPadrao mediaDesvio = intent.getExtras().getParcelable("mediaDesvio");
+        Morfometricas morfometrica = intent.getExtras().getParcelable("morfometrica");
     }
 
     @Override
