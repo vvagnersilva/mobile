@@ -43,9 +43,9 @@ public class AvalIndividualActivity extends AppCompatActivity {
     private boolean isInstitucional;
     private boolean isParticular;
 
-    private TipoInstituicaoEnum tpInstituicaoEnum;
-    private TipoCategoriaOvinaEnum tpCategoriaOvinaEnum;
-    private TipoRacaEnum tpRacaEnum;
+    private TipoInstituicaoEnum csInstituicaoEnum;
+    private TipoCategoriaOvinaEnum csCategoriaOvinaEnum;
+    private TipoRacaEnum csRacaEnum;
 
     private Spinner spInstituicao;
     private Spinner spParticular;
@@ -105,29 +105,29 @@ public class AvalIndividualActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 if (position == 0) {
-                    tpInstituicaoEnum = null;
+                    csInstituicaoEnum = null;
                     Log.i(TAG, "Instituicao nao selecionada");
                 } else if (position == 1) {
-                    tpInstituicaoEnum = TipoInstituicaoEnum.UFGD;
+                    csInstituicaoEnum = TipoInstituicaoEnum.UFGD;
                     Log.i(TAG, "Raca UFGD");
                 } else if (position == 2) {
                     // A implementar
-                    tpInstituicaoEnum = TipoInstituicaoEnum.ANHANGUERA;
+                    csInstituicaoEnum = TipoInstituicaoEnum.ANHANGUERA;
                     Log.i(TAG, "Raca ANHANGUERA");
                 } else if (position == 3) {
                     // A implementar
-                    tpInstituicaoEnum = TipoInstituicaoEnum.EMBRAPA_GADO_CORTE;
+                    csInstituicaoEnum = TipoInstituicaoEnum.EMBRAPA_GADO_CORTE;
                     Log.i(TAG, "Raca EMBRAPA_GADO_CORTE");
                 } else if (position == 4) {
                     // A implementar
-                    tpInstituicaoEnum = TipoInstituicaoEnum.EMBRAPA_PANTANAL;
+                    csInstituicaoEnum = TipoInstituicaoEnum.EMBRAPA_PANTANAL;
                     Log.i(TAG, "Raca EMBRAPA_PANTANAL");
                 } else if (position == 5) {
                     // A implementar
-                    tpInstituicaoEnum = TipoInstituicaoEnum.UNIDERP;
+                    csInstituicaoEnum = TipoInstituicaoEnum.UNIDERP;
                     Log.i(TAG, "Raca UNIDERP");
                 }
-                morfometrica.setTpInstituicaoEnum(tpInstituicaoEnum);
+                morfometrica.setCsInstituicaoEnum(csInstituicaoEnum);
             }
 
             @Override
@@ -142,25 +142,25 @@ public class AvalIndividualActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
-                    tpRacaEnum = null;
+                    csRacaEnum = null;
                     Log.i(TAG, "Raça nao selecionada");
                 } else if (position == 1) {
-                    tpRacaEnum = TipoRacaEnum.PANTANEIRA;
+                    csRacaEnum = TipoRacaEnum.PANTANEIRA;
                     Log.i(TAG, "Raca PANTANEIRA");
                 } else if (position == 2) {
                     // A implementar
-                    tpRacaEnum = TipoRacaEnum.CRIOULA;
+                    csRacaEnum = TipoRacaEnum.CRIOULA;
                     Log.i(TAG, "Raca CRIOULA");
                 } else if (position == 3) {
                     // A implementar
-                    tpRacaEnum = TipoRacaEnum.MORADA_NOVA;
+                    csRacaEnum = TipoRacaEnum.MORADA_NOVA;
                     Log.i(TAG, "Raca MORADA_NOVA");
                 } else if (position == 4) {
                     // A implementar
-                    tpRacaEnum = TipoRacaEnum.KARAKUL;
+                    csRacaEnum = TipoRacaEnum.KARAKUL;
                     Log.i(TAG, "Raca KARAKUL");
                 }
-                morfometrica.setTpRacaEnum(tpRacaEnum);
+                morfometrica.setCsRacaEnum(csRacaEnum);
             }
 
             @Override
@@ -174,45 +174,45 @@ public class AvalIndividualActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
-                    tpCategoriaOvinaEnum = null;
+                    csCategoriaOvinaEnum = null;
                     Log.i(TAG, "Categoria nao selecionada");
                 } else if (position == 1) {
-                    tpCategoriaOvinaEnum = TipoCategoriaOvinaEnum.CORDEIRO;
-                    morfometrica.setTpSexo(TipoSexoEnum.MASCULINO);
+                    csCategoriaOvinaEnum = TipoCategoriaOvinaEnum.CORDEIRO;
+                    morfometrica.setCsSexo(TipoSexoEnum.MASCULINO);
                     morfometrica.setIdade(0);
 
                     Log.i(TAG, "Categoria CORDEIRO");
                 } else if (position == 2) {
-                    tpCategoriaOvinaEnum = TipoCategoriaOvinaEnum.CORDEIRA;
-                    morfometrica.setTpSexo(TipoSexoEnum.FEMININO);
+                    csCategoriaOvinaEnum = TipoCategoriaOvinaEnum.CORDEIRA;
+                    morfometrica.setCsSexo(TipoSexoEnum.FEMININO);
                     morfometrica.setIdade(0);
                     Log.i(TAG, "Categoria CORDEIRA");
                 } else if (position == 3) {
-                    tpCategoriaOvinaEnum = TipoCategoriaOvinaEnum.BORREGO;
-                    morfometrica.setTpSexo(TipoSexoEnum.MASCULINO);
+                    csCategoriaOvinaEnum = TipoCategoriaOvinaEnum.BORREGO;
+                    morfometrica.setCsSexo(TipoSexoEnum.MASCULINO);
                     morfometrica.setIdade(2);
 
                     Log.i(TAG, "Categoria BORREGO");
                 } else if (position == 4) {
-                    tpCategoriaOvinaEnum = TipoCategoriaOvinaEnum.BORREGA;
-                    morfometrica.setTpSexo(TipoSexoEnum.FEMININO);
+                    csCategoriaOvinaEnum = TipoCategoriaOvinaEnum.BORREGA;
+                    morfometrica.setCsSexo(TipoSexoEnum.FEMININO);
                     morfometrica.setIdade(2);
 
                     Log.i(TAG, "Categoria BORREGA");
                 } else if (position == 5) {
-                    tpCategoriaOvinaEnum = TipoCategoriaOvinaEnum.OVELHA;
-                    morfometrica.setTpSexo(TipoSexoEnum.FEMININO);
-                    morfometrica.setIdade(4);
+                    csCategoriaOvinaEnum = TipoCategoriaOvinaEnum.OVELHA;
+                    morfometrica.setCsSexo(TipoSexoEnum.FEMININO);
+                    morfometrica.setIdade(34);
 
                     Log.i(TAG, "Categoria OVELHA");
                 } else if (position == 6) {
-                    tpCategoriaOvinaEnum = TipoCategoriaOvinaEnum.CARNEIRO;
-                    morfometrica.setTpSexo(TipoSexoEnum.MASCULINO);
-                    morfometrica.setIdade(4);
+                    csCategoriaOvinaEnum = TipoCategoriaOvinaEnum.CARNEIRO;
+                    morfometrica.setCsSexo(TipoSexoEnum.MASCULINO);
+                    morfometrica.setIdade(34);
 
                     Log.i(TAG, "Categoria CARNEIRO");
                 }
-                morfometrica.setTpCategoriaOvinaEnum(tpCategoriaOvinaEnum);
+                morfometrica.setCsCategoriaOvinaEnum(csCategoriaOvinaEnum);
             }
 
             @Override
@@ -350,10 +350,10 @@ public class AvalIndividualActivity extends AppCompatActivity {
 
                 if (isInstitucional) {
                     // Se não for a UFGD, então aviso porque não tem base de dados.
-                    if (tpInstituicaoEnum == null) {
+                    if (csInstituicaoEnum == null) {
                         alertDialogBuilder.setMessage(getString(R.string.obrigatorio_instituicao));
                         bValidacao = true;
-                    } else if (!tpInstituicaoEnum.getCodigo().equals(TipoInstituicaoEnum.UFGD.getCodigo())) {
+                    } else if (!csInstituicaoEnum.getCodigo().equals(TipoInstituicaoEnum.UFGD.getCodigo())) {
                         alertDialogBuilder.setMessage(getString(R.string.condicao_instituicao));
                         bValidacao = true;
                     }
@@ -366,10 +366,10 @@ public class AvalIndividualActivity extends AppCompatActivity {
             case RACA: {
                 alertDialogBuilder.setTitle(R.string.racas);
 
-                if (tpRacaEnum == null) {
+                if (csRacaEnum == null) {
                     alertDialogBuilder.setMessage(getString(R.string.obrigatorio_raca));
                     bValidacao = true;
-                } else if (!tpRacaEnum.getCodigo().equals(TipoRacaEnum.PANTANEIRA.getCodigo())) {
+                } else if (!csRacaEnum.getCodigo().equals(TipoRacaEnum.PANTANEIRA.getCodigo())) {
                     alertDialogBuilder.setMessage(getString(R.string.condicao_raca));
                     bValidacao = true;
                 }
@@ -377,7 +377,7 @@ public class AvalIndividualActivity extends AppCompatActivity {
             }
             case CATEGORIA_OVINA: {
                 alertDialogBuilder.setTitle(R.string.categoria);
-                if (tpCategoriaOvinaEnum == null) {
+                if (csCategoriaOvinaEnum == null) {
                     alertDialogBuilder.setMessage(getString(R.string.obrigatorio_categoria));
                     bValidacao = true;
                 }
@@ -422,7 +422,7 @@ public class AvalIndividualActivity extends AppCompatActivity {
         protected List<Morfometricas> doInBackground(Void... params) {
             try {
                 // Busca os carros em background (Thread)
-                return MorfometricasService.getMorfometricas();
+                return MorfometricasService.getMorfometricas(csInstituicaoEnum, csRacaEnum, csCategoriaOvinaEnum);
             } catch (Exception e) {
                 Log.e(TAG, e.getMessage(), e);
                 return null;
@@ -442,8 +442,8 @@ public class AvalIndividualActivity extends AppCompatActivity {
 
                 Intent it = new Intent(AvalIndividualActivity.this, RelIndividualActivity.class);
 
-                it.putExtra("mediaDesvio", mediaDesvio);
-                it.putExtra("morfometrica", morfometrica);
+                it.putExtra("medias", mediaDesvio);
+                it.putExtra("morfometricas", morfometrica);
 
                 startActivity(it);
             }

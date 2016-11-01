@@ -116,8 +116,8 @@
         <item>Cordeira (dente de leite)</item>
         <item>Borrego (2 dentes)</item>
         <item>Borrega (2 dentes)</item>
-        <item>Ovelha (3 ou 4 dentes)</item>
-        <item>Carneiro (3 ou 4 dentes)</item>
+        <item>Ovelha (4, 6 ou 8 dentes)</item>
+        <item>Carneiro (4, 6 ou 8 dentes)</item>
     </string-array>
 
     <string-array name="morfologica_array">

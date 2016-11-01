@@ -27,8 +27,12 @@ public class RelIndividualActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        MediaAritmeticaDesvioPadrao mediaDesvio = intent.getExtras().getParcelable("mediaDesvio");
-        Morfometricas morfometrica = intent.getExtras().getParcelable("morfometrica");
+        MediaAritmeticaDesvioPadrao mediaDesvio = intent.getExtras().getParcelable("medias");
+        Morfometricas morfo = intent.getExtras().getParcelable("morfometricas");
+
+
+
+
     }
 
     @Override

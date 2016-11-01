@@ -103,8 +103,7 @@ public enum TipoOpcoesEnum implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(codigo);
-        dest.writeString(descricao);
+        dest.writeInt(this.ordinal());
     }
 
     public static final Parcelable.Creator<TipoOpcoesEnum>

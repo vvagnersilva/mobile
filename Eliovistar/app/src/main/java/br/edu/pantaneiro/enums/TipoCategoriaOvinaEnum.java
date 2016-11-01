@@ -20,8 +20,8 @@ public enum TipoCategoriaOvinaEnum  implements Parcelable {
     CORDEIRA("CA", "Cordeira dente de leite"),
     BORREGO("BO", "2 dentes"),
     BORREGA("BA", "2 dentes"),
-    OVELHA("OV", "3 ou 4 dentes"),
-    CARNEIRO("CA", "3 ou 4 dentes");
+    OVELHA("OV", "4, 6 ou 8 dentes"),
+    CARNEIRO("CA", "4, 6 ou 8 dentes");
 
     private final String codigo;
     private final String descricao;
@@ -109,8 +109,7 @@ public enum TipoCategoriaOvinaEnum  implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(codigo);
-        dest.writeString(descricao);
+        dest.writeInt(this.ordinal());
     }
 
     public static final Parcelable.Creator<TipoCategoriaOvinaEnum>

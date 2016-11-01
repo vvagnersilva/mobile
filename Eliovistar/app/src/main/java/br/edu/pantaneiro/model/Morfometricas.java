@@ -15,7 +15,7 @@ import br.edu.pantaneiro.enums.TipoSexoEnum;
  */
 public class Morfometricas implements Parcelable {
 
-    private TipoSexoEnum tpSexo;
+    private TipoSexoEnum csSexo;
     private Integer idade;
     private Double scoreCorporal;
     private Double pesoVivo;
@@ -46,16 +46,16 @@ public class Morfometricas implements Parcelable {
     private Double perimBaseCauda;
     private Double compTetos;
     private Double circEscroto;
-    private TipoInstituicaoEnum tpInstituicaoEnum;
-    private TipoRacaEnum tpRacaEnum;
-    private TipoCategoriaOvinaEnum tpCategoriaOvinaEnum;
+    private TipoInstituicaoEnum csInstituicaoEnum;
+    private TipoRacaEnum csRacaEnum;
+    private TipoCategoriaOvinaEnum csCategoriaOvinaEnum;
 
     public Morfometricas() {
     }
 
     public Morfometricas(Parcel parcel) {
 
-        this.tpSexo = (TipoSexoEnum) parcel.readValue(TipoSexoEnum.class.getClassLoader());
+        this.csSexo = (TipoSexoEnum) parcel.readValue(TipoSexoEnum.class.getClassLoader());
         this.idade = parcel.readInt();
         this.scoreCorporal = parcel.readDouble();
         this.pesoVivo = parcel.readDouble();
@@ -87,9 +87,9 @@ public class Morfometricas implements Parcelable {
         this.compTetos = parcel.readDouble();
         this.circEscroto = parcel.readDouble();
 
-        this.tpInstituicaoEnum = (TipoInstituicaoEnum) parcel.readValue(TipoInstituicaoEnum.class.getClassLoader());
-        this.tpRacaEnum = (TipoRacaEnum) parcel.readValue(TipoRacaEnum.class.getClassLoader());
-        this.tpCategoriaOvinaEnum = (TipoCategoriaOvinaEnum) parcel.readValue(TipoCategoriaOvinaEnum.class.getClassLoader());
+        this.csInstituicaoEnum = (TipoInstituicaoEnum) parcel.readValue(TipoInstituicaoEnum.class.getClassLoader());
+        this.csRacaEnum = (TipoRacaEnum) parcel.readValue(TipoRacaEnum.class.getClassLoader());
+        this.csCategoriaOvinaEnum = (TipoCategoriaOvinaEnum) parcel.readValue(TipoCategoriaOvinaEnum.class.getClassLoader());
     }
 
     @Override
@@ -100,7 +100,7 @@ public class Morfometricas implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
 
-        dest.writeValue(tpSexo);
+        dest.writeValue(csSexo);
         dest.writeInt(idade);
         dest.writeDouble(scoreCorporal);
         dest.writeDouble(pesoVivo);
@@ -131,9 +131,14 @@ public class Morfometricas implements Parcelable {
         dest.writeDouble(perimBaseCauda);
         dest.writeDouble(compTetos);
         dest.writeDouble(circEscroto);
-        dest.writeValue(tpInstituicaoEnum);
-        dest.writeValue(tpRacaEnum);
-        dest.writeValue(tpCategoriaOvinaEnum);
+
+        dest.writeValue(csInstituicaoEnum);
+        dest.writeValue(csRacaEnum);
+        dest.writeValue(csCategoriaOvinaEnum);
+    }
+
+    public static Creator<Morfometricas> getCREATOR() {
+        return CREATOR;
     }
 
     public static final Parcelable.Creator<Morfometricas>
@@ -148,12 +153,12 @@ public class Morfometricas implements Parcelable {
         }
     };
 
-    public TipoSexoEnum getTpSexo() {
-        return tpSexo;
+    public TipoSexoEnum getCsSexo() {
+        return csSexo;
     }
 
-    public void setTpSexo(TipoSexoEnum tpSexo) {
-        this.tpSexo = tpSexo;
+    public void setCsSexo(TipoSexoEnum csSexo) {
+        this.csSexo = csSexo;
     }
 
     public Integer getIdade() {
@@ -396,71 +401,27 @@ public class Morfometricas implements Parcelable {
         this.circEscroto = circEscroto;
     }
 
-    public TipoInstituicaoEnum getTpInstituicaoEnum() {
-        return tpInstituicaoEnum;
+    public TipoInstituicaoEnum getCsInstituicaoEnum() {
+        return csInstituicaoEnum;
     }
 
-    public void setTpInstituicaoEnum(TipoInstituicaoEnum tpInstituicaoEnum) {
-        this.tpInstituicaoEnum = tpInstituicaoEnum;
+    public void setCsInstituicaoEnum(TipoInstituicaoEnum csInstituicaoEnum) {
+        this.csInstituicaoEnum = csInstituicaoEnum;
     }
 
-    public TipoRacaEnum getTpRacaEnum() {
-        return tpRacaEnum;
+    public TipoRacaEnum getCsRacaEnum() {
+        return csRacaEnum;
     }
 
-    public void setTpRacaEnum(TipoRacaEnum tpRacaEnum) {
-        this.tpRacaEnum = tpRacaEnum;
+    public void setCsRacaEnum(TipoRacaEnum csRacaEnum) {
+        this.csRacaEnum = csRacaEnum;
     }
 
-    public TipoCategoriaOvinaEnum getTpCategoriaOvinaEnum() {
-        return tpCategoriaOvinaEnum;
+    public TipoCategoriaOvinaEnum getCsCategoriaOvinaEnum() {
+        return csCategoriaOvinaEnum;
     }
 
-    public void setTpCategoriaOvinaEnum(TipoCategoriaOvinaEnum tpCategoriaOvinaEnum) {
-        this.tpCategoriaOvinaEnum = tpCategoriaOvinaEnum;
-    }
-
-    public static Creator<Morfometricas> getCREATOR() {
-        return CREATOR;
-    }
-
-    @Override
-    public String toString() {
-        return "Morfometricas{" +
-                "tpSexo=" + tpSexo +
-                ", idade=" + idade +
-                ", scoreCorporal=" + scoreCorporal +
-                ", pesoVivo=" + pesoVivo +
-                ", compCabeca=" + compCabeca +
-                ", compCranio=" + compCranio +
-                ", largCabeca=" + largCabeca +
-                ", longRosto=" + longRosto +
-                ", tamOrelhas=" + tamOrelhas +
-                ", perimPescoco=" + perimPescoco +
-                ", compPescoco=" + compPescoco +
-                ", compCorporal=" + compCorporal +
-                ", profundidade=" + profundidade +
-                ", largOmbros=" + largOmbros +
-                ", perimToracico=" + perimToracico +
-                ", compGarupa=" + compGarupa +
-                ", largEntreIlios=" + largEntreIlios +
-                ", largEntreIsquios=" + largEntreIsquios +
-                ", altCernelha=" + altCernelha +
-                ", altGarupa=" + altGarupa +
-                ", distEntreVentreSolo=" + distEntreVentreSolo +
-                ", perimTarso=" + perimTarso +
-                ", perimMetatarso=" + perimMetatarso +
-                ", perimCarpo=" + perimCarpo +
-                ", perimMetacarpo=" + perimMetacarpo +
-                ", compPernasAnteriores=" + compPernasAnteriores +
-                ", compPernasPosteriores=" + compPernasPosteriores +
-                ", compCauda=" + compCauda +
-                ", perimBaseCauda=" + perimBaseCauda +
-                ", compTetos=" + compTetos +
-                ", circEscroto=" + circEscroto +
-                ", tpInstituicaoEnum=" + tpInstituicaoEnum +
-                ", tpRacaEnum=" + tpRacaEnum +
-                ", tpCategoriaOvinaEnum=" + tpCategoriaOvinaEnum +
-                '}';
+    public void setCsCategoriaOvinaEnum(TipoCategoriaOvinaEnum csCategoriaOvinaEnum) {
+        this.csCategoriaOvinaEnum = csCategoriaOvinaEnum;
     }
 }

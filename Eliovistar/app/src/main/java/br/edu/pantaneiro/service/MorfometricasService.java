@@ -11,23 +11,32 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.edu.pantaneiro.enums.TipoSexoEnum;
+import br.edu.pantaneiro.enums.TipoCategoriaOvinaEnum;
+import br.edu.pantaneiro.enums.TipoInstituicaoEnum;
+import br.edu.pantaneiro.enums.TipoRacaEnum;
 import br.edu.pantaneiro.model.Morfometricas;
 
 public class MorfometricasService {
     private static final String TAG = "MorfometricasService";
 
     // Ambiente local.
-    //private static final String SERVIDOR = "http://192.168.1.3:8080/pantaneiro/morfometricas";
+    //private static final StringBuilder SERVIDOR = new StringBuilder("http://192.168.1.3:8080/pantaneiro/morfometricas");
+    private static final StringBuilder SERVIDOR = new StringBuilder("http://192.168.43.245:8080/pantaneiro/morfometricas");
 
     // Ambiente da Amazon.
-    private static final String SERVIDOR = "http://52.67.183.205:8080/pantaneiro/morfometricas";
+    //private static final StringBuilder SERVIDOR = StringBuilder("http://52.67.183.205:8080/pantaneiro/morfometricas");
 
-    private static final String WEBSERVICE_URL = SERVIDOR + "/buscarTodos";
+    private static final StringBuilder url = SERVIDOR.append("/buscaEspec/");
 
     // Faz a requisição HTTP, cria a lista de carros e salva o JSON em arquivo
-    public static List<Morfometricas> getMorfometricas() throws Exception {
-        HttpURLConnection conexao = abrirConexao(WEBSERVICE_URL, "GET", false);
+    public static List<Morfometricas> getMorfometricas(TipoInstituicaoEnum csInstituicaoEnum, TipoRacaEnum csRacaEnum, TipoCategoriaOvinaEnum csCategoriaOvinaEnum) throws Exception {
+
+        url.append("?instituicao=").append(csInstituicaoEnum.getCodigo());
+        url.append("&raca=").append(csRacaEnum.getCodigo());
+        url.append("&categoriaOvina=").append(csCategoriaOvinaEnum.getCodigo());
+
+        HttpURLConnection conexao = abrirConexao(url.toString(), "GET", false);
+
         List<Morfometricas> list = new ArrayList<Morfometricas>();
 
         if (conexao.getResponseCode() == HttpURLConnection.HTTP_OK) {
@@ -41,7 +50,6 @@ public class MorfometricasService {
 
                 Morfometricas m = new Morfometricas();
 
-                m.setTpSexo(TipoSexoEnum.FEMININO.getCodigo().equals(morfoJson.getString("sexo")) ? TipoSexoEnum.FEMININO: TipoSexoEnum.MASCULINO);
                 m.setIdade(morfoJson.getInt("idade"));
                 m.setScoreCorporal((double) morfoJson.getDouble("scoreCorporal"));
                 m.setPesoVivo((double) morfoJson.getDouble("pesoVivo"));

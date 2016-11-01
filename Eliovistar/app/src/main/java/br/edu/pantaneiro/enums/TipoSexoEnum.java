@@ -66,8 +66,7 @@ public enum TipoSexoEnum implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(codigo);
-        dest.writeString(descricao);
+        dest.writeInt(this.ordinal());
     }
 
     public static final Parcelable.Creator<TipoSexoEnum>
