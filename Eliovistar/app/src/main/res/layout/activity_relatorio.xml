@@ -40,7 +40,6 @@
             android:textColor="@color/orange" />
 
         <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/tableLayout1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="5dip"
@@ -48,48 +47,39 @@
 
             <!-- Score corporal -->
             <TableRow
-                android:id="@+id/tabCranio"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:text="@string/score_corporal" />
 
-                <EditText
-                    android:id="@+id/edScoreCorporal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="3" />
+                <ImageView
+                    android:id="@+id/imgScoreCorporal"
+                    android:layout_width="180dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Peso vivo -->
             <TableRow
-                android:id="@+id/tabCranio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:text="@string/peso_vivo" />
 
-                <EditText
-                    android:id="@+id/edPesoVivo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgPesoVivo"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
-
         </TableLayout>
 
         <!-- Medidas do cranio -->
@@ -102,7 +92,6 @@
             android:textColor="@color/orange" />
 
         <TableLayout
-            android:id="@+id/tableLayout1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="5dip"
@@ -110,114 +99,93 @@
 
             <!-- Medidas do cranio -->
             <TableRow
-                android:id="@+id/tabCranio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:text="@string/comp_cabeca" />
 
-                <EditText
-                    android:id="@+id/edCompCabeca"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgCompCabeca"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Medidas do cranio -->
             <TableRow
-                android:id="@+id/tabCompCranio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:text="@string/comp_cranio" />
 
-                <EditText
-                    android:id="@+id/edCompCranio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgCompCranio"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Largura da cabeca -->
             <TableRow
-                android:id="@+id/tabLargCabeca"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:padding="5dip">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:text="@string/larg_cabeca" />
 
-                <EditText
-                    android:id="@+id/edLargCabeca"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgLargCabeca"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Longitude do rosto -->
             <TableRow
-                android:id="@+id/tabLongRosto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:text="@string/long_rosto" />
 
-                <EditText
-                    android:id="@+id/edLongRosto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgLongRosto"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Tamanho orelhas -->
             <TableRow
-                android:id="@+id/tabTamOrelhas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:text="@string/tam_orelhas" />
 
-                <EditText
-                    android:id="@+id/edTamOrelhas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgTamOrelhas"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
-
         </TableLayout>
 
         <!-- Medidas de tronco -->
@@ -230,7 +198,6 @@
             android:textColor="@color/orange" />
 
         <TableLayout
-            android:id="@+id/tableLayout1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="5dip"
@@ -238,7 +205,6 @@
 
             <!-- Perimetro de pescoço -->
             <TableRow
-                android:id="@+id/tabPerPescoco"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -248,19 +214,15 @@
                     android:layout_height="30dp"
                     android:text="@string/perim_pescoco" />
 
-                <EditText
-                    android:id="@+id/edPerimPescoco"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgPerimPescoco"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Comprimento do pescoço -->
             <TableRow
-                android:id="@+id/tabCompPescoco"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -270,19 +232,15 @@
                     android:layout_height="30dp"
                     android:text="@string/comp_pescoco" />
 
-                <EditText
-                    android:id="@+id/edCompPescoco"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgCompPescoco"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Comprimento corporal -->
             <TableRow
-                android:id="@+id/tabCompCorporal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -292,19 +250,15 @@
                     android:layout_height="30dp"
                     android:text="@string/comp_corporal" />
 
-                <EditText
-                    android:id="@+id/edCompCorporal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgCompCorporal"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Profundidade -->
             <TableRow
-                android:id="@+id/tabProfundidade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -314,19 +268,15 @@
                     android:layout_height="30dp"
                     android:text="@string/profundidade" />
 
-                <EditText
-                    android:id="@+id/edProfundidade"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgProfundidade"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Largura ombros -->
             <TableRow
-                android:id="@+id/tabLargOmbros"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -336,19 +286,15 @@
                     android:layout_height="30dp"
                     android:text="@string/larg_ombros" />
 
-                <EditText
-                    android:id="@+id/edLargOmbros"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgLargOmbros"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Perimetro toracico -->
             <TableRow
-                android:id="@+id/tabPerimetroToracico"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -358,19 +304,15 @@
                     android:layout_height="30dp"
                     android:text="@string/perim_toracico" />
 
-                <EditText
-                    android:id="@+id/edPerimToracico"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgPerimToracico"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Comprimento garupa -->
             <TableRow
-                android:id="@+id/tabCompGarupa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -380,19 +322,15 @@
                     android:layout_height="30dp"
                     android:text="@string/comp_garupa" />
 
-                <EditText
-                    android:id="@+id/edCompGarupa"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgCompGarupa"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Largura entre ilios -->
             <TableRow
-                android:id="@+id/tabLargEntreIlios"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -402,19 +340,15 @@
                     android:layout_height="30dp"
                     android:text="@string/Largura_entre_ilios" />
 
-                <EditText
-                    android:id="@+id/edLargEntreIlios"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgLargEntreIlios"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Largura entre isquios -->
             <TableRow
-                android:id="@+id/tabLargEntreIsquios"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -424,14 +358,11 @@
                     android:layout_height="30dp"
                     android:text="@string/Largura_entre_isquios" />
 
-                <EditText
-                    android:id="@+id/edLargEntreIsquios"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgLargEntreIsquios"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
         </TableLayout>
@@ -447,7 +378,6 @@
 
 
         <TableLayout
-            android:id="@+id/tableLayout1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="5dip"
@@ -455,7 +385,6 @@
 
             <!-- Perimetro de pescoço -->
             <TableRow
-                android:id="@+id/tabAltCernelha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -465,19 +394,15 @@
                     android:layout_height="30dp"
                     android:text="@string/alt_cernelha" />
 
-                <EditText
-                    android:id="@+id/edAltCernelha"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgAltCernelha"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Altura garupa -->
             <TableRow
-                android:id="@+id/tabAltGarupa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -487,19 +412,15 @@
                     android:layout_height="30dp"
                     android:text="@string/alt_garupa" />
 
-                <EditText
-                    android:id="@+id/edAltGarupa"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgAltGarupa"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Distancia ventre-solo -->
             <TableRow
-                android:id="@+id/tabDistVentreSolo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -509,19 +430,15 @@
                     android:layout_height="30dp"
                     android:text="@string/dist_ventre_solo" />
 
-                <EditText
-                    android:id="@+id/edDistanciaVentreSolo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgDistanciaVentreSolo"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Perimetro tarso -->
             <TableRow
-                android:id="@+id/tabPerimTarso"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -531,19 +448,15 @@
                     android:layout_height="30dp"
                     android:text="@string/perim_tarso" />
 
-                <EditText
-                    android:id="@+id/edPerimTarso"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgPerimTarso"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Perimetro metatarso -->
             <TableRow
-                android:id="@+id/tabPerimMetatarso"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -553,19 +466,15 @@
                     android:layout_height="30dp"
                     android:text="@string/perim_metatarso" />
 
-                <EditText
-                    android:id="@+id/edPerimMetatarso"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgPerimMetatarso"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Perimetro carpo -->
             <TableRow
-                android:id="@+id/tabPerimetroCarpo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -575,19 +484,15 @@
                     android:layout_height="30dp"
                     android:text="@string/perim_carpo" />
 
-                <EditText
-                    android:id="@+id/edPerimCarpo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgPerimCarpo"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Perimetro metacarpo -->
             <TableRow
-                android:id="@+id/tabPerimetroMetacarpo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -597,19 +502,15 @@
                     android:layout_height="30dp"
                     android:text="@string/perim_metacarpo" />
 
-                <EditText
-                    android:id="@+id/edPerimMetaCarpo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgPerimMetaCarpo"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Comprimento pernas anteriores -->
             <TableRow
-                android:id="@+id/tabCompPernasAnteriores"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -619,19 +520,15 @@
                     android:layout_height="30dp"
                     android:text="@string/comp_pernas_anteriores" />
 
-                <EditText
-                    android:id="@+id/edCompPernasAnteriores"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgCompPernasAnteriores"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Comprimento pernas posteriores -->
             <TableRow
-                android:id="@+id/tabCompPernasPosteriores"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -641,14 +538,11 @@
                     android:layout_height="30dp"
                     android:text="@string/comp_pernas_posteriores" />
 
-                <EditText
-                    android:id="@+id/edCompPernasPosteriores"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgCompPernasPosteriores"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
         </TableLayout>
@@ -664,7 +558,6 @@
 
 
         <TableLayout
-            android:id="@+id/tableLayout1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="5dip"
@@ -672,7 +565,6 @@
 
             <!-- Comprimento da cauda -->
             <TableRow
-                android:id="@+id/tabCompCauda"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -682,19 +574,15 @@
                     android:layout_height="30dp"
                     android:text="@string/comp_cauda" />
 
-                <EditText
-                    android:id="@+id/edCompCauda"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgCompCauda"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Perimetro da base cauda -->
             <TableRow
-                android:id="@+id/tabPerimBaseCauda"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -704,19 +592,15 @@
                     android:layout_height="30dp"
                     android:text="@string/perim_base_cauda" />
 
-                <EditText
-                    android:id="@+id/edPerimBaseCauda"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgPerimBaseCauda"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Comprimento de tetos -->
             <TableRow
-                android:id="@+id/tabCompTetos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -726,19 +610,15 @@
                     android:layout_height="30dp"
                     android:text="@string/comp_tetos" />
 
-                <EditText
-                    android:id="@+id/edCompTetos"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgCompTetos"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
 
             <!-- Circunferencia escroto -->
             <TableRow
-                android:id="@+id/tabCircEscroto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -748,14 +628,11 @@
                     android:layout_height="30dp"
                     android:text="@string/circ_escroto" />
 
-                <EditText
-                    android:id="@+id/edCircEscroto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:inputType="numberDecimal"
-                    android:maxLength="5" />
+                <ImageView
+                    android:id="@+id/imgCircEscroto"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="right" />
             </TableRow>
         </TableLayout>
 
@@ -768,7 +645,6 @@
             android:textColor="@color/yellow" />
 
         <TableLayout
-            android:id="@+id/tableLayout1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="5dip"
@@ -776,7 +652,6 @@
 
             <!-- Perfil cefalico -->
             <TableRow
-                android:id="@+id/tabPerPescoco"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -796,7 +671,6 @@
 
             <!-- Chanfro -->
             <TableRow
-                android:id="@+id/tabChanfro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -816,7 +690,6 @@
 
             <!-- Focinho -->
             <TableRow
-                android:id="@+id/tabFocinho"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -836,7 +709,6 @@
 
             <!-- Chifres -->
             <TableRow
-                android:id="@+id/tabChifres"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dip">
@@ -855,8 +727,6 @@
             </TableRow>
 
             <!-- Lã  -->
-
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
@@ -925,7 +795,7 @@
                     android:text="@string/pelo" />
 
                 <Spinner
-                    android:id="@+id/spCorLa"
+                    android:id="@+id/spPeloCorLa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:entries="@array/cor_array"
@@ -964,25 +834,25 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/checkOrelha"
+                    android:id="@+id/ckManchasOrelha"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/orelha" />
 
                 <CheckBox
-                    android:id="@+id/checkCara"
+                    android:id="@+id/ckManchasCara"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/cara" />
 
                 <CheckBox
-                    android:id="@+id/checkPernas"
+                    android:id="@+id/ckManchasPernas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/pernas" />
 
                 <CheckBox
-                    android:id="@+id/checkBarriga"
+                    android:id="@+id/ckManchasBarriga"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/barriga" />

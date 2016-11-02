@@ -179,37 +179,26 @@ public class AvalIndividualActivity extends AppCompatActivity {
                 } else if (position == 1) {
                     csCategoriaOvinaEnum = TipoCategoriaOvinaEnum.CORDEIRO;
                     morfometrica.setCsSexo(TipoSexoEnum.MASCULINO);
-                    morfometrica.setIdade(0);
-
                     Log.i(TAG, "Categoria CORDEIRO");
                 } else if (position == 2) {
                     csCategoriaOvinaEnum = TipoCategoriaOvinaEnum.CORDEIRA;
                     morfometrica.setCsSexo(TipoSexoEnum.FEMININO);
-                    morfometrica.setIdade(0);
                     Log.i(TAG, "Categoria CORDEIRA");
                 } else if (position == 3) {
                     csCategoriaOvinaEnum = TipoCategoriaOvinaEnum.BORREGO;
                     morfometrica.setCsSexo(TipoSexoEnum.MASCULINO);
-                    morfometrica.setIdade(2);
-
                     Log.i(TAG, "Categoria BORREGO");
                 } else if (position == 4) {
                     csCategoriaOvinaEnum = TipoCategoriaOvinaEnum.BORREGA;
                     morfometrica.setCsSexo(TipoSexoEnum.FEMININO);
-                    morfometrica.setIdade(2);
-
                     Log.i(TAG, "Categoria BORREGA");
                 } else if (position == 5) {
                     csCategoriaOvinaEnum = TipoCategoriaOvinaEnum.OVELHA;
                     morfometrica.setCsSexo(TipoSexoEnum.FEMININO);
-                    morfometrica.setIdade(34);
-
                     Log.i(TAG, "Categoria OVELHA");
                 } else if (position == 6) {
                     csCategoriaOvinaEnum = TipoCategoriaOvinaEnum.CARNEIRO;
                     morfometrica.setCsSexo(TipoSexoEnum.MASCULINO);
-                    morfometrica.setIdade(34);
-
                     Log.i(TAG, "Categoria CARNEIRO");
                 }
                 morfometrica.setCsCategoriaOvinaEnum(csCategoriaOvinaEnum);
@@ -432,9 +421,7 @@ public class AvalIndividualActivity extends AppCompatActivity {
         // Atualiza a interface
         protected void onPostExecute(List<Morfometricas> listMorfo) {
             if (listMorfo != null) {
-
                 calcularMedias(listMorfo);
-
                 calcularDesvioPadrao(listMorfo);
 
                 Log.i(TAG, mediaDesvio.toString());
@@ -450,6 +437,7 @@ public class AvalIndividualActivity extends AppCompatActivity {
         }
 
         private void calcularMedias(List<Morfometricas> listMorfo) {
+            Double mediaScoreCorporal = 0D;
             Double mediaPesoVivo = 0D;
             Double mediaCompCabeca = 0D;
             Double mediaCompCranio = 0D;
@@ -480,6 +468,7 @@ public class AvalIndividualActivity extends AppCompatActivity {
             Double mediaCircEscroto = 0D;
 
             for (Morfometricas morfo : listMorfo) {
+                mediaScoreCorporal += morfo.getScoreCorporal();
                 mediaPesoVivo += morfo.getPesoVivo();
                 mediaCompCabeca += morfo.getCompCabeca();
                 mediaCompCranio += morfo.getCompCranio();
@@ -510,13 +499,14 @@ public class AvalIndividualActivity extends AppCompatActivity {
                 mediaCircEscroto += morfo.getCircEscroto();
             }
 
-            mediaDesvio.setMediaPesoVivo(Util.converteStringToDouble(nf.format(mediaPesoVivo / listMorfo.size())));
-            mediaDesvio.setMediaCompCabeca(Util.converteStringToDouble(nf.format(mediaCompCabeca / listMorfo.size())));
-            mediaDesvio.setMediaCompCranio(Util.converteStringToDouble(nf.format(mediaCompCranio / listMorfo.size())));
-            mediaDesvio.setMediaLargCabeca(Util.converteStringToDouble(nf.format(mediaLargCabeca / listMorfo.size())));
-            mediaDesvio.setMediaLongRosto(Util.converteStringToDouble(nf.format(mediaLongRosto / listMorfo.size())));
-            mediaDesvio.setMediaTamOrelhas(Util.converteStringToDouble(nf.format(mediaTamOrelhas / listMorfo.size())));
-            mediaDesvio.setMediaPerimPescoco(Util.converteStringToDouble(nf.format(mediaPerimPescoco / listMorfo.size())));
+            mediaDesvio.setMediaScoreCorporal(Util.converteStringToDouble(nf.format(mediaScoreCorporal/listMorfo.size())));
+            mediaDesvio.setMediaPesoVivo(Util.converteStringToDouble(nf.format(mediaPesoVivo/listMorfo.size())));
+            mediaDesvio.setMediaCompCabeca(Util.converteStringToDouble(nf.format(mediaCompCabeca/listMorfo.size())));
+            mediaDesvio.setMediaCompCranio(Util.converteStringToDouble(nf.format(mediaCompCranio/listMorfo.size())));
+            mediaDesvio.setMediaLargCabeca(Util.converteStringToDouble(nf.format(mediaLargCabeca/listMorfo.size())));
+            mediaDesvio.setMediaLongRosto(Util.converteStringToDouble(nf.format(mediaLongRosto/listMorfo.size())));
+            mediaDesvio.setMediaTamOrelhas(Util.converteStringToDouble(nf.format(mediaTamOrelhas/listMorfo.size())));
+            mediaDesvio.setMediaPerimPescoco(Util.converteStringToDouble(nf.format(mediaPerimPescoco/listMorfo.size())));
             mediaDesvio.setMediaCompPescoco(Util.converteStringToDouble(nf.format(mediaCompPescoco / listMorfo.size())));
             mediaDesvio.setMediaCompCorporal(Util.converteStringToDouble(nf.format(mediaCompCorporal / listMorfo.size())));
             mediaDesvio.setMediaProfundidade(Util.converteStringToDouble(nf.format(mediaProfundidade / listMorfo.size())));
@@ -541,6 +531,7 @@ public class AvalIndividualActivity extends AppCompatActivity {
         }
 
         private void calcularDesvioPadrao(List<Morfometricas> listMorfo) {
+            Double desvioScoreCorporal = 0D;
             Double desvioPesoVivo = 0D;
             Double desvioCompCabeca = 0D;
             Double desvioCompCranio = 0D;
@@ -571,6 +562,7 @@ public class AvalIndividualActivity extends AppCompatActivity {
             Double desvioCircEscroto = 0D;
 
             for (Morfometricas morfo : listMorfo) {
+                desvioScoreCorporal += Math.pow(morfo.getScoreCorporal() - mediaDesvio.getMediaScoreCorporal(), 2);
                 desvioPesoVivo += Math.pow(morfo.getPesoVivo() - mediaDesvio.getMediaPesoVivo(), 2);
                 desvioCompCabeca += Math.pow(morfo.getCompCabeca() - mediaDesvio.getMediaCompCabeca(), 2);
                 desvioCompCranio += Math.pow(morfo.getCompCranio() - mediaDesvio.getMediaCompCranio(), 2);
@@ -601,6 +593,7 @@ public class AvalIndividualActivity extends AppCompatActivity {
                 desvioCircEscroto += Math.pow(morfo.getCircEscroto() - mediaDesvio.getMediaCircEscroto(), 2);
             }
 
+            mediaDesvio.setDesvioScoreCorporal(Util.converteStringToDouble(nf.format(Math.sqrt(desvioScoreCorporal/(listMorfo.size() - 1)))));
             mediaDesvio.setDesvioPesoVivo(Util.converteStringToDouble(nf.format(Math.sqrt(desvioPesoVivo / (listMorfo.size() - 1)))));
             mediaDesvio.setDesvioCompCabeca(Util.converteStringToDouble(nf.format(Math.sqrt(desvioCompCabeca / (listMorfo.size() - 1)))));
             mediaDesvio.setDesvioCompCranio(Util.converteStringToDouble(nf.format(Math.sqrt(desvioCompCranio / (listMorfo.size() - 1)))));

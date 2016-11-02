@@ -11,6 +11,7 @@ import android.os.Parcelable;
 public class MediaAritmeticaDesvioPadrao implements Parcelable {
 
     // Media Aritmetica
+    Double mediaScoreCorporal = 0D;
     Double mediaPesoVivo = 0D;
     Double mediaCompCabeca = 0D;
     Double mediaCompCranio = 0D;
@@ -41,6 +42,7 @@ public class MediaAritmeticaDesvioPadrao implements Parcelable {
     Double mediaCircEscroto = 0D;
 
     // Desvio Padrao
+    Double desvioScoreCorporal = 0D;
     Double desvioPesoVivo = 0D;
     Double desvioCompCabeca = 0D;
     Double desvioCompCranio = 0D;
@@ -75,6 +77,7 @@ public class MediaAritmeticaDesvioPadrao implements Parcelable {
 
     private MediaAritmeticaDesvioPadrao(Parcel p) {
         // Media Aritmetica
+        mediaScoreCorporal = p.readDouble();
         mediaPesoVivo = p.readDouble();
         mediaCompCabeca = p.readDouble();
         mediaCompCranio = p.readDouble();
@@ -105,6 +108,7 @@ public class MediaAritmeticaDesvioPadrao implements Parcelable {
         mediaCircEscroto = p.readDouble();
 
         // Desvio Padrao
+        desvioScoreCorporal = p.readDouble();
         desvioPesoVivo = p.readDouble();
         desvioCompCabeca = p.readDouble();
         desvioCompCranio = p.readDouble();
@@ -156,6 +160,7 @@ public class MediaAritmeticaDesvioPadrao implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
 
         // Media Aritmetica
+        dest.writeDouble(mediaScoreCorporal);
         dest.writeDouble(mediaPesoVivo);
         dest.writeDouble(mediaCompCabeca);
         dest.writeDouble(mediaCompCranio);
@@ -184,6 +189,7 @@ public class MediaAritmeticaDesvioPadrao implements Parcelable {
         dest.writeDouble(mediaCircEscroto);
 
         // Desvio Padrao
+        dest.writeDouble(desvioScoreCorporal);
         dest.writeDouble(desvioPesoVivo);
         dest.writeDouble(desvioCompCabeca);
         dest.writeDouble(desvioCompCranio);
@@ -212,6 +218,22 @@ public class MediaAritmeticaDesvioPadrao implements Parcelable {
         dest.writeDouble(desvioPerimBaseCauda);
         dest.writeDouble(desvioCompTetos);
         dest.writeDouble(desvioCircEscroto);
+    }
+
+    public Double getMediaScoreCorporal() {
+        return mediaScoreCorporal;
+    }
+
+    public void setMediaScoreCorporal(Double mediaScoreCorporal) {
+        this.mediaScoreCorporal = mediaScoreCorporal;
+    }
+
+    public Double getDesvioScoreCorporal() {
+        return desvioScoreCorporal;
+    }
+
+    public void setDesvioScoreCorporal(Double desvioScoreCorporal) {
+        this.desvioScoreCorporal = desvioScoreCorporal;
     }
 
     public Double getMediaPesoVivo() {

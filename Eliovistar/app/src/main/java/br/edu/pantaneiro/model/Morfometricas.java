@@ -16,7 +16,6 @@ import br.edu.pantaneiro.enums.TipoSexoEnum;
 public class Morfometricas implements Parcelable {
 
     private TipoSexoEnum csSexo;
-    private Integer idade;
     private Double scoreCorporal;
     private Double pesoVivo;
     private Double compCabeca;
@@ -56,7 +55,6 @@ public class Morfometricas implements Parcelable {
     public Morfometricas(Parcel parcel) {
 
         this.csSexo = (TipoSexoEnum) parcel.readValue(TipoSexoEnum.class.getClassLoader());
-        this.idade = parcel.readInt();
         this.scoreCorporal = parcel.readDouble();
         this.pesoVivo = parcel.readDouble();
         this.compCabeca = parcel.readDouble();
@@ -101,7 +99,6 @@ public class Morfometricas implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
 
         dest.writeValue(csSexo);
-        dest.writeInt(idade);
         dest.writeDouble(scoreCorporal);
         dest.writeDouble(pesoVivo);
         dest.writeDouble(compCabeca);
@@ -159,14 +156,6 @@ public class Morfometricas implements Parcelable {
 
     public void setCsSexo(TipoSexoEnum csSexo) {
         this.csSexo = csSexo;
-    }
-
-    public Integer getIdade() {
-        return idade;
-    }
-
-    public void setIdade(Integer idade) {
-        this.idade = idade;
     }
 
     public Double getScoreCorporal() {

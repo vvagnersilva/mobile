@@ -20,11 +20,10 @@ public class MorfometricasService {
     private static final String TAG = "MorfometricasService";
 
     // Ambiente local.
-    //private static final StringBuilder SERVIDOR = new StringBuilder("http://192.168.1.3:8080/pantaneiro/morfometricas");
-    private static final StringBuilder SERVIDOR = new StringBuilder("http://192.168.43.245:8080/pantaneiro/morfometricas");
+    //private static final StringBuilder SERVIDOR = new StringBuilder("http://192.168.1.7:8080/pantaneiro/morfometricas");
 
     // Ambiente da Amazon.
-    //private static final StringBuilder SERVIDOR = StringBuilder("http://52.67.183.205:8080/pantaneiro/morfometricas");
+    private static final StringBuilder SERVIDOR = new StringBuilder("http://52.67.183.205:8080/EliovistarWs/morfometricas");
 
     private static final StringBuilder url = SERVIDOR.append("/buscaEspec/");
 
@@ -50,7 +49,6 @@ public class MorfometricasService {
 
                 Morfometricas m = new Morfometricas();
 
-                m.setIdade(morfoJson.getInt("idade"));
                 m.setScoreCorporal((double) morfoJson.getDouble("scoreCorporal"));
                 m.setPesoVivo((double) morfoJson.getDouble("pesoVivo"));
                 m.setCompCabeca((double) morfoJson.getDouble("compCabeca"));
