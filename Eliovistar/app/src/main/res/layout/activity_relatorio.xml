@@ -40,16 +40,16 @@
             android:textColor="@color/orange" />
 
         <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:padding="5dip"
             android:stretchColumns="*">
 
             <!-- Score corporal -->
             <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dip">
+                android:layout_height="match_parent"
+                android:padding="5dip"
+                android:layout_width="match_parent">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -58,9 +58,12 @@
 
                 <ImageView
                     android:id="@+id/imgScoreCorporal"
-                    android:layout_width="180dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Peso vivo -->
@@ -76,9 +79,12 @@
 
                 <ImageView
                     android:id="@+id/imgPesoVivo"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
         </TableLayout>
 
@@ -110,9 +116,12 @@
 
                 <ImageView
                     android:id="@+id/imgCompCabeca"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Medidas do cranio -->
@@ -128,9 +137,12 @@
 
                 <ImageView
                     android:id="@+id/imgCompCranio"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Largura da cabeca -->
@@ -146,9 +158,12 @@
 
                 <ImageView
                     android:id="@+id/imgLargCabeca"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Longitude do rosto -->
@@ -164,9 +179,12 @@
 
                 <ImageView
                     android:id="@+id/imgLongRosto"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Tamanho orelhas -->
@@ -182,9 +200,12 @@
 
                 <ImageView
                     android:id="@+id/imgTamOrelhas"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
         </TableLayout>
 
@@ -216,9 +237,12 @@
 
                 <ImageView
                     android:id="@+id/imgPerimPescoco"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Comprimento do pescoço -->
@@ -234,9 +258,12 @@
 
                 <ImageView
                     android:id="@+id/imgCompPescoco"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Comprimento corporal -->
@@ -252,9 +279,12 @@
 
                 <ImageView
                     android:id="@+id/imgCompCorporal"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Profundidade -->
@@ -270,9 +300,12 @@
 
                 <ImageView
                     android:id="@+id/imgProfundidade"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Largura ombros -->
@@ -288,9 +321,12 @@
 
                 <ImageView
                     android:id="@+id/imgLargOmbros"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Perimetro toracico -->
@@ -306,9 +342,12 @@
 
                 <ImageView
                     android:id="@+id/imgPerimToracico"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Comprimento garupa -->
@@ -324,9 +363,12 @@
 
                 <ImageView
                     android:id="@+id/imgCompGarupa"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Largura entre ilios -->
@@ -342,9 +384,12 @@
 
                 <ImageView
                     android:id="@+id/imgLargEntreIlios"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Largura entre isquios -->
@@ -360,9 +405,12 @@
 
                 <ImageView
                     android:id="@+id/imgLargEntreIsquios"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
         </TableLayout>
@@ -396,9 +444,12 @@
 
                 <ImageView
                     android:id="@+id/imgAltCernelha"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Altura garupa -->
@@ -414,9 +465,12 @@
 
                 <ImageView
                     android:id="@+id/imgAltGarupa"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Distancia ventre-solo -->
@@ -432,9 +486,12 @@
 
                 <ImageView
                     android:id="@+id/imgDistanciaVentreSolo"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Perimetro tarso -->
@@ -450,9 +507,12 @@
 
                 <ImageView
                     android:id="@+id/imgPerimTarso"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Perimetro metatarso -->
@@ -468,9 +528,12 @@
 
                 <ImageView
                     android:id="@+id/imgPerimMetatarso"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Perimetro carpo -->
@@ -486,9 +549,12 @@
 
                 <ImageView
                     android:id="@+id/imgPerimCarpo"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Perimetro metacarpo -->
@@ -504,9 +570,12 @@
 
                 <ImageView
                     android:id="@+id/imgPerimMetaCarpo"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Comprimento pernas anteriores -->
@@ -522,9 +591,12 @@
 
                 <ImageView
                     android:id="@+id/imgCompPernasAnteriores"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Comprimento pernas posteriores -->
@@ -540,9 +612,12 @@
 
                 <ImageView
                     android:id="@+id/imgCompPernasPosteriores"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
         </TableLayout>
@@ -576,9 +651,12 @@
 
                 <ImageView
                     android:id="@+id/imgCompCauda"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Perimetro da base cauda -->
@@ -594,9 +672,12 @@
 
                 <ImageView
                     android:id="@+id/imgPerimBaseCauda"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Comprimento de tetos -->
@@ -612,9 +693,12 @@
 
                 <ImageView
                     android:id="@+id/imgCompTetos"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
 
             <!-- Circunferencia escroto -->
@@ -630,9 +714,12 @@
 
                 <ImageView
                     android:id="@+id/imgCircEscroto"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:layout_gravity="right" />
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="center"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false" />
             </TableRow>
         </TableLayout>
 

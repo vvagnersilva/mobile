@@ -302,11 +302,13 @@ public class AvalIndividualActivity extends AppCompatActivity {
                 EditText edCircEscroto = (EditText) findViewById(R.id.edCircEscroto);
                 morfometrica.setCircEscroto(Util.converteStringToDouble(edCircEscroto.getText().length() == 0 ? "0" : edCircEscroto.getText().toString()));
 
-                // Valida campo Instituicao
-                if (validaCampoObrigatorio(TipoOpcoesEnum.PROCEDENCIA) ||
-                        validaCampoObrigatorio(TipoOpcoesEnum.RACA) ||
-                        validaCampoObrigatorio(TipoOpcoesEnum.CATEGORIA_OVINA) ||
-                        validaCampoObrigatorio(TipoOpcoesEnum.SCORE_CORPORAL)) {
+                if (validaCampoObrigatorio(TipoOpcoesEnum.PROCEDENCIA)) {
+                    return;
+                } else if (validaCampoObrigatorio(TipoOpcoesEnum.RACA)) {
+                    return;
+                } else if (validaCampoObrigatorio(TipoOpcoesEnum.CATEGORIA_OVINA)) {
+                    return;
+                } else if (validaCampoObrigatorio(TipoOpcoesEnum.SCORE_CORPORAL)) {
                     return;
                 } else {
                     new GetMorfometricasTask().execute();
@@ -348,6 +350,9 @@ public class AvalIndividualActivity extends AppCompatActivity {
                     }
                 } else if (isParticular) {
                     alertDialogBuilder.setMessage(getString(R.string.condicao_particular));
+                    bValidacao = true;
+                } else {
+                    alertDialogBuilder.setMessage(getString(R.string.obrigatorio_instituicao));
                     bValidacao = true;
                 }
                 break;
@@ -499,14 +504,14 @@ public class AvalIndividualActivity extends AppCompatActivity {
                 mediaCircEscroto += morfo.getCircEscroto();
             }
 
-            mediaDesvio.setMediaScoreCorporal(Util.converteStringToDouble(nf.format(mediaScoreCorporal/listMorfo.size())));
-            mediaDesvio.setMediaPesoVivo(Util.converteStringToDouble(nf.format(mediaPesoVivo/listMorfo.size())));
-            mediaDesvio.setMediaCompCabeca(Util.converteStringToDouble(nf.format(mediaCompCabeca/listMorfo.size())));
-            mediaDesvio.setMediaCompCranio(Util.converteStringToDouble(nf.format(mediaCompCranio/listMorfo.size())));
-            mediaDesvio.setMediaLargCabeca(Util.converteStringToDouble(nf.format(mediaLargCabeca/listMorfo.size())));
-            mediaDesvio.setMediaLongRosto(Util.converteStringToDouble(nf.format(mediaLongRosto/listMorfo.size())));
-            mediaDesvio.setMediaTamOrelhas(Util.converteStringToDouble(nf.format(mediaTamOrelhas/listMorfo.size())));
-            mediaDesvio.setMediaPerimPescoco(Util.converteStringToDouble(nf.format(mediaPerimPescoco/listMorfo.size())));
+            mediaDesvio.setMediaScoreCorporal(Util.converteStringToDouble(nf.format(mediaScoreCorporal / listMorfo.size())));
+            mediaDesvio.setMediaPesoVivo(Util.converteStringToDouble(nf.format(mediaPesoVivo / listMorfo.size())));
+            mediaDesvio.setMediaCompCabeca(Util.converteStringToDouble(nf.format(mediaCompCabeca / listMorfo.size())));
+            mediaDesvio.setMediaCompCranio(Util.converteStringToDouble(nf.format(mediaCompCranio / listMorfo.size())));
+            mediaDesvio.setMediaLargCabeca(Util.converteStringToDouble(nf.format(mediaLargCabeca / listMorfo.size())));
+            mediaDesvio.setMediaLongRosto(Util.converteStringToDouble(nf.format(mediaLongRosto / listMorfo.size())));
+            mediaDesvio.setMediaTamOrelhas(Util.converteStringToDouble(nf.format(mediaTamOrelhas / listMorfo.size())));
+            mediaDesvio.setMediaPerimPescoco(Util.converteStringToDouble(nf.format(mediaPerimPescoco / listMorfo.size())));
             mediaDesvio.setMediaCompPescoco(Util.converteStringToDouble(nf.format(mediaCompPescoco / listMorfo.size())));
             mediaDesvio.setMediaCompCorporal(Util.converteStringToDouble(nf.format(mediaCompCorporal / listMorfo.size())));
             mediaDesvio.setMediaProfundidade(Util.converteStringToDouble(nf.format(mediaProfundidade / listMorfo.size())));
@@ -593,7 +598,7 @@ public class AvalIndividualActivity extends AppCompatActivity {
                 desvioCircEscroto += Math.pow(morfo.getCircEscroto() - mediaDesvio.getMediaCircEscroto(), 2);
             }
 
-            mediaDesvio.setDesvioScoreCorporal(Util.converteStringToDouble(nf.format(Math.sqrt(desvioScoreCorporal/(listMorfo.size() - 1)))));
+            mediaDesvio.setDesvioScoreCorporal(Util.converteStringToDouble(nf.format(Math.sqrt(desvioScoreCorporal / (listMorfo.size() - 1)))));
             mediaDesvio.setDesvioPesoVivo(Util.converteStringToDouble(nf.format(Math.sqrt(desvioPesoVivo / (listMorfo.size() - 1)))));
             mediaDesvio.setDesvioCompCabeca(Util.converteStringToDouble(nf.format(Math.sqrt(desvioCompCabeca / (listMorfo.size() - 1)))));
             mediaDesvio.setDesvioCompCranio(Util.converteStringToDouble(nf.format(Math.sqrt(desvioCompCranio / (listMorfo.size() - 1)))));

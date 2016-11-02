@@ -129,17 +129,17 @@ public class RelIndividualActivity extends AppCompatActivity {
     private void defineCores(ImageView imgRes, Double medidaTela, Double desvio, Double media) {
 
         if (medidaTela == 0) {
-            imgRes.setImageResource(R.drawable.ic_help_white_48dp);
+            imgRes.setImageResource(R.drawable.ic_help_white_24dp);
         } else {
             Double lim_inf = media - desvio;
             Double lim_sup = media + desvio;
 
             if ((medidaTela >= lim_inf) && (medidaTela <= lim_sup)) {
-                imgRes.setImageResource(R.drawable.verde);
+                imgRes.setBackgroundResource(R.drawable.verde);
             } else if (medidaTela <= lim_inf) {
-                imgRes.setImageResource(R.drawable.laranja);
+                imgRes.setBackgroundResource(R.drawable.laranja);
             } else if (medidaTela >= lim_sup) {
-                imgRes.setImageResource(R.drawable.roxo);
+                imgRes.setBackgroundResource(R.drawable.roxo);
             }
         }
     }
