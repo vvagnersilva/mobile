@@ -1,16 +1,15 @@
-package br.edu.pantaneiro;
+package br.edu.pantaneiro.fragment;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +22,9 @@ import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
 
+import br.edu.pantaneiro.MainActivity;
+import br.edu.pantaneiro.R;
+import br.edu.pantaneiro.RelIndividualActivity;
 import br.edu.pantaneiro.enums.TipoCategoriaOvinaEnum;
 import br.edu.pantaneiro.enums.TipoInstituicaoEnum;
 import br.edu.pantaneiro.enums.TipoOpcoesEnum;
@@ -33,10 +35,12 @@ import br.edu.pantaneiro.model.Morfometricas;
 import br.edu.pantaneiro.service.MorfometricasService;
 import br.edu.pantaneiro.utils.Util;
 
+
 /**
- *
+ * Created by Wagner Silva.
  */
-public class AvalIndividualActivity extends AppCompatActivity {
+public class AvaliacaoIndividualFragment extends Fragment {
+    private static final String EXTRA_TIPO = "mTipo";
 
     private static final String TAG = "Pantaneiro";
 
@@ -57,19 +61,31 @@ public class AvalIndividualActivity extends AppCompatActivity {
     private MediaAritmeticaDesvioPadrao mediaDesvio = new MediaAritmeticaDesvioPadrao();
 
     private NumberFormat nf = new DecimalFormat("#,##0.00", new DecimalFormatSymbols(new Locale("pt", "BR")));
+    private View layout;
+
+    public static AvaliacaoIndividualFragment novaInstancia(String tipo) {
+        Bundle params = new Bundle();
+        params.putString(EXTRA_TIPO, tipo);
+        AvaliacaoIndividualFragment f = new AvaliacaoIndividualFragment();
+        f.setArguments(params);
+        return f;
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
 
-        setContentView(R.layout.activity_avaliacao);
+    @Override
+    public View onCreateView(LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        // Setando o titulo no toolbar.
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(
+                R.string.avaliacao);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.avaliacao);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        layout = inflater.inflate(R.layout.aval_indiv_fragment, container, false);
 
-        group = (RadioGroup) findViewById(R.id.rgOpcoes);
+        group = (RadioGroup) layout.findViewById(R.id.rgOpcoes);
 
         // Evento do RadioGroup
         group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -78,18 +94,18 @@ public class AvalIndividualActivity extends AppCompatActivity {
                 isParticular = R.id.radioParticular == checkedId;
 
                 if (isInstitucional) {
-                    spInstituicao = (Spinner) findViewById(R.id.spInstituicao);
+                    spInstituicao = (Spinner) layout.findViewById(R.id.spInstituicao);
                     spInstituicao.setVisibility(View.VISIBLE);
 
-                    spParticular = (Spinner) findViewById(R.id.spParticular);
+                    spParticular = (Spinner) layout.findViewById(R.id.spParticular);
                     spParticular.setVisibility(View.INVISIBLE);
 
                     Log.i(TAG, "Marcou radio Institucional: " + checkedId);
                 } else if (isParticular) {
-                    spParticular = (Spinner) findViewById(R.id.spParticular);
+                    spParticular = (Spinner) layout.findViewById(R.id.spParticular);
                     spParticular.setVisibility(View.VISIBLE);
 
-                    spInstituicao = (Spinner) findViewById(R.id.spInstituicao);
+                    spInstituicao = (Spinner) layout.findViewById(R.id.spInstituicao);
                     spInstituicao.setVisibility(View.INVISIBLE);
 
                     Log.i(TAG, "Marcou radio do Particular: " + checkedId);
@@ -98,7 +114,7 @@ public class AvalIndividualActivity extends AppCompatActivity {
         });
 
         // Spinner de instituicao
-        spInstituicao = (Spinner) findViewById(R.id.spInstituicao);
+        spInstituicao = (Spinner) layout.findViewById(R.id.spInstituicao);
 
         spInstituicao.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -136,7 +152,7 @@ public class AvalIndividualActivity extends AppCompatActivity {
         });
 
         // Spinner da Raças
-        spRacas = (Spinner) findViewById(R.id.spRacas);
+        spRacas = (Spinner) layout.findViewById(R.id.spRacas);
         spRacas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
@@ -169,7 +185,7 @@ public class AvalIndividualActivity extends AppCompatActivity {
         });
 
         // Spinner de categoria ovina
-        spCategoriaOvina = (Spinner) findViewById(R.id.spCategoriaOvina);
+        spCategoriaOvina = (Spinner) layout.findViewById(R.id.spCategoriaOvina);
         spCategoriaOvina.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -209,97 +225,97 @@ public class AvalIndividualActivity extends AppCompatActivity {
             }
         });
 
-        Button btEmitirRelatorio = (Button) findViewById(R.id.btEmitirRelatorio);
+        Button btEmitirRelatorio = (Button) layout.findViewById(R.id.btEmitirRelatorio);
 
         // Evento onClick do botao emitir relatorio.
         btEmitirRelatorio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText edScoreCorporal = (EditText) findViewById(R.id.edScoreCorporal);
+                EditText edScoreCorporal = (EditText) layout.findViewById(R.id.edScoreCorporal);
                 morfometrica.setScoreCorporal(Util.converteStringToDouble(edScoreCorporal.getText().length() == 0 ? "0" : edScoreCorporal.getText().toString()));
 
-                EditText edPesoVivo = (EditText) findViewById(R.id.edPesoVivo);
+                EditText edPesoVivo = (EditText) layout.findViewById(R.id.edPesoVivo);
                 morfometrica.setPesoVivo(Util.converteStringToDouble(edPesoVivo.getText().length() == 0 ? "0" : edPesoVivo.getText().toString()));
 
-                EditText edCompCabeca = (EditText) findViewById(R.id.edCompCabeca);
+                EditText edCompCabeca = (EditText) layout.findViewById(R.id.edCompCabeca);
                 morfometrica.setCompCabeca(Util.converteStringToDouble(edCompCabeca.getText().length() == 0 ? "0" : edCompCabeca.getText().toString()));
 
-                EditText edCompCranio = (EditText) findViewById(R.id.edCompCranio);
+                EditText edCompCranio = (EditText) layout.findViewById(R.id.edCompCranio);
                 morfometrica.setCompCranio(Util.converteStringToDouble(edCompCranio.getText().length() == 0 ? "0" : edCompCranio.getText().toString()));
 
-                EditText edLargCabeca = (EditText) findViewById(R.id.edLargCabeca);
+                EditText edLargCabeca = (EditText) layout.findViewById(R.id.edLargCabeca);
                 morfometrica.setLargCabeca(Util.converteStringToDouble(edLargCabeca.getText().length() == 0 ? "0" : edLargCabeca.getText().toString()));
 
-                EditText edLongRosto = (EditText) findViewById(R.id.edLongRosto);
+                EditText edLongRosto = (EditText) layout.findViewById(R.id.edLongRosto);
                 morfometrica.setLongRosto(Util.converteStringToDouble(edLongRosto.getText().length() == 0 ? "0" : edLongRosto.getText().toString()));
 
-                EditText edTamOrelhas = (EditText) findViewById(R.id.edTamOrelhas);
+                EditText edTamOrelhas = (EditText) layout.findViewById(R.id.edTamOrelhas);
                 morfometrica.setTamOrelhas(Util.converteStringToDouble(edTamOrelhas.getText().length() == 0 ? "0" : edTamOrelhas.getText().toString()));
 
-                EditText edPerimPescoco = (EditText) findViewById(R.id.edPerimPescoco);
+                EditText edPerimPescoco = (EditText) layout.findViewById(R.id.edPerimPescoco);
                 morfometrica.setPerimPescoco(Util.converteStringToDouble(edPerimPescoco.getText().length() == 0 ? "0" : edPerimPescoco.getText().toString()));
 
-                EditText edCompPescoco = (EditText) findViewById(R.id.edCompPescoco);
+                EditText edCompPescoco = (EditText) layout.findViewById(R.id.edCompPescoco);
                 morfometrica.setCompPescoco(Util.converteStringToDouble(edCompPescoco.getText().length() == 0 ? "0" : edCompPescoco.getText().toString()));
 
-                EditText edCompCorporal = (EditText) findViewById(R.id.edCompCorporal);
+                EditText edCompCorporal = (EditText) layout.findViewById(R.id.edCompCorporal);
                 morfometrica.setCompCorporal(Util.converteStringToDouble(edCompCorporal.getText().length() == 0 ? "0" : edCompCorporal.getText().toString()));
 
-                EditText edProfundidade = (EditText) findViewById(R.id.edProfundidade);
+                EditText edProfundidade = (EditText) layout.findViewById(R.id.edProfundidade);
                 morfometrica.setProfundidade(Util.converteStringToDouble(edProfundidade.getText().length() == 0 ? "0" : edProfundidade.getText().toString()));
 
-                EditText edLargOmbros = (EditText) findViewById(R.id.edLargOmbros);
+                EditText edLargOmbros = (EditText) layout.findViewById(R.id.edLargOmbros);
                 morfometrica.setLargOmbros(Util.converteStringToDouble(edLargOmbros.getText().length() == 0 ? "0" : edLargOmbros.getText().toString()));
 
-                EditText edPerimToracico = (EditText) findViewById(R.id.edPerimToracico);
+                EditText edPerimToracico = (EditText) layout.findViewById(R.id.edPerimToracico);
                 morfometrica.setPerimToracico(Util.converteStringToDouble(edPerimToracico.getText().length() == 0 ? "0" : edPerimToracico.getText().toString()));
 
-                EditText edCompGarupa = (EditText) findViewById(R.id.edCompGarupa);
+                EditText edCompGarupa = (EditText) layout.findViewById(R.id.edCompGarupa);
                 morfometrica.setCompGarupa(Util.converteStringToDouble(edCompGarupa.getText().length() == 0 ? "0" : edCompGarupa.getText().toString()));
 
-                EditText edLargEntreIlios = (EditText) findViewById(R.id.edLargEntreIlios);
+                EditText edLargEntreIlios = (EditText) layout.findViewById(R.id.edLargEntreIlios);
                 morfometrica.setLargEntreIlios(Util.converteStringToDouble(edLargEntreIlios.getText().length() == 0 ? "0" : edLargEntreIlios.getText().toString()));
 
-                EditText edLargEntreIsquios = (EditText) findViewById(R.id.edLargEntreIsquios);
+                EditText edLargEntreIsquios = (EditText) layout.findViewById(R.id.edLargEntreIsquios);
                 morfometrica.setLargEntreIsquios(Util.converteStringToDouble(edLargEntreIsquios.getText().length() == 0 ? "0" : edLargEntreIsquios.getText().toString()));
 
-                EditText edAltCernelha = (EditText) findViewById(R.id.edAltCernelha);
+                EditText edAltCernelha = (EditText) layout.findViewById(R.id.edAltCernelha);
                 morfometrica.setAltCernelha(Util.converteStringToDouble(edAltCernelha.getText().length() == 0 ? "0" : edAltCernelha.getText().toString()));
 
-                EditText edAltGarupa = (EditText) findViewById(R.id.edAltGarupa);
+                EditText edAltGarupa = (EditText) layout.findViewById(R.id.edAltGarupa);
                 morfometrica.setAltGarupa(Util.converteStringToDouble(edAltGarupa.getText().length() == 0 ? "0" : edAltGarupa.getText().toString()));
 
-                EditText edDistanciaVentreSolo = (EditText) findViewById(R.id.edDistanciaVentreSolo);
+                EditText edDistanciaVentreSolo = (EditText) layout.findViewById(R.id.edDistanciaVentreSolo);
                 morfometrica.setDistEntreVentreSolo(Util.converteStringToDouble(edDistanciaVentreSolo.getText().length() == 0 ? "0" : edDistanciaVentreSolo.getText().toString()));
 
-                EditText edPerimTarso = (EditText) findViewById(R.id.edPerimTarso);
+                EditText edPerimTarso = (EditText) layout.findViewById(R.id.edPerimTarso);
                 morfometrica.setPerimTarso(Util.converteStringToDouble(edPerimTarso.getText().length() == 0 ? "0" : edPerimTarso.getText().toString()));
 
-                EditText edPerimMetatarso = (EditText) findViewById(R.id.edPerimMetatarso);
+                EditText edPerimMetatarso = (EditText) layout.findViewById(R.id.edPerimMetatarso);
                 morfometrica.setPerimMetatarso(Util.converteStringToDouble(edPerimMetatarso.getText().length() == 0 ? "0" : edPerimMetatarso.getText().toString()));
 
-                EditText edPerimCarpo = (EditText) findViewById(R.id.edPerimCarpo);
+                EditText edPerimCarpo = (EditText) layout.findViewById(R.id.edPerimCarpo);
                 morfometrica.setPerimCarpo(Util.converteStringToDouble(edPerimCarpo.getText().length() == 0 ? "0" : edPerimCarpo.getText().toString()));
 
-                EditText edPerimMetaCarpo = (EditText) findViewById(R.id.edPerimMetaCarpo);
+                EditText edPerimMetaCarpo = (EditText) layout.findViewById(R.id.edPerimMetaCarpo);
                 morfometrica.setPerimMetacarpo(Util.converteStringToDouble(edPerimMetaCarpo.getText().length() == 0 ? "0" : edPerimMetaCarpo.getText().toString()));
 
-                EditText edCompPernasAnteriores = (EditText) findViewById(R.id.edCompPernasAnteriores);
+                EditText edCompPernasAnteriores = (EditText) layout.findViewById(R.id.edCompPernasAnteriores);
                 morfometrica.setCompPernasAnteriores(Util.converteStringToDouble(edCompPernasAnteriores.getText().length() == 0 ? "0" : edCompPernasAnteriores.getText().toString()));
 
-                EditText edCompPernasPosteriores = (EditText) findViewById(R.id.edCompPernasPosteriores);
+                EditText edCompPernasPosteriores = (EditText) layout.findViewById(R.id.edCompPernasPosteriores);
                 morfometrica.setCompPernasPosteriores(Util.converteStringToDouble(edCompPernasPosteriores.getText().length() == 0 ? "0" : edCompPernasPosteriores.getText().toString()));
 
-                EditText edCompCauda = (EditText) findViewById(R.id.edCompCauda);
+                EditText edCompCauda = (EditText) layout.findViewById(R.id.edCompCauda);
                 morfometrica.setCompCauda(Util.converteStringToDouble(edCompCauda.getText().length() == 0 ? "0" : edCompCauda.getText().toString()));
 
-                EditText edPerimBaseCauda = (EditText) findViewById(R.id.edPerimBaseCauda);
+                EditText edPerimBaseCauda = (EditText) layout.findViewById(R.id.edPerimBaseCauda);
                 morfometrica.setPerimBaseCauda(Util.converteStringToDouble(edPerimBaseCauda.getText().length() == 0 ? "0" : edPerimBaseCauda.getText().toString()));
 
-                EditText edCompTetos = (EditText) findViewById(R.id.edCompTetos);
+                EditText edCompTetos = (EditText) layout.findViewById(R.id.edCompTetos);
                 morfometrica.setCompTetos(Util.converteStringToDouble(edCompTetos.getText().length() == 0 ? "0" : edCompTetos.getText().toString()));
 
-                EditText edCircEscroto = (EditText) findViewById(R.id.edCircEscroto);
+                EditText edCircEscroto = (EditText) layout.findViewById(R.id.edCircEscroto);
                 morfometrica.setCircEscroto(Util.converteStringToDouble(edCircEscroto.getText().length() == 0 ? "0" : edCircEscroto.getText().toString()));
 
                 if (validaCampoObrigatorio(TipoOpcoesEnum.PROCEDENCIA)) {
@@ -315,23 +331,14 @@ public class AvalIndividualActivity extends AppCompatActivity {
                 }
             }
         });
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            // Id correspondente ao botão Up/Home da actionbar
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return layout;
     }
 
     private boolean validaCampoObrigatorio(TipoOpcoesEnum opcao) {
         boolean bValidacao = false;
 
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this, R.style.AlertDialogStyle);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext(), R.style.AlertDialogStyle);
 
         alertDialogBuilder.setIcon(R.drawable.ic_alert_white_48dp);
 
@@ -380,7 +387,7 @@ public class AvalIndividualActivity extends AppCompatActivity {
             case SCORE_CORPORAL: {
                 alertDialogBuilder.setTitle(R.string.score_corporal);
 
-                EditText edScoreCorporal = (EditText) findViewById(R.id.edScoreCorporal);
+                EditText edScoreCorporal = (EditText) layout.findViewById(R.id.edScoreCorporal);
 
                 double scoreCorporal = Util.converteStringToDouble(edScoreCorporal.getText().length() == 0 ? "0" : edScoreCorporal.getText().toString());
 
@@ -432,7 +439,7 @@ public class AvalIndividualActivity extends AppCompatActivity {
                 Log.i(TAG, mediaDesvio.toString());
                 Log.i(TAG, morfometrica.toString());
 
-                Intent it = new Intent(AvalIndividualActivity.this, RelIndividualActivity.class);
+                Intent it = new Intent(getContext(), RelIndividualActivity.class);
 
                 it.putExtra("medias", mediaDesvio);
                 it.putExtra("morfometricas", morfometrica);
@@ -630,3 +637,4 @@ public class AvalIndividualActivity extends AppCompatActivity {
         }
     }
 }
+

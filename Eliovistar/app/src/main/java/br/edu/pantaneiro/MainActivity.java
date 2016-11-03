@@ -1,6 +1,5 @@
 package br.edu.pantaneiro;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -12,6 +11,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import br.edu.pantaneiro.fragment.AvaliacaoIndividualFragment;
+import br.edu.pantaneiro.fragment.SobreFragment;
 import br.edu.pantaneiro.fragment.WebFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -78,22 +79,44 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        String titulo = item.getTitle().toString();
 
-        if (id == R.id.nav_avaliacao_individual) {
+        Fragment frag = null;
 
-            Intent it = new Intent(this, AvalIndividualActivity.class);
+        if (id == R.id.nav_ufgd) {
+            frag = WebFragment.novaInstancia(titulo);
 
-            // Iniciamos nossa activity
-            startActivity(it);
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.conteudo, frag, titulo)
+                    .commit();
+        } else if (id == R.id.nav_avaliacao_individual) {
+            frag = AvaliacaoIndividualFragment.novaInstancia(titulo);
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.conteudo, frag, titulo)
+                    .commit();
+        } else if (id == R.id.nav_locais_medicao) {
+         /*   frag = SobreFragment.novaInstancia(titulo);
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.conteudo, frag, titulo)
+                    .commit();*/
+        } else if (id == R.id.nav_imagens) {
+        } else if (id == R.id.nav_questionarios) {
+        } else if (id == R.id.nav_dna) {
+        } else if (id == R.id.nav_ident_individual) {
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+
         return true;
     }
 }

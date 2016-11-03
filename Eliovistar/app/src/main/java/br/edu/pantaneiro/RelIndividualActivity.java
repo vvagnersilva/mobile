@@ -26,7 +26,7 @@ public class RelIndividualActivity extends AppCompatActivity {
         setContentView(R.layout.activity_relatorio);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.avaliacao_relatorio);
+        toolbar.setTitle(R.string.rel_aval_individual);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

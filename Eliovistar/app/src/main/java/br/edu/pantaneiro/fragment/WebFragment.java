@@ -32,7 +32,6 @@ public class WebFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
     }
 
@@ -41,8 +40,7 @@ public class WebFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         // Setando o titulo no toolbar.
         ((MainActivity) getActivity()).getSupportActionBar().setTitle(
-                R.string.app_name);
-
+                R.string.ufgd);
 
         View layout = inflater.inflate(R.layout.web_fragment, container, false);
 

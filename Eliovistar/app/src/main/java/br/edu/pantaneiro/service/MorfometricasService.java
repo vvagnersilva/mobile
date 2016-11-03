@@ -20,10 +20,10 @@ public class MorfometricasService {
     private static final String TAG = "MorfometricasService";
 
     // Ambiente local.
-    //private static final StringBuilder SERVIDOR = new StringBuilder("http://192.168.1.7:8080/pantaneiro/morfometricas");
+    private static final StringBuilder SERVIDOR = new StringBuilder("http://192.168.1.7:8080/pantaneiro/morfometricas");
 
     // Ambiente da Amazon.
-    private static final StringBuilder SERVIDOR = new StringBuilder("http://52.67.183.205:8080/EliovistarWs/morfometricas");
+    //private static final StringBuilder SERVIDOR = new StringBuilder("http://52.67.183.205:8080/EliovistarWs/morfometricas");
 
     private static final StringBuilder url = SERVIDOR.append("/buscaEspec/");
 
