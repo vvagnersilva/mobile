@@ -35,7 +35,7 @@ b, strong { font-weight: bold; }
 
 dfn { font-style: italic; }
 
-mark { background: #ff0; color: #000; }
+mark { background: #FFF; color: #000; }
 
 sub, sup { line-height: 0; position: relative; vertical-align: baseline; }
 
@@ -93,7 +93,7 @@ th, td { padding: 0.375rem 0; }
 
 th { text-align: left; }
 
-@media print { body { background: #fff !important; color: #000 !important; } }
+@media print { body { background: #fff !important; color: #FFF !important; } }
 .g-container { margin: 0 auto; padding: 0; }
 
 .g-block .g-container { width: auto; }

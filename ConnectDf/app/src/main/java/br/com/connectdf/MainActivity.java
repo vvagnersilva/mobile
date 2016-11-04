@@ -188,15 +188,4 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-    /**
-     * Metodo p/ setar o titulo do toolbar.
-     *
-     * @param actionBarTitle
-     */
-    public void setActionBarTitle(int actionBarTitle) {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(actionBarTitle);
-        setSupportActionBar(toolbar);
-    }
 }

@@ -18,9 +18,9 @@
     <string name="excelencia">Excelência em serviços</string>
 
     <string name="no_maps">Google Maps V2 not available!</string>
+    <string name="marker_title">Bem vindo à connect</string>
+    <string name="marker_snippet">Tecnologia da informação</string>
 
     <string name="API_KEY">AIzaSyDuvEZ09ajiaK936hbFq4yoy4jakWtOALs</string>
-    <string name="marker_title">\"Bem vindo à connect\"</string>
-    <string name="marker_snippet">\"Tecnologia da informação\"</string>
 
 </resources>

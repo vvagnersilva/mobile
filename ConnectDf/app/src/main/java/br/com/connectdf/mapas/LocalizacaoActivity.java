@@ -67,8 +67,7 @@ public class LocalizacaoActivity extends AbstractMapActivity implements
             map.animateCamera(zoom);
         }
 
-        addMarker(map, -15.7866009, -47.8895302,
-                R.string.marker_title,
+        addMarker(map, -15.7866009, -47.8895302, R.string.marker_title,
                 R.string.marker_snippet);
     }
 

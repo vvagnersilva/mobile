@@ -12,7 +12,6 @@ import br.com.connectdf.R;
 
 public class AlocacaoFragment extends Fragment {
     private static final String EXTRA_TIPO = "mTipo";
-    private String mTipo;
     private WebView mWebView;
 
     public static AlocacaoFragment novaInstancia(String tipo) {
@@ -21,11 +20,6 @@ public class AlocacaoFragment extends Fragment {
         AlocacaoFragment f = new AlocacaoFragment();
         f.setArguments(params);
         return f;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
     }
 
     @Override
