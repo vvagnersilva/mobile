@@ -2,12 +2,67 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@color/primary_light">
 
-    <item android:title="Biometria">
-        <menu>
-            <item
-                android:id="@+id/nav_avaliacao_individual"
-                android:icon="@drawable/ic_playlist_check_white_48dp"
-                android:title="@string/avaliacao" />
-        </menu>
-    </item>
+    <item
+        android:id="@+id/nav_ufgd"
+        android:icon="@drawable/ic_school_white_36dp"
+        android:title="@string/ufgd" />
+
+    <group android:checkableBehavior="single">
+        <item android:title="Biometria">
+            <menu>
+                <item
+                    android:id="@+id/nav_avaliacao_individual"
+                    android:icon="@drawable/ic_playlist_check_white_48dp"
+                    android:title="@string/aval_biometrica" />
+                <item
+                    android:id="@+id/nav_locais_medicao"
+                    android:icon="@drawable/ic_ruler_white_48dp"
+                    android:title="@string/locais_medicao" />
+            </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="@string/imagens">
+            <menu>
+                <item
+                    android:id="@+id/nav_imagens"
+                    android:icon="@drawable/ic_image_white_48dp"
+                    android:title="@string/imagens" />
+            </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="@string/dna">
+            <menu>
+                <item
+                    android:id="@+id/nav_dna"
+                    android:icon="@drawable/ic_dna_white_48dp"
+                    android:title="@string/dna" />
+            </menu>        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="@string/identif_individual">
+            <menu>
+                <item
+                    android:id="@+id/nav_ident_individual"
+                    android:icon="@drawable/ic_playlist_check_white_48dp"
+                    android:title="@string/identif_individual" />
+            </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="@string/questionarios">
+            <menu>
+                <item
+                    android:id="@+id/nav_questionarios"
+                    android:icon="@drawable/ic_lead_pencil_white_48dp"
+                    android:title="@string/questionarios" />
+            </menu>
+        </item>
+    </group>
+
 </menu>

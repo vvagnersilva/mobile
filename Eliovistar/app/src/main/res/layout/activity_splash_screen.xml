@@ -5,11 +5,13 @@
 
     <ImageView
         android:id="@+id/imgLogo"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         android:gravity="center"
-        android:src="@drawable/abertura"
-        android:layout_centerHorizontal="true" />
+        android:src="@drawable/estrelinha"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false" />
 
 </RelativeLayout>

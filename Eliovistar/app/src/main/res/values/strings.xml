@@ -5,8 +5,8 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Configurações</string>
-    <string name="avaliacao">Avaliação individual</string>
-    <string name="avaliacao_relatorio">Relatório de Avaliação Individual</string>
+    <string name="aval_biometrica">Avaliação biométrica</string>
+    <string name="rel_aval_individual">Relatório de Avaliação Individual</string>
     <string name="medidas_cranio">Medidas do crânio</string>
     <string name="cad_biometrico">Cadastro Biométrico</string>
     <string name="racas">Raças locais brasileiras</string>
@@ -87,6 +87,47 @@
     <string name="obrigatorio_categoria">Campo Categoria Ovina é de preenchimento obrigatório!</string>
     <string name="condicao_score_corporal">Campo score corporal deve estar entre 1-5</string>
     <string name="instituicao">Instituição</string>
+    <string name="locais_medicao">Locais de medição</string>
+    <string name="imagens">Imagens</string>
+    <string name="dna">DNA</string>
+    <string name="questionarios">Questionários</string>
+    <string name="internet">Falha na conexão de internet</string>
+
+    <string name="membros" formatted="false"><![CDATA[<html>
+	<body>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli"><b>MEMBROS DA EXECU&Ccedil;&Atilde;O</b></font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Adrielly</font> <font face="MV Boli">Lais Alves da Silva</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Fernando Miranda de Vargas Junior</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Marcelo Corr&ecirc;a da Silva</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Marcus Vinicius Porto dos Santos</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Wagner Silva</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli"><b>MEMBROS COLABORADORES</b></font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Adriana Sathie Ozaki Hirata</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Alexandre Rodrigo Mendes Fernandes </font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Bruno Antunes Grenge</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">H&eacute;lio de Almeida Ricardo</font></p>
+		<p align="center" style="line-height: 100%">
+			<font face="MV Boli">Ingrid Harumi de Souza Fuzikawa</font></p>
+		<p align="center" style="text-indent: 1.25cm; line-height: 100%">
+			<font face="MV Boli">M&aacute;rcio Rodrigues de Souza</font></p>
+	</body>
+</html>
+]]>
+    </string>
+    <string name="carregando">Carregando ...</string>
+    <string name="ufgd">UFGD</string>
+    <string name="identif_individual">Identificação Individual</string>
 
     <string-array name="instituicoes_arrays">
         <item>Selecione a Instituição</item>

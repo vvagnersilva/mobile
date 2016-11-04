@@ -35,23 +35,11 @@
             android:configChanges="keyboardHidden|orientation"
             android:label="@string/app_name" />
 
-        <!-- Avaliacao Individual -->
-        <activity
-            android:name=".AvalIndividualActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/avaliacao"
-            android:theme="@style/AppTheme.NoActionBar">
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
-
         <!-- Relatorio Individual -->
         <activity
             android:name=".RelIndividualActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/avaliacao"
+            android:label="@string/aval_biometrica"
             android:theme="@style/AppTheme.NoActionBar">
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data

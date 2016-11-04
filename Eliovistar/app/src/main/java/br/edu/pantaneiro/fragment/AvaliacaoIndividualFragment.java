@@ -81,7 +81,7 @@ public class AvaliacaoIndividualFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         // Setando o titulo no toolbar.
         ((MainActivity) getActivity()).getSupportActionBar().setTitle(
-                R.string.avaliacao);
+                R.string.aval_biometrica);
 
         layout = inflater.inflate(R.layout.aval_indiv_fragment, container, false);
 
