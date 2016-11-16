@@ -15,7 +15,7 @@ import android.view.MenuItem;
 import br.gov.serintegral.fragment.FacebookFragment;
 import br.gov.serintegral.fragment.PaypalFragment;
 import br.gov.serintegral.fragment.SobreFragment;
-import br.gov.serintegral.mapas.LocalizacaoActivity;
+import br.gov.serintegral.mapas.MapsActivity;
 
 /**
  * Created by Wagner Silva.
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.action_mapa:
-                Intent it = new Intent(this, LocalizacaoActivity.class);
+                Intent it = new Intent(this, MapsActivity.class);
 
                 // Iniciamos nossa activity
                 startActivity(it);
