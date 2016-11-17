@@ -5,6 +5,7 @@ public class Constantes {
     public static final String FORMULA_CORDEIRO_MACHO_PEITO = "EGS (FORMULA_CORDEIRO_MACHO_PEITO) = -3,23+0,550 X1 -0,776 X2 -0,00891 X1^2 + 0,0506 X2^2";
 
     public static final String HIFEN = "-";
+    public static final String HIFEN_ESPACO = " - ";
     public static final String TIL = "~";
     public static final String UNDERSCORE = "_";
     public static final String BARRA = "/";
