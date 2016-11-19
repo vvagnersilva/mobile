@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_horizontal_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:layout_height="78dp"
+            android:text="@string/multa"
+            android:paddingTop="@dimen/activity_horizontal_margin"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textAlignment="center" />
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dip"
+            android:stretchColumns="3">
+
+            <!-- Placa -->
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:padding="5dip">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary"
+                    android:text="@string/placa"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"/>
+
+                <EditText
+                    android:id="@+id/edPlaca"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary"
+                    android:ems="10"
+                    android:inputType="textCapCharacters"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:elevation="1dp" />
+
+                <ImageView
+                    android:id="@+id/btFavoritos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="fitEnd"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false"
+                    android:layout_weight="0.3"
+                    android:src="@drawable/ic_star_outline_black_24dp"/>
+            </TableRow>
+
+            <!-- Radio Group -->
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:padding="5dip">
+
+                <RadioGroup
+                    android:id="@+id/rgOpcoes"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:textColor="@color/primary"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3">
+
+                    <RadioButton
+                        android:id="@+id/radioVeiculoEstrangeiro"
+                        android:layout_width="205dp"
+                        android:layout_height="52dp"
+                        android:checked="false"
+                        android:textColor="@color/primary"
+                        android:text="@string/veiculo_estrangeiro"
+                        android:layout_weight="3"
+                        android:button="@drawable/custom_radio_button"
+                        android:textAlignment="textStart" />
+                </RadioGroup>
+            </TableRow>
+
+            <!-- Renavam -->
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="5dip">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:text="@string/renavam"/>
+
+                <EditText
+                    android:id="@+id/edRenavam"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:textColor="@color/primary"
+                    android:inputType="number"
+                    android:maxLength="11"/>
+
+                <ImageView
+                    android:id="@+id/btConsultar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="fitEnd"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false"
+                    android:layout_weight="0.3"
+                    android:src="@drawable/ic_magnify_black_24dp"/>
+            </TableRow>
+
+            <!-- Tela de pesquisa -->
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:padding="5dip">
+
+                <ImageView
+                    android:id="@+id/imgMultas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/comprovante_multa"
+                    android:visibility="invisible"
+                    android:layout_centerHorizontal="true" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</ScrollView>
+

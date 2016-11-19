@@ -1,0 +1,119 @@
+.colunaFundova {
+    text-align: right;    
+    width: 700px;
+    font-family: Verdana;
+	font-weight: bold;
+	font-size: 13px;
+}
+.colunaLabel {
+    text-align: left;    
+    width: 30%;
+    font-family: Verdana;
+	font-size: 10px;
+}
+.colunaInput {
+    text-align: left;    
+    width: 70%;
+    font-family: Verdana;
+	font-size: 10px;
+}
+.colunaCentro {
+    text-align: center;    
+    font-family: Verdana;
+	font-size: 12px;
+}
+.enunciado {
+    text-align: center;    
+    font-family: Verdana;
+    font-weight: bold;
+	font-size: 12px;
+}
+.linhaFundova {
+	height: 13px;
+	vertical-align: bottom;
+}
+.gridFundova {
+	background-image: url(/br.gov.dprf.brbrasil.rel.inter/images/fundova.gif);
+	align: right;
+	width: 781;
+}
+.gridMenu {
+	background-image: url(/br.gov.dprf.brbrasil.rel.inter/images/menu3.jpg);
+	align: right;
+	width: 781;
+}
+.gridRodape {
+	background-image: url(/br.gov.dprf.brbrasil.rel.inter/images/rotape.jpg);
+	width: 781;
+	height: 53;
+}
+.formulario {
+	background-image: url(/br.gov.dprf.brbrasil.rel.inter/images/marcadagua.jpg);
+}
+.formulario table {
+	width: 400px;
+}
+.formulario2 table {
+	width: 610px;
+}
+.formulario3 table {
+	width: 421px;
+}
+.main table {
+	width: 774px;
+}
+.titulo tr {
+	height: 30px;
+}
+.titulo table {
+	width: 400px;
+}
+.corpo tr {
+	height: 30px;
+}
+.corpo table {
+	width: 400px;
+}
+.texto {
+	font-family: Verdana;
+	font-size: 10px;
+}
+.borda {
+	background:#f0ffff; 
+	border:1px solid #87ceeb;
+	border-color: lime;
+}
+.coluna1 {
+    width: 183px;
+}
+.coluna2 {
+    width: 267px;
+}
+.bordaum {background:#cccccc url(smile.gif);}
+.bordaum td {background:#f0ffff; border:1px solid #87ceeb;} 
+
+.txtabela001 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+	background-color: #d9dfea;
+	border: thin;
+	border-color: #FFFFFF
+}
+.tab_linha_1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #000000;
+	background-color: #bac5d9;
+	border: thin;
+	border-color: #FFFFFF
+}
+.erroMsg {
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #FF0000;
+	font-weight: bold;
+	text-decoration: none
+}

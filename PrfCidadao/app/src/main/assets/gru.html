@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="shortcut icon" type="image/x-icon" href="https://www.prf.gov.br/gru/javax.faces.resource/img/favicon.ico.xhtml?ln=prf&amp;v=1_0_8" sizes="32x32">
+		<title>PRF - Guia de Recolhimento da União</title><link type="text/css" rel="stylesheet" href="gru_arquivos/theme.css">
+		<link rel="stylesheet" type="text/css" href="gru_arquivos/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="gru_arquivos/bootstrap-theme.css"><link type="text/css" rel="stylesheet" href="gru_arquivos/primefaces.css"><link type="text/css" rel="stylesheet" href="gru_arquivos/font-awesome.css"><link type="text/css" rel="stylesheet" href="gru_arquivos/prf.css"><link type="text/css" rel="stylesheet" href="gru_arquivos/sistema.css"><script type="text/javascript" src="gru_arquivos/jsf.js"></script><script type="text/javascript" src="gru_arquivos/jquery.js"></script><script type="text/javascript" src="gru_arquivos/jquery-plugins.js"></script><script type="text/javascript" src="gru_arquivos/primefaces.js"></script><script type="text/javascript">if(window.PrimeFaces){}</script><script type="text/javascript" src="gru_arquivos/prf.js"></script><script type="text/javascript" src="gru_arquivos/sistema.js"></script></head><body>
+
+	<!-- Barra Superior Principal -->	
+<div id="conteudo"><div id="conteudo-principal" class="container-fluid">
+		<div class="largura-maxima">
+			<div class="page-header" style="margin-top: 10px;">
+				<div class="row">
+					<div class="col-md-10">
+						<h2 style="text-align: center;"><span class="nome-sistema-index">Guia de Recolhimento da União</span></h2>
+					</div>
+				</div>
+			</div>
+
+<form id="formConsulta" name="formConsulta" method="post" action="/gru/index.xhtml" class="form-horizontal formulario-principal" enctype="application/x-www-form-urlencoded">
+<input name="formConsulta" value="formConsulta" type="hidden">
+
+			
+				<div class="modal fade" id="modalConsultaSilver" tabindex="-1" role="dialog" aria-labelledby="modalTitutloConsultaSilver" aria-hidden="true" data-backdrop="false">
+					<div class="modal-dialog">	
+
+		<div class="camada-bloqueio" style="display: none; font-size: xx-large; z-index: 1042;">
+			<div style="display: table; position: absolute; width: 100%; height: 100%;">
+				<div style="display: table-cell; vertical-align: middle; text-align: center;">
+					<span class="icon-spinner icon-spin icon-large"></span>
+				</div>
+			</div>
+		</div>
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">
+									<span aria-hidden="true">×</span><span class="sr-only">Fechar</span>
+								</button>
+								<h4 class="modal-title" id="modalTitutloConsultaSilver">Importar Dados do Veículo</h4>
+							</div><div id="formConsulta:itensConsultaSilver">
+								<div class="modal-body"><div class="alert alert-warning">Efetue <strong>login</strong> para pesquisar utilizando apenas um critério.</div><div class="alert alert-info">Preencha <strong>todos</strong> os campos abaixo.</div>
+									<hr>
+									
+									<div class="form-group"><label id="formConsulta:labelConsultaNumeroRecolhimento" for="formConsulta:consultaNumeroRecolhimento" class="col-sm-4 control-label">Número do e-DRV:</label>
+										<div class="col-sm-8"><input id="formConsulta:consultaNumeroRecolhimento" name="formConsulta:consultaNumeroRecolhimento" class="form-control controle-foco" maxlength="18" title="Número do e-DRV para consulta. Este é o número do recibo de recolhimento do veículo." pattern="^[0-9]{1,14}\-?[0-9]{1,3}$" type="text">
+										</div>
+									</div>
+									
+									<div class="form-group"><label id="formConsulta:labelConsultaPlaca" for="formConsulta:consultaPlaca" class="col-sm-4 control-label">Placa:</label>
+										<div class="col-sm-8"><input id="formConsulta:consultaPlaca" name="formConsulta:consultaPlaca" class="form-control" maxlength="20" title="Placa para consulta. Serão consultados os veículo retidos com esta placa." pattern="^.{6,}$" type="text">
+										</div>
+									</div>
+								
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar
+									</button>
+									<button type="button" class="btn btn-default" onclick="$('#modalConsultaSilver input[type=text]').val(''); $('#modalConsultaSilver input[type=text]').first().focus();">Limpar
+									</button><input id="formConsulta:btnConsultar" name="formConsulta:btnConsultar" value="Importar" role="button" class="btn btn-primary" onclick="mojarra.ab(this,event,'action','@form','mensagem fecharModalConsultaSilver formGru');return false" type="submit">
+								</div></div>
+						</div>
+					</div>
+				</div><input name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:4" value="-5419830020154112842:-3138377792420287911" autocomplete="off" type="hidden">
+</form>
+<form id="formGru" name="formGru" method="post" action="/gru/index.xhtml" class="formulario-principal" enctype="application/x-www-form-urlencoded">
+<input name="formGru" value="formGru" type="hidden">
+
+			
+				<div class="form-group">
+					<div class="panel panel-default">
+						<div class="panel-heading"><select id="formGru:tipoServico" name="formGru:tipoServico" class="form-control" size="1" title="Serviço prestado pela PRF" onchange="alterarTipoServico(true)">	
+	<option value="1" selected="selected">Serviços de Diária e/ou Remoção de Veículos</option>
+	<option value="2">Serviços de Diária e/ou Recolhimento de Animais</option>
+	<option value="3">Serviços de Escolta de Carga Superdimensionada</option>
+</select>
+						</div><div id="formGru:grupoDiariaRemocaoVeiculos" class="panel-body" style="display: block;">
+	
+								<div class="form-group"><label id="formGru:labelTipoVeiculo" for="formGru:tipoVeiculo" class="control-label">Tipo de Veículo:</label><select id="formGru:tipoVeiculo" name="formGru:tipoVeiculo" class="form-control" size="1" title="Tipo de veículo" onchange="alterarTipoVeiculo(true)" required="">	<option value="" selected="selected"></option>
+	<option value="1">Motocicleta, ciclomotor, motoneta ou quadriciclo</option>
+	<option value="2">Veículo com peso bruto total até 3.500 kg</option>
+	<option value="3">Veículo com peso bruto total superior a 3.500 kg</option>
+</select>
+								</div>
+								
+								<div class="form-group"><label id="formGru:labelDataRecolhimento" for="formGru:dataRecolhimento_input" class="control-label adicionar-input-ao-for">Data de Recolhimento:</label><span id="formGru:dataRecolhimento"><input id="formGru:dataRecolhimento_input" name="formGru:dataRecolhimento_input" class="ui-inputfield ui-widget ui-state-default ui-corner-all form-control hasDatepicker" autocomplete="off" title="Data de recolhimento do veículo ao depósito" role="textbox" aria-disabled="false" aria-readonly="false" type="text"></span><script type="text/javascript">$(document.getElementById('formGru:dataRecolhimento_input')).addClass('form-control');</script>
+								</div>
+								
+								<div id="grupoLiberacao" class="form-group" style="display: none;">
+									<label title="Deixe marcado para indicar que a data de liberação do veículo é a mesma data de vencimento da GRU. Ao desmarcar será dada a opção de entrar com a data de liberação."><input id="formGru:dataLiberacaoIgualVencimento" name="formGru:dataLiberacaoIgualVencimento" checked="checked" onchange="alterarDataLiberacaoIgualVencimento(true)" type="checkbox">
+										<span>
+											<span id="labelLiberacaoIgualVencimento">Liberado na Data de Vencimento</span>
+											<span id="labelDataLiberacao" style="display: none;">Data de Liberação:</span>
+										</span>
+									</label>
+									<div id="divDataLiberacao" style="display: none;"><span id="formGru:dataLiberacao"><input id="formGru:dataLiberacao_input" name="formGru:dataLiberacao_input" class="ui-inputfield ui-widget ui-state-default ui-corner-all form-control hasDatepicker" autocomplete="off" title="Data de liberação do veículo do depósito" role="textbox" aria-disabled="false" aria-readonly="false" required="" type="text"></span><script type="text/javascript">$(document.getElementById('formGru:dataLiberacao_input')).addClass('form-control');</script>
+									</div>
+								</div><div id="formGru:divHoraDestombamento" class="form-group" style="display: none;"><label id="formGru:labelHoraDestombamento" for="formGru:horaDestombamento" class="control-label">Destombamento (horas):</label><input id="formGru:horaDestombamento" name="formGru:horaDestombamento" class="form-control" maxlength="3" title="Quantidade de horas de trabalho do guincho em serviço de destombamento ou içamento." disabled="disabled" type="text"></div>
+								
+								<div class="form-group"><label id="formGru:labelKmDeslocamento" for="formGru:kmDeslocamento" class="control-label">Deslocamento de Guincho (Km):</label><input id="formGru:kmDeslocamento" name="formGru:kmDeslocamento" class="form-control" maxlength="5" title="Quantidade total de km de deslocamento do guincho. Serão calculados apenas o excedente a 60 km." required="" type="text">
+								</div></div><div id="formGru:grupoDiariaRemocaoAnimal" class="panel-body" style="display: none;">
+
+							<div class="form-group"><label id="formGru:labelAnimalQuantidadeAnimal" for="formGru:animalQuantidadeAnimal" class="control-label">Quantidade de animais:</label><input id="formGru:animalQuantidadeAnimal" name="formGru:animalQuantidadeAnimal" class="form-control" maxlength="3" title="Quantidade de animais envolvidos na ocorrência." disabled="disabled" type="text">
+							</div>
+							
+							<div class="form-group"><label id="formGru:labelDataRecolhimentoAnimal" for="formGru:dataRecolhimentoAnimal_input" class="control-label adicionar-input-ao-for">Data de Recolhimento:</label><span id="formGru:dataRecolhimentoAnimal"><input id="formGru:dataRecolhimentoAnimal_input" name="formGru:dataRecolhimentoAnimal_input" class="ui-inputfield ui-widget ui-state-default ui-corner-all form-control hasDatepicker" autocomplete="off" title="Data de recolhimento do animal" role="textbox" aria-disabled="false" aria-readonly="false" disabled="disabled" type="text"></span><script type="text/javascript">$(document.getElementById('formGru:dataRecolhimentoAnimal_input')).addClass('form-control');</script>
+							</div>
+							
+							<div class="form-group"><label id="formGru:labelKmDeslocamentoAnimal" for="formGru:kmDeslocamentoAnimal" class="control-label">Deslocamento de Veículo (Km):</label><input id="formGru:kmDeslocamentoAnimal" name="formGru:kmDeslocamentoAnimal" class="form-control" maxlength="5" title="Quantidade total de km de deslocamento do veículo para remoção dos animais. Serão calculados apenas o excedente a 60 km." disabled="disabled" type="text">
+							</div></div><div id="formGru:grupoEscolta" class="panel-body" style="display: none;">
+							
+							<div>
+								<div class="form-group"><label id="formGru:labelTipoServicoEscolta" for="formGru:tipoServicoEscolta" class="control-label">Tipo de Serviço de Escolta:</label><select id="formGru:tipoServicoEscolta" name="formGru:tipoServicoEscolta" class="form-control" size="1" title="Tipo de serviço de escolta" onchange="alterarTipoServicoEscolta(true)" disabled="disabled">	<option value="" selected="selected"></option>
+	<option value="6">Credenciamento de empresa de escolta</option>
+	<option value="8">Teste de conhecimento para motorista de escolta</option>
+	<option value="7">Vistoria de veículos de escolta.</option>
+	<option value="5">Escolta com viatura PRF</option>
+</select>
+								</div>
+							</div><div id="formGru:grupoEscoltaVistoria" style="display: none;">
+							
+								<!-- Grupo vazio para exibi&ccedil;&atilde;o correta da margem -->
+								<div class="form-group"></div>
+								
+								<div class="form-group"><label id="formGru:labelQuantidadeVeiculoVistoriaEscolta" for="formGru:quantidadeVeiculoVistoriaEscolta" class="control-label">Quantidade de veículos:</label><input id="formGru:quantidadeVeiculoVistoriaEscolta" name="formGru:quantidadeVeiculoVistoriaEscolta" class="form-control" maxlength="3" title="Quantidade de veículos de escolta da carga superdimensionada que serão vistoriados." disabled="disabled" type="text">
+								</div></div><div id="formGru:grupoEscoltaViatura" style="display: none;">
+							
+								<!-- Grupo vazio para exibi&ccedil;&atilde;o correta da margem -->
+								<div class="form-group"></div>
+								
+								<div class="form-group"><label id="formGru:labelVelocidadeEscolta" for="formGru:velocidadeEscolta" class="control-label">Velocidade da Escolta:</label><select id="formGru:velocidadeEscolta" name="formGru:velocidadeEscolta" class="form-control" size="1" title="Velocidade máxima que a escolta deverá ser executada pela viatura PRF, conforme velocidade prevista na AET." disabled="disabled">	<option value="" selected="selected"></option>
+	<option value="4">De 01 km/h a 30 km/h</option>
+	<option value="5">De 31 km/h a 60 km/h</option>
+	<option value="6">Acima de 60 km/h</option>
+</select>
+								</div>
+							
+								<div class="form-group"><label id="formGru:labelQuantidadeViaturaEscolta" for="formGru:quantidadeViaturaEscolta" class="control-label">Quantidade de viatura PRF:</label><input id="formGru:quantidadeViaturaEscolta" name="formGru:quantidadeViaturaEscolta" class="form-control" maxlength="2" title="Quantidade de viaturas PRF solicitadas para a escolta da carga superdimensionada." disabled="disabled" type="text">
+								</div>
+							
+								<div class="form-group"><label id="formGru:labelQuantidadeKmEscolta" for="formGru:quantidadeKmEscolta" class="control-label">Percurso da escolta (Km):</label><input id="formGru:quantidadeKmEscolta" name="formGru:quantidadeKmEscolta" class="form-control" maxlength="5" title="Quantidade total de km do percurso que será efetuada a escolta com viatura PRF." disabled="disabled" type="text">
+								</div></div></div>
+						
+						<script>
+							var blocoDiariaVeiculo = new bloco("formGru:tipoServico", "1", "formGru:grupoDiariaRemocaoVeiculos", ["dataRecolhimento"]);
+							var blocoDiariaAnimal = new bloco("formGru:tipoServico", "2", "formGru:grupoDiariaRemocaoAnimal", ["dataRecolhimentoAnimal"]);
+							var blocoLiberacao = new bloco("formGru:dataRecolhimento_input", ["", "__/__/____"], "grupoLiberacao", null, true);
+							var blocoLabelDataLiberacao = new bloco("formGru:dataLiberacaoIgualVencimento", false, "labelDataLiberacao");
+							var blocoLabelLiberacaoIgualVencimento = new bloco("formGru:dataLiberacaoIgualVencimento", true, "labelLiberacaoIgualVencimento");
+							var blocoDataLiberacao = new bloco("formGru:dataLiberacaoIgualVencimento", false, "divDataLiberacao");
+							var blocoEscolta = new bloco("formGru:tipoServico", "3", "formGru:grupoEscolta");
+							var blocoEscoltaVistoria = new bloco("formGru:tipoServicoEscolta", "7", "formGru:grupoEscoltaVistoria");
+							var blocoEscoltaViatura = new bloco("formGru:tipoServicoEscolta", "5", "formGru:grupoEscoltaViatura");
+							var blocoHoraDestombamento = new bloco("formGru:tipoVeiculo", "3", "formGru:divHoraDestombamento");
+
+							function alterarTipoServico(animar) {
+								blocoDiariaVeiculo.alterar(animar);
+								blocoDiariaAnimal.alterar(animar);
+								blocoEscolta.alterar(animar);
+								alterarTipoServicoEscolta(animar);
+								alterarTipoVeiculo(animar);
+								removeEmBranco('formGru:tipoServico');
+
+								atualizarExplicacaoNumeroReferencia();
+							}
+
+							function alterarTipoServicoEscolta(animar) {
+								blocoEscoltaVistoria.alterar(animar);
+								blocoEscoltaViatura.alterar(animar);
+
+								atualizarExplicacaoNumeroReferencia();
+							}
+
+							function alterarTipoVeiculo(animar) {
+								blocoHoraDestombamento.alterar(animar);
+							}
+
+							function alterarDataLiberacaoIgualVencimento(animar) {
+								blocoLabelDataLiberacao.alterar();
+								blocoLabelLiberacaoIgualVencimento.alterar();
+								blocoDataLiberacao.alterar(animar);
+							}
+
+							function alterarDataRecolhimentoVeiculo(animar) {
+								blocoLiberacao.alterar(animar);
+							}
+							
+							function atualizarExplicacaoNumeroReferencia() {
+
+								var labelNumeroReferencia = 'Número de Referência:';
+								
+								$('#numeroReferenciaExplicacao [id^="numeroReferenciaExplicacao"]').hide();
+
+								switch ($(document.getElementById('formGru:tipoServico')).val()) {
+									case "1": {
+										$('#numeroReferenciaExplicacaoDiariaRemocaoVeiculo').show();
+										labelNumeroReferencia = 'Número do Recibo de Recolhimento (e-DRV):';
+									} break;
+									case "2": {
+										$('#numeroReferenciaExplicacaoDiariaRemocaoAnimal').show();
+									} break;
+									case "3": {
+
+										switch ($(document.getElementById('formGru:tipoServicoEscolta')).val()) {
+											case "6": {
+												$('#numeroReferenciaExplicacaoCredenciamentoEmpresa').show();
+												labelNumeroReferencia = 'Número do Processo de Credenciamento (sem o dígito verificador):';
+											} break;
+											case "8": {
+												$('#numeroReferenciaExplicacaoTesteConhecimento').show();
+											} break;
+											case "7": {
+												$('#numeroReferenciaExplicacaoVistoria').show();
+											} break;
+											case "5": {
+												$('#numeroReferenciaExplicacaoViatura').show();
+											} break;
+										}
+									} break;
+								}
+
+								$(document.getElementById('formGru:labelNumeroReferencia')).text(labelNumeroReferencia);
+							}
+							
+							$(function() {
+								alterarTipoServico();
+								alterarTipoServicoEscolta();
+								alterarTipoVeiculo();
+								alterarDataRecolhimentoVeiculo();
+								alterarDataLiberacaoIgualVencimento();
+								new observar(document.getElementById("formGru:dataRecolhimento_input"), 250, function() { alterarDataRecolhimentoVeiculo(true); }).iniciar();
+							});
+						</script>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong>Dados do contribuinte</strong>
+					</div>
+					<div class="panel-body"><script type="text/javascript">
+							function carregarDadosContribuinte(nomeContribuinte, documentoContribuinte) {
+								$(document.getElementById('formGru:documentoContribuinte')).val(documentoContribuinte);
+								$(document.getElementById('formGru:nomeContribuinte')).val(nomeContribuinte);
+							}
+						</script>
+						
+						<div class="form-group"><label id="formGru:labelDocumentoContribuinte" for="formGru:documentoContribuinte" class="control-label">CPF/CNPJ:</label><input id="formGru:documentoContribuinte" name="formGru:documentoContribuinte" class="form-control" maxlength="18" title="Número do CPF ou de CNPJ do contribuinte" required="required" type="text">
+						</div>
+						
+						<div class="form-group"><label id="formGru:labelNomeContribuinte" for="formGru:nomeContribuinte" class="control-label">Nome Completo:</label><input id="formGru:nomeContribuinte" name="formGru:nomeContribuinte" class="form-control" maxlength="45" title="Nome completo do contribuinte" required="required" type="text">
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong>Dados da GRU</strong>
+					</div>
+					<div class="panel-body">
+						
+						<div class="form-group"><label id="formGru:labelNumeroReferencia" for="formGru:numeroReferencia" class="control-label">Número do Recibo de Recolhimento (e-DRV):</label>
+							<span style="float: right; cursor: pointer;" class="icon-question-sign" onclick="$('#numeroReferenciaExplicacao').slideToggle();"></span>
+							<div id="numeroReferenciaExplicacao" style="display: none; margin-bottom: 5px; text-align: justify;">
+								<small>O Número de Referência é o campo identificador do 
+pagamento. Este campo deverá ser suficiente para fazer a correspondência
+ entre a solicitação e o pagamento.</small>
+								<small id="numeroReferenciaExplicacaoDiariaRemocaoVeiculo" style="display: inline;">Para
+ serviços de "Diária e/ou remoção de veículos" este campo deverá ser 
+preenchido com o número do Recibo de Recolhimento do Veículo (e-DRV).</small> 
+								<small id="numeroReferenciaExplicacaoDiariaRemocaoAnimal" style="display: none;">Para
+ serviços de "Diária e/ou remoção de animais" este campo deverá ser 
+preenchido com o número do Recibo de Recolhimento de Animal (RRA).</small> 
+								<small id="numeroReferenciaExplicacaoCredenciamentoEmpresa" style="display: none;">Para
+ serviço de "Credenciamento de empresa de escolta" este campo deverá ser
+ preenchido com o número do processo de credenciamento, sem o dígito 
+verificador.</small> 
+								<small id="numeroReferenciaExplicacaoVistoria" style="display: none;">Para
+ serviço de "Vistoria de veículos de escolta" este campo deverá ser 
+preenchido com o ano (dois algarismos), seguido do número da credencial 
+(seis
+								algarismos), seguido do RENAVAM do veículo (onze algarismos), 
+mais um algarismo sequencial de um a nove referente a quantidade de 
+vistorias realizadas no ano.</small>
+								<small id="numeroReferenciaExplicacaoTesteConhecimento" style="display: none;">Para
+ serviço de "Teste de conhecimento para motorista de escolta" este campo
+ deverá ser preenchido com o ano (dois algarismos), seguido do CPF do 
+candidato (onze
+								algarismos), mais um algarismo sequencial de um a nove referente
+ a quantidade de testes realizados no ano.</small> 
+								<small id="numeroReferenciaExplicacaoViatura" style="display: none;">Para
+ serviço de "Escolta com viatura PRF" este campo deverá ser preenchido 
+com a data/hora da solicitação, iniciando com o dia (dois algarismos), 
+seguido do mês (dois
+								algarismos), seguido do ano (dois algarismos), seguido da hora 
+(dois algarismos), seguido do minuto (dois algarismos), seguido do 
+número da AET (sem a barra "/" e sem a letra "E").</small> 
+							</div><input id="formGru:numeroReferencia" name="formGru:numeroReferencia" class="form-control" maxlength="20" title="Número de referência desta GRU. No caso de serviços relacionados à diária e/ou remoção de veículos deve ser utilizado o número do recibo de recolhimento e-DRV." required="required" type="text">
+						</div>
+
+						<div class="form-group"><label id="formGru:labelEstado" for="formGru:estado" class="control-label">UF da execução do serviço:</label><select id="formGru:estado" name="formGru:estado" class="form-control" size="1" title="Estado que pertence a unidade que executou o serviço" required="required">	<option value=""></option>
+	<option value="36">SEDE/PRF</option>
+	<option value="21">Acre</option>
+	<option value="13">Alagoas</option>
+	<option value="34">Amapá</option>
+	<option value="33">Amazonas</option>
+	<option value="10">Bahia</option>
+	<option value="16">Ceará</option>
+	<option value="31" selected="selected">Distrito Federal</option>
+	<option value="12">Espírito Santo</option>
+	<option value="1">Goiás</option>
+	<option value="18">Maranhão</option>
+	<option value="2">Mato Grosso</option>
+	<option value="3">Mato Grosso do Sul</option>
+	<option value="4">Minas Gerais</option>
+	<option value="19">Pará</option>
+	<option value="14">Paraíba</option>
+	<option value="7">Paraná</option>
+	<option value="11">Pernambuco</option>
+	<option value="17">Piauí</option>
+	<option value="5">Rio de Janeiro</option>
+	<option value="15">Rio Grande do Norte</option>
+	<option value="9">Rio Grande do Sul</option>
+	<option value="21">Rondônia</option>
+	<option value="35">Roraima</option>
+	<option value="8">Santa Catarina</option>
+	<option value="6">São Paulo</option>
+	<option value="20">Sergipe</option>
+	<option value="32">Tocantins</option>
+</select>
+						</div>
+		
+						<div class="form-group"><label id="formGru:labelVencimento" for="formGru:vencimento_input" class="control-label adicionar-input-ao-for">Data de Vencimento:</label><span id="formGru:vencimento" required="required"><input id="formGru:vencimento_input" name="formGru:vencimento_input" aria-required="true" value="18/11/2016" class="ui-inputfield ui-widget ui-state-default ui-corner-all form-control hasDatepicker" autocomplete="off" title="Data limite para pagamento desta GRU. Caso exceda esta data deverá ser gerada uma nova GRU." required="required" role="textbox" aria-disabled="false" aria-readonly="false" type="text"></span><script type="text/javascript">$(document.getElementById('formGru:vencimento_input')).addClass('form-control');</script>
+						</div>
+					</div>
+				</div>
+
+</form>
+		</div>
+		
+		<script>$(".adicionar-input-ao-for").each(function(i, element) { element.htmlFor = element.htmlFor + '_input'; })</script>
+		
+		<!-- C&oacute;digo executado quando o formul&aacute;rio Modal &eacute; submetido e &eacute; validado. Utilizado para fechar o formul&aacute;rio. --><span id="fecharModalConsultaSilver"></span>
+		
+		<!-- C&oacute;digo executado quando o formul&aacute;rio Modal &eacute; submetido e &eacute; validado. Utilizado para abrir o formul&aacute;rio. --><span id="abrirModalVerificaResultado"></span>
+		
+		<div class="modal fade" id="modalVerificaResultado" tabindex="-1" role="dialog" aria-labelledby="modalTituloVerificaResultado" aria-hidden="true" data-backdrop="false">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">×</span><span class="sr-only">Fechar</span>
+						</button>
+						<h4 class="modal-title" id="modalTituloVerificaResultado">Descrição dos Serviços Prestados</h4>
+					</div><div id="itensVerificaResultado">
+						<div class="modal-body">
+
+							<table class="table tabela-valores">
+								<thead>
+									<tr class="text-center">
+										<th>Descrição</th>
+										<th>Qtd.</th>
+										<th>Unit.</th>
+										<th>Total</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th colspan="3">Total</th>
+										<th></th>
+									</tr>
+								</tfoot>
+							</table>
+						
+						</div>
+						<div class="modal-footer">
+<form id="j_idt247" name="j_idt247" method="post" action="/gru/index.xhtml" enctype="application/x-www-form-urlencoded">
+<input name="j_idt247" value="j_idt247" type="hidden">
+
+								<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar
+								</button>
+								<a id="btnUrlGru" class="btn btn-primary" onclick="esconderFormulario('modalVerificaResultado')" role="button">Baixar GRU</a><input name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:26" value="-5419830020154112842:-3138377792420287911" autocomplete="off" type="hidden">
+</form>
+						</div></div>
+				</div>
+			</div>
+		</div>	
+
+		<div class="camada-bloqueio" style="display: none; font-size: xx-large; z-index: 1010;">
+			<div style="display: table; position: absolute; width: 100%; height: 100%;">
+				<div style="display: table-cell; vertical-align: middle; text-align: center;">
+					<span class="icon-spinner icon-spin icon-large"></span>
+				</div>
+			</div>
+		</div></div><div id="j_idt255"></div>
+
+		<!-- Elemento respons&aacute;vel por apresentar as "sticky" com as mensagens de valida&ccedil;&atilde;o. --><div id="mensagem"><span id="warnMessage"></span><span id="infoMessage"></span><span id="dangerMessage"></span></div>
+
+	<script src="gru_arquivos/bootstrap.js"></script>
+
+<div id="textarea_simulator" style="position: absolute; top: 0px; left: 0px; visibility: hidden;"></div><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="position: absolute; left: 478.5px; top: 788px; display: none; z-index: 1054;"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="Anterior"><span class="ui-icon ui-icon-circle-triangle-w">Anterior</span></a><a class="ui-datepicker-next ui-corner-all ui-state-disabled" title="Próximo"><span class="ui-icon ui-icon-circle-triangle-e">Próximo</span></a><div class="ui-datepicker-title"><span class="ui-datepicker-month">Novembro</span>&nbsp;<span class="ui-datepicker-year">2016</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col"><span title="Segunda">S</span></th><th scope="col"><span title="Terça">T</span></th><th scope="col"><span title="Quarta">Q</span></th><th scope="col"><span title="Quinta">Q</span></th><th scope="col"><span title="Sexta">S</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Sábado">S</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Domingo">D</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">1</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">2</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">3</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">4</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">5</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">6</span></td></tr><tr><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">7</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">8</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">9</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">10</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">11</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">12</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">13</span></td></tr><tr><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">14</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">15</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">16</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">17</span></td><td class=" ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="10" data-year="2016"><a class="ui-state-default ui-state-highlight ui-state-active" href="#">18</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="10" data-year="2016"><a class="ui-state-default" href="#">19</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="10" data-year="2016"><a class="ui-state-default" href="#">20</a></td></tr><tr><td class=" " data-handler="selectDay" data-event="click" data-month="10" data-year="2016"><a class="ui-state-default" href="#">21</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="10" data-year="2016"><a class="ui-state-default" href="#">22</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="10" data-year="2016"><a class="ui-state-default" href="#">23</a></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">24</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">25</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">26</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">27</span></td></tr><tr><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">28</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">29</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">30</span></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div><div id="warnMessage_container" class="ui-growl ui-widget" style="z-index: 1051;"></div><div id="infoMessage_container" class="ui-growl ui-widget" style="z-index: 1052;"></div><div id="dangerMessage_container" class="ui-growl ui-widget" style="z-index: 1053;"></div></body></html>

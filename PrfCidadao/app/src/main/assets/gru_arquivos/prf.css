@@ -1,0 +1,165 @@
+@CHARSET "UTF-8";
+
+html, body {
+	height: 100%;
+}
+
+body {
+	padding-top: 60px;
+}
+
+#data-nome-sistema,
+#data-menu-principal {
+	display: none;
+}
+
+.font-prf-antigo {
+	font-family: Arial, Verdana;
+	font-size: 13px;
+}
+
+.barra-principal {
+	background-color: #293999;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 1021;
+}
+
+.prf-brand {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color:#1a2c8f;
+	min-width: 137px;
+	min-height: 42px;
+	background-image: url(/gru/javax.faces.resource/img/PRF-small.png.xhtml?ln=prf&v=1_0_8);
+}
+
+.prf-brand-background {
+	width: 190px;
+	height: 60px;
+}
+
+.btn-usuario-logado-container {
+	margin-right: 12px;
+	margin-top: 12px;
+	height: 34px;
+	float: right;
+}
+
+.nome-sistema-principal {
+	font-size: 32px;
+	color: white;
+	margin-top: 5px;
+	margin-left: 20px;
+	text-shadow: 2px 2px 4px #333333;
+}
+
+.nome-sistema-reduzido {
+	margin-top: 60px;
+	text-align: center;
+	font-size: 28px;
+	color: gray;
+}
+
+#barra-navegacao {
+	background-color: #f5f5f5;
+	position: fixed;
+	left: 190px;
+	right: 0px;
+	height: 41px;
+	z-index: 1015;
+	padding: 10px 15px;
+}
+
+.barra-navegacao-divider {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+li:first-child .barra-navegacao-divider {
+	margin-left: 0px;
+}
+
+#sidebar .panel {
+	margin-top: 0px;
+}
+
+#sidebar .panel-title {
+	font-size: inherit;
+}
+
+#sidebar .ativo {
+	background-color: white;
+	color: #0b6cbc;
+}
+
+#conteudo {
+	min-height: 100%;
+}
+
+#conteudo-principal {
+	position: relative;
+	
+	/* Mantido em 40 + 15 = 55 */
+	/* Escolhido padding em vez de margin devido a diferença entre Chrome e Firefox. */
+	padding-bottom: 55px;
+}
+
+#conteudo-principal.sem-menu-principal {
+	margin-left: 0;
+}
+
+#rodape-principal {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 1020;
+	background-color: #FFDD21;
+	padding: 10px 15px 0px;
+}
+
+@media (max-width: 767px) {
+	.visible-mn {
+		display: block !important;
+	}
+	  
+	.hidden-mn {
+		display: none !important;
+	}
+	  
+	[id^='rodape-principal-'] {
+		width: 100%;
+	}
+	
+	#conteudo-principal {
+		margin-left: 0;
+		padding-bottom: 0;
+	}
+	
+	.center-sm {
+		text-align: center;
+	}
+	
+	#rodape-principal {
+		position: static;
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+@media (min-width: 768px) {
+	.visible-not-mn {
+		display: block !important;
+	}
+	  
+	.hidden-not-mn {
+		display: none !important;
+	}
+	
+	.vertical-align-title {
+		margin-top: 24px;
+	}
+}

@@ -1,0 +1,19 @@
+<resources>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Used for the buttons -->
+        <item name="colorAccent">#009688</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">@color/orange</item>
+        <!-- Used for the background -->
+        <item name="android:background">@color/primary_light</item>
+    </style>
+
+</resources>

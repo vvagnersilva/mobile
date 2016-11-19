@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="pt-br"><head>
+		<title>BAT INTERNET - DPRF</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link type="text/css" rel="stylesheet" href="bat_arquivos/estilosAplicacao.css">
+	<link href="bat_arquivos/styles.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+		.style2 {
+			font-size: 10px;
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			font-weight: bold;
+		}
+		.style3 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px;}
+		.style4 {color: #FFFFFF}
+	</style>
+</head>
+
+<body>
+	
+<form id="formColeta" name="formColeta" method="post" action="/bat/relatorio/coleta_dados.jsf" enctype="application/x-www-form-urlencoded">
+<input name="formColeta" value="formColeta" type="hidden">
+
+	
+	<div class="linhaAzulMenuDireito" name="sistema" title="Sistema">
+		BAT - Consulta Boletim de Ocorrência de Acidente 
+</div>
+	<br>
+	
+	<div class="tituloAzul" name="mapa" title="Menu de navegação!">
+		<a title="Página Inicial!" href="http://www.prf.gov.br/bat/index.jsp">CONSULTA BOLETIM</a> 
+	</div> 
+	<div>
+		<p class="style3">
+			Para consulta de Boletim de Ocorrência de Acidente, informe os dados abaixo e pressione o botão Consultar.
+		</p>
+	</div>
+	<table class="titulo">
+<tbody>
+<tr>
+<td class="colunaCentro"><input id="formColeta:geral" name="formColeta:geral" value="" type="hidden"></td>
+</tr>
+</tbody>
+</table>
+
+	<fieldset>
+<legend class="bold">CONSULTAR</legend>
+		<table class="formulario3">
+<tbody>
+<tr>
+<td class="colunaCentro"><table>
+<tbody>
+<tr>
+<td><table class="corpo">
+<tbody>
+<tr>
+<td class="colunaLabel"><label for="formColeta:comid" class="bold">
+Comunicação C:</label></td>
+<td class="colunaInput"><input id="formColeta:comid" name="formColeta:comid" class="txtBox1" maxlength="10" onkeypress="return forbidNumber(event);" size="10" type="text"></td>
+</tr>
+</tbody>
+</table>
+<table>
+	<tbody><tr>
+<td>
+<input checked="checked" name="formColeta:j_id_jsp_1303115989_18" id="formColeta:j_id_jsp_1303115989_18:0" value="1" onclick="A4J.AJAX.Submit('formColeta:j_id_jsp_1303115989_11','formColeta',event,{'control':this,'single':true,'parameters':{'formColeta:j_id_jsp_1303115989_20':'formColeta:j_id_jsp_1303115989_20'},'actionUrl':'/bat/relatorio/coleta_dados.jsf'})" type="radio"><label for="formColeta:j_id_jsp_1303115989_18:0"> Pessoa Física</label></td>
+<td>
+<input name="formColeta:j_id_jsp_1303115989_18" id="formColeta:j_id_jsp_1303115989_18:1" value="2" onclick="A4J.AJAX.Submit('formColeta:j_id_jsp_1303115989_11','formColeta',event,{'control':this,'single':true,'parameters':{'formColeta:j_id_jsp_1303115989_20':'formColeta:j_id_jsp_1303115989_20'},'actionUrl':'/bat/relatorio/coleta_dados.jsf'})" type="radio"><label for="formColeta:j_id_jsp_1303115989_18:1"> Pessoa Jurídica</label></td>
+	</tr>
+</tbody></table><table class="corpo">
+<tbody>
+<tr>
+<td class="colunaLabel"><span id="formColeta:panelLabel"><label for="formColeta:cpf" class="bold">
+CPF :</label></span></td>
+<td class="colunaInput"><span id="formColeta:panelInput"><input id="formColeta:cpf" name="formColeta:cpf" class="txtBox1" maxlength="14" onkeyup="return formatarCPF(this);" size="20" type="text"></span></td>
+</tr>
+<tr>
+<td class="colunaLabel"><label for="formColeta:uf" class="bold">
+UF do Acidente:</label></td>
+<td class="colunaInput"><select id="formColeta:uf" name="formColeta:uf" class="drpDown1" size="1">	<option value="AC" selected="selected">AC</option>
+	<option value="AL">AL</option>
+	<option value="AM">AM</option>
+	<option value="AP">AP</option>
+	<option value="BA">BA</option>
+	<option value="CE">CE</option>
+	<option value="DF">DF</option>
+	<option value="ES">ES</option>
+	<option value="GO">GO</option>
+	<option value="MA">MA</option>
+	<option value="MG">MG</option>
+	<option value="MS">MS</option>
+	<option value="MT">MT</option>
+	<option value="PA">PA</option>
+	<option value="PB">PB</option>
+	<option value="PE">PE</option>
+	<option value="PI">PI</option>
+	<option value="PR">PR</option>
+	<option value="RJ">RJ</option>
+	<option value="RN">RN</option>
+	<option value="RO">RO</option>
+	<option value="RR">RR</option>
+	<option value="RS">RS</option>
+	<option value="SC">SC</option>
+	<option value="SE">SE</option>
+	<option value="SP">SP</option>
+	<option value="TO">TO</option>
+</select></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class="colunaCentro"></td>
+</tr>
+</tbody>
+</table>
+
+	  </fieldset>
+</form>
+
+
+</body><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+	<script xmlns="http://www.w3.org/1999/xhtml">A4J.AJAX._scriptEvaluated=true;</script>
+
+</head><body></body></html>

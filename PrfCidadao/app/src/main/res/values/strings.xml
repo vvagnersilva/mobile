@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">PRF Cidadão</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_config">Configurações</string>
+
+    <string name="acesso_info">Acesso à informação</string>
+    <string name="acidentes">Acidentes de transito</string>
+    <string name="consultar">Consultar</string>
+    <string name="fiscalizacao">Policiamento e Fiscalização</string>
+    <string name="home">Policia Rodoviária Federal</string>
+    <string name="marker_title">Policia Rodoviária Federal</string>
+    <string name="multas">Nada Consta/Multas</string>
+    <string name="no_maps">Google Maps V2 not available!</string>
+    <string name="pontos_apoio">Postos e delegacias</string>
+    <string name="pontos_mapa">Posto(s) ou Delegacia(s)</string>
+    <string name="contatos">Telefones e endereços</string>
+    <string name="marker_snippet">Disk 191</string>
+
+    <string name="API_KEY">AIzaSyDuvEZ09ajiaK936hbFq4yoy4jakWtOALs</string>
+    <string name="multa">Consulta de multas - Nada Consta</string>
+    <string name="string_vazia" />
+    <string name="placa">Placa</string>
+    <string name="veiculo_estrangeiro">Veículo estrangeiro</string>
+    <string name="renavam">RENAVAM</string>
+    <string name="obr_placa">Informe a placa do veículo</string>
+    <string name="obr_renavam">Informe o renavam do veículo</string>
+    <string name="obs_multa">Para consulta de multas vinculadas ao CPF ou CNPJ, favor procurar a unidade Polícia Rodoviária Federal mais próxima.</string>
+    <string name="enter_text">Digite a placa</string>
+    <string name="gru">GRU</string>
+    <string name="bat">BAT</string>
+    <string name="txtBat">Boletim de Ocorrência de Acidente </string>
+    <string name="limpar">Limpar</string>
+    <string name="calcularGru">Calcular GRU</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="msg_favoritos">Deseja salvar os dados nos favoritos ?</string>
+    <string name="site">Site da PRF</string>
+
+
+</resources>
