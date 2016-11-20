@@ -115,7 +115,7 @@
                     android:layout_weight="0.3"
                     android:textColor="@color/primary"
                     android:inputType="number"
-                    android:maxLength="11"/>
+                    android:maxLength="9"/>
 
                 <ImageView
                     android:id="@+id/btConsultar"

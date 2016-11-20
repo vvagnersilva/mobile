@@ -97,10 +97,8 @@ public class MultasFragment extends Fragment {
         btFavoritos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String placa = edPlaca.getText().toString();
-                String renavam = edRenavam.getText().toString();
 
-                if (placa.length() > 0 && renavam.length() > 0) {
+                if (!validaCamposObrigatorios()) {
                     AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
                     alertDialogBuilder.setIcon(R.drawable.ic_alert_outline_white_48dp);
                     alertDialogBuilder.setTitle(R.string.favoritos);
