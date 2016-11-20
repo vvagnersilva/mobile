@@ -12,7 +12,11 @@ import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import br.gov.dprf.R;
+import br.gov.dprf.utils.MaskEditTextChangedListener;
 
 public class MultasFragment extends Fragment {
     private static final String TAG = "DPRF";
@@ -25,6 +29,13 @@ public class MultasFragment extends Fragment {
     private ImageView btFavoritos;
     private Boolean isVeiculoEstrangeiro;
     private View view;
+
+    // Mascara no componete edittext.
+    private String mMask;
+    private EditText mEditText;
+    private Set<String> symbolMask = new HashSet<String>();
+    private boolean isUpdating;
+    private String old = "";
 
     public static MultasFragment novaInstancia(String tipo) {
         Bundle params = new Bundle();
@@ -46,6 +57,10 @@ public class MultasFragment extends Fragment {
 
         edPlaca = (EditText) view.findViewById(R.id.edPlaca);
         edRenavam = (EditText) view.findViewById(R.id.edRenavam);
+
+        MaskEditTextChangedListener maskPlaca = new MaskEditTextChangedListener("###-####", edPlaca);
+
+        edPlaca.addTextChangedListener(maskPlaca);
 
         group = (RadioGroup) view.findViewById(R.id.rgOpcoes);
 

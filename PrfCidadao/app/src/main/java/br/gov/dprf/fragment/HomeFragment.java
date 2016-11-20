@@ -11,6 +11,7 @@ import android.webkit.WebViewClient;
 
 import br.gov.dprf.MainActivity;
 import br.gov.dprf.R;
+import br.gov.dprf.utils.Connectivity;
 
 
 public class HomeFragment extends Fragment {
@@ -42,7 +43,21 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.home_fragment, container, false);
 
         mWebView = (WebView) view.findViewById(R.id.webHome);
-        mWebView.loadUrl("file:///android_asset/home.html");
+
+        if (Connectivity.isConnected()) {
+            mWebView.loadUrl("https://www.prf.gov.br/portal");
+
+            // Enable Javascript
+            WebSettings webSettings = mWebView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            webSettings.setSupportZoom(false);
+
+            // Force links and redirects to open in the WebView instead of in a browser
+            mWebView.setWebViewClient(new WebViewClient());
+
+        } else {
+            mWebView.loadUrl("file:///android_asset/home.html");
+        }
 
         return view;
     }

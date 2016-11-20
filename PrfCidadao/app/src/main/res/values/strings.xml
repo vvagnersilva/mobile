@@ -36,6 +36,20 @@
     <string name="favoritos">Favoritos</string>
     <string name="msg_favoritos">Deseja salvar os dados nos favoritos ?</string>
     <string name="site">Site da PRF</string>
+    <string name="fale_conosco">Fale Conosco</string>
+    <string name="assunto">Assunto</string>
+    <string name="descricao">Descrição</string>
+    <string name="enviar">enviar</string>
+    <string name="msg_email">Escolha um e-mail:</string>
+    <string name="informacao">Informação</string>
+    <string name="info_obrigatorio">Campo assunto é de preenchimento obrigatório !</string>
+    <string name="desc_obrigatorio">Campo descrição é de preenchimento obrigatório!</string>
 
+    <string-array name="categoria_assunto">
+        <item>Selecione uma opção</item>
+        <item>Dúvidas</item>
+        <item>Elogios</item>
+        <item>Sugestões</item>
+    </string-array>
 
 </resources>

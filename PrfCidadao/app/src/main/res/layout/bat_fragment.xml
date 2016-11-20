@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingTop="@dimen/activity_horizontal_margin">
+    android:paddingTop="48dp">
 
     <WebView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/webBat"

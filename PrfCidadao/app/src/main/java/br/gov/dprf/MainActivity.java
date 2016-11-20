@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -16,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import br.gov.dprf.fragment.BatFragment;
+import br.gov.dprf.fragment.FaleConoscoFragment;
 import br.gov.dprf.fragment.GruFragment;
 import br.gov.dprf.fragment.HomeFragment;
 import br.gov.dprf.fragment.LocalidadesFragment;
@@ -26,6 +26,8 @@ import br.gov.dprf.utils.Connectivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private Fragment f = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +40,12 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                f = FaleConoscoFragment.novaInstancia("FaleConoscoFragment");
+
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.conteudo, f, "FaleConoscoFragment")
+                        .commit();
             }
         });
 
@@ -52,8 +58,9 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
         // Fragment default.
-        Fragment f = HomeFragment.novaInstancia("Home");
+        f = HomeFragment.novaInstancia("Home");
 
         getSupportFragmentManager()
                 .beginTransaction()
@@ -101,8 +108,6 @@ public class MainActivity extends AppCompatActivity
 
         String titulo = item.getTitle().toString();
 
-        Fragment f = null;
-
         if (id == R.id.nav_homepage) {
             f = HomeFragment.novaInstancia(titulo);
             getSupportFragmentManager()
@@ -128,9 +133,8 @@ public class MainActivity extends AppCompatActivity
                     .replace(R.id.conteudo, f, titulo)
                     .commit();
         } else if (id == R.id.nav_postos_apoio) {
-            Connectivity con = new Connectivity();
 
-            if (con.isConnected()) {
+            if (Connectivity.isConnected()) {
                 Intent it = new Intent(this, MapsActivity.class);
 
                 // Iniciamos nossa activity

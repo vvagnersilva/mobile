@@ -26,7 +26,7 @@ public class TelefonesEnderecosFragment extends Fragment implements AdapterView.
                 R.drawable.pe, R.drawable.pi, R.drawable.pr, R.drawable.rj, R.drawable.rn, R.drawable.ro, R.drawable.rr, R.drawable.rs,
                 R.drawable.sc, R.drawable.se, R.drawable.sp, R.drawable.to};
     */
-    int flags[] = {R.drawable.ic_help_black_24dp, R.drawable.df, R.drawable.pe, R.drawable.sp, R.drawable.rj};
+    int flags[] = {R.drawable.ic_help_black_18dp, R.drawable.df, R.drawable.pe, R.drawable.sp, R.drawable.rj};
 
     private View view;
 

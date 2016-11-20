@@ -46,7 +46,7 @@
                     android:id="@+id/edPlaca"
                     android:layout_height="wrap_content"
                     android:textColor="@color/primary"
-                    android:ems="10"
+                    android:ems="8"
                     android:inputType="textCapCharacters"
                     android:layout_width="0dp"
                     android:layout_weight="0.3"
