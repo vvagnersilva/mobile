@@ -124,13 +124,10 @@ public class MultasFragment extends Fragment {
             }
         });
 
-
         return view;
     }
 
     private boolean validaCamposObrigatorios() {
-
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext(), R.style.AlertDialogStyle);
 
         if (edPlaca.getText().length() == 0) {
             String peso = getString(R.string.obr_placa);
