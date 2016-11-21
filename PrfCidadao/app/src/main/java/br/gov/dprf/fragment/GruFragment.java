@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import br.gov.dprf.MainActivity;
 import br.gov.dprf.R;
@@ -17,6 +19,7 @@ public class GruFragment extends Fragment {
     private static final String EXTRA_TIPO = "mTipo";
     private String mTipo;
     private WebView mWebView;
+    private Button btCalcularGru;
 
     public static GruFragment novaInstancia(String tipo) {
         Bundle params = new Bundle();
@@ -39,12 +42,26 @@ public class GruFragment extends Fragment {
         ((MainActivity) getActivity()).getSupportActionBar().setTitle(
                 R.string.gru);
 
-        View view = inflater.inflate(R.layout.gru_fragment, container, false);
+        final View view = inflater.inflate(R.layout.gru_fragment, container, false);
 
         mWebView = (WebView) view.findViewById(R.id.webGru);
         mWebView.loadUrl("file:///android_asset/gru.html");
 
+        btCalcularGru = (Button) view.findViewById(R.id.btCalcularGru);
+
+        // Evento onClick do botao calcular egs.
+        btCalcularGru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImageView imgPopupGru = (ImageView) view.findViewById(R.id.imgPopupGru);
+
+                imgPopupGru.setVisibility(View.VISIBLE);
+            }
+        });
+
         return view;
     }
 }
+
+
 

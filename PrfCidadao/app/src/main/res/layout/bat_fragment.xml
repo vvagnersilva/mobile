@@ -2,7 +2,7 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingTop="48dp">
 
@@ -24,9 +24,27 @@
         android:elevation="6dp"
         android:stateListAnimator="@null"
         android:text="@string/consultar"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="14sp"
-        android:textAllCaps="false"/>
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/imgListaBat"
+        android:layout_width="301dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="false"
+        android:src="@drawable/lista_bat"
+        android:visibility="invisible"
+        android:layout_gravity="left" />
+
+    <ImageView
+        android:id="@+id/imgRelBat"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:visibility="invisible"
+        android:src="@drawable/rel_bat" />
 
 </LinearLayout>
 
