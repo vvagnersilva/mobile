@@ -7,8 +7,10 @@ import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -16,6 +18,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import br.gov.dprf.R;
+import br.gov.dprf.utils.Constantes;
 import br.gov.dprf.utils.MaskEditTextChangedListener;
 
 public class MultasFragment extends Fragment {
@@ -27,6 +30,7 @@ public class MultasFragment extends Fragment {
     private EditText edRenavam;
     private ImageView btConsultar;
     private ImageView btFavoritos;
+    private Button btLimpar;
     private Boolean isVeiculoEstrangeiro;
     private View view;
 
@@ -74,13 +78,16 @@ public class MultasFragment extends Fragment {
 
         btConsultar = (ImageView) view.findViewById(R.id.btConsultar);
 
-        // Evento onClick do botao calcular egs.
         btConsultar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!validaCamposObrigatorios()) {
                     //String placa = edPlaca.getText().toString();
                     //String renavam = edRenavam.getText().toString();
+
+                    ImageView btpesquisa = (ImageView) view.findViewById(R.id.btConsultar);
+
+                    btpesquisa.setImageResource(R.drawable.ic_magnify_grey600_24dp);
 
                     ImageView imgMultas = (ImageView) view.findViewById(R.id.imgMultas);
 
@@ -93,7 +100,6 @@ public class MultasFragment extends Fragment {
 
         btFavoritos = (ImageView) view.findViewById(R.id.btFavoritos);
 
-        // Evento onClick do botao calcular egs.
         btFavoritos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,6 +113,10 @@ public class MultasFragment extends Fragment {
                     //define um botão sim.
                     alertDialogBuilder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface arg0, int arg1) {
+                            ImageView btFavoritos = (ImageView) view.findViewById(R.id.btFavoritos);
+
+                            btFavoritos.setImageResource(R.drawable.ic_star_outline_grey600_24dp);
+
                             Toast.makeText(getContext(), "Sim = " + arg1, Toast.LENGTH_SHORT).show();
                         }
                     });
@@ -114,6 +124,10 @@ public class MultasFragment extends Fragment {
                     //define um botão nao.
                     alertDialogBuilder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface arg0, int arg1) {
+                            ImageView btFavoritos = (ImageView) view.findViewById(R.id.btFavoritos);
+
+                            btFavoritos.setImageResource(R.drawable.ic_star_outline_black_24dp);
+
                             Toast.makeText(getContext(), "Não = " + arg1, Toast.LENGTH_SHORT).show();
                         }
                     });
@@ -121,6 +135,34 @@ public class MultasFragment extends Fragment {
                     alertDialogBuilder.show();
 
                 }
+            }
+        });
+
+        btLimpar = (Button) view.findViewById(R.id.btLimparMultas);
+
+        btLimpar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                EditText edRenavam = (EditText) view.findViewById(R.id.edRenavam);
+                edRenavam.setText(Constantes.STRING_VAZIA);
+
+                EditText edPlaca = (EditText) view.findViewById(R.id.edPlaca);
+                edPlaca.setText(Constantes.STRING_VAZIA);
+
+                RadioButton radioVeiculoEstrangeiro = (RadioButton) view.findViewById(R.id.radioVeiculoEstrangeiro);
+
+                radioVeiculoEstrangeiro.setChecked(false);
+
+                ImageView btFavoritos = (ImageView) view.findViewById(R.id.btFavoritos);
+                btFavoritos.setImageResource(R.drawable.ic_star_outline_black_24dp);
+
+                ImageView btpesquisa = (ImageView) view.findViewById(R.id.btConsultar);
+                btpesquisa.setImageResource(R.drawable.ic_magnify_black_24dp);
+
+                ImageView imgMultas = (ImageView) view.findViewById(R.id.imgMultas);
+
+                imgMultas.setVisibility(View.INVISIBLE);
             }
         });
 

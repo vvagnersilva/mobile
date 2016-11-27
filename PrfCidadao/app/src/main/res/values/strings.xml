@@ -44,6 +44,8 @@
     <string name="informacao">Informação</string>
     <string name="info_obrigatorio">Campo assunto é de preenchimento obrigatório !</string>
     <string name="desc_obrigatorio">Campo descrição é de preenchimento obrigatório!</string>
+    <string name="opcao_login">Login</string>
+    <string name="opcao_logout">Logout</string>
 
     <string-array name="categoria_assunto">
         <item>Selecione uma opção</item>

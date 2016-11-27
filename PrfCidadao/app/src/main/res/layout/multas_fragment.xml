@@ -129,6 +129,31 @@
                     android:src="@drawable/ic_magnify_black_24dp"/>
             </TableRow>
 
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:padding="5dip">
+
+                <Button
+                    android:id="@+id/btLimparMultas"
+                    android:layout_width="0dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/fundo"
+                    android:elevation="6dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/limpar"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </TableRow>
+
             <!-- Tela de pesquisa -->
             <TableRow
                 android:layout_width="fill_parent"
